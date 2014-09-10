@@ -29,13 +29,13 @@
 - (IBAction)clickedUserId:(id)sender {
     //write the delegeate function to go the specified userid
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://twitter.com/search?q=fashon%20week&src=typd"]];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://twitter.com/search?q=fashon%20week&src=typd"]];
     
 }
 
 - (IBAction)clickedViewComments:(id)sender {
     //write the delegeate function to go the specified tweet
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://twitter.com/search?q=fashon%20week&src=typd"]];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://twitter.com/search?q=fashon%20week&src=typd"]];
 }
 @end

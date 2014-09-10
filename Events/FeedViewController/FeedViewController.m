@@ -44,39 +44,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    [self dicDummyDataInitialization];
+
     self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
-    
-    
-//    self.event =[[KQEventAPI alloc]
-//            initWithDataAssyncWithStart:^(void){
-//                NSLog(@"Init Fetching");
-//                //                        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
-//            } finishProcess:^(void){
-//                NSLog(@"Finish Fetching");
-//                //                        [loading dismissViewControllerAnimated:YES completion:nil];
-//                [self dicDummyDataInitialization];
-//            } errorHandler:^(void){
-//                //                        [loading dismissViewControllerAnimated:YES completion:nil];
-//                NSLog(@"Error Fetching");
-//            }];
-    
     
     cache = [KQCache sharedManager];
     _dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"speakers"];
     
-    //arrFeedImages=[[NSMutableArray alloc] initWithObjects:@"pic.png",@"image1.png",@"image2.png", nil];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 -(void)dicDummyDataInitialization{
-    //dic initilization for dummy data start
     _dataSource = [_event objectForKey:@"speakers"];
     NSLog(@"Lectures : %@",_dataSource);
     [tableView reloadData];
@@ -92,18 +68,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-//    return 4; //[arrFeedImages count];
-    
-    
     return _dataSource.count;
 }
 
@@ -115,7 +84,7 @@
     }
     else
     {
-        return 69;
+        return 120;
     }
     
 }
@@ -125,22 +94,15 @@
     
 //    if (indexPath.row%2==0) {
         static NSString *CellIdentifier = @"";
-//        if((indexPath.row)%2==0)
-//        {
-            CellIdentifier = @"FeedCustomCell";
-//        }
-//        else
-//        {
-//            CellIdentifier = @"ThirdFeedCustomCell";
-//        }
+
+        CellIdentifier = @"FeedCustomCell";
         
         FeedCustomCell *cell = [tableview dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         if(!cell)
         {
             cell = [[FeedCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         }
-    
-        //        cell.imgMainImage.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]]];
+
     cell.imgMainImage.image = [UIImage imageNamed:@"no_profile.png"];
     if ([imagesCache objectForKey:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]!= nil ){
         cell.imgMainImage.image=[UIImage imageWithData: [imagesCache objectForKey:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]];
@@ -168,42 +130,26 @@
         
         return cell;
 
-//    }else if (indexPath.row%2!=0){
-//        static NSString *CellIdentifier = @"SecondFeedCustomCell";
-//        SecondFeedCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//        if(!cell)
-//        {
-//            cell = [[SecondFeedCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-//        }
-//        if(dicImageFeed.count>=0+(indexPath.row/2)*3)
-//           [cell.btnOne setImage:[UIImage imageNamed:[[dicImageFeed objectAtIndex:indexPath.row/2*3] valueForKey:@"image"]] forState:UIControlStateNormal];
-//        if(dicImageFeed.count>=1+(indexPath.row/2)*3)
-//            [cell.btnTwo setImage:[UIImage imageNamed:[[dicImageFeed objectAtIndex:1+(indexPath.row/2)*3] valueForKey:@"image"]] forState:UIControlStateNormal];
-//        if(dicImageFeed.count>=2+(indexPath.row/2)*3)
-//            [cell.btnThree setImage:[UIImage imageNamed:[[dicImageFeed objectAtIndex:2+(indexPath.row/2)*3] valueForKey:@"image"]] forState:UIControlStateNormal];
-//        
-//        return cell;
-//        
-//    }
-//    return Nil;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
     {
-        // Get reference to the destination view controller
-        ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
-        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        NSLog(@"IP: %@",[_dataSource objectAtIndex:ip.row]);
-        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
-        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
-        [self.sidePanelController setRightPanel:vc];
-        [self.sidePanelController showRightPanelAnimated:YES];
+        [self.sidePanelController setRightFixedWidth:300];
     }
     else
     {
-        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
+        //        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
     }
+    
+        // Get reference to the destination view controller
+        SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
+        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        [self.sidePanelController setRightPanel:vc];
+        [self.sidePanelController showRightPanelAnimated:YES];
+    
+    
 
 }
 

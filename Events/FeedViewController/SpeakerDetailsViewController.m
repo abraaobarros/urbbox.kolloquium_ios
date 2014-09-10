@@ -27,6 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _profission.text = [data objectForKey:@"company"];
+    _name.text = [data objectForKey:@"name"];
+    _email_label.text = [data objectForKey:@"email"];
+    _mobile_tel.text = [data objectForKey:@"tel"];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -34,6 +39,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)mobile_click:(id)sender {
+}
+- (IBAction)email_click:(id)sender {
 }
 
 /*
