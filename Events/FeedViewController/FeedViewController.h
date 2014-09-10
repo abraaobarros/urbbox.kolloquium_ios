@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KQURLConnectHelper.h"
+#import "KQEventAPI.h"
 
 @interface FeedViewController : UITableViewController
+
+@property (nonatomic, retain) KQURLConnectHelper * urlConnectHelper;
+@property (nonatomic,strong) NSArray *dataSource;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic,strong) KQEventAPI *event;
+@property (nonatomic,strong) NSMutableDictionary *imagesCache;
+
 
 @end

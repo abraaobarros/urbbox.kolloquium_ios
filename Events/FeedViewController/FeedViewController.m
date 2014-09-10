@@ -12,18 +12,25 @@
 #import "ThirdFeedCustomCell.h"
 #import "UIViewController+JASidePanel.h"
 #import "JASidePanelController.h"
+#import "KQEventAPI.h"
+#import "KQCache.h"
+#import "SpeakerDetailsViewController.h"
+#import "ProgramDetailsViewController.h"
 
 @interface FeedViewController ()
 {
     // NSMutableArray *arrFeedImages;
     NSMutableArray *dicTweetFeed;
     NSMutableArray *dicImageFeed;
-
+    KQCache *cache;
+    
 }
 
 @end
 
 @implementation FeedViewController
+@synthesize tableView;
+@synthesize imagesCache;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -38,8 +45,28 @@
 {
     [super viewDidLoad];
     
-    [self dicDummyDataInitialization];
+//    [self dicDummyDataInitialization];
     self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
+    
+    
+//    self.event =[[KQEventAPI alloc]
+//            initWithDataAssyncWithStart:^(void){
+//                NSLog(@"Init Fetching");
+//                //                        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
+//            } finishProcess:^(void){
+//                NSLog(@"Finish Fetching");
+//                //                        [loading dismissViewControllerAnimated:YES completion:nil];
+//                [self dicDummyDataInitialization];
+//            } errorHandler:^(void){
+//                //                        [loading dismissViewControllerAnimated:YES completion:nil];
+//                NSLog(@"Error Fetching");
+//            }];
+    
+    
+    cache = [KQCache sharedManager];
+    _dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"speakers"];
+    
     //arrFeedImages=[[NSMutableArray alloc] initWithObjects:@"pic.png",@"image1.png",@"image2.png", nil];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -50,21 +77,9 @@
 }
 -(void)dicDummyDataInitialization{
     //dic initilization for dummy data start
-    dicTweetFeed = [[NSMutableArray alloc] init];
-    NSDictionary *tweetFeedItem = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"pic.png",@"Prof. Christian Brecher",@"IPT",@"https://twitter.com/BCCI",@"This fashion show will beautiful, I will present what do you think?",@"9013",@"https://twitter.com/BCCI", nil] forKeys:[[NSArray alloc] initWithObjects:@"image",@"userName",@"userId",@"userLink",@"tweet",@"comments",@"commentsLink", nil]];
-    [dicTweetFeed addObject:tweetFeedItem];
-    
-    tweetFeedItem = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"pic.png",@"Prof. Christian Brecher",@"IPT",@"https://twitter.com/BCCI",@"This fashion show will beautiful, I will present what do you think?",@"9013",@"https://twitter.com/BCCI", nil] forKeys:[[NSArray alloc] initWithObjects:@"image",@"userName",@"userId",@"userLink",@"tweet",@"comments",@"commentsLink", nil]];
-    [dicTweetFeed addObject:tweetFeedItem];
-    
-    tweetFeedItem = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"pic.png",@"Prof. Christian Brecher",@"IPT",@"https://twitter.com/BCCI",@"This fashion show will beautiful, I will present what do you think?",@"9013",@"https://twitter.com/BCCI", nil] forKeys:[[NSArray alloc] initWithObjects:@"image",@"userName",@"userId",@"userLink",@"tweet",@"comments",@"commentsLink", nil]];
-    [dicTweetFeed addObject:tweetFeedItem];
-    
-    tweetFeedItem = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"pic.png",@"Prof. Christian Brecher",@"IPT",@"https://twitter.com/BCCI",@"This fashion show will beautiful, I will present what do you think?",@"9013",@"https://twitter.com/BCCI", nil] forKeys:[[NSArray alloc] initWithObjects:@"image",@"userName",@"userId",@"userLink",@"tweet",@"comments",@"commentsLink", nil]];
-    [dicTweetFeed addObject:tweetFeedItem];
-    tweetFeedItem = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"pic.png",@"Prof. Christian Brecher",@"IPT",@"https://twitter.com/BCCI",@"This fashion show will beautiful, I will present what do you think?",@"9013",@"https://twitter.com/BCCI", nil] forKeys:[[NSArray alloc] initWithObjects:@"image",@"userName",@"userId",@"userLink",@"tweet",@"comments",@"commentsLink", nil]];
-    [dicTweetFeed addObject:tweetFeedItem];
-
+    _dataSource = [_event objectForKey:@"speakers"];
+    NSLog(@"Lectures : %@",_dataSource);
+    [tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,34 +104,67 @@
 //    return 4; //[arrFeedImages count];
     
     
-    return dicTweetFeed.count;
+    return _dataSource.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        
+        return 163;
+    }
+    else
+    {
+        return 69;
+    }
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
 //    if (indexPath.row%2==0) {
         static NSString *CellIdentifier = @"";
-        if((indexPath.row)%2==0)
-        {
+//        if((indexPath.row)%2==0)
+//        {
             CellIdentifier = @"FeedCustomCell";
-        }
-        else
-        {
-            CellIdentifier = @"ThirdFeedCustomCell";
-        }
+//        }
+//        else
+//        {
+//            CellIdentifier = @"ThirdFeedCustomCell";
+//        }
         
-        FeedCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        FeedCustomCell *cell = [tableview dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         if(!cell)
         {
             cell = [[FeedCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         }
-        cell.imgMainImage.image=[UIImage imageNamed:[[dicTweetFeed objectAtIndex:indexPath.row/2] valueForKey:@"image"]];
-        cell.lblTweet.text=[[dicTweetFeed objectAtIndex:indexPath.row/2] valueForKey:@"tweet"];
-        cell.lblUserName.text=[[dicTweetFeed objectAtIndex:indexPath.row/2] valueForKey:@"userName"];
-        cell.btnUserId.titleLabel.text=[[dicTweetFeed objectAtIndex:indexPath.row/2] valueForKey:@"userId"];
+    
+        //        cell.imgMainImage.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]]];
+    cell.imgMainImage.image = [UIImage imageNamed:@"no_profile.png"];
+    if ([imagesCache objectForKey:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]!= nil ){
+        cell.imgMainImage.image=[UIImage imageWithData: [imagesCache objectForKey:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]];
+    }else{
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            @try {
+                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [imagesCache setObject:data forKey:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]];
+                    cell.imgMainImage.image=[UIImage imageWithData: data];
+                    [cache putDataSource:data toHash:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]];
+                });
+            }@catch (NSException *exception) {
+                NSLog(@"Error : %@",exception);
+            }
+            
+        });
+    }
+    cell.lblTweet.text=[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"company"];
+    [cell.lblTweet sizeToFit];
+    cell.lblUserName.text=[[_dataSource objectAtIndex:indexPath.row/2] valueForKey:@"name"];
+    cell.btnUserId.titleLabel.text=[[_dataSource objectAtIndex:indexPath.row/2] valueForKey:@"tel"];
         
-        cell.lblViewComment.text=[NSString stringWithFormat:@"View other %@ comments",[[dicTweetFeed objectAtIndex:indexPath.row/2] valueForKey:@"comments"]];
+    cell.lblViewComment.text=[NSString stringWithFormat:@"Tel: %@",[[_dataSource objectAtIndex:indexPath.row/2] valueForKey:@"tel"]];
         
         return cell;
 
@@ -140,6 +188,57 @@
 //    return Nil;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        // Get reference to the destination view controller
+        ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
+        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+        NSLog(@"IP: %@",[_dataSource objectAtIndex:ip.row]);
+        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        [self.sidePanelController setRightPanel:vc];
+        [self.sidePanelController showRightPanelAnimated:YES];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
+    }
+
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([[segue identifier] isEqualToString:@"SpeakerDetailsViewController"])
+    {
+        // Get reference to the destination view controller
+//        SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[segue destinationViewController];
+//        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+//        NSLog(@"IP: %@",[_dataSource objectAtIndex:ip.row]);
+//        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+//        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        
+        
+        // Pass any objects to the view controller here, like...
+    }
+    
+    if ([[segue identifier] isEqualToString:@"ProgramDetailsViewController"])
+    {
+        // Get reference to the destination view controller
+        ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[segue destinationViewController];
+        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+        NSLog(@"IP: %@",[_dataSource objectAtIndex:ip.row]);
+        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        
+        
+        // Pass any objects to the view controller here, like...
+    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

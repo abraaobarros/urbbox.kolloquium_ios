@@ -1,23 +1,18 @@
 //
-//  EventsTests.m
-//  EventsTests
+//  KQHTMLParser.m
+//  Events
 //
-//  Created by Shabbir Hasan Zaheb on 22/02/14.
+//  Created by Abraao Barros Lacerda on 20/08/14.
 //  Copyright (c) 2014 Teknowledge Software. All rights reserved.
 //
 
-
-/*
-    Script de teste DataConnect
- 
- */
 #import <XCTest/XCTest.h>
 
-@interface EventsTests : XCTestCase
+@interface KQHTMLParser : XCTestCase
 
 @end
 
-@implementation EventsTests
+@implementation KQHTMLParser
 
 - (void)setUp
 {
@@ -33,12 +28,7 @@
 
 - (void)testExample
 {
-    int x = 123;
-    void (^printXandY)(int) = ^(int y){
-        printf("%d %d\n", x, y);
-    };
-    
-    printXandY(456);
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:@"http://kolloquium.herokuapp.com"];
 }
 
 @end

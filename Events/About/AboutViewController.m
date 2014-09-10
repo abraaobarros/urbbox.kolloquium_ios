@@ -12,12 +12,14 @@
 #import "AboutCustomCell3.h"
 #import "UIViewController+JASidePanel.h"
 #import "JASidePanelController.h"
+#import "KQEventAPI.h"
+#import "ProgramDetailsViewController.h"
 @interface AboutViewController ()
 
 @end
 
 @implementation AboutViewController
-
+KQEventAPI *event;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,6 +28,18 @@
     }
     return self;
 }
+- (IBAction)wzl_button:(id)sender {
+    // Get reference to the destination view controller
+    ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
+    [self.sidePanelController setRightPanel:vc];
+    [self.sidePanelController showRightPanelAnimated:YES];
+}
+- (IBAction)ipt_button:(id)sender {
+    // Get reference to the destination view controller
+    ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
+    [self.sidePanelController setRightPanel:vc];
+    [self.sidePanelController showRightPanelAnimated:YES];
+}
 
 - (void)viewDidLoad
 {
@@ -33,6 +47,24 @@
 	// Do any additional setup after loading the view.
     self.scrollViewMain.contentSize = CGSizeMake(self.scrollViewMain.frame.size.width,
                                           320);
+
+    self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
+    
+    
+    event =[[KQEventAPI alloc]
+            initWithDataAssyncWithStart:^(void){
+                NSLog(@"Init Fetching");
+            } finishProcess:^(void){
+                _description.text = [event objectForKey:@"descript"];
+                _address.text =[event objectForKey:@"address"];
+                
+                [_description sizeToFit];
+
+            } errorHandler:^(void){
+                NSLog(@"Error Fetching");
+            }];
+    
     self.scrollViewMain.delegate = (id)self;
     [self initializeNavigationBar];
 }
@@ -40,6 +72,7 @@
     
     self.tabBarController.tabBar.hidden=NO;
     self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -47,30 +80,8 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)initializeNavigationBar{
-    UIImage* image1 = [UIImage imageNamed:@"share.png"];
-    CGRect frameimg1 = CGRectMake(0, 0, image1.size.width, image1.size.height);
-    UIButton *shareButton = [[UIButton alloc] initWithFrame:frameimg1];
-    [shareButton setBackgroundImage:image1 forState:UIControlStateNormal];
-    [shareButton addTarget:self action:@selector(clickedShare:)
-          forControlEvents:UIControlEventTouchUpInside];
-    [shareButton setShowsTouchWhenHighlighted:YES];
-    
-    UIBarButtonItem *shareButtonBar =[[UIBarButtonItem alloc] initWithCustomView:shareButton];
-    
-    
-    
-    UIImage* image2 = [UIImage imageNamed:@"sendto.png"];
-    CGRect frameimg2 = CGRectMake(0, 0, image2.size.width, image2.size.height);
-    UIButton *sendtoButton = [[UIButton alloc] initWithFrame:frameimg2];
-    [sendtoButton setBackgroundImage:image2 forState:UIControlStateNormal];
-    [sendtoButton addTarget:self action:@selector(clickedSendTo:)
-           forControlEvents:UIControlEventTouchUpInside];
-    [sendtoButton setShowsTouchWhenHighlighted:YES];
-    
-    UIBarButtonItem *sendtoButtonBar =[[UIBarButtonItem alloc] initWithCustomView:sendtoButton];
-    
-    
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:shareButtonBar,sendtoButtonBar,nil];
+    self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
 }
 #pragma mark - Button Clicked
 -(IBAction)clickedShare:(id)sender{

@@ -14,4 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblEventName;
 @property (strong, nonatomic) IBOutlet UILabel *lblEventDesc;
 @property (strong, nonatomic) IBOutlet UIImageView *imgEventImage;
+@property (weak, nonatomic) IBOutlet UILabel *speaker;
+@property (weak, nonatomic) IBOutlet UILabel *data;
 @end

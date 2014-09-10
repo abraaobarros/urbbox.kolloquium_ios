@@ -1,19 +1,19 @@
 //
-//  KQSidePanelViewController.m
+//  SpeakerDetailsViewController.m
 //  Events
 //
-//  Created by Abraao Barros Lacerda on 17/08/14.
+//  Created by Abraao Barros Lacerda on 25/08/14.
 //  Copyright (c) 2014 Teknowledge Software. All rights reserved.
 //
 
-#import "KQSidePanelViewController.h"
+#import "SpeakerDetailsViewController.h"
 
-
-@interface KQSidePanelViewController ()
+@interface SpeakerDetailsViewController ()
 
 @end
 
-@implementation KQSidePanelViewController
+@implementation SpeakerDetailsViewController
+@synthesize data;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,24 +34,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void) awakeFromNib
-{
-    
-    [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"]];
-    [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
-    [self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    {
-        
-        [self setLeftFixedWidth:300.0];
-    }
-    else
-    {
-        
-    }
-//    [self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"rightViewController"]];
 }
 
 /*

@@ -75,7 +75,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 6;
 }
 
 
@@ -99,7 +99,7 @@
         if (cell == nil) {
             cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
-        cell.title.text=@"Participants";
+        cell.title.text=@"Speakers";
         cell.icon.image = [UIImage imageNamed:@"participants.png"];
         return cell;
     }
@@ -111,36 +111,99 @@
             cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         cell.title.text=@"About us";
-        cell.icon.image = [UIImage imageNamed:@"about.png"];
+        cell.icon.image = [UIImage imageNamed:@"About2.png"];
         return cell;
     }
+    else if(indexPath.row==3)
+    {
+        static NSString *CellIdentifier = @"KQSideBarTableViewCell";
+        KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        cell.title.text=@"Institutes";
+        cell.icon.image = [UIImage imageNamed:@"institutes.png"];
+        return cell;
+    }
+    else if(indexPath.row==4)
+    {
+        static NSString *CellIdentifier = @"KQSideBarTableViewCell";
+        KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        cell.title.text=@"Exhibition";
+        cell.icon.image = [UIImage imageNamed:@"About2.png"];
+        return cell;
+    }
+    else if(indexPath.row==5)
+    {
+        static NSString *CellIdentifier = @"KQSideBarTableViewCell";
+        KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        cell.title.text=@"Refresh info";
+        cell.icon.image = nil;
+        return cell;
+    }
+//    else if(indexPath.row==3)
+//    {
+//        static NSString *CellIdentifier = @"KQSideBarTableViewCell";
+//        KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//        if (cell == nil) {
+//            cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//        }
+//        cell.title.text=@"Refresh Data";
+//        cell.icon.image = [UIImage imageNamed:@"about.png"];
+//        return cell;
+//    }
+
     else
         return nil;
 }
 - (CGFloat) tableView: (UITableView *) tableView heightForRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    return 65;
+    return 50;
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    KQTabBarViewController *v = [self.storyboard instantiateViewControllerWithIdentifier:@"KQTabBarViewController"];
     if(indexPath.row==0)
     {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
+        }
+        else
+        {
+            [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
+        }
         
-        v.tabBarController.selectedIndex = 1;
-        [self.sidePanelController setCenterPanel:v];
     }
     if(indexPath.row==1)
     {
-        v.tabBarController.selectedIndex = 2;
-        [self.sidePanelController setCenterPanel:v];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"]];        }
+        else
+        {
+            [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"]];
+
+        }
     }
     if(indexPath.row==2)
     {
-        v.tabBarController.selectedIndex = 1;
-        [self.sidePanelController setCenterPanel:v];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"]];
+        }
+        else
+        {
+            [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"]];
+            
+        }
     }
     
 }
