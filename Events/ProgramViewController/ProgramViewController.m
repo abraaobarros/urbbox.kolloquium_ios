@@ -40,11 +40,11 @@ KQEventAPI *event;
 {
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [super viewDidLoad];
-    
+    NSLog(@"Program");
     event =[[KQEventAPI alloc]
                     initWithDataAssyncWithStart:^(void){
                         NSLog(@"Init Fetching");
-//                        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
+                        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
                     } finishProcess:^(void){
                         NSLog(@"Finish Fetching");
 //                        [loading dismissViewControllerAnimated:YES completion:nil];
@@ -78,8 +78,6 @@ KQEventAPI *event;
 -(void)openLeftNavigation{
     NSLog(@"aqui");
     [self.sidePanelController showLeftPanelAnimated:YES];
-    
-
 }
 -(void)loadDummyData{
     //dic initilization for dummy data start
@@ -123,8 +121,7 @@ KQEventAPI *event;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-     return [dataSource count];
+    return [dataSource count];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -162,21 +159,32 @@ KQEventAPI *event;
     
     
     cell.imgEventImage.image = nil;
-    if ([dataImageSource objectForKey:[dataSource objectAtIndex:indexPath.row]]) {
-        cell.imgEventImage.image=[UIImage imageWithData: [dataImageSource objectForKey:[dataSource objectAtIndex:indexPath.row]]];
-    }
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            @try {
-                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"]]];
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    cell.imgEventImage.image=[UIImage imageWithData: data];
-                    [dataImageSource setObject:data forKey:[dataSource objectAtIndex:indexPath.row]];
-                });
-            }@catch (NSException *exception) {
-                NSLog(@"Error : %@",exception);
-            }
-            
-        });
+    
+    [event getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"] finishHandler:^(NSData* data){
+        cell.imgEventImage.image=[UIImage imageWithData:data];
+    
+    } startHandler:^{
+        NSLog(@"Init Image loader");
+    
+    } errorHandler:^{
+        NSLog(@"Problem Image loader");
+    }];
+
+//    if ([dataImageSource objectForKey:[dataSource objectAtIndex:indexPath.row]]) {
+//        cell.imgEventImage.image=[UIImage imageWithData: [dataImageSource objectForKey:[dataSource objectAtIndex:indexPath.row]]];
+//    }
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//            @try {
+//                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"]]];
+//                dispatch_sync(dispatch_get_main_queue(), ^{
+//                    cell.imgEventImage.image=[UIImage imageWithData: data];
+//                    [dataImageSource setObject:data forKey:[dataSource objectAtIndex:indexPath.row]];
+//                });
+//            }@catch (NSException *exception) {
+//                NSLog(@"Error : %@",exception);
+//            }
+//            
+//        });
     
     return cell;
 }

@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, retain) NSMutableDictionary *data;
-@property (nonatomic, strong) NSMutableDictionary *dataSource;
+@property (nonatomic, retain) NSMutableDictionary *dataSource;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 + (id)sharedManager;

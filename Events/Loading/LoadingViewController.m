@@ -46,4 +46,11 @@
 }
 */
 
+- (IBAction)login_action:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (IBAction)login_finish:(id)sender {
+}
 @end

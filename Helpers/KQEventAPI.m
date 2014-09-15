@@ -80,7 +80,7 @@
 }
 
 - (void)getImageFromUrl:(NSString *)url
-          finishHandler:(void (^)())finishHandler
+          finishHandler:(void (^)(NSData *))finishHandler
            startHandler:(void (^)())startHandler
            errorHandler:(void (^)())errorHandler{
     
@@ -90,22 +90,20 @@
                              withParameters:nil
                                 startHandle:startHandler
                               sucessHandler:^(NSData* finished){
-                                  data = [finished mutableCopy];
-                                  [cache putData:data toHash:URL_EVENT];
+                                  
                                   if (finishHandler!=nil) {
-                                      finishHandler();
+                                      [cache putDataSource:finished toHash:url];
+                                      finishHandler(finished);
+
                                   }
                                   
                               } errorHandler:errorHandler];
-        NSLog(@"Data DB fetched: %@",self.data);
     }else{
         if (startHandler!=nil) {
             startHandler();
         }
-        self.data = [[cache getDataFromHash:url] mutableCopy];
-        NSLog(@"Data DB fetchedaaa: %@",self.data);
         if (finishHandler!=nil) {
-            finishHandler();
+            finishHandler([cache getDataSourceFromHash:url]);
         }
     }
 }

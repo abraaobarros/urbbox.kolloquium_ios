@@ -163,6 +163,7 @@
                                     <outlet property="lblDateTime" destination="KQH-tr-znJ" id="pO1-mN-iTu"/>
                                     <outlet property="lblEventName" destination="USu-og-3Wx" id="DNy-uq-G99"/>
                                     <outlet property="speaker" destination="q9X-Wa-xt2" id="TGL-zZ-0HK"/>
+                                    <segue destination="pAy-tA-K3N" kind="modal" identifier="LoadingViewController" id="dvg-jC-Y9r"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -179,6 +180,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1YQ-7d-2CP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1244" y="-2133"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="kok-JJ-ACf">
+            <objects>
+                <viewController id="pAy-tA-K3N" customClass="LoadingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nMh-3Z-gnO">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" id="gH0-lU-VWb">
+                                <rect key="frame" x="336" y="395" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="CtK-U4-7QC">
+                                <rect key="frame" x="336" y="433" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bnW-vj-Rt4">
+                                <rect key="frame" x="387" y="471" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="login_action:" destination="pAy-tA-K3N" eventType="touchUpInside" id="mCe-kZ-9P3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="login" destination="gH0-lU-VWb" id="svN-Ce-rDz"/>
+                        <outlet property="pass" destination="CtK-U4-7QC" id="rZ0-6P-uCC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Huu-Fb-7sa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1165" y="-3360"/>
         </scene>
         <!--Program Details View Controller-->
         <scene sceneID="1Ej-p7-Nbl">

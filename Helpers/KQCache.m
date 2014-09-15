@@ -26,6 +26,7 @@
 - (id)init {
     if (self = [super init]) {
         data = [[NSMutableDictionary alloc] init];
+        dataSource = [[NSMutableDictionary alloc] init];
         AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
         managedObjectContext = appDelegate.managedObjectContext;
         [self loadData];
@@ -59,14 +60,13 @@
 
 -(void) putDataSource: (NSData *) dado toHash:(NSString *)hash{
     [self.dataSource setValue:dado forKey:hash];
+
     Cache* newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Cache"
                                                     inManagedObjectContext:self.managedObjectContext];
     //  2
     newEntry.url = hash;
-    newEntry.cache = [dataSource objectForKey:hash]; ;
+    newEntry.cache = [self.dataSource objectForKey:hash]; ;
     
-    NSLog(@"Whoops, couldn't save: %@",dataSource);
-    //  3
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
@@ -106,15 +106,19 @@
     NSArray *fetchedRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
     for (Cache *c in fetchedRecords) {
-        if ([NSKeyedUnarchiver unarchiveObjectWithData:c.cache]!=nil) {
-            [dataSource setObject:c.cache forKey:c.url];
-            [data setObject:(NSDictionary*) [NSKeyedUnarchiver unarchiveObjectWithData:c.cache] forKey:c.url];
-        }
         
+            @try {
+                if ([NSKeyedUnarchiver unarchiveObjectWithData:c.cache]!=nil) {
+                    [data setObject:(NSDictionary*) [NSKeyedUnarchiver unarchiveObjectWithData:c.cache] forKey:c.url];
+                }
+            }
+            @catch (NSException *exception) {
+                [dataSource setObject:c.cache forKey:c.url];
+            }
     }
-    NSLog(@"DB :%@",data);
+//    NSLog(@"DB :%@",data);
     
-    NSLog(@"DB Source:%@",dataSource);
+
 }
 
 
