@@ -88,6 +88,41 @@
     }
 }
 
+-(void) postDataToURL:(NSString *)url withParameters:(NSDictionary *)parameters
+           startHandle:(void (^)(void))startHandler
+         sucessHandler:(void (^)(NSDictionary *))sucessBlock
+          errorHandler:(void (^)(void))errorBlock{
+    
+    
+    NSLog(@"PostDataToURL");
+    
+    startHandler();
+    sucessBlock(nil);
+    errorBlock();
+    if (startHandler) {
+        startHandler();
+    }
+//    @try {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//            @try {
+                NSDictionary* data = [KQURLConnectHelper requestPost:url post:[KQURLConnectHelper buildUrlWith:parameters]];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    if (sucessBlock!=nil)
+                        sucessBlock(data);
+                });
+//            }@catch (NSException *exception) {
+//                errorBlock();
+//                NSLog(@"Error : %@",exception);
+//            }
+        
+        });
+//    }
+//    @catch (NSException *exception) {
+//        errorBlock();
+//        NSLog(@"Error : %@",exception);
+//    }
+}
+
 + (NSDictionary *)requestPost:(NSString *)urlString post:(NSString *)post {
     NSURL *url = [NSURL URLWithString:urlString];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];

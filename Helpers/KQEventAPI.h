@@ -25,6 +25,9 @@
              startHandler:(void (^)())startHandler
              errorHandler:(void (^)())errorHandler;
 
-
++ (void)makeLogin:(NSString *)login withPass:(NSString *)pass finishHandler:(void (^)())finishHandler
+     startHandler:(void (^)())startHandler
+     errorHandler:(void (^)())errorHandler
+loginErrorHandler:(void(^)())loginErrorHandler;
 
 @end

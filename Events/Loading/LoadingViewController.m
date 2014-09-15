@@ -7,6 +7,7 @@
 //
 
 #import "LoadingViewController.h"
+#import "KQEventAPI.h"
 
 @interface LoadingViewController ()
 
@@ -47,7 +48,35 @@
 */
 
 - (IBAction)login_action:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [_pass resignFirstResponder];
+    [_login resignFirstResponder];
+    [KQEventAPI makeLogin:_login.text withPass:_pass.text
+            finishHandler:^{
+                _textLoading.hidden = NO;
+                _textLoading.text = @"Getting information...";
+                KQEventAPI *event = [[KQEventAPI alloc] initWithDataAssyncWithStart:^{
+                } finishProcess:^{
+                    [_loading stopAnimating];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                } errorHandler:^{
+                    _textLoading.hidden = NO;
+                    _textLoading.text = @"No internet connection";
+                }];
+            } startHandler:^{
+                [_loading startAnimating];
+                _textLoading.hidden = NO;
+                _textLoading.text = @"Logging in...";
+            } errorHandler:^{
+                _textLoading.hidden = NO;
+                _textLoading.text = @"No internet connection";
+                [_loading stopAnimating];
+            } loginErrorHandler:^{
+                _textLoading.hidden = NO;
+                _textLoading.text = @"Wrong password or username";
+                [_loading stopAnimating];
+            }];
+    
+    
     
 }
 

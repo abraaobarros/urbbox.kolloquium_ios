@@ -11,6 +11,7 @@
 #import "KQCache.h"
 
 #define URL_EVENT @"http://kolloquium.herokuapp.com/rest/event/1"
+#define URL_LOGIN @"http://kolloquium.herokuapp.com/rest/login"
 
 @implementation KQEventAPI
 @synthesize urlConnectHelper;
@@ -57,6 +58,48 @@
         if (finishHandler!=nil) {
             finishHandler();
         }
+    }
+}
+
++ (void)makeLogin:(NSString *)login withPass:(NSString *)pass finishHandler:(void (^)())finishHandler
+    startHandler:(void (^)())startHandler
+    errorHandler:(void (^)())errorHandler
+    loginErrorHandler:(void(^)())loginErrorHandler
+{
+
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([userDefaults objectForKey:@"emai+"]) {
+        startHandler();
+        finishHandler();
+    }else{
+        NSMutableDictionary *dados = [[NSMutableDictionary alloc] init];
+        [dados setObject:login forKey:@"email"];
+        [dados setObject:pass forKey:@"password"];
+        KQURLConnectHelper *conn = [[KQURLConnectHelper alloc]init];
+        [conn postDataToURL:URL_LOGIN withParameters:dados
+                            startHandle:startHandler
+                            sucessHandler:^(NSDictionary* finished){
+                              NSMutableDictionary * data;
+                                NSLog(@"Data Login Post: %@",data);
+                              data = [finished mutableCopy];
+                              @try {
+                                  [userDefaults setObject:[finished objectForKey:@"id"] forKey:@"id"];
+                                  [userDefaults setObject:[finished objectForKey:@"name"] forKey:@"name"];
+                                  [userDefaults setObject:[finished objectForKey:@"company"] forKey:@"company"];
+                                  [userDefaults setObject:[finished objectForKey:@"email"] forKey:@"email"];
+                                  [userDefaults synchronize];
+                                  if (![finished objectForKey:@"id"] ) {
+                                      loginErrorHandler();
+                                  }
+                                  else if (finishHandler!=nil) {
+                                      finishHandler();
+                                  }
+                              }
+                              @catch (NSException *exception) {
+                                  loginErrorHandler();
+                              }
+//                              }
+                          } errorHandler:errorHandler];
     }
 }
 

@@ -47,10 +47,8 @@ KQEventAPI *event;
                         [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
                     } finishProcess:^(void){
                         NSLog(@"Finish Fetching");
-//                        [loading dismissViewControllerAnimated:YES completion:nil];
                         [self loadDummyData];
                     } errorHandler:^(void){
-//                        [loading dismissViewControllerAnimated:YES completion:nil];
                         NSLog(@"Error Fetching");
                     }];
     
