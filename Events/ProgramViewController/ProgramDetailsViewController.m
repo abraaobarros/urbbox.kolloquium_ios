@@ -43,9 +43,6 @@
                              [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"HH:mm"],[Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"dd"],[Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"MMM"]];
         }
         
-//        if ([dataImageSource objectForKey:[dataSource objectAtIndex:indexPath.row]]) {
-//            cell.imgEventImage.image=[UIImage imageWithData: [dataImageSource objectForKey:[dataSource objectAtIndex:indexPath.row]]];
-//        }
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             @try {
                 NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[data objectForKey:@"speaker"] objectForKey:@"profile_img"]]];

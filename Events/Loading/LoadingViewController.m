@@ -68,16 +68,13 @@
                 _textLoading.text = @"Logging in...";
             } errorHandler:^{
                 _textLoading.hidden = NO;
-                _textLoading.text = @"No internet connection";
+                _textLoading.text = @"No internet connection, try again later";
                 [_loading stopAnimating];
             } loginErrorHandler:^{
                 _textLoading.hidden = NO;
                 _textLoading.text = @"Wrong password or username";
                 [_loading stopAnimating];
             }];
-    
-    
-    
 }
 
 - (IBAction)login_finish:(id)sender {

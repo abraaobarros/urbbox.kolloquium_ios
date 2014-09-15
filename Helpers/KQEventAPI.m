@@ -68,7 +68,7 @@
 {
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if ([userDefaults objectForKey:@"emai+"]) {
+    if ([userDefaults objectForKey:@"email"]) {
         startHandler();
         finishHandler();
     }else{

@@ -17,6 +17,5 @@
 
 - (IBAction)login_finish:(id)sender;
 -(void) noInternetConnect;
--(void) dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion;
 
 @end

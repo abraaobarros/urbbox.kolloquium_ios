@@ -40,11 +40,13 @@ KQEventAPI *event;
 {
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [super viewDidLoad];
-    NSLog(@"Program");
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![userDefaults objectForKey:@"email"]) {
+        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
+    }
     event =[[KQEventAPI alloc]
                     initWithDataAssyncWithStart:^(void){
-                        NSLog(@"Init Fetching");
-                        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
+                        
                     } finishProcess:^(void){
                         NSLog(@"Finish Fetching");
                         [self loadDummyData];
@@ -61,7 +63,6 @@ KQEventAPI *event;
 
 - (IBAction)reloadData:(id)sender {
     [event reloadData:^(void){
-            //[self performSegueWithIdentifier:@"LoadingViewController" sender:self];
         } startHandler:^{
             [loading dismissViewControllerAnimated:YES completion:nil];
             [self loadDummyData];
@@ -200,11 +201,6 @@ KQEventAPI *event;
         [self.sidePanelController setRightFixedWidth:300];
     }
         [self.sidePanelController showRightPanelAnimated:YES];
-//    }
-//    else
-//    {
-//        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
-//    }
 }
 
 
