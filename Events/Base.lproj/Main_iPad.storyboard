@@ -318,12 +318,6 @@
                                 <color key="textColor" red="0.49357734120000002" green="0.4698608822" blue="0.4950175383" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" id="E1y-1M-cbA">
-                                <rect key="frame" x="190" y="288" width="550" height="431"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="l9M-C3-PBL">
                                 <rect key="frame" x="181" y="17" width="499" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -335,15 +329,42 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ask a question" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="5gY-6i-Za8">
+                                <rect key="frame" x="272" y="381" width="317" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="contentStretch" x="0.14999999999999969" y="0.59999999999999998" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="send:" destination="0BV-KE-p17" eventType="editingDidEndOnExit" id="i1Y-6v-PTl"/>
+                                    <action selector="sendQuestion:" destination="0BV-KE-p17" eventType="editingDidEnd" id="6gg-oD-Nk7"/>
+                                </connections>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" id="adQ-rV-yfW">
+                                <rect key="frame" x="272" y="319" width="317" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                    <segment title="5"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeAvaliation:" destination="0BV-KE-p17" eventType="valueChanged" id="nd3-F9-HCf"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Pwu-vv-Fqu"/>
                     <connections>
-                        <outlet property="description" destination="E1y-1M-cbA" id="zdx-ky-Szf"/>
+                        <outlet property="avaliacao" destination="adQ-rV-yfW" id="2lR-NH-4j9"/>
                         <outlet property="location" destination="bqN-tJ-ENI" id="BJg-t1-Qsq"/>
                         <outlet property="name" destination="ib7-aN-00O" id="opk-de-wiY"/>
                         <outlet property="photo" destination="EdR-x1-7kc" id="ZU9-x0-ZGE"/>
+                        <outlet property="quetion" destination="5gY-6i-Za8" id="3Sr-4n-H0J"/>
                         <outlet property="subject" destination="l9M-C3-PBL" id="iD3-4e-SHf"/>
                     </connections>
                 </viewController>
