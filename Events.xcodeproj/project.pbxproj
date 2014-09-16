@@ -75,6 +75,7 @@
 		7836B9C719AC3300004BB485 /* bg_default_institute.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7836B9C619AC3300004BB485 /* bg_default_institute.jpg */; };
 		7836B9CA19AC33CD004BB485 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836B9C919AC33CD004BB485 /* AboutTableViewController.m */; };
 		7836B9CC19AC36A1004BB485 /* about_institutes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7836B9CB19AC36A1004BB485 /* about_institutes.jpg */; };
+		784F678019C7F56B00EA6217 /* KQSectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 784F677F19C7F56B00EA6217 /* KQSectionTableViewCell.m */; };
 		788DE31C19A2B42F00ED8D23 /* KQEventAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DE31B19A2B42F00ED8D23 /* KQEventAPI.m */; };
 		788DE31F19A2D8C800ED8D23 /* KQCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DE31E19A2D8C800ED8D23 /* KQCache.m */; };
 		788DE32119A2DD1D00ED8D23 /* KQEventAPITestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DE32019A2DD1D00ED8D23 /* KQEventAPITestCase.m */; };
@@ -293,6 +294,8 @@
 		784F677B19C7F2C100EA6217 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		784F677C19C7F2CD00EA6217 /* icon_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_.png; sourceTree = "<group>"; };
 		784F677D19C7F2D900EA6217 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		784F677E19C7F56B00EA6217 /* KQSectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQSectionTableViewCell.h; path = TabBarController/KQSectionTableViewCell.h; sourceTree = "<group>"; };
+		784F677F19C7F56B00EA6217 /* KQSectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQSectionTableViewCell.m; path = TabBarController/KQSectionTableViewCell.m; sourceTree = "<group>"; };
 		788DE31A19A2B42F00ED8D23 /* KQEventAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQEventAPI.h; path = Helpers/KQEventAPI.h; sourceTree = "<group>"; };
 		788DE31B19A2B42F00ED8D23 /* KQEventAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQEventAPI.m; path = Helpers/KQEventAPI.m; sourceTree = "<group>"; };
 		788DE31D19A2D8C800ED8D23 /* KQCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQCache.h; path = Helpers/KQCache.h; sourceTree = "<group>"; };
@@ -648,6 +651,8 @@
 			children = (
 				78AD2C8519A1BC0300047B9A /* KQSideBarTableViewCell.h */,
 				78AD2C8619A1BC0300047B9A /* KQSideBarTableViewCell.m */,
+				784F677E19C7F56B00EA6217 /* KQSectionTableViewCell.h */,
+				784F677F19C7F56B00EA6217 /* KQSectionTableViewCell.m */,
 			);
 			name = SideBarViewCell;
 			sourceTree = "<group>";
@@ -1158,6 +1163,7 @@
 				7112224118BCD7E800E77A4A /* MoreViewController.m in Sources */,
 				BB303E3418B8802E00B6EBC9 /* ProgramViewController.m in Sources */,
 				7890808A19A2405500C537E1 /* KQTabBarViewController.m in Sources */,
+				784F678019C7F56B00EA6217 /* KQSectionTableViewCell.m in Sources */,
 				7836B9B819ABB791004BB485 /* Cache.m in Sources */,
 				7836B9C119AC2933004BB485 /* SpeakerDetailsViewController.m in Sources */,
 				7112222E18BCC69300E77A4A /* AboutCustomCell2.m in Sources */,

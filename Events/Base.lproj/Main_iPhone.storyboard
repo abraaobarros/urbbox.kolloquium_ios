@@ -18,15 +18,15 @@
                                 <color key="backgroundColor" red="1" green="0.98643761130834939" blue="0.97419883452093281" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeader" rowHeight="29" id="MSK-oQ-hlZ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeader" rowHeight="29" id="MSK-oQ-hlZ" customClass="KQSectionTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="center" tableViewCell="MSK-oQ-hlZ" id="Z4c-hE-WZO">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="28"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ftk-H9-iBp">
-                                                    <rect key="frame" x="7" y="5" width="42" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="123" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ftk-H9-iBp">
+                                                    <rect key="frame" x="7" y="5" width="261" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
@@ -45,6 +45,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="title" destination="Ftk-H9-iBp" id="Xdt-3N-1Dr"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="KQSideBarTableViewCell" rowHeight="43" id="4OP-aL-wLS" customClass="KQSideBarTableViewCell">
                                         <rect key="frame" x="0.0" y="51" width="320" height="43"/>
@@ -245,12 +248,6 @@
                                 <color key="textColor" red="0.49357734120000002" green="0.4698608822" blue="0.4950175383" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" id="KVw-Xb-VA7">
-                                <rect key="frame" x="20" y="280" width="280" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" id="KdJ-dJ-edZ">
                                 <rect key="frame" x="30" y="46" width="270" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -263,15 +260,42 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.17974728949999999" green="0.17974728949999999" blue="0.17974728949999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ask a question" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="GJF-7O-Ovx">
+                                <rect key="frame" x="78" y="314" width="190" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="contentStretch" x="0.14999999999999969" y="0.59999999999999998" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="send:" destination="d6p-kL-gGL" eventType="editingDidEndOnExit" id="1Ox-iA-hnN"/>
+                                    <action selector="sendQuestion:" destination="d6p-kL-gGL" eventType="editingDidEnd" id="tYe-Pd-F7r"/>
+                                </connections>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" id="f2y-lB-fRY">
+                                <rect key="frame" x="116" y="269" width="114" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                    <segment title="5"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeAvaliation:" destination="d6p-kL-gGL" eventType="valueChanged" id="Jll-dt-qbm"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="5qG-Bj-nXt"/>
                     <connections>
-                        <outlet property="description" destination="KVw-Xb-VA7" id="ck1-Rx-5R7"/>
+                        <outlet property="avaliacao" destination="f2y-lB-fRY" id="gnM-VP-3dB"/>
                         <outlet property="location" destination="G43-7W-FC0" id="Iu6-MY-7Oa"/>
                         <outlet property="name" destination="KdJ-dJ-edZ" id="Z8E-zG-hhM"/>
                         <outlet property="photo" destination="wkR-Ga-Wn9" id="MbE-k1-HnU"/>
+                        <outlet property="quetion" destination="GJF-7O-Ovx" id="Iv2-d4-TAb"/>
                         <outlet property="subject" destination="8Dx-2d-0w5" id="0bk-Dg-uIw"/>
                     </connections>
                 </viewController>

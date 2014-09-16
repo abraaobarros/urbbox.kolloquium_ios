@@ -49,15 +49,15 @@
                                             <outlet property="title" destination="kjV-F8-8w8" id="fFg-ge-LL6"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeader" rowHeight="29" id="rcX-cQ-47E">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeader" rowHeight="29" id="rcX-cQ-47E" customClass="KQSectionTableViewCell">
                                         <rect key="frame" x="0.0" y="67" width="768" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="center" tableViewCell="rcX-cQ-47E" id="3wY-N1-ox3">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="28"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BeX-Xm-6fV">
-                                                    <rect key="frame" x="7" y="5" width="42" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="123" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BeX-Xm-6fV">
+                                                    <rect key="frame" x="7" y="5" width="417" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
@@ -76,6 +76,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="title" destination="BeX-Xm-6fV" id="NzO-N1-m0U"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

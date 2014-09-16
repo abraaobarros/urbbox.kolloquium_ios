@@ -8,6 +8,7 @@
 
 #import "ProgramDetailsViewController.h"
 #import "Util.h"
+#import "KQEventAPI.h"
 
 @interface ProgramDetailsViewController ()
 
@@ -80,6 +81,39 @@
     description.text = @"muito bom";
     subject.text = @"muito bom";
 }
+- (IBAction)sendQuestion:(id)sender {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [KQEventAPI makeQuestion:_quetion.text
+                  toActivity:[[data objectForKey:@"id"] intValue] withParticipant:[[userDefaults objectForKey:@"id"] intValue] finishHandler:^{
+                     NSLog(@"Deu certo ");
+                 } startHandler:^{
+                     NSLog(@"Começou");
+                 } errorHandler:^{
+                     NSLog(@"Deu Errado");
+                 }];
+}
+- (IBAction)send:(id)sender {
+     NSLog(@"Aqui");
+}
+- (IBAction)changeAvaliation:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Bewertung Schreiben" message:@"Sagen Sie uns lhre Meinung" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [KQEventAPI makeReview:[[alertView textFieldAtIndex:0] text]
+                 withScore:(int)_avaliacao.selectedSegmentIndex toActivity:[[data objectForKey:@"id"] intValue] withParticipant:[[userDefaults objectForKey:@"id"] intValue] finishHandler:^{
+                     NSLog(@"Deu certo");
+                 } startHandler:^{
+                     NSLog(@"Começou");
+                 } errorHandler:^{
+                     NSLog(@"Deu Errado");
+                 }];
+    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+}
+
 /*
 #pragma mark - Navigation
 

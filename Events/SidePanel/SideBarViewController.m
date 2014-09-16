@@ -11,6 +11,7 @@
 #import "JASidePanelController.h"
 #import "KQSideBarTableViewCell.h"
 #import "KQTabBarViewController.h"
+#import "KQSectionTableViewCell.h"
 
 @interface SideBarViewController ()
 
@@ -231,9 +232,23 @@
 
 -(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     static NSString *CellIdentifier = @"SectionHeader";
-    UITableViewCell *headerView = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+     KQSectionTableViewCell *headerView = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (headerView == nil){
         [NSException raise:@"headerView == nil.." format:@"No cells with matching CellIdentifier loaded from your storyboard"];
+    }
+    switch (section) {
+        case 0:
+            headerView.title.text = @"Event";
+            break;
+        case 1:
+            headerView.title.text = @"Veranstalter";
+            break;
+        case 2:
+            headerView.title.text = @"Algeimenes";
+            break;
+            
+        default:
+            break;
     }
     return headerView;
 }

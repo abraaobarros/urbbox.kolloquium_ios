@@ -30,4 +30,12 @@
      errorHandler:(void (^)())errorHandler
 loginErrorHandler:(void(^)())loginErrorHandler;
 
++ (void)makeReview:(NSString *)review withScore:(int) value toActivity:(int)activity_id withParticipant:(int) participant_id finishHandler:(void (^)())finishHandler
+      startHandler:(void (^)())startHandler
+      errorHandler:(void (^)())errorHandler;
+
++ (void)makeQuestion:(NSString *)question toActivity:(int)activity_id withParticipant:(int) participant_id finishHandler:(void (^)())finishHandler
+        startHandler:(void (^)())startHandler
+        errorHandler:(void (^)())errorHandler;
+
 @end

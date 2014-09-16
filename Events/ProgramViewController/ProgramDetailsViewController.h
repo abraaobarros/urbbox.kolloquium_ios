@@ -16,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *name;
 @property (strong, nonatomic) IBOutlet UILabel *description;
 @property (weak, nonatomic) IBOutlet UILabel *location;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *avaliacao;
 @property (strong, nonatomic) NSDictionary *data;
+@property (weak, nonatomic) IBOutlet UITextField *quetion;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 @end

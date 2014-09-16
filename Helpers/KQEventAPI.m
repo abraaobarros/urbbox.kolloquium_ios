@@ -12,6 +12,8 @@
 
 #define URL_EVENT @"http://kolloquium.herokuapp.com/rest/event/1"
 #define URL_LOGIN @"http://kolloquium.herokuapp.com/rest/login"
+#define URL_QUESTION @"http://kolloquium.herokuapp.com/rest/question"
+#define URL_REVIEW @"http://kolloquium.herokuapp.com/rest/question"
 
 @implementation KQEventAPI
 @synthesize urlConnectHelper;
@@ -103,6 +105,61 @@
     }
 }
 
++ (void)makeQuestion:(NSString *)question toActivity:(int)activity_id withParticipant:(int) participant_id finishHandler:(void (^)())finishHandler
+     startHandler:(void (^)())startHandler
+     errorHandler:(void (^)())errorHandler
+{
+    
+        NSMutableDictionary *dados = [[NSMutableDictionary alloc] init];
+        [dados setObject:question forKey:@"question"];
+        [dados setObject:@(activity_id) forKey:@"activity_id"];
+        [dados setObject:@(participant_id) forKey:@"participant_id"];
+        KQURLConnectHelper *conn = [[KQURLConnectHelper alloc]init];
+        [conn postDataToURL:URL_QUESTION withParameters:dados
+                startHandle:startHandler
+              sucessHandler:^(NSDictionary* finished){
+                  NSMutableDictionary * data;
+                  NSLog(@"Question: %@",data);
+                  data = [finished mutableCopy];
+                  @try {
+                      if (finishHandler!=nil) {
+                          finishHandler();
+                      }
+                  }
+                  @catch (NSException *exception) {
+                      errorHandler();
+                  }
+              } errorHandler:errorHandler];
+}
+
++ (void)makeReview:(NSString *)review withScore:(int) value toActivity:(int)activity_id withParticipant:(int) participant_id finishHandler:(void (^)())finishHandler
+        startHandler:(void (^)())startHandler
+        errorHandler:(void (^)())errorHandler
+{
+    
+    NSMutableDictionary *dados = [[NSMutableDictionary alloc] init];
+    [dados setObject:review forKey:@"review"];
+    [dados setObject:@(value) forKey:@"value"];
+    [dados setObject:@(activity_id) forKey:@"activity_id"];
+    [dados setObject:@(participant_id) forKey:@"participant_id"];
+    KQURLConnectHelper *conn = [[KQURLConnectHelper alloc]init];
+    [conn postDataToURL:URL_REVIEW withParameters:dados
+            startHandle:startHandler
+          sucessHandler:^(NSDictionary* finished){
+              NSMutableDictionary * data;
+              NSLog(@"Question: %@",data);
+              data = [finished mutableCopy];
+              @try {
+                  if (finishHandler!=nil) {
+                      finishHandler();
+                  }
+              }
+              @catch (NSException *exception) {
+                  errorHandler();
+              }
+          } errorHandler:errorHandler];
+}
+
 - (void)reloadData:(void (^)())finishHandler
     startHandler:(void (^)())startHandler
     errorHandler:(void (^)())errorHandler
@@ -137,7 +194,6 @@
                                   if (finishHandler!=nil) {
                                       [cache putDataSource:finished toHash:url];
                                       finishHandler(finished);
-
                                   }
                                   
                               } errorHandler:errorHandler];
