@@ -45,8 +45,13 @@
 {
     [super viewDidLoad];
 
+    self.navigationItem.title = @"Werkzeugbau Mit Zukunft";
+    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:15.0],NSFontAttributeName,[UIColor redColor],NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = size;
+    
     self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
+    NSLog(@"_Event: %@",_event);
     
     cache = [KQCache sharedManager];
     _dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"speakers"];
@@ -54,6 +59,7 @@
 }
 -(void)dicDummyDataInitialization{
     _dataSource = [_event objectForKey:@"speakers"];
+    
     NSLog(@"Lectures : %@",_dataSource);
     [tableView reloadData];
 }
