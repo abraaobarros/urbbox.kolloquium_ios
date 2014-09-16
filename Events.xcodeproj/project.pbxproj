@@ -290,6 +290,9 @@
 		7836B9C819AC33CD004BB485 /* AboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
 		7836B9C919AC33CD004BB485 /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
 		7836B9CB19AC36A1004BB485 /* about_institutes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = about_institutes.jpg; path = Images/about_institutes.jpg; sourceTree = "<group>"; };
+		784F677B19C7F2C100EA6217 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		784F677C19C7F2CD00EA6217 /* icon_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_.png; sourceTree = "<group>"; };
+		784F677D19C7F2D900EA6217 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		788DE31A19A2B42F00ED8D23 /* KQEventAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQEventAPI.h; path = Helpers/KQEventAPI.h; sourceTree = "<group>"; };
 		788DE31B19A2B42F00ED8D23 /* KQEventAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQEventAPI.m; path = Helpers/KQEventAPI.m; sourceTree = "<group>"; };
 		788DE31D19A2D8C800ED8D23 /* KQCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQCache.h; path = Helpers/KQCache.h; sourceTree = "<group>"; };
@@ -663,6 +666,9 @@
 		BB303D8D18B863E300B6EBC9 = {
 			isa = PBXGroup;
 			children = (
+				784F677D19C7F2D900EA6217 /* icon@2x.png */,
+				784F677C19C7F2CD00EA6217 /* icon_.png */,
+				784F677B19C7F2C100EA6217 /* icon.png */,
 				7836B9B619ABB791004BB485 /* Cache.m */,
 				7836B9B719ABB791004BB485 /* Cache.h */,
 				7836B9AA19A9388B004BB485 /* welcome.jpg */,
@@ -1294,7 +1300,6 @@
 		BB303DCC18B863E300B6EBC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
@@ -1308,7 +1313,6 @@
 		BB303DCD18B863E300B6EBC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
