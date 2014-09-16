@@ -76,6 +76,8 @@
 		7836B9CA19AC33CD004BB485 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836B9C919AC33CD004BB485 /* AboutTableViewController.m */; };
 		7836B9CC19AC36A1004BB485 /* about_institutes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7836B9CB19AC36A1004BB485 /* about_institutes.jpg */; };
 		784F678019C7F56B00EA6217 /* KQSectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 784F677F19C7F56B00EA6217 /* KQSectionTableViewCell.m */; };
+		784F678319C808F300EA6217 /* InstituteDepartamentDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784F678219C808F300EA6217 /* InstituteDepartamentDetailsViewController.m */; };
+		784F678619C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 784F678519C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.m */; };
 		788DE31C19A2B42F00ED8D23 /* KQEventAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DE31B19A2B42F00ED8D23 /* KQEventAPI.m */; };
 		788DE31F19A2D8C800ED8D23 /* KQCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DE31E19A2D8C800ED8D23 /* KQCache.m */; };
 		788DE32119A2DD1D00ED8D23 /* KQEventAPITestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DE32019A2DD1D00ED8D23 /* KQEventAPITestCase.m */; };
@@ -296,6 +298,10 @@
 		784F677D19C7F2D900EA6217 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		784F677E19C7F56B00EA6217 /* KQSectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQSectionTableViewCell.h; path = TabBarController/KQSectionTableViewCell.h; sourceTree = "<group>"; };
 		784F677F19C7F56B00EA6217 /* KQSectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQSectionTableViewCell.m; path = TabBarController/KQSectionTableViewCell.m; sourceTree = "<group>"; };
+		784F678119C808F300EA6217 /* InstituteDepartamentDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstituteDepartamentDetailsViewController.h; path = Institutes/InstituteDepartamentDetailsViewController.h; sourceTree = "<group>"; };
+		784F678219C808F300EA6217 /* InstituteDepartamentDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstituteDepartamentDetailsViewController.m; path = Institutes/InstituteDepartamentDetailsViewController.m; sourceTree = "<group>"; };
+		784F678419C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstituteDepartamentDetailTableViewCell.h; path = Institutes/InstituteDepartamentDetailTableViewCell.h; sourceTree = "<group>"; };
+		784F678519C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstituteDepartamentDetailTableViewCell.m; path = Institutes/InstituteDepartamentDetailTableViewCell.m; sourceTree = "<group>"; };
 		788DE31A19A2B42F00ED8D23 /* KQEventAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQEventAPI.h; path = Helpers/KQEventAPI.h; sourceTree = "<group>"; };
 		788DE31B19A2B42F00ED8D23 /* KQEventAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQEventAPI.m; path = Helpers/KQEventAPI.m; sourceTree = "<group>"; };
 		788DE31D19A2D8C800ED8D23 /* KQCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQCache.h; path = Helpers/KQCache.h; sourceTree = "<group>"; };
@@ -664,6 +670,10 @@
 				78B83D1919BE1DE8004E5B35 /* InstituteDetailTableViewController.m */,
 				78BF115C19BEB290005AE8B0 /* InstituteDetailTableViewCell.h */,
 				78BF115D19BEB290005AE8B0 /* InstituteDetailTableViewCell.m */,
+				784F678119C808F300EA6217 /* InstituteDepartamentDetailsViewController.h */,
+				784F678219C808F300EA6217 /* InstituteDepartamentDetailsViewController.m */,
+				784F678419C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.h */,
+				784F678519C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.m */,
 			);
 			name = InstituteDetail;
 			sourceTree = "<group>";
@@ -1139,6 +1149,7 @@
 				7836B9B419AB721B004BB485 /* LoadingViewController.m in Sources */,
 				7112223A18BCD08700E77A4A /* MapViewController.m in Sources */,
 				78AD2C8719A1BC0300047B9A /* KQSideBarTableViewCell.m in Sources */,
+				784F678319C808F300EA6217 /* InstituteDepartamentDetailsViewController.m in Sources */,
 				788DE31C19A2B42F00ED8D23 /* KQEventAPI.m in Sources */,
 				78AD2C8319A1AA2500047B9A /* SideBarViewController.m in Sources */,
 				711221DD18BC62DD00E77A4A /* NSMutableArray+convenience.m in Sources */,
@@ -1169,6 +1180,7 @@
 				7112222E18BCC69300E77A4A /* AboutCustomCell2.m in Sources */,
 				711221DF18BC62DD00E77A4A /* UIView+convenience.m in Sources */,
 				78B83D1A19BE1DE8004E5B35 /* InstituteDetailTableViewController.m in Sources */,
+				784F678619C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.m in Sources */,
 				7112222F18BCC69300E77A4A /* AboutCustomCell3.m in Sources */,
 				BB303DA618B863E300B6EBC9 /* main.m in Sources */,
 				78AD2C7B19A1843B00047B9A /* KQSidePanelViewController.m in Sources */,

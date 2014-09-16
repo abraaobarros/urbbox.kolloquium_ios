@@ -11,6 +11,7 @@
 #import "KQEventAPI.h"
 #import "ProgramDetailsViewController.h"
 #import "UIViewController+JASidePanel.h"
+#import "InstituteDepartamentDetailsViewController.h"
 
 @interface InstituteDetailTableViewController (){
     NSMutableArray *dataSource;
@@ -122,7 +123,7 @@ KQEventAPI *event;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
         // Get reference to the destination view controller
-        ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
+        InstituteDepartamentDetailsViewController *vc = (InstituteDepartamentDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InstituteDepartamentDetailsViewController"];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
         NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
@@ -132,7 +133,7 @@ KQEventAPI *event;
     }
     else
     {
-        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
+        [self performSegueWithIdentifier:@"InstituteDepartamentDetailsViewController" sender:self];
     }
 }
 /*
