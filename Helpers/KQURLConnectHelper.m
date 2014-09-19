@@ -26,7 +26,6 @@
         }@catch (NSException *exception) {
             NSLog(@"Error : %@",exception);
         }
-        
     });
 
 }
@@ -102,25 +101,13 @@
     if (startHandler) {
         startHandler();
     }
-//    @try {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//            @try {
                 NSDictionary* data = [KQURLConnectHelper requestPost:url post:[KQURLConnectHelper buildUrlWith:parameters]];
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     if (sucessBlock!=nil)
                         sucessBlock(data);
                 });
-//            }@catch (NSException *exception) {
-//                errorBlock();
-//                NSLog(@"Error : %@",exception);
-//            }
-        
         });
-//    }
-//    @catch (NSException *exception) {
-//        errorBlock();
-//        NSLog(@"Error : %@",exception);
-//    }
 }
 
 + (NSDictionary *)requestPost:(NSString *)urlString post:(NSString *)post {
