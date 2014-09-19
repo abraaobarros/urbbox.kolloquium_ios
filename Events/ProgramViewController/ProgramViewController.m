@@ -55,6 +55,10 @@ KQEventAPI *event;
                     }];
     
     [self loadDummyData];
+    self.navigationItem.title = @"Werkzeugbau Mit Zukunft";
+    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:15.0],NSFontAttributeName,[UIColor redColor],NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = size;
+    
     self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
 

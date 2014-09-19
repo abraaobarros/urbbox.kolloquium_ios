@@ -60,6 +60,8 @@
 		7122DC1518BDE6D900DC9925 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122DC1418BDE6D900DC9925 /* VRGCalendarView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7122DC1718BDFB7B00DC9925 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7122DC1618BDFB7B00DC9925 /* MapKit.framework */; };
 		7122DC1918BDFB8100DC9925 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7122DC1818BDFB8100DC9925 /* CoreLocation.framework */; };
+		7806B3DC19CCCC27008BCC31 /* ParticipantsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7806B3DB19CCCC27008BCC31 /* ParticipantsTableViewController.m */; };
+		7806B3DF19CCDB20008BCC31 /* ParticipantsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7806B3DE19CCDB20008BCC31 /* ParticipantsTableViewCell.m */; };
 		7836B99719A3897C004BB485 /* CacheDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7836B99519A3897C004BB485 /* CacheDB.xcdatamodeld */; };
 		7836B99919A38C0B004BB485 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7836B99819A38C0B004BB485 /* CoreData.framework */; };
 		7836B9A619A479E9004BB485 /* ProgramDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7836B9A519A479E9004BB485 /* ProgramDetailsViewController.m */; };
@@ -273,6 +275,10 @@
 		7122DC1418BDE6D900DC9925 /* VRGCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGCalendarView.m; sourceTree = "<group>"; };
 		7122DC1618BDFB7B00DC9925 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7122DC1818BDFB8100DC9925 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7806B3DA19CCCC27008BCC31 /* ParticipantsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticipantsTableViewController.h; path = Participants/ParticipantsTableViewController.h; sourceTree = "<group>"; };
+		7806B3DB19CCCC27008BCC31 /* ParticipantsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParticipantsTableViewController.m; path = Participants/ParticipantsTableViewController.m; sourceTree = "<group>"; };
+		7806B3DD19CCDB20008BCC31 /* ParticipantsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticipantsTableViewCell.h; path = Participants/ParticipantsTableViewCell.h; sourceTree = "<group>"; };
+		7806B3DE19CCDB20008BCC31 /* ParticipantsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParticipantsTableViewCell.m; path = Participants/ParticipantsTableViewCell.m; sourceTree = "<group>"; };
 		7836B99619A3897C004BB485 /* CacheDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CacheDB.xcdatamodel; sourceTree = "<group>"; };
 		7836B99819A38C0B004BB485 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7836B9A419A479E9004BB485 /* ProgramDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramDetailsViewController.h; sourceTree = "<group>"; };
@@ -559,6 +565,15 @@
 			path = MyProgramCustomCell;
 			sourceTree = "<group>";
 		};
+		7806B3D919CCCC01008BCC31 /* Participants */ = {
+			isa = PBXGroup;
+			children = (
+				7806B3DA19CCCC27008BCC31 /* ParticipantsTableViewController.h */,
+				7806B3DB19CCCC27008BCC31 /* ParticipantsTableViewController.m */,
+			);
+			name = Participants;
+			sourceTree = "<group>";
+		};
 		7836B9A319A479BE004BB485 /* ProgramDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -726,6 +741,7 @@
 		BB303D9F18B863E300B6EBC9 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				7806B3D919CCCC01008BCC31 /* Participants */,
 				78B83D1B19BE1DF0004E5B35 /* InstituteDetail */,
 				7836B9B119AB71C1004BB485 /* Loading */,
 				78AD2C7E19A1866400047B9A /* Images */,
@@ -741,6 +757,8 @@
 				BB303DA818B863E300B6EBC9 /* AppDelegate.h */,
 				BB303DA918B863E300B6EBC9 /* AppDelegate.m */,
 				BB303DAB18B863E300B6EBC9 /* Main_iPhone.storyboard */,
+				7806B3DD19CCDB20008BCC31 /* ParticipantsTableViewCell.h */,
+				7806B3DE19CCDB20008BCC31 /* ParticipantsTableViewCell.m */,
 				7836B9C419AC31E3004BB485 /* about_cell.jpg */,
 				BB303DAE18B863E300B6EBC9 /* Main_iPad.storyboard */,
 				BB303DB118B863E300B6EBC9 /* ViewController.h */,
@@ -1181,9 +1199,11 @@
 				711221DF18BC62DD00E77A4A /* UIView+convenience.m in Sources */,
 				78B83D1A19BE1DE8004E5B35 /* InstituteDetailTableViewController.m in Sources */,
 				784F678619C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.m in Sources */,
+				7806B3DF19CCDB20008BCC31 /* ParticipantsTableViewCell.m in Sources */,
 				7112222F18BCC69300E77A4A /* AboutCustomCell3.m in Sources */,
 				BB303DA618B863E300B6EBC9 /* main.m in Sources */,
 				78AD2C7B19A1843B00047B9A /* KQSidePanelViewController.m in Sources */,
+				7806B3DC19CCCC27008BCC31 /* ParticipantsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

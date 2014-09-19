@@ -274,6 +274,15 @@
         }
         else if(indexPath.row==1)
         {
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
+                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ParticipantsViewController"]];
+            }
+            else
+            {
+                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ParticipantsViewController"]];
+                
+            }
             
         }
         else if(indexPath.row==2)
