@@ -574,6 +574,13 @@
 			name = Participants;
 			sourceTree = "<group>";
 		};
+		7806B3E119D01DC1008BCC31 /* Expositions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Expositions;
+			sourceTree = "<group>";
+		};
 		7836B9A319A479BE004BB485 /* ProgramDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -741,6 +748,7 @@
 		BB303D9F18B863E300B6EBC9 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				7806B3E119D01DC1008BCC31 /* Expositions */,
 				7806B3D919CCCC01008BCC31 /* Participants */,
 				78B83D1B19BE1DF0004E5B35 /* InstituteDetail */,
 				7836B9B119AB71C1004BB485 /* Loading */,

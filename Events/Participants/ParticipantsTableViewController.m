@@ -10,6 +10,7 @@
 #import "UIViewController+JASidePanel.h"
 #import "ParticipantsTableViewCell.h"
 #import "KQCache.h"
+#import <MessageUI/MessageUI.h>
 
 @interface ParticipantsTableViewController (){
     KQCache *cache;
@@ -46,13 +47,9 @@
     
     cache = [KQCache sharedManager];
     
-    _dataSource = [[[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"speakers"] mutableCopy];
-    filteredArray = [[[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"speakers"] mutableCopy];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _dataSource = [[[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"participants"] mutableCopy];
+    filteredArray = [[[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"participants"] mutableCopy];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,25 +103,41 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    if ([MFMailComposeViewController canSendMail]) {
+        
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+//        [mailViewController setSubject:@"Subject Goes Here."];
+//        [mailViewController setMessageBody:@"Your message goes here." isHTML:NO];
+       
+        NSArray *toRecipients = [NSArray arrayWithObjects:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"email"], nil];
+        [mailViewController setToRecipients:toRecipients];
+        mailViewController.mailComposeDelegate =self;
+        [self presentModalViewController:mailViewController animated:YES];
+    } else {
+        NSLog(@"Device is unable to send email in its current state.");
+    }
+    
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 #pragma mark Content Filtering
 -(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
-    // Update the filtered array based on the search text and scope.
-    // Remove all objects from the filtered search array
-//    _filteredArray  = [[NSMutableArray alloc] init];
-    // Filter the array using NSPredicate
-//    for (NSDictionary *dict in _dataSource) {
-//        if ([[dict objectForKey:@"name"] rangeOfString:searchText].location != NSNotFound  ) {
-//            [_filteredArray addObject:dict];
-//        }
-//    }
     
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"name CONTAINS[c] %@ OR company CONTAINS[c] %@", searchText, searchText];
    filteredArray = [_dataSource filteredArrayUsingPredicate:pred];
     
     
-
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.name contains[c] %@ OR self.company contains[c] %@",searchText,searchText];
-//    _filteredArray = [NSMutableArray arrayWithArray:[_dataSource filteredArrayUsingPredicate:predicate]];
 }
 
 #pragma mark - UISearchDisplayController Delegate Methods

@@ -11,6 +11,7 @@
 @interface ParticipantsTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *enterprise;
+@property (weak, nonatomic) NSString *email;
 - (IBAction)send_email:(id)sender;
 
 @end

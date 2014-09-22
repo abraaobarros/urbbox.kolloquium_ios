@@ -7,6 +7,7 @@
 //
 
 #import "ParticipantsTableViewCell.h"
+#import <MessageUI/MessageUI.h>
 
 @implementation ParticipantsTableViewCell
 
@@ -31,6 +32,4 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)send_email:(id)sender {
-}
 @end
