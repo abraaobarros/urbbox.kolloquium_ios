@@ -164,16 +164,11 @@ KQEventAPI *event;
     @finally {
         
     }
-   
-    
-    
-    
     
     cell.imgEventImage.image = nil;
     
     [event getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"] finishHandler:^(NSData* data){
         cell.imgEventImage.image=[UIImage imageWithData:data];
-    
     } startHandler:^{
         NSLog(@"Init Image loader");
     
@@ -205,6 +200,7 @@ KQEventAPI *event;
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+        [vc setData:data];
         [self.sidePanelController setRightPanel:vc];
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
     {

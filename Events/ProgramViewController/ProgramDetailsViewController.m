@@ -74,11 +74,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void) setContent:(NSDictionary *) data{
-    name.text = @"muito bom";
-    description.text = @"muito bom";
-    subject.text = @"muito bom";
-}
 - (IBAction)sendQuestion:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [KQEventAPI makeQuestion:_quetion.text
@@ -120,6 +115,38 @@
                      NSLog(@"Deu Errado");
                  }];
     NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+}
+
+
+-(void)setData:(NSDictionary *)new_data{
+    @try {
+        data = new_data;
+        name.text = [new_data objectForKey:@"subject"];
+        description.text = [new_data objectForKey:@"descrition"];
+        subject.text = [[new_data objectForKey:@"speaker"] objectForKey:@"name"];
+        if ([data objectForKey:@"location"] != (id)[NSNull null]) {
+            location.text = [NSString stringWithFormat:@"In the Eurogress, at %@ at %@ of %@",
+                             [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"HH:mm"],[Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"dd"],[Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"MMM"]];
+        }
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            @try {
+                NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[new_data objectForKey:@"speaker"] objectForKey:@"profile_img"]]];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    _photo.image=[UIImage imageWithData: data_img];
+                });
+            }@catch (NSException *exception) {
+                NSLog(@"Error : %@",exception);
+            }
+            
+        });
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+        
+    }
 }
 
 /*
