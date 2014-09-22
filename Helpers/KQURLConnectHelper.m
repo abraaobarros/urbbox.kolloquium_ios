@@ -93,11 +93,6 @@
           errorHandler:(void (^)(void))errorBlock{
     
     
-    NSLog(@"PostDataToURL");
-    
-    startHandler();
-    sucessBlock(nil);
-    errorBlock();
     if (startHandler) {
         startHandler();
     }

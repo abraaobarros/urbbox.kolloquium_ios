@@ -32,9 +32,7 @@
 
 - (void)viewDidLoad
 {
-    name.text = @"muito bom";
-    description.text = @"muito bom";
-    subject.text = @"muito bom";
+
     @try {
         name.text = [data objectForKey:@"subject"];
         description.text = [data objectForKey:@"descrition"];
