@@ -18,6 +18,7 @@
 #import "KQCache.h"
 #import "SpeakerDetailsViewController.h"
 #import "ProgramDetailsViewController.h"
+#import "ExibitorsDetailsViewController.h"
 
 @interface ExpositionTableViewController ()
 {
@@ -33,6 +34,7 @@
 @implementation ExpositionTableViewController
 @synthesize tableView;
 @synthesize imagesCache;
+@synthesize dataSource;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -55,13 +57,13 @@
     NSLog(@"_Event: %@",_event);
     
     cache = [KQCache sharedManager];
-    _dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"guest_companies"];
+    dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"guest_companies"];
     
 }
 -(void)dicDummyDataInitialization{
-    _dataSource = [_event objectForKey:@"guest_companies"];
+    dataSource = [_event objectForKey:@"guest_companies"];
     
-    NSLog(@"Lectures : %@",_dataSource);
+    NSLog(@"Lectures : %@",dataSource);
     [tableView reloadData];
 }
 
@@ -80,7 +82,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _dataSource.count;
+    return dataSource.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -111,16 +113,16 @@
     }
     
     cell.imgMainImage.image = [UIImage imageNamed:@"no_profile.png"];
-    if ([imagesCache objectForKey:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"]]!= nil ){
-        cell.imgMainImage.image=[UIImage imageWithData: [imagesCache objectForKey:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"]]];
+    if ([imagesCache objectForKey:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"]]!= nil ){
+        cell.imgMainImage.image=[UIImage imageWithData: [imagesCache objectForKey:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"]]];
     }else{
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             @try {
-                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"]]];
+                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"]]];
                 dispatch_sync(dispatch_get_main_queue(), ^{
-                    [imagesCache setObject:data forKey:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"]];
+                    [imagesCache setObject:data forKey:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"]];
                     cell.imgMainImage.image=[UIImage imageWithData: data];
-                    [cache putDataSource:data toHash:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"]];
+                    [cache putDataSource:data toHash:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"]];
                 });
             }@catch (NSException *exception) {
                 NSLog(@"Error : %@",exception);
@@ -128,9 +130,9 @@
             
         });
     }
-    cell.lblTweet.text=[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"short_descript"];
+    cell.lblTweet.text=[[dataSource objectAtIndex:indexPath.row] objectForKey:@"short_descript"];
     [cell.lblTweet sizeToFit];
-    cell.lblUserName.text=[[_dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
+    cell.lblUserName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
 //    cell.btnUserId.titleLabel.text=[[_dataSource objectAtIndex:indexPath.row/2] valueForKey:@"tel"];
     
 //    cell.lblViewComment.text=[NSString stringWithFormat:@"Tel: %@",[[_dataSource objectAtIndex:indexPath.row/2] valueForKey:@"tel"]];
@@ -150,11 +152,24 @@
     }
     
     // Get reference to the destination view controller
-    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExibitorsDetailsViewController"];
-    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-    vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+    
+    
+    ExibitorsDetailsViewController *vc = (ExibitorsDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExibitorsDetailsViewController"];
+    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
+    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
+    [vc setData:data];
     [self.sidePanelController setRightPanel:vc];
     [self.sidePanelController showRightPanelAnimated:YES];
+    
+    
+    
+//    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExibitorsDetailsViewController"];
+//    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+//    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+//    [self.sidePanelController setRightPanel:vc];
+//    [self.sidePanelController showRightPanelAnimated:YES];
+    
+    
     
 }
 
@@ -180,9 +195,9 @@
         // Get reference to the destination view controller
         ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[segue destinationViewController];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        NSLog(@"IP: %@",[_dataSource objectAtIndex:ip.row]);
-        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
-        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
+        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+        vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         
         
         // Pass any objects to the view controller here, like...
