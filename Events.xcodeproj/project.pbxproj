@@ -769,6 +769,8 @@
 		BB303D9F18B863E300B6EBC9 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				78CD61F319D0371F00C6E49A /* CompetitionViewController.h */,
+				78CD61F419D0371F00C6E49A /* CompetitionViewController.m */,
 				7806B3E119D01DC1008BCC31 /* Expositions */,
 				7806B3D919CCCC01008BCC31 /* Participants */,
 				78B83D1B19BE1DF0004E5B35 /* InstituteDetail */,
@@ -792,8 +794,6 @@
 				BB303DAE18B863E300B6EBC9 /* Main_iPad.storyboard */,
 				78CD61F619D044A400C6E49A /* Loading2ViewController.h */,
 				78CD61F719D044A400C6E49A /* Loading2ViewController.m */,
-				78CD61F319D0371F00C6E49A /* CompetitionViewController.h */,
-				78CD61F419D0371F00C6E49A /* CompetitionViewController.m */,
 				BB303DB118B863E300B6EBC9 /* ViewController.h */,
 				BB303DB218B863E300B6EBC9 /* ViewController.m */,
 				BB303DB418B863E300B6EBC9 /* Images.xcassets */,

@@ -57,7 +57,7 @@ NSInteger *_index;
             } finishProcess:^(void){
                 _description.text = [event objectForKey:@"descript"];
                 _address.text =[event objectForKey:@"address"];
-                
+                _dates.text = [NSString stringWithFormat:@"%@  -  %@",[event objectForKey:@"start"],[event objectForKey:@"finish"]];
                 [_description sizeToFit];
 
             } errorHandler:^(void){
