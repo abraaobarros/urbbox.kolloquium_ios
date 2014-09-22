@@ -89,6 +89,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="4u4-KZ-p3E" id="rbt-Xr-Q3F"/>
                     </connections>
@@ -106,6 +107,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtZ-CH-Ql7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,6 +118,7 @@
             <objects>
                 <tabBarController definesPresentationContext="YES" id="q9k-LP-O7A" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="TdN-8L-fSs">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -203,6 +206,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Kolloquium" id="y1a-iC-8HW"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="MKC-cY-S7n" id="5zp-4n-h12"/>
                     </connections>
@@ -265,6 +269,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="loading" destination="iBw-TV-mB0" id="5Cg-wv-m7v"/>
                         <outlet property="login" destination="gH0-lU-VWb" id="svN-Ce-rDz"/>
@@ -359,6 +364,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Pwu-vv-Fqu"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="avaliacao" destination="adQ-rV-yfW" id="2lR-NH-4j9"/>
                         <outlet property="location" destination="bqN-tJ-ENI" id="BJg-t1-Qsq"/>
@@ -600,6 +606,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Speakers" id="Adv-9F-zKI"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="291-wP-R6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -699,6 +706,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="RvZ-JG-aVt"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="u8J-Ix-Ese" id="yQ5-t6-JSf"/>
                         <outlet property="searchDisplayController" destination="2fY-aN-u02" id="jx4-lH-Kas"/>
@@ -793,6 +801,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="BLn-ny-zhj"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eK9-qA-Hhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -893,6 +902,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="il5-Mh-Omx"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="address" destination="aBc-XM-hNZ" id="aHW-Gd-pMw"/>
                         <outlet property="dates" destination="FZj-47-iaU" id="3wR-aB-30P"/>
@@ -954,6 +964,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="mYm-G8-ijT"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="8TA-DX-DqI" id="5TJ-cM-rgB"/>
                     </connections>
@@ -1058,6 +1069,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="b3C-q5-Gyi"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="conferences" destination="GLR-fX-wMp" id="p3K-zk-IWs"/>
                         <outlet property="email_label" destination="A2E-xb-cDz" id="0Dm-eB-dy1"/>
@@ -1332,6 +1344,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Nm1-Oi-QjP"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="description" destination="iiE-FG-TYg" id="jtF-x8-dzm"/>
                         <outlet property="institute_en" destination="OQR-Lh-xrf" id="WlB-pC-x1P"/>
@@ -1431,6 +1444,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="nUY-X1-GIY"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="description" destination="SjH-Yz-u9H" id="j3I-gD-xal"/>
                         <outlet property="kategorie" destination="yEz-gm-a6Z" id="xQE-wE-arw"/>
