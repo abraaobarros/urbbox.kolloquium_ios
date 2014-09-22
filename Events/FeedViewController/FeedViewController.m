@@ -148,23 +148,6 @@
     {
         //        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
     }
-
-//    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
-//    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-//    NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
-//    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
-//    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
-//    [self.sidePanelController setRightPanel:vc];
-//    [self.sidePanelController showRightPanelAnimated:YES];
-    
-//    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
-//    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-//    NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
-//    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
-//    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
-//    [self.sidePanelController setRightPanel:vc];
-//    [self.sidePanelController showRightPanelAnimated:YES];
-    
     
     SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
     NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];

@@ -200,17 +200,26 @@ KQEventAPI *event;
         NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
         vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
         [vc setData:data];
+    
+    if ([data objectForKey:@"speaker_id"]!=(id)[NSNull null]) {
         [self.sidePanelController setRightPanel:vc];
-    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-    {
-
-        [self.sidePanelController setRightFixedWidth:300];
-    }
+        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+        {
+            
+            [self.sidePanelController setRightFixedWidth:300];
+        }
         [self.sidePanelController showRightPanelAnimated:YES];
+    }
+    
+    
 }
 
 
 -(NSString *) convertDataFormat:(NSString *) data withPattern:(NSString *) from toPattern:(NSString *) to{
+    
+    
+    
+    
     NSString *str =data; /// here this is your date with format yyyy-MM-dd
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; // here we create NSDateFormatter object for change the Format of date..
