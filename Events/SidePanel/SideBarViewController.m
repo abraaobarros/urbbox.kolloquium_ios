@@ -140,7 +140,7 @@
             if (cell == nil) {
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            cell.title.text=@"Austeller";
+            cell.title.text=@"Aussteller";
             cell.icon.image = [UIImage imageNamed:@"ic_star.png"];
             return cell;
         }
@@ -173,7 +173,7 @@
             if (cell == nil) {
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            cell.title.text=@"Finalists";
+            cell.title.text=@"Finalisten";
             cell.icon.image = [UIImage imageNamed:@"ic_finalists.png"];
             return cell;
         }
