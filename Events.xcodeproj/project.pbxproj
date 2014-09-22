@@ -122,6 +122,8 @@
 		78BF118519C779A4005AE8B0 /* ic_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 78BF117519C779A4005AE8B0 /* ic_star.png */; };
 		78BF118619C779A4005AE8B0 /* ic_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 78BF117619C779A4005AE8B0 /* ic_thumbnail.png */; };
 		78CD61EC19D0207A00C6E49A /* ExpositionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61EB19D0207A00C6E49A /* ExpositionTableViewController.m */; };
+		78CD61EF19D027AA00C6E49A /* ExibitorsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61EE19D027AA00C6E49A /* ExibitorsDetailsViewController.m */; };
+		78CD61F219D02ACD00C6E49A /* ExpositionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61F119D02ACD00C6E49A /* ExpositionTableViewCell.m */; };
 		BB303D9A18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
 		BB303D9C18B863E300B6EBC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */; };
 		BB303D9E18B863E300B6EBC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9D18B863E300B6EBC9 /* UIKit.framework */; };
@@ -366,6 +368,10 @@
 		78BF117619C779A4005AE8B0 /* ic_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_thumbnail.png; sourceTree = "<group>"; };
 		78CD61EA19D0207A00C6E49A /* ExpositionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpositionTableViewController.h; path = Exposition/ExpositionTableViewController.h; sourceTree = "<group>"; };
 		78CD61EB19D0207A00C6E49A /* ExpositionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpositionTableViewController.m; path = Exposition/ExpositionTableViewController.m; sourceTree = "<group>"; };
+		78CD61ED19D027AA00C6E49A /* ExibitorsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExibitorsDetailsViewController.h; path = Exposition/ExibitorsDetailsViewController.h; sourceTree = "<group>"; };
+		78CD61EE19D027AA00C6E49A /* ExibitorsDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExibitorsDetailsViewController.m; path = Exposition/ExibitorsDetailsViewController.m; sourceTree = "<group>"; };
+		78CD61F019D02ACD00C6E49A /* ExpositionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpositionTableViewCell.h; path = Exposition/ExpositionTableViewCell.h; sourceTree = "<group>"; };
+		78CD61F119D02ACD00C6E49A /* ExpositionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpositionTableViewCell.m; path = Exposition/ExpositionTableViewCell.m; sourceTree = "<group>"; };
 		BB303D9618B863E300B6EBC9 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -582,6 +588,10 @@
 			children = (
 				78CD61EA19D0207A00C6E49A /* ExpositionTableViewController.h */,
 				78CD61EB19D0207A00C6E49A /* ExpositionTableViewController.m */,
+				78CD61ED19D027AA00C6E49A /* ExibitorsDetailsViewController.h */,
+				78CD61EE19D027AA00C6E49A /* ExibitorsDetailsViewController.m */,
+				78CD61F019D02ACD00C6E49A /* ExpositionTableViewCell.h */,
+				78CD61F119D02ACD00C6E49A /* ExpositionTableViewCell.m */,
 			);
 			name = Expositions;
 			sourceTree = "<group>";
@@ -1183,6 +1193,7 @@
 				784F678319C808F300EA6217 /* InstituteDepartamentDetailsViewController.m in Sources */,
 				788DE31C19A2B42F00ED8D23 /* KQEventAPI.m in Sources */,
 				78AD2C8319A1AA2500047B9A /* SideBarViewController.m in Sources */,
+				78CD61F219D02ACD00C6E49A /* ExpositionTableViewCell.m in Sources */,
 				711221DD18BC62DD00E77A4A /* NSMutableArray+convenience.m in Sources */,
 				7890808019A229FE00C537E1 /* KQURLConnectHelper.m in Sources */,
 				7122DB1218BB1F7300C044E8 /* FeedCustomCell.m in Sources */,
@@ -1197,6 +1208,7 @@
 				711221DE18BC62DD00E77A4A /* UIColor+expanded.m in Sources */,
 				7122DB1518BB1F7300C044E8 /* ThirdFeedCustomCell.m in Sources */,
 				78BF116619C01901005AE8B0 /* Util.m in Sources */,
+				78CD61EF19D027AA00C6E49A /* ExibitorsDetailsViewController.m in Sources */,
 				7836B99719A3897C004BB485 /* CacheDB.xcdatamodeld in Sources */,
 				7122DB1418BB1F7300C044E8 /* SecondFeedCustomCell.m in Sources */,
 				BB303DAA18B863E300B6EBC9 /* AppDelegate.m in Sources */,

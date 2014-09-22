@@ -14,12 +14,14 @@
 #import "JASidePanelController.h"
 #import "KQEventAPI.h"
 #import "ProgramDetailsViewController.h"
+#import "InstituteDetailTableViewController.h"
 @interface AboutViewController ()
 
 @end
 
 @implementation AboutViewController
 KQEventAPI *event;
+NSInteger *_index;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,15 +32,12 @@ KQEventAPI *event;
 }
 - (IBAction)wzl_button:(id)sender {
     // Get reference to the destination view controller
-    ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
-    [self.sidePanelController setRightPanel:vc];
-    [self.sidePanelController showRightPanelAnimated:YES];
+    _index=1;
+    [self performSegueWithIdentifier:@"Institiute" sender:self];
 }
 - (IBAction)ipt_button:(id)sender {
-    // Get reference to the destination view controller
-    ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
-    [self.sidePanelController setRightPanel:vc];
-    [self.sidePanelController showRightPanelAnimated:YES];
+    _index=0;
+    [self performSegueWithIdentifier:@"Institiute" sender:self];
 }
 
 - (void)viewDidLoad
@@ -181,4 +180,23 @@ KQEventAPI *event;
     }
     
 }
+
+
+#pragma mark - Navigation
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([[segue identifier] isEqualToString:@"Institiute"])
+    {
+        // Get reference to the destination view controller
+        InstituteDetailTableViewController *vc = (InstituteDetailTableViewController *)[segue destinationViewController];
+        vc.index=_index;
+        // Pass any objects to the view controller here, like...
+    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+
 @end

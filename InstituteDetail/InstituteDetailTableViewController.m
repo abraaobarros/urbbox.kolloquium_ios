@@ -38,6 +38,16 @@ KQEventAPI *event;
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [super viewDidLoad];
     
+    UINavigationBar *myNav = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    self.navigationItem.title = @"Werkzeugbau Mit Zukunft";
+    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:15.0],NSFontAttributeName,[UIColor redColor],NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = size;
+    
+    self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
+    [self.navigationController setNavigationBarHidden:NO];
+//    [self.view addSubview:myNav];
+    
     event =[[KQEventAPI alloc]
             initWithDataAssyncWithStart:^(void){
                 NSLog(@"Init Fetching");
@@ -63,7 +73,7 @@ KQEventAPI *event;
 
 -(void)loadDummyData{
     //dic initilization for dummy data start
-    dataSource = [[[event objectForKey:@"organizers"] objectAtIndex:0] objectForKey:@"departments"];
+    dataSource = [[[event objectForKey:@"organizers"] objectAtIndex:_index] objectForKey:@"departments"];
     NSLog(@"Lectures : %@",dataSource);
     [tableView reloadData];
     //dic initilization for dummy data end

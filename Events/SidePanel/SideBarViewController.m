@@ -12,6 +12,7 @@
 #import "KQSideBarTableViewCell.h"
 #import "KQTabBarViewController.h"
 #import "KQSectionTableViewCell.h"
+#import "InstituteDetailTableViewController.h"
 
 @interface SideBarViewController ()
 
@@ -81,7 +82,7 @@
             return 7;
             break;
         case 1:
-            return 2;
+            return 3;
             break;
         case 2:
             return 2;
@@ -183,11 +184,22 @@
             if (cell == nil) {
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            cell.title.text=@"Veranstalter";
+            cell.title.text=@"Fraunhoufer IPT";
             cell.icon.image = [UIImage imageNamed:@"ic_institutes.png"];
             return cell;
         }
-        else if(indexPath.row==1)
+        if(indexPath.row==1)
+        {
+            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
+            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (cell == nil) {
+                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
+            cell.title.text=@"WZL";
+            cell.icon.image = [UIImage imageNamed:@"ic_institutes.png"];
+            return cell;
+        }
+        else if(indexPath.row==2)
         {
             static NSString *CellIdentifier = @"KQSideBarTableViewCell";
             KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -335,10 +347,15 @@
     else if (indexPath.section==1){
         if(indexPath.row==0)
         {
-            
+            InstituteDetailTableViewController *vc = (InstituteDetailTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InstituteDetailTableViewController"];
+            vc.index = 0;
+            [self.sidePanelController setCenterPanel:vc];
         }
         else if(indexPath.row==1)
         {
+            InstituteDetailTableViewController *vc = (InstituteDetailTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InstituteDetailTableViewController"];
+            vc.index = 1;
+            [self.sidePanelController setCenterPanel:vc];
            
         }
     }else if (indexPath.section ==2){

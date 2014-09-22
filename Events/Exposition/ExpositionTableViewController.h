@@ -10,7 +10,7 @@
 #import "KQURLConnectHelper.h"
 #import "KQEventAPI.h"
 
-@interface ExpositionTableViewController : UITableViewController
+@interface ExpositionTableViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate,UISearchDisplayDelegate>
 @property (nonatomic, retain) KQURLConnectHelper * urlConnectHelper;
 @property (nonatomic,strong) NSArray *dataSource;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

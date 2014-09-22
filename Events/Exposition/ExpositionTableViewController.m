@@ -150,7 +150,7 @@
     }
     
     // Get reference to the destination view controller
-    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
+    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExibitorsDetailsViewController"];
     NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
     vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
     [self.sidePanelController setRightPanel:vc];
