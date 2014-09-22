@@ -13,6 +13,8 @@
 #import "KQTabBarViewController.h"
 #import "KQSectionTableViewCell.h"
 #import "InstituteDetailTableViewController.h"
+#import "Loading2ViewController.h"
+
 
 @interface SideBarViewController ()
 
@@ -342,7 +344,15 @@
         }
         else if(indexPath.row==6)
         {
-            
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
+                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
+            }
+            else
+            {
+                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
+                
+            }
         }
     }
     else if (indexPath.section==1){
@@ -359,9 +369,22 @@
             [self.sidePanelController setCenterPanel:vc];
            
         }
+        else if(indexPath.row ==2){
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
+                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
+            }
+            else
+            {
+                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
+                
+            }
+        }
     }else if (indexPath.section ==2){
         if(indexPath.row==0)
         {
+            Loading2ViewController *loading = [[Loading2ViewController alloc] init];
+            [self presentViewController:loading animated:YES completion:nil];
             
         }
         else if(indexPath.row==1)

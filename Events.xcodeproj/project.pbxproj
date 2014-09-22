@@ -125,6 +125,7 @@
 		78CD61EF19D027AA00C6E49A /* ExibitorsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61EE19D027AA00C6E49A /* ExibitorsDetailsViewController.m */; };
 		78CD61F219D02ACD00C6E49A /* ExpositionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61F119D02ACD00C6E49A /* ExpositionTableViewCell.m */; };
 		78CD61F519D0371F00C6E49A /* CompetitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61F419D0371F00C6E49A /* CompetitionViewController.m */; };
+		78CD61F819D044A400C6E49A /* Loading2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61F719D044A400C6E49A /* Loading2ViewController.m */; };
 		BB303D9A18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
 		BB303D9C18B863E300B6EBC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */; };
 		BB303D9E18B863E300B6EBC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9D18B863E300B6EBC9 /* UIKit.framework */; };
@@ -375,6 +376,8 @@
 		78CD61F119D02ACD00C6E49A /* ExpositionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpositionTableViewCell.m; path = Exposition/ExpositionTableViewCell.m; sourceTree = "<group>"; };
 		78CD61F319D0371F00C6E49A /* CompetitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompetitionViewController.h; path = Competition/CompetitionViewController.h; sourceTree = "<group>"; };
 		78CD61F419D0371F00C6E49A /* CompetitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompetitionViewController.m; path = Competition/CompetitionViewController.m; sourceTree = "<group>"; };
+		78CD61F619D044A400C6E49A /* Loading2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Loading2ViewController.h; path = Loading/Loading2ViewController.h; sourceTree = "<group>"; };
+		78CD61F719D044A400C6E49A /* Loading2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Loading2ViewController.m; path = Loading/Loading2ViewController.m; sourceTree = "<group>"; };
 		BB303D9618B863E300B6EBC9 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -787,6 +790,8 @@
 				7806B3DE19CCDB20008BCC31 /* ParticipantsTableViewCell.m */,
 				7836B9C419AC31E3004BB485 /* about_cell.jpg */,
 				BB303DAE18B863E300B6EBC9 /* Main_iPad.storyboard */,
+				78CD61F619D044A400C6E49A /* Loading2ViewController.h */,
+				78CD61F719D044A400C6E49A /* Loading2ViewController.m */,
 				78CD61F319D0371F00C6E49A /* CompetitionViewController.h */,
 				78CD61F419D0371F00C6E49A /* CompetitionViewController.m */,
 				BB303DB118B863E300B6EBC9 /* ViewController.h */,
@@ -1198,6 +1203,7 @@
 				784F678319C808F300EA6217 /* InstituteDepartamentDetailsViewController.m in Sources */,
 				788DE31C19A2B42F00ED8D23 /* KQEventAPI.m in Sources */,
 				78AD2C8319A1AA2500047B9A /* SideBarViewController.m in Sources */,
+				78CD61F819D044A400C6E49A /* Loading2ViewController.m in Sources */,
 				78CD61F219D02ACD00C6E49A /* ExpositionTableViewCell.m in Sources */,
 				711221DD18BC62DD00E77A4A /* NSMutableArray+convenience.m in Sources */,
 				7890808019A229FE00C537E1 /* KQURLConnectHelper.m in Sources */,

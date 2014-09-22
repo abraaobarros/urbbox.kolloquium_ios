@@ -44,6 +44,11 @@
     }
 }
 
+-(void) setLoadingMode:(BOOL)mode{
+    _login_view.hidden =mode;
+
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -156,8 +156,6 @@
     [self.sidePanelController setRightPanel:vc];
     [self.sidePanelController showRightPanelAnimated:YES];
     
-    
-    
 }
 
 

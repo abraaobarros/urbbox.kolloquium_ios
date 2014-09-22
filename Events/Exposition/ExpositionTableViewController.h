@@ -12,7 +12,7 @@
 
 @interface ExpositionTableViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate,UISearchDisplayDelegate>
 @property (nonatomic, retain) KQURLConnectHelper * urlConnectHelper;
-@property (nonatomic,strong) NSArray *dataSource;
+@property (nonatomic,weak) NSArray *dataSource;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic,strong) KQEventAPI *event;
