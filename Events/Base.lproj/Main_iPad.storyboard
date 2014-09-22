@@ -434,18 +434,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xZ2-ZF-ZJ9">
-                                            <rect key="frame" x="195" y="48" width="124" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                            <state key="normal" title="@JoannaS">
-                                                <color key="titleColor" red="0.18823531269999999" green="0.69019609689999994" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="clickedUserId:" destination="BfP-Ty-0k5" eventType="touchUpInside" id="Jat-hk-0Rf"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This fashion show will beautiful, I will present what do you think?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="emz-Zq-7jA">
                                             <rect key="frame" x="195" y="59" width="418" height="55"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -474,7 +462,6 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="btnUserId" destination="xZ2-ZF-ZJ9" id="uhR-Jk-jLE"/>
                                     <outlet property="images" destination="dM9-af-TlH" id="9N0-67-NER"/>
                                     <outlet property="imgMainImage" destination="dM9-af-TlH" id="aps-SR-MxJ"/>
                                     <outlet property="lblTweet" destination="emz-Zq-7jA" id="Bp3-0T-qVZ"/>

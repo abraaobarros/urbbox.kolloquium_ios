@@ -197,9 +197,8 @@ KQEventAPI *event;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         // Get reference to the destination view controller
         ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
-        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
-        vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
+        vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
         [vc setData:data];
         [self.sidePanelController setRightPanel:vc];
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
