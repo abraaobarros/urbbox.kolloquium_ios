@@ -129,10 +129,10 @@
     }
     cell.lblTweet.text=[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"company"];
     [cell.lblTweet sizeToFit];
-    cell.lblUserName.text=[[_dataSource objectAtIndex:indexPath.row/2] valueForKey:@"name"];
-    cell.btnUserId.titleLabel.text=[[_dataSource objectAtIndex:indexPath.row/2] valueForKey:@"tel"];
+    cell.lblUserName.text=[[_dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
+    cell.btnUserId.titleLabel.text=[[_dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"];
         
-    cell.lblViewComment.text=[NSString stringWithFormat:@"Tel: %@",[[_dataSource objectAtIndex:indexPath.row/2] valueForKey:@"tel"]];
+    cell.lblViewComment.text=[NSString stringWithFormat:@"Tel: %@",[[_dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"]];
         
         return cell;
 
