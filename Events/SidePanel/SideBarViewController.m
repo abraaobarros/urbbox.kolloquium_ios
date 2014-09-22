@@ -300,7 +300,15 @@
         }
         else if(indexPath.row==3)
         {
-        
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
+                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
+            }
+            else
+            {
+                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
+                
+            }
         }
         else if(indexPath.row==4)
         {

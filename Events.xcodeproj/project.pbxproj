@@ -121,6 +121,7 @@
 		78BF118419C779A4005AE8B0 /* ic_red_arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 78BF117419C779A4005AE8B0 /* ic_red_arrow_right.png */; };
 		78BF118519C779A4005AE8B0 /* ic_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 78BF117519C779A4005AE8B0 /* ic_star.png */; };
 		78BF118619C779A4005AE8B0 /* ic_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 78BF117619C779A4005AE8B0 /* ic_thumbnail.png */; };
+		78CD61EC19D0207A00C6E49A /* ExpositionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61EB19D0207A00C6E49A /* ExpositionTableViewController.m */; };
 		BB303D9A18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
 		BB303D9C18B863E300B6EBC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */; };
 		BB303D9E18B863E300B6EBC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9D18B863E300B6EBC9 /* UIKit.framework */; };
@@ -363,6 +364,8 @@
 		78BF117419C779A4005AE8B0 /* ic_red_arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_red_arrow_right.png; sourceTree = "<group>"; };
 		78BF117519C779A4005AE8B0 /* ic_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_star.png; sourceTree = "<group>"; };
 		78BF117619C779A4005AE8B0 /* ic_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_thumbnail.png; sourceTree = "<group>"; };
+		78CD61EA19D0207A00C6E49A /* ExpositionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpositionTableViewController.h; path = Exposition/ExpositionTableViewController.h; sourceTree = "<group>"; };
+		78CD61EB19D0207A00C6E49A /* ExpositionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpositionTableViewController.m; path = Exposition/ExpositionTableViewController.m; sourceTree = "<group>"; };
 		BB303D9618B863E300B6EBC9 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -577,6 +580,8 @@
 		7806B3E119D01DC1008BCC31 /* Expositions */ = {
 			isa = PBXGroup;
 			children = (
+				78CD61EA19D0207A00C6E49A /* ExpositionTableViewController.h */,
+				78CD61EB19D0207A00C6E49A /* ExpositionTableViewController.m */,
 			);
 			name = Expositions;
 			sourceTree = "<group>";
@@ -1183,6 +1188,7 @@
 				7122DB1218BB1F7300C044E8 /* FeedCustomCell.m in Sources */,
 				711221E418BC93D000E77A4A /* EventCalCell.m in Sources */,
 				7112220D18BCAEFF00E77A4A /* AboutViewController.m in Sources */,
+				78CD61EC19D0207A00C6E49A /* ExpositionTableViewController.m in Sources */,
 				7122DB0818BB1F5C00C044E8 /* ProgramCustomCell.m in Sources */,
 				BB62B12B18B8C07C000DBDBC /* MyProgramViewController.m in Sources */,
 				78BF115E19BEB290005AE8B0 /* InstituteDetailTableViewCell.m in Sources */,
