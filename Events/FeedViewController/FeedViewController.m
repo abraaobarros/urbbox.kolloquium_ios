@@ -148,22 +148,31 @@
     {
         //        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
     }
+
+//    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
+//    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+//    NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
+//    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+//    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+//    [self.sidePanelController setRightPanel:vc];
+//    [self.sidePanelController showRightPanelAnimated:YES];
     
-        // Get reference to the destination view controller
-//        SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
-//        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-//        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
-//        [self.sidePanelController setRightPanel:vc];
-//        [self.sidePanelController showRightPanelAnimated:YES];
+//    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
+//    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+//    NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
+//    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+//    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+//    [self.sidePanelController setRightPanel:vc];
+//    [self.sidePanelController showRightPanelAnimated:YES];
+    
+    
     SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
-    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-    NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
-    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
-    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
+    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
+    [vc setData:data];
     [self.sidePanelController setRightPanel:vc];
     [self.sidePanelController showRightPanelAnimated:YES];
     
-
 }
 
 
@@ -192,7 +201,6 @@
         NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         [vc setData:data];
 //        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
-        
         
         // Pass any objects to the view controller here, like...
     }
