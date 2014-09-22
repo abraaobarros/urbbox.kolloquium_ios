@@ -166,11 +166,11 @@
     if ([[segue identifier] isEqualToString:@"SpeakerDetailsViewController"])
     {
         // Get reference to the destination view controller
-//        SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[segue destinationViewController];
-//        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-//        NSLog(@"IP: %@",[_dataSource objectAtIndex:ip.row]);
-//        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
-//        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[segue destinationViewController];
+        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+        NSLog(@"IP: %@",[_dataSource objectAtIndex:ip.row]);
+        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
         
         
         // Pass any objects to the view controller here, like...
@@ -183,7 +183,8 @@
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         NSLog(@"IP: %@",[_dataSource objectAtIndex:ip.row]);
         NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
-        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        [vc setData:data];
+//        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
         
         
         // Pass any objects to the view controller here, like...

@@ -85,7 +85,12 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [KQEventAPI makeQuestion:_quetion.text
                   toActivity:[[data objectForKey:@"id"] intValue] withParticipant:[[userDefaults objectForKey:@"id"] intValue] finishHandler:^{
-                     NSLog(@"Deu certo ");
+                      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Gesendet"
+                                                                      message:@"Dein Frage war gesendet"
+                                                                     delegate:nil
+                                                            cancelButtonTitle:@"OK"
+                                                            otherButtonTitles:nil];
+                      [alert show];
                  } startHandler:^{
                      NSLog(@"Começou");
                  } errorHandler:^{
@@ -105,7 +110,12 @@
      NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [KQEventAPI makeReview:[[alertView textFieldAtIndex:0] text]
                  withScore:(int)_avaliacao.selectedSegmentIndex toActivity:[[data objectForKey:@"id"] intValue] withParticipant:[[userDefaults objectForKey:@"id"] intValue] finishHandler:^{
-                     NSLog(@"Deu certo");
+                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Gesendet"
+                                                                     message:@"Dein Bewertung war gesendet"
+                                                                    delegate:nil
+                                                           cancelButtonTitle:@"OK"
+                                                           otherButtonTitles:nil];
+                     [alert show];
                  } startHandler:^{
                      NSLog(@"Começou");
                  } errorHandler:^{

@@ -378,7 +378,7 @@
 		78CD61F419D0371F00C6E49A /* CompetitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompetitionViewController.m; path = Competition/CompetitionViewController.m; sourceTree = "<group>"; };
 		78CD61F619D044A400C6E49A /* Loading2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Loading2ViewController.h; path = Loading/Loading2ViewController.h; sourceTree = "<group>"; };
 		78CD61F719D044A400C6E49A /* Loading2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Loading2ViewController.m; path = Loading/Loading2ViewController.m; sourceTree = "<group>"; };
-		BB303D9618B863E300B6EBC9 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB303D9618B863E300B6EBC9 /* Werkzeugbau mit Zukunft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Werkzeugbau mit Zukunft.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BB303D9D18B863E300B6EBC9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -742,7 +742,7 @@
 		BB303D9718B863E300B6EBC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB303D9618B863E300B6EBC9 /* Events.app */,
+				BB303D9618B863E300B6EBC9 /* Werkzeugbau mit Zukunft.app */,
 				BB303DBA18B863E300B6EBC9 /* EventsTests.xctest */,
 			);
 			name = Products;
@@ -989,7 +989,7 @@
 			);
 			name = Events;
 			productName = Events;
-			productReference = BB303D9618B863E300B6EBC9 /* Events.app */;
+			productReference = BB303D9618B863E300B6EBC9 /* Werkzeugbau mit Zukunft.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BB303DB918B863E300B6EBC9 /* EventsTests */ = {
@@ -1381,7 +1381,7 @@
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
 				INFOPLIST_FILE = "Events/Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Werkzeugbau mit Zukunft";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1395,7 +1395,7 @@
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
 				INFOPLIST_FILE = "Events/Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Werkzeugbau mit Zukunft";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
