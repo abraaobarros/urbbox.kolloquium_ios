@@ -31,6 +31,7 @@
 @implementation FeedViewController
 @synthesize tableView;
 @synthesize imagesCache;
+@synthesize dataSource;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -54,13 +55,13 @@
     NSLog(@"_Event: %@",_event);
     
     cache = [KQCache sharedManager];
-    _dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"speakers"];
+    dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"speakers"];
     
 }
 -(void)dicDummyDataInitialization{
-    _dataSource = [_event objectForKey:@"speakers"];
+    dataSource = [_event objectForKey:@"speakers"];
     
-    NSLog(@"Lectures : %@",_dataSource);
+    NSLog(@"Lectures : %@",dataSource);
     [tableView reloadData];
 }
 
@@ -79,7 +80,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _dataSource.count;
+    return dataSource.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -110,16 +111,16 @@
         }
 
     cell.imgMainImage.image = [UIImage imageNamed:@"no_profile.png"];
-    if ([imagesCache objectForKey:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]!= nil ){
-        cell.imgMainImage.image=[UIImage imageWithData: [imagesCache objectForKey:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]];
+    if ([imagesCache objectForKey:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]!= nil ){
+        cell.imgMainImage.image=[UIImage imageWithData: [imagesCache objectForKey:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]];
     }else{
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             @try {
-                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]];
+                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]];
                 dispatch_sync(dispatch_get_main_queue(), ^{
-                    [imagesCache setObject:data forKey:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]];
+                    [imagesCache setObject:data forKey:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]];
                     cell.imgMainImage.image=[UIImage imageWithData: data];
-                    [cache putDataSource:data toHash:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]];
+                    [cache putDataSource:data toHash:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]];
                 });
             }@catch (NSException *exception) {
                 NSLog(@"Error : %@",exception);
@@ -127,12 +128,12 @@
             
         });
     }
-    cell.lblTweet.text=[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"company"];
+    cell.lblTweet.text=[[dataSource objectAtIndex:indexPath.row] objectForKey:@"company"];
     [cell.lblTweet sizeToFit];
-    cell.lblUserName.text=[[_dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
-    cell.btnUserId.titleLabel.text=[[_dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"];
+    cell.lblUserName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
+    cell.btnUserId.titleLabel.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"];
         
-    cell.lblViewComment.text=[NSString stringWithFormat:@"Tel: %@",[[_dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"]];
+    cell.lblViewComment.text=[NSString stringWithFormat:@"Tel: %@",[[dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"]];
         
         return cell;
 
@@ -149,12 +150,18 @@
     }
     
         // Get reference to the destination view controller
-        SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
-        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
-        [self.sidePanelController setRightPanel:vc];
-        [self.sidePanelController showRightPanelAnimated:YES];
-    
+//        SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
+//        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+//        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+//        [self.sidePanelController setRightPanel:vc];
+//        [self.sidePanelController showRightPanelAnimated:YES];
+    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
+    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+    NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
+    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+    [self.sidePanelController setRightPanel:vc];
+    [self.sidePanelController showRightPanelAnimated:YES];
     
 
 }
@@ -168,9 +175,9 @@
         // Get reference to the destination view controller
         SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[segue destinationViewController];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        NSLog(@"IP: %@",[_dataSource objectAtIndex:ip.row]);
-        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
-        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
+        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+        vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         
         
         // Pass any objects to the view controller here, like...
@@ -181,8 +188,8 @@
         // Get reference to the destination view controller
         ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[segue destinationViewController];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        NSLog(@"IP: %@",[_dataSource objectAtIndex:ip.row]);
-        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
+        NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
+        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         [vc setData:data];
 //        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
         
