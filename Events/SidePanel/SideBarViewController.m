@@ -336,8 +336,9 @@
             
         }
         else if(indexPath.row==5)
-        {
             
+        {
+            [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"CompetitionViewController"]];
         }
         else if(indexPath.row==6)
         {

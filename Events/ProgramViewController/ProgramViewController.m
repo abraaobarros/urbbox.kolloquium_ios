@@ -155,8 +155,16 @@ KQEventAPI *event;
     [cell.lblEventName sizeToFit];
     
     cell.data.text=[Util convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"dd MMM"];
-    
-    cell.speaker.text = [[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"name"];
+    @try {
+         cell.speaker.text = [[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"name"];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+        
+    }
+   
     
     
     
