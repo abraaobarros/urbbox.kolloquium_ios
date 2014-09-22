@@ -16,9 +16,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1044"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="SoP-ez-QKK">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="51"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="KQSideBarTableViewCell" rowHeight="45" id="acn-Oq-QyE" customClass="KQSideBarTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="768" height="45"/>
+                                        <rect key="frame" x="0.0" y="73" width="768" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="acn-Oq-QyE" id="bin-3f-azs">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
@@ -50,7 +55,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeader" rowHeight="29" id="rcX-cQ-47E" customClass="KQSectionTableViewCell">
-                                        <rect key="frame" x="0.0" y="67" width="768" height="29"/>
+                                        <rect key="frame" x="0.0" y="118" width="768" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="123" contentMode="center" tableViewCell="rcX-cQ-47E" id="3wY-N1-ox3">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="28"/>
