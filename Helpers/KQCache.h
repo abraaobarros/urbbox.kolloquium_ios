@@ -21,5 +21,6 @@
 - (NSData *) getDataSourceFromHash: (NSString *) hash;
 - (void) putData: (NSDictionary *) dado toHash:(NSString *)hash;
 - (void) putDataSource: (NSData *) dado toHash:(NSString *)hash;
+-(void) resetDatabase;
 
 @end

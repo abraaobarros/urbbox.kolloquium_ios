@@ -616,6 +616,8 @@
 			children = (
 				7836B9B219AB721B004BB485 /* LoadingViewController.h */,
 				7836B9B319AB721B004BB485 /* LoadingViewController.m */,
+				78CD61F619D044A400C6E49A /* Loading2ViewController.h */,
+				78CD61F719D044A400C6E49A /* Loading2ViewController.m */,
 			);
 			name = Loading;
 			sourceTree = "<group>";
@@ -792,8 +794,6 @@
 				7806B3DE19CCDB20008BCC31 /* ParticipantsTableViewCell.m */,
 				7836B9C419AC31E3004BB485 /* about_cell.jpg */,
 				BB303DAE18B863E300B6EBC9 /* Main_iPad.storyboard */,
-				78CD61F619D044A400C6E49A /* Loading2ViewController.h */,
-				78CD61F719D044A400C6E49A /* Loading2ViewController.m */,
 				BB303DB118B863E300B6EBC9 /* ViewController.h */,
 				BB303DB218B863E300B6EBC9 /* ViewController.m */,
 				BB303DB418B863E300B6EBC9 /* Images.xcassets */,

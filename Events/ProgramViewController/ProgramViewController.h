@@ -11,4 +11,5 @@
 
 @interface ProgramViewController : UITableViewController
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+-(void) reload;
 @end

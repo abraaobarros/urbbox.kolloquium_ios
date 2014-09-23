@@ -19,29 +19,26 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        if ([userDefaults objectForKey:@"email"]) {
-            [self dismissViewControllerAnimated:NO completion:nil];
-        }    }
+    }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if ([userDefaults objectForKey:@"email"]) {
-        [self dismissViewControllerAnimated:NO completion:nil];
-    }
     [super viewDidLoad];
+    
     
     // Do any additional setup after loading the view.
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if ([userDefaults objectForKey:@"email"]) {
-        [self dismissViewControllerAnimated:NO completion:nil];
-    }
+    [[KQEventAPI alloc]
+     initWithDataAssyncWithStart:^(void){
+     } finishProcess:^(void){
+         [self dismissViewControllerAnimated:YES completion:nil];
+     } errorHandler:^(void){
+         NSLog(@"Error Fetching");
+     }];
 }
 
 - (void)didReceiveMemoryWarning

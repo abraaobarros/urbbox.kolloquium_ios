@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface Loading2ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 
 @end

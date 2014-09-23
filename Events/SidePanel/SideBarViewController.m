@@ -14,6 +14,9 @@
 #import "KQSectionTableViewCell.h"
 #import "InstituteDetailTableViewController.h"
 #import "Loading2ViewController.h"
+#import "ProgramViewController.h"
+#import "KQNavigationController.h"
+#import "KQCache.h"
 
 
 @interface SideBarViewController ()
@@ -383,8 +386,11 @@
     }else if (indexPath.section ==2){
         if(indexPath.row==0)
         {
-            Loading2ViewController *loading = [[Loading2ViewController alloc] init];
-            [self presentViewController:loading animated:YES completion:nil];
+            KQCache *cache = [KQCache sharedManager];
+            [cache resetDatabase];
+            KQNavigationController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"];
+            [self.sidePanelController setCenterPanel:vc];
+            
             
         }
         else if(indexPath.row==1)

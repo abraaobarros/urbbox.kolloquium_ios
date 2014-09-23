@@ -97,7 +97,6 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="4u4-KZ-p3E" id="rbt-Xr-Q3F"/>
-                        <segue destination="6UC-KM-Kvz" kind="modal" identifier="LoadingViewController" id="hn0-SR-UPZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZH-fm-sPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,6 +214,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="MKC-cY-S7n" id="5zp-4n-h12"/>
+                        <segue destination="6UC-KM-Kvz" kind="modal" identifier="Loading2ViewController" id="NJv-DF-79g"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1YQ-7d-2CP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -390,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6T-Nk-ZMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2085" y="-2133"/>
+            <point key="canvasLocation" x="2403" y="-2133"/>
         </scene>
         <!--Navigation Controller - Schedule-->
         <scene sceneID="441-0B-9Cl">
@@ -1457,7 +1457,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="AO6-bT-gJk">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="AO6-bT-gJk">
                                 <rect key="frame" x="374" y="546" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
@@ -1474,8 +1474,7 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="loading" destination="AO6-bT-gJk" id="JUg-3C-5u7"/>
-                        <outlet property="textLoading" destination="fTG-6E-XkW" id="NUN-7u-fVb"/>
+                        <outlet property="loading" destination="AO6-bT-gJk" id="keA-fw-BQt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hjy-r3-7M3" userLabel="First Responder" sceneMemberID="firstResponder"/>

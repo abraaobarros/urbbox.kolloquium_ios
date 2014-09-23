@@ -117,8 +117,31 @@
             }
     }
 //    NSLog(@"DB :%@",data);
-    
+}
 
+- (void) resetDatabase{
+    // initializing NSFetchRequest
+    data = [[NSMutableDictionary alloc] init];
+    dataSource = [[NSMutableDictionary alloc] init];
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    managedObjectContext = appDelegate.managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    //Setting Entity to be Queried
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Cache"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError* error;
+    
+    // Query on managedObjectContext With Generated fetchRequest
+    NSArray *fetchedRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (NSManagedObject *managedObject in fetchedRecords) {
+    	[managedObjectContext deleteObject:managedObject];
+    }
+    if (![managedObjectContext save:&error]) {
+    }
+    
 }
 
 

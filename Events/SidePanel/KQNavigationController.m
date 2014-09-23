@@ -46,9 +46,8 @@
 }
 
 - (void)openLeftNavigation{
-    
+ 
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

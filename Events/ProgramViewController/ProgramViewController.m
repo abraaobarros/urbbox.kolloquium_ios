@@ -13,12 +13,14 @@
 #import "KQEventAPI.h"
 #import "Util.h"
 #import "LoadingViewController.h"
+
 @interface ProgramViewController (){
     
     NSMutableArray *dicProgramDescription;
     NSMutableArray *dataSource;
     NSMutableDictionary *dataImageSource;
     LoadingViewController *loading;
+   
 }
 
 @end
@@ -26,6 +28,7 @@
 @implementation ProgramViewController
 KQEventAPI *event;
 @synthesize tableView;
+BOOL reload = FALSE;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,7 +49,7 @@ KQEventAPI *event;
     }
     event =[[KQEventAPI alloc]
                     initWithDataAssyncWithStart:^(void){
-                        
+                        [self performSegueWithIdentifier:@"Loading2ViewController" sender:self];
                     } finishProcess:^(void){
                         NSLog(@"Finish Fetching");
                         [self loadDummyData];
@@ -68,14 +71,18 @@ KQEventAPI *event;
 - (IBAction)reloadData:(id)sender {
     [event reloadData:^(void){
         } startHandler:^{
-            [loading dismissViewControllerAnimated:YES completion:nil];
+            [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
             [self loadDummyData];
         } errorHandler:^{
             [loading dismissViewControllerAnimated:YES completion:nil];
             NSLog(@"Error Fetching");
         }];
 }
-            
+
+-(void) reload{
+    reload = FALSE;
+}
+
             
 
 -(void)openLeftNavigation{
@@ -217,9 +224,6 @@ KQEventAPI *event;
 
 -(NSString *) convertDataFormat:(NSString *) data withPattern:(NSString *) from toPattern:(NSString *) to{
     
-    
-    
-    
     NSString *str =data; /// here this is your date with format yyyy-MM-dd
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; // here we create NSDateFormatter object for change the Format of date..
@@ -284,6 +288,14 @@ KQEventAPI *event;
         // Get reference to the destination view controller
         loading = [segue destinationViewController];
 
+        
+        // Pass any objects to the view controller here, like...
+    }
+    if ([[segue identifier] isEqualToString:@"Loading2ViewController"])
+    {
+        // Get reference to the destination view controller
+        loading = [segue destinationViewController];
+        
         
         // Pass any objects to the view controller here, like...
     }

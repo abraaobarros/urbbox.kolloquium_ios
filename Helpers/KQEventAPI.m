@@ -52,9 +52,9 @@
                             } errorHandler:errorHandler];
         NSLog(@"Data DB fetched: %@",self.data);
     }else{
-        if (startHandler!=nil) {
-            startHandler();
-        }
+//        if (startHandler!=nil) {
+//            startHandler();
+//        }
         self.data = [[cache getDataFromHash:URL_EVENT] mutableCopy];
         NSLog(@"Data DB fetchedaaa: %@",self.data);
         if (finishHandler!=nil) {
