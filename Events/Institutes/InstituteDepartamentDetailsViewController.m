@@ -8,6 +8,7 @@
 
 #import "InstituteDepartamentDetailsViewController.h"
 #import "InstituteDepartamentDetailTableViewCell.h"
+#import "KQEventAPI.h"
 
 @interface InstituteDepartamentDetailsViewController ()
 
@@ -35,6 +36,12 @@ NSArray *dataSource;
     _responsable.text = [data objectForKey:@"responsible_name"];
     _mobile.text = [data objectForKey:@"responsible_tel"];
     _email.text = [data objectForKey:@"responsible_email"];
+    [KQEventAPI getImageFromUrl:[data objectForKey:@"thumb"] finishHandler:^(NSData* _data){
+        _photo.image=[UIImage imageWithData:_data];
+    } startHandler:^{
+        
+    } errorHandler:^{
+    }];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         @try {
             NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data objectForKey:@"thumb"]]];

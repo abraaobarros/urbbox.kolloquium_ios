@@ -23,7 +23,6 @@
     NSMutableArray *dicTweetFeed;
     NSMutableArray *dicImageFeed;
     KQCache *cache;
-    
 }
 
 @end
@@ -37,7 +36,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -110,24 +108,15 @@
             cell = [[FeedCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         }
 
-    cell.imgMainImage.image = [UIImage imageNamed:@"no_profile.png"];
-    if ([imagesCache objectForKey:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]!= nil ){
-        cell.imgMainImage.image=[UIImage imageWithData: [imagesCache objectForKey:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]];
-    }else{
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            @try {
-                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]]];
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    [imagesCache setObject:data forKey:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]];
-                    cell.imgMainImage.image=[UIImage imageWithData: data];
-                    [cache putDataSource:data toHash:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]];
-                });
-            }@catch (NSException *exception) {
-                NSLog(@"Error : %@",exception);
-            }
-            
-        });
-    }
+        [KQEventAPI getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile_img"]
+                       finishHandler:^(NSData *data) {
+                          cell.imgMainImage.image=[UIImage imageWithData: data];
+                       }
+                       startHandler:^{
+                           
+                       } errorHandler:^{
+                           
+                       }];
     cell.lblTweet.text=[[dataSource objectAtIndex:indexPath.row] objectForKey:@"company"];
     [cell.lblTweet sizeToFit];
     cell.lblUserName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];

@@ -41,18 +41,16 @@
             location.text = [NSString stringWithFormat:@"In the Eurogress, at %@ at %@ of %@",
                              [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"HH:mm"],[Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"dd"],[Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"MMM"]];
         }
+        [KQEventAPI getImageFromUrl:[data objectForKey:@"speaker"]
+                       finishHandler:^(NSData *_data) {
+                           _photo.image=[UIImage imageWithData: _data];
+                       }
+                        startHandler:^{
+                            
+                        } errorHandler:^{
+                            
+                        }];
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            @try {
-                NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[data objectForKey:@"speaker"] objectForKey:@"profile_img"]]];
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    _photo.image=[UIImage imageWithData: data_img];
-                });
-            }@catch (NSException *exception) {
-                NSLog(@"Error : %@",exception);
-            }
-            
-        });
     }
     @catch (NSException *exception) {
         

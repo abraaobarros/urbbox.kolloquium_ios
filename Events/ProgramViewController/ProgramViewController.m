@@ -174,7 +174,7 @@ BOOL reload = FALSE;
     
     cell.imgEventImage.image = nil;
     
-    [event getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"] finishHandler:^(NSData* data){
+    [KQEventAPI getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"] finishHandler:^(NSData* data){
         cell.imgEventImage.image=[UIImage imageWithData:data];
     } startHandler:^{
         NSLog(@"Init Image loader");

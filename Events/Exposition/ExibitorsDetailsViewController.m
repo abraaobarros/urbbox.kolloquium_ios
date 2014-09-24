@@ -9,6 +9,7 @@
 #import "ExibitorsDetailsViewController.h"
 #import "ParticipantsTableViewCell.h"
 #import <MessageUI/MessageUI.h>
+#import "KQEventAPI.h"
 
 @interface ExibitorsDetailsViewController ()
 
@@ -64,17 +65,13 @@ NSArray *dataSource;
     _email.text = [data objectForKey:@"responsible_email"];
     _stand.text = [NSString stringWithFormat:@"Find me in stand: %@",[data objectForKey:@"localization"]];
     [_description sizeToFit];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        @try {
-            NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data objectForKey:@"logo"]]];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                _photo.image=[UIImage imageWithData: data_img];
-            });
-        }@catch (NSException *exception) {
-            NSLog(@"Error : %@",exception);
-        }
+    
+    [KQEventAPI getImageFromUrl:[data objectForKey:@"logo"] finishHandler:^(NSData* data_img){
+        _photo.image=[UIImage imageWithData:data_img];
+    } startHandler:^{
         
-    });
+    } errorHandler:^{
+    }];
 
 }
 

@@ -52,9 +52,6 @@
                             } errorHandler:errorHandler];
         NSLog(@"Data DB fetched: %@",self.data);
     }else{
-//        if (startHandler!=nil) {
-//            startHandler();
-//        }
         self.data = [[cache getDataFromHash:URL_EVENT] mutableCopy];
         NSLog(@"Data DB fetchedaaa: %@",self.data);
         if (finishHandler!=nil) {
@@ -179,13 +176,14 @@
                               } errorHandler:errorHandler];
 }
 
-- (void)getImageFromUrl:(NSString *)url
++ (void)getImageFromUrl:(NSString *)url
           finishHandler:(void (^)(NSData *))finishHandler
            startHandler:(void (^)())startHandler
            errorHandler:(void (^)())errorHandler{
     
     KQCache *cache = [KQCache sharedManager];
-    if ([cache getDataFromHash:url]==nil) {
+    if ([cache getDataSourceFromHash:url]==nil) {
+        KQURLConnectHelper *urlConnectHelper = [[KQURLConnectHelper alloc]init];
         [urlConnectHelper fetchDataAtURL:url
                              withParameters:nil
                                 startHandle:startHandler

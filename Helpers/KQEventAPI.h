@@ -20,7 +20,7 @@
 - (void)reloadData:(void (^)())finishHandler
         startHandler:(void (^)())startHandler
         errorHandler:(void (^)())errorHandler;
-- (void)getImageFromUrl:(NSString *)url
++ (void)getImageFromUrl:(NSString *)url
             finishHandler:(void (^)(NSData *))finishHandler
              startHandler:(void (^)())startHandler
              errorHandler:(void (^)())errorHandler;

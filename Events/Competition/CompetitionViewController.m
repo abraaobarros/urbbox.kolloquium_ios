@@ -8,6 +8,7 @@
 
 #import "CompetitionViewController.h"
 #import "KQCache.h"
+#import "KQEventAPI.h"
 
 @interface CompetitionViewController ()
 
@@ -37,17 +38,14 @@ KQCache *cache;
     
     [_description sizeToFit];
     [_kategorie sizeToFit];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        @try {
-            NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data objectForKey:@"thumb"]]];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                _photo.image=[UIImage imageWithData: data_img];
-            });
-        }@catch (NSException *exception) {
-            NSLog(@"Error : %@",exception);
-        }
+    
+    [KQEventAPI getImageFromUrl:[data objectForKey:@"thumb"] finishHandler:^(NSData* data){
+        _photo.image=[UIImage imageWithData:data];
+    } startHandler:^{
         
-    });
+    } errorHandler:^{
+    }];
+    
     // Do any additional setup after loading the view.
 }
 

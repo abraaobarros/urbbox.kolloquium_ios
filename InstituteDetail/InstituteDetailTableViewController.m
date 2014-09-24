@@ -115,17 +115,14 @@ KQEventAPI *event;
     
     //    cell.imgEventImage.image = [UIImage imageNamed:@"no_profile.png"];
     cell.image.image = nil;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        @try {
-            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"]]];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                cell.image.image=[UIImage imageWithData: data];
-            });
-        }@catch (NSException *exception) {
-            NSLog(@"Error : %@",exception);
-        }
+    
+    [KQEventAPI getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"] finishHandler:^(NSData* data){
+        cell.image.image=[UIImage imageWithData:data];
+    } startHandler:^{
         
-    });
+    } errorHandler:^{
+    }];
+    
     return cell;
 }
 
