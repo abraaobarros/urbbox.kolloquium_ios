@@ -150,9 +150,9 @@
     [self.sidePanelController setRightPanel:vc];
     if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
     {
-        [self.sidePanelController setRightFixedWidth:700];
+        [self.sidePanelController setRightFixedWidth:600];
     }else{
-        [self.sidePanelController setRightFixedWidth:300];
+        [self.sidePanelController setRightFixedWidth:600];
     }
     [self.sidePanelController showRightPanelAnimated:YES];
     

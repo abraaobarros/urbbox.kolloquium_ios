@@ -139,7 +139,6 @@ KQEventAPI *event;
         {
             [self.sidePanelController setRightFixedWidth:650];
         }else{
-            [self.sidePanelController setRightFixedWidth:300];
         }
         [self.sidePanelController setRightPanel:vc];
         

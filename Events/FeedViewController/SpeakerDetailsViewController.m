@@ -7,6 +7,7 @@
 //
 
 #import "SpeakerDetailsViewController.h"
+#import "KQEventAPI.h"
 
 @interface SpeakerDetailsViewController ()
 
@@ -31,6 +32,15 @@
     _name.text = [data objectForKey:@"name"];
     _email_label.text = [data objectForKey:@"email"];
     _mobile_tel.text = [data objectForKey:@"tel"];
+    [KQEventAPI getImageFromUrl:[data objectForKey:@"profile_img"]
+                  finishHandler:^(NSData *data) {
+                      _image.image = [UIImage imageWithData: data];
+                  }
+                   startHandler:^{
+                       
+                   } errorHandler:^{
+                       
+                   }];
     // Do any additional setup after loading the view.
 }
 

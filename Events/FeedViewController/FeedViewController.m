@@ -142,6 +142,7 @@
     NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     [vc setData:data];
+    [self.sidePanelController setRightFixedWidth:600];
     [self.sidePanelController setRightPanel:vc];
     [self.sidePanelController showRightPanelAnimated:YES];
     
