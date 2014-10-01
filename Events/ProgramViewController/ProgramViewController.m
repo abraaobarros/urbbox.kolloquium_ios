@@ -212,8 +212,13 @@ BOOL reload = FALSE;
         [self.sidePanelController setRightPanel:vc];
         if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
         {
-            
-            [self.sidePanelController setRightFixedWidth:300];
+                [self.sidePanelController setRightFixedWidth:300];
+        }else{
+            if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
+            {
+                [self.sidePanelController setRightFixedWidth:650];
+            }else{
+            }
         }
         [self.sidePanelController showRightPanelAnimated:YES];
     }

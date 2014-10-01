@@ -148,6 +148,12 @@
     vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     [vc setData:data];
     [self.sidePanelController setRightPanel:vc];
+    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
+    {
+        [self.sidePanelController setRightFixedWidth:700];
+    }else{
+        [self.sidePanelController setRightFixedWidth:300];
+    }
     [self.sidePanelController showRightPanelAnimated:YES];
     
     
