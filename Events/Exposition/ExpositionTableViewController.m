@@ -57,7 +57,7 @@
     NSLog(@"_Event: %@",_event);
     
     cache = [KQCache sharedManager];
-    dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"guest_companies"];
+    dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:_data];
     
 }
 -(void)dicDummyDataInitialization{

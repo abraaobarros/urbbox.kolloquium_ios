@@ -744,7 +744,7 @@
         <!--Exposition Table View Controller - Root View Controller-->
         <scene sceneID="Yj3-UJ-UYL">
             <objects>
-                <tableViewController id="sZ5-4s-Uwx" customClass="ExpositionTableViewController" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="ExpositionTableViewController" storyboardIdentifier="ExpositionTableViewController" id="sZ5-4s-Uwx" customClass="ExpositionTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1pm-nj-7Sy">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -811,7 +811,7 @@
         <!--Navigation Controller-->
         <scene sceneID="w2n-LT-D7n">
             <objects>
-                <navigationController storyboardIdentifier="ExpositionTableViewController" definesPresentationContext="YES" id="cra-Hl-Fud" customClass="KQNavigationController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="cra-Hl-Fud" customClass="KQNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WVs-U1-xVR">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1246,12 +1246,12 @@
                                 <color key="backgroundColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" id="8AH-rO-C75">
-                                <rect key="frame" x="199.00000042988279" y="435" width="523" height="460"/>
+                                <rect key="frame" x="199.0000008871543" y="435" width="523" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ParticipantsTableCell" rowHeight="87" id="Fb5-ob-rDL" customClass="ParticipantsTableViewCell">
-                                        <rect key="frame" x="-5.1989779876748798e-06" y="22" width="523" height="87"/>
+                                        <rect key="frame" x="-5.5302148211922031e-06" y="22" width="523" height="87"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fb5-ob-rDL" id="nRe-iR-r3c">
                                             <rect key="frame" x="0.0" y="0.0" width="523" height="86"/>
@@ -1302,7 +1302,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iiE-FG-TYg">
-                                <rect key="frame" x="199.00000042988279" y="287" width="523" height="111"/>
+                                <rect key="frame" x="199.00000088715433" y="287" width="523" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1361,19 +1361,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SjH-Yz-u9H">
-                                <rect key="frame" x="56" y="483" width="692" height="188"/>
+                                <rect key="frame" x="56" y="477" width="692" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Externet Werkzeugbau unter 50 Mitarbeiter     " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yEz-gm-a6Z">
-                                <rect key="frame" x="56" y="797" width="361" height="29"/>
+                                <rect key="frame" x="56" y="901" width="361" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kategorie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wIU-lJ-fo6">
-                                <rect key="frame" x="56" y="768" width="110" height="21"/>
+                                <rect key="frame" x="56" y="874" width="110" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
@@ -1385,25 +1385,25 @@
                                 <color key="backgroundColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Externet Werkzeugbau über 50 Mitarbeiter     " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EGJ-BL-Vhq">
-                                <rect key="frame" x="56" y="834" width="361" height="29"/>
+                                <rect key="frame" x="56" y="922" width="361" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Interner Werkzeugbau unter 50 Mitarbeiter     " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6PF-UL-K2M">
-                                <rect key="frame" x="56" y="871" width="361" height="29"/>
+                                <rect key="frame" x="56" y="942" width="361" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Interner Werkzeugbau über 50 Mitarbeiter     " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vYa-Re-x8j">
-                                <rect key="frame" x="56" y="908" width="361" height="29"/>
+                                <rect key="frame" x="56" y="962" width="361" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Gesanmtsieger" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fkp-xL-4Zw">
-                                <rect key="frame" x="56" y="945" width="361" height="29"/>
+                                <rect key="frame" x="56" y="982" width="361" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -1412,7 +1412,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wettbewerb" id="nUY-X1-GIY"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="description" destination="SjH-Yz-u9H" id="j3I-gD-xal"/>
                         <outlet property="kategorie" destination="yEz-gm-a6Z" id="xQE-wE-arw"/>

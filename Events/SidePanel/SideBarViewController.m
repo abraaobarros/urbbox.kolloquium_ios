@@ -16,6 +16,7 @@
 #import "Loading2ViewController.h"
 #import "ProgramViewController.h"
 #import "KQNavigationController.h"
+#import "ExpositionTableViewController.h"
 #import "KQCache.h"
 
 
@@ -317,15 +318,10 @@
         }
         else if(indexPath.row==3)
         {
-            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-            {
-                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
-            }
-            else
-            {
-                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
-                
-            }
+            ExpositionTableViewController *vc = (ExpositionTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
+            KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
+            [vc setData:@"guest_companies"];
+            [self.sidePanelController setCenterPanel:partnersView];
         }
         else if(indexPath.row==4)
         {
@@ -347,15 +343,10 @@
         }
         else if(indexPath.row==6)
         {
-            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-            {
-                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
-            }
-            else
-            {
-                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
-                
-            }
+            ExpositionTableViewController *vc = (ExpositionTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
+            KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
+            [vc setData:@"competitors"];
+            [self.sidePanelController setCenterPanel:partnersView];
         }
     }
     else if (indexPath.section==1){
@@ -363,19 +354,24 @@
         {
             InstituteDetailTableViewController *vc = (InstituteDetailTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InstituteDetailTableViewController"];
             vc.index = 0;
-            [self.sidePanelController setCenterPanel:vc];
+            KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
+            [self.sidePanelController setCenterPanel:partnersView];
         }
         else if(indexPath.row==1)
         {
             InstituteDetailTableViewController *vc = (InstituteDetailTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InstituteDetailTableViewController"];
             vc.index = 1;
-            [self.sidePanelController setCenterPanel:vc];
+            KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
+            [self.sidePanelController setCenterPanel:partnersView];
            
         }
         else if(indexPath.row ==2){
             if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
             {
-                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
+                ExpositionTableViewController *vc = (ExpositionTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
+                KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
+                [vc setData:@"partners"];
+                [self.sidePanelController setCenterPanel:partnersView];
             }
             else
             {

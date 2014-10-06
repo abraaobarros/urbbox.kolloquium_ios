@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic,strong) KQEventAPI *event;
+@property (nonatomic,strong) NSString *data;
 @property (nonatomic,strong) NSMutableDictionary *imagesCache;
 @end
