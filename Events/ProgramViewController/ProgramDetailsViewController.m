@@ -21,12 +21,33 @@
 @synthesize data;
 @synthesize location;
 
+UIDocumentInteractionController *documentInteractionController;
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
+    return self;
+}
+- (IBAction)openPDF:(id)sender {
+    
+    NSURL *URL = [[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"pdf"];
+    
+    if (URL) {
+        // Initialize Document Interaction Controller
+        documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:URL];
+        
+        // Configure Document Interaction Controller
+        [documentInteractionController setDelegate:self];
+        
+        // Preview PDF
+        [documentInteractionController presentPreviewAnimated:YES];
+    }
+}
+- (UIViewController *) documentInteractionControllerViewControllerForPreview: (UIDocumentInteractionController *) controller {
     return self;
 }
 

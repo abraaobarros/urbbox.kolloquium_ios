@@ -126,6 +126,7 @@
 		78CD61F219D02ACD00C6E49A /* ExpositionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61F119D02ACD00C6E49A /* ExpositionTableViewCell.m */; };
 		78CD61F519D0371F00C6E49A /* CompetitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61F419D0371F00C6E49A /* CompetitionViewController.m */; };
 		78CD61F819D044A400C6E49A /* Loading2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61F719D044A400C6E49A /* Loading2ViewController.m */; };
+		78D1A30219E2557B00E92F93 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 78D1A30119E2557B00E92F93 /* sample.pdf */; };
 		BB303D9A18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
 		BB303D9C18B863E300B6EBC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */; };
 		BB303D9E18B863E300B6EBC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9D18B863E300B6EBC9 /* UIKit.framework */; };
@@ -378,6 +379,7 @@
 		78CD61F419D0371F00C6E49A /* CompetitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompetitionViewController.m; path = Competition/CompetitionViewController.m; sourceTree = "<group>"; };
 		78CD61F619D044A400C6E49A /* Loading2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Loading2ViewController.h; path = Loading/Loading2ViewController.h; sourceTree = "<group>"; };
 		78CD61F719D044A400C6E49A /* Loading2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Loading2ViewController.m; path = Loading/Loading2ViewController.m; sourceTree = "<group>"; };
+		78D1A30119E2557B00E92F93 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
 		BB303D9618B863E300B6EBC9 /* Werkzeugbau mit Zukunft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Werkzeugbau mit Zukunft.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -732,6 +734,7 @@
 				7836B9B619ABB791004BB485 /* Cache.m */,
 				7836B9B719ABB791004BB485 /* Cache.h */,
 				7836B9AA19A9388B004BB485 /* welcome.jpg */,
+				78D1A30119E2557B00E92F93 /* sample.pdf */,
 				7890807D19A2297900C537E1 /* API */,
 				78AD2C7F19A1A97500047B9A /* menu.jpg */,
 				BB303D9F18B863E300B6EBC9 /* Events */,
@@ -1050,6 +1053,7 @@
 			files = (
 				BB62B12018B8B529000DBDBC /* Next.png in Resources */,
 				711221E918BC94F900E77A4A /* GreenDot.png in Resources */,
+				78D1A30219E2557B00E92F93 /* sample.pdf in Resources */,
 				7112220618BCA62300E77A4A /* share@2x.png in Resources */,
 				BB303E2518B879AA00B6EBC9 /* pic.png in Resources */,
 				7122DB2B18BB4BDB00C044E8 /* feedviewCell5.png in Resources */,

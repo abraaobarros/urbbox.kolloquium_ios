@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProgramDetailsViewController : UIViewController{
+@interface ProgramDetailsViewController : UIViewController<UIDocumentInteractionControllerDelegate>{
 }
 
 -(void) setContent:(NSDictionary *) data;
