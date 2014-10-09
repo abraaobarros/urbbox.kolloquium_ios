@@ -127,6 +127,7 @@
 		78CD61F519D0371F00C6E49A /* CompetitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61F419D0371F00C6E49A /* CompetitionViewController.m */; };
 		78CD61F819D044A400C6E49A /* Loading2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61F719D044A400C6E49A /* Loading2ViewController.m */; };
 		78D1A30219E2557B00E92F93 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 78D1A30119E2557B00E92F93 /* sample.pdf */; };
+		78D1A30619E2D98400E92F93 /* ListOneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D1A30519E2D98400E92F93 /* ListOneTableViewController.m */; };
 		BB303D9A18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
 		BB303D9C18B863E300B6EBC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */; };
 		BB303D9E18B863E300B6EBC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9D18B863E300B6EBC9 /* UIKit.framework */; };
@@ -380,6 +381,8 @@
 		78CD61F619D044A400C6E49A /* Loading2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Loading2ViewController.h; path = Loading/Loading2ViewController.h; sourceTree = "<group>"; };
 		78CD61F719D044A400C6E49A /* Loading2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Loading2ViewController.m; path = Loading/Loading2ViewController.m; sourceTree = "<group>"; };
 		78D1A30119E2557B00E92F93 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
+		78D1A30419E2D98400E92F93 /* ListOneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListOneTableViewController.h; path = Templates/ListOneTableViewController.h; sourceTree = "<group>"; };
+		78D1A30519E2D98400E92F93 /* ListOneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListOneTableViewController.m; path = Templates/ListOneTableViewController.m; sourceTree = "<group>"; };
 		BB303D9618B863E300B6EBC9 /* Werkzeugbau mit Zukunft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Werkzeugbau mit Zukunft.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -725,6 +728,15 @@
 			name = InstituteDetail;
 			sourceTree = "<group>";
 		};
+		78D1A30319E2D8B700E92F93 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				78D1A30419E2D98400E92F93 /* ListOneTableViewController.h */,
+				78D1A30519E2D98400E92F93 /* ListOneTableViewController.m */,
+			);
+			name = Templates;
+			sourceTree = "<group>";
+		};
 		BB303D8D18B863E300B6EBC9 = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +749,7 @@
 				78D1A30119E2557B00E92F93 /* sample.pdf */,
 				7890807D19A2297900C537E1 /* API */,
 				78AD2C7F19A1A97500047B9A /* menu.jpg */,
+				78D1A30319E2D8B700E92F93 /* Templates */,
 				BB303D9F18B863E300B6EBC9 /* Events */,
 				BB303DC118B863E300B6EBC9 /* EventsTests */,
 				BB303D9818B863E300B6EBC9 /* Frameworks */,
@@ -1209,6 +1222,7 @@
 				78AD2C8319A1AA2500047B9A /* SideBarViewController.m in Sources */,
 				78CD61F819D044A400C6E49A /* Loading2ViewController.m in Sources */,
 				78CD61F219D02ACD00C6E49A /* ExpositionTableViewCell.m in Sources */,
+				78D1A30619E2D98400E92F93 /* ListOneTableViewController.m in Sources */,
 				711221DD18BC62DD00E77A4A /* NSMutableArray+convenience.m in Sources */,
 				7890808019A229FE00C537E1 /* KQURLConnectHelper.m in Sources */,
 				7122DB1218BB1F7300C044E8 /* FeedCustomCell.m in Sources */,

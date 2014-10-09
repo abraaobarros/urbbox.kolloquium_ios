@@ -20,6 +20,7 @@
     NSMutableArray *dataSource;
     NSMutableDictionary *dataImageSource;
     LoadingViewController *loading;
+    NSArray *data;
    
 }
 
@@ -63,6 +64,8 @@ BOOL reload = FALSE;
     self.navigationController.navigationBar.titleTextAttributes = size;
     
     self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
+    self.navigationItem.rightBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
 
 }
@@ -108,8 +111,15 @@ BOOL reload = FALSE;
         return [d1 compare:d2];
         
     }];
-    dataSource = [[NSMutableArray alloc] initWithArray:retorno];
+    data = [[NSMutableArray alloc] initWithArray:retorno];
     dataImageSource = [[NSMutableDictionary alloc] init];
+    
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"2014-11-05"];
+    dataSource  = [data filteredArrayUsingPredicate:predicate];
+    [_segmentDay setSelectedSegmentIndex:0];
+    
+    
     NSLog(@"Lectures : %@",dataSource);
     [tableView reloadData];
     //dic initilization for dummy data end
@@ -154,8 +164,6 @@ BOOL reload = FALSE;
     {
         cell = [[ProgramCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-//    cell.imgEventImage.image=[UIImage imageNamed:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"image"]];
-    
     cell.lblDateTime.text=[self convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"HH:mm"];
     cell.lblEventName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"subject"];
     cell.lblEventDesc.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"descript"];
@@ -166,7 +174,7 @@ BOOL reload = FALSE;
          cell.speaker.text = [[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"name"];
     }
     @catch (NSException *exception) {
-        
+        cell.speaker.text = @"";
     }
     @finally {
         
@@ -182,22 +190,6 @@ BOOL reload = FALSE;
     } errorHandler:^{
         NSLog(@"Problem Image loader");
     }];
-
-//    if ([dataImageSource objectForKey:[dataSource objectAtIndex:indexPath.row]]) {
-//        cell.imgEventImage.image=[UIImage imageWithData: [dataImageSource objectForKey:[dataSource objectAtIndex:indexPath.row]]];
-//    }
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//            @try {
-//                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"]]];
-//                dispatch_sync(dispatch_get_main_queue(), ^{
-//                    cell.imgEventImage.image=[UIImage imageWithData: data];
-//                    [dataImageSource setObject:data forKey:[dataSource objectAtIndex:indexPath.row]];
-//                });
-//            }@catch (NSException *exception) {
-//                NSLog(@"Error : %@",exception);
-//            }
-//            
-//        });
     
     return cell;
 }
@@ -243,45 +235,6 @@ BOOL reload = FALSE;
     return convertedString;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -314,10 +267,22 @@ BOOL reload = FALSE;
         vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         // Pass any objects to the view controller here, like...
     }
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
 
+- (IBAction)segmentDayChange:(id)sender {
+    if (_segmentDay.selectedSegmentIndex==0) {
+        NSPredicate *predicate =
+        [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"2014-11-04"];
+        dataSource = [[data filteredArrayUsingPredicate:predicate] mutableCopy];
+        
+    }else{
+        NSPredicate *predicate =
+        [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"2014-11-05"];
+        dataSource = [[data filteredArrayUsingPredicate:predicate] mutableCopy];
+        
+    }
+    [tableView reloadData];
+}
 
 
 

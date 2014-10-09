@@ -11,5 +11,6 @@
 
 @interface ProgramViewController : UITableViewController
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentDay;
 -(void) reload;
 @end

@@ -134,7 +134,7 @@
             </objects>
             <point key="canvasLocation" x="-715" y="-1107"/>
         </scene>
-        <!--Program View Controller - Kolloquium-->
+        <!--Program View Controller - Title-->
         <scene sceneID="Ipy-lB-hRh">
             <objects>
                 <tableViewController id="IGe-Iu-Ivt" customClass="ProgramViewController" sceneMemberID="viewController">
@@ -142,9 +142,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="MT5-qp-6BZ">
+                            <rect key="frame" x="0.0" y="64" width="768" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="gPj-vO-TQV">
+                                    <rect key="frame" x="-13" y="0.0" width="794" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <segments>
+                                        <segment title="4. November 2014"/>
+                                        <segment title="5. November 2014"/>
+                                    </segments>
+                                    <color key="tintColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
+                                    <connections>
+                                        <action selector="segmentDayChange:" destination="IGe-Iu-Ivt" eventType="valueChanged" id="nis-Z1-0hV"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgramCustomCell" rowHeight="240" id="fUt-vu-T8G" customClass="ProgramCustomCell">
-                                <rect key="frame" x="0.0" y="86" width="768" height="240"/>
+                                <rect key="frame" x="0.0" y="115" width="768" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fUt-vu-T8G" id="zyU-rw-vZ9">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="239"/>
@@ -210,16 +229,19 @@
                             <outlet property="delegate" destination="IGe-Iu-Ivt" id="fxn-HS-Dl1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Kolloquium" id="y1a-iC-8HW"/>
+                    <navigationItem key="navigationItem" title="Title" id="IYt-bJ-vJj">
+                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="qbE-e3-55R"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="segmentDay" destination="gPj-vO-TQV" id="lP1-jb-40l"/>
                         <outlet property="tableView" destination="MKC-cY-S7n" id="5zp-4n-h12"/>
                         <segue destination="6UC-KM-Kvz" kind="modal" identifier="Loading2ViewController" id="NJv-DF-79g"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1YQ-7d-2CP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244" y="-2133"/>
+            <point key="canvasLocation" x="1580" y="-2133"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="kok-JJ-ACf">
@@ -411,12 +433,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="IGe-Iu-Ivt" kind="relationship" relationship="rootViewController" id="lHc-y6-LjP"/>
+                        <segue destination="IGe-Iu-Ivt" kind="relationship" relationship="rootViewController" id="Ttq-z5-VRa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLt-R1-Oak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="425" y="-2133"/>
+            <point key="canvasLocation" x="-175" y="-2133"/>
         </scene>
         <!--Feed View Controller - Speakers-->
         <scene sceneID="E5r-Uf-aov">
@@ -434,7 +456,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="194"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic.png" id="dM9-af-TlH">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_profile.png" id="dM9-af-TlH">
                                             <rect key="frame" x="49" y="20" width="125" height="114"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -1256,7 +1278,7 @@
                                 <color key="backgroundColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" id="8AH-rO-C75">
-                                <rect key="frame" x="199.0000008871543" y="435" width="523" height="460"/>
+                                <rect key="frame" x="199.00000284982315" y="435" width="523" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1312,7 +1334,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iiE-FG-TYg">
-                                <rect key="frame" x="199.00000088715433" y="287" width="523" height="111"/>
+                                <rect key="frame" x="199.00000284982309" y="287" width="523" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
