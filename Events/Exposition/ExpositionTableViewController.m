@@ -58,6 +58,9 @@
     
     cache = [KQCache sharedManager];
     dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:_data];
+    if ([_data isEqualToString:@"competitors"]) {
+        dataSource = [[[[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"competitions"] objectAtIndex:0] objectForKey:@"competitors"];
+    }
     
 }
 -(void)dicDummyDataInitialization{

@@ -180,6 +180,7 @@
             cell.title.text=@"Finalisten";
             cell.icon.image = [UIImage imageNamed:@"ic_finalists.png"];
             return cell;
+            
         }
     }
     else if (indexPath.section==1){
