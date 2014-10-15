@@ -18,6 +18,7 @@
 #import "KQNavigationController.h"
 #import "ExpositionTableViewController.h"
 #import "KQCache.h"
+#import "Util.h"
 
 
 @interface SideBarViewController ()
@@ -408,6 +409,34 @@
             [userDefaults setObject:nil forKey:@"email"];
             [userDefaults synchronize];
             [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
+            
+        }
+        else if(indexPath.row==2)
+        {
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
+                CGRect webFrame = CGRectMake(0.0, 0.0, 768.0, 1024.0);
+                UIWebView *webView = [[UIWebView alloc] initWithFrame:webFrame];
+                
+                NSString *path = [[NSBundle mainBundle] pathForResource:@"Impressum" ofType:@"pdf"];
+                NSURL *targetURL = [NSURL fileURLWithPath:path];
+                NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+                [webView loadRequest:request];
+
+                UIViewController *vc = [[UIViewController alloc] init];
+                vc.view = webView;
+                
+                
+                
+                KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
+                [Util setupNavigationBar:vc withTitle:@"Impressum"];
+                [self.sidePanelController setCenterPanel:partnersView];
+            }
+            else
+            {
+                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
+                
+            }
             
         }
     }

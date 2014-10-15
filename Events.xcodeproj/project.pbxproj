@@ -134,6 +134,7 @@
 		78E103E819EDBDCF00066580 /* ic_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E103E719EDBDCF00066580 /* ic_logout.png */; };
 		78E103EA19EDBDF000066580 /* ic_aachen.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E103E919EDBDF000066580 /* ic_aachen.png */; };
 		78E103EC19EDBE0700066580 /* ic_impressum.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E103EB19EDBE0700066580 /* ic_impressum.png */; };
+		78E5C3A219EE40C80055C6E4 /* Impressum.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 78E5C3A119EE40C80055C6E4 /* Impressum.pdf */; };
 		BB303D9A18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
 		BB303D9C18B863E300B6EBC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */; };
 		BB303D9E18B863E300B6EBC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9D18B863E300B6EBC9 /* UIKit.framework */; };
@@ -395,6 +396,7 @@
 		78E103E719EDBDCF00066580 /* ic_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_logout.png; sourceTree = "<group>"; };
 		78E103E919EDBDF000066580 /* ic_aachen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_aachen.png; sourceTree = "<group>"; };
 		78E103EB19EDBE0700066580 /* ic_impressum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_impressum.png; sourceTree = "<group>"; };
+		78E5C3A119EE40C80055C6E4 /* Impressum.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Impressum.pdf; sourceTree = "<group>"; };
 		BB303D9618B863E300B6EBC9 /* Werkzeugbau mit Zukunft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Werkzeugbau mit Zukunft.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -684,6 +686,7 @@
 		78AD2C7E19A1866400047B9A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				78E5C3A119EE40C80055C6E4 /* Impressum.pdf */,
 				78E103EB19EDBE0700066580 /* ic_impressum.png */,
 				78E103E919EDBDF000066580 /* ic_aachen.png */,
 				78E103E719EDBDCF00066580 /* ic_logout.png */,
@@ -1104,6 +1107,7 @@
 				BB303E2218B879AA00B6EBC9 /* image2@2x.png in Resources */,
 				7890809019A2865900C537E1 /* about_icon.png in Resources */,
 				7836B9C319AC2B25004BB485 /* no_profile.png in Resources */,
+				78E5C3A219EE40C80055C6E4 /* Impressum.pdf in Resources */,
 				BB303E2318B879AA00B6EBC9 /* nearby.png in Resources */,
 				7122DB1F18BB459C00C044E8 /* feedviewCell2.png in Resources */,
 				BB303DF718B86B3400B6EBC9 /* Feed.png in Resources */,
