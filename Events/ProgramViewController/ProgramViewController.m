@@ -59,14 +59,9 @@ BOOL reload = FALSE;
                     }];
     
     [self loadDummyData];
-    self.navigationItem.title = @"Werkzeugbau Mit Zukunft";
-    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:15.0],NSFontAttributeName,[UIColor redColor],NSForegroundColorAttributeName, nil];
-    self.navigationController.navigationBar.titleTextAttributes = size;
     
     self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
-    self.navigationItem.rightBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
+    [Util setupNavigationBar:self withTitle:@"Werkzeugbau Mit Zukunft"];
 
 }
             
@@ -115,7 +110,7 @@ BOOL reload = FALSE;
     dataImageSource = [[NSMutableDictionary alloc] init];
     
     NSPredicate *predicate =
-    [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"2014-11-05"];
+    [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"2014-11-04"];
     dataSource  = [data filteredArrayUsingPredicate:predicate];
     [_segmentDay setSelectedSegmentIndex:0];
     
@@ -167,7 +162,8 @@ BOOL reload = FALSE;
     cell.lblDateTime.text=[self convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"HH:mm"];
     cell.lblEventName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"subject"];
     cell.lblEventDesc.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"descript"];
-    [cell.lblEventName sizeToFit];
+    //[cell.lblEventName sizeToFit];
+    [cell.lblEventDesc sizeToFit];
     
     cell.data.text=[Util convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"dd MMM"];
     @try {
@@ -182,8 +178,8 @@ BOOL reload = FALSE;
     
     cell.imgEventImage.image = nil;
     
-    [KQEventAPI getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"] finishHandler:^(NSData* data){
-        cell.imgEventImage.image=[UIImage imageWithData:data];
+    [KQEventAPI getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"] finishHandler:^(NSData* d){
+        cell.imgEventImage.image=[UIImage imageWithData:d];
     } startHandler:^{
         NSLog(@"Init Image loader");
     

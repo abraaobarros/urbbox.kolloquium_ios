@@ -8,6 +8,7 @@
 
 #import "CompetitionViewController.h"
 #import "KQCache.h"
+#import "Util.h"
 #import "KQEventAPI.h"
 
 @interface CompetitionViewController ()
@@ -45,6 +46,9 @@ KQCache *cache;
         
     } errorHandler:^{
     }];
+    [_scroll_page setContentSize:CGSizeMake(self.view.frame.size.width, 1024)];
+    
+    [Util setupNavigationBar:self withTitle:@"Werkzeugbau Mit Zukunft"];
     
     // Do any additional setup after loading the view.
 }

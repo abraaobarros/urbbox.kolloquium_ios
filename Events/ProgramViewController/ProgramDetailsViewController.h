@@ -20,4 +20,5 @@
 @property (strong, nonatomic) NSDictionary *data;
 @property (weak, nonatomic) IBOutlet UITextField *quetion;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end

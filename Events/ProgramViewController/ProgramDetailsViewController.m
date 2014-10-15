@@ -34,17 +34,21 @@ UIDocumentInteractionController *documentInteractionController;
 }
 - (IBAction)openPDF:(id)sender {
     
-    NSURL *URL = [[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"pdf"];
+    NSLog(@"%@",[data objectForKey:@"document"]);
+//    NSURL *URL = [NSURL URLWithString:[data objectForKey:@"document"]];
     
-    if (URL) {
+    NSURL *URL = [NSURL URLWithString:[data objectForKey:@"document"]];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+    if ([data objectForKey:@"document"]!=(id)[NSNull null]) {
+        [_webView loadRequest:[NSURLRequest requestWithURL:URL]];
         // Initialize Document Interaction Controller
-        documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:URL];
-        
-        // Configure Document Interaction Controller
-        [documentInteractionController setDelegate:self];
-        
-        // Preview PDF
-        [documentInteractionController presentPreviewAnimated:YES];
+//        documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:URL];
+////        self.documentInteractionController.name = @"Title";
+//        // Configure Document Interaction Controller
+//        [documentInteractionController setDelegate:self];
+//        
+//        // Preview PDF
+//        [documentInteractionController presentPreviewAnimated:YES];
     }
 }
 - (UIViewController *) documentInteractionControllerViewControllerForPreview: (UIDocumentInteractionController *) controller {

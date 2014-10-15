@@ -13,4 +13,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *kategorie;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scroll_page;
 @end

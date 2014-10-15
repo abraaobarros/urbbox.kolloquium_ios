@@ -14,6 +14,7 @@
 #import "JASidePanelController.h"
 #import "KQEventAPI.h"
 #import "KQCache.h"
+#import "Util.h"
 #import "SpeakerDetailsViewController.h"
 #import "ProgramDetailsViewController.h"
 
@@ -43,15 +44,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.navigationItem.title = @"Werkzeugbau Mit Zukunft";
-    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:15.0],NSFontAttributeName,[UIColor redColor],NSForegroundColorAttributeName, nil];
-    self.navigationController.navigationBar.titleTextAttributes = size;
-    
     self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
-    NSLog(@"_Event: %@",_event);
-    
+    [Util setupNavigationBar:self withTitle:@"Werkzeugbau Mit Zukunft"];
     cache = [KQCache sharedManager];
     dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"speakers"];
     
@@ -85,7 +79,7 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
         
-        return 163;
+        return 108;
     }
     else
     {
@@ -97,7 +91,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-//    if (indexPath.row%2==0) {
         static NSString *CellIdentifier = @"";
 
         CellIdentifier = @"FeedCustomCell";

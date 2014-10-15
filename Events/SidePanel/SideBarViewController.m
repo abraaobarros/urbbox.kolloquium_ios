@@ -91,7 +91,7 @@
             return 3;
             break;
         case 2:
-            return 2;
+            return 3;
             break;
             
         default:
@@ -225,7 +225,7 @@
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
             cell.title.text=@"Refresh data";
-            cell.icon.image = [UIImage imageNamed:@"schedules.png"];
+            cell.icon.image = [UIImage imageNamed:@"ic_refresh.png"];
             return cell;
         }
         else if(indexPath.row==1)
@@ -236,12 +236,24 @@
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
             cell.title.text=@"Logout";
-            cell.icon.image = [UIImage imageNamed:@"ic_partners.png"];
+            cell.icon.image = [UIImage imageNamed:@"ic_logout.png"];
+            return cell;
+        }
+        else if(indexPath.row==2)
+        {
+            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
+            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (cell == nil) {
+                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
+            cell.title.text=@"Impressum";
+            cell.icon.image = [UIImage imageNamed:@"ic_impressum.png"];
             return cell;
         }
     }
         return nil;
 }
+
 - (CGFloat) tableView: (UITableView *) tableView heightForRowAtIndexPath: (NSIndexPath *) indexPath
 {
     return 43;
@@ -379,7 +391,7 @@
                 
             }
         }
-    }else if (indexPath.section ==2){
+    }else if (indexPath.section==2){
         if(indexPath.row==0)
         {
             KQCache *cache = [KQCache sharedManager];

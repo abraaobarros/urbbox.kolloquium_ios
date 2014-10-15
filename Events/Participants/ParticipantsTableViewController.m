@@ -11,6 +11,7 @@
 #import "ParticipantsTableViewCell.h"
 #import "KQCache.h"
 #import <MessageUI/MessageUI.h>
+#import "Util.h"
 
 @interface ParticipantsTableViewController (){
     KQCache *cache;
@@ -35,13 +36,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
     
-    self.navigationItem.title = @"Werkzeugbau Mit Zukunft";
-    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:15.0],NSFontAttributeName,[UIColor redColor],NSForegroundColorAttributeName, nil];
-    self.navigationController.navigationBar.titleTextAttributes = size;
     
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
+    [Util setupNavigationBar:self withTitle:@"Werkzeugbau Mit Zukunft"];
+    
     
     filteredArray = [[NSMutableArray alloc] init];
     
