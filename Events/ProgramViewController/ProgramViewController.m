@@ -62,6 +62,9 @@ BOOL reload = FALSE;
     
     self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
     [Util setupNavigationBar:self withTitle:@"Werkzeugbau Mit Zukunft"];
+    
+    CGRect frame= _segmentDay.frame;
+    [_segmentDay setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 60)];
 
 }
             

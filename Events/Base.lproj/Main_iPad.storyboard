@@ -143,7 +143,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="MT5-qp-6BZ">
-                            <rect key="frame" x="0.0" y="64" width="768" height="29"/>
+                            <rect key="frame" x="0.0" y="64" width="768" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" segmentControlStyle="bordered" selectedSegmentIndex="0" id="gPj-vO-TQV">
@@ -166,7 +166,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgramCustomCell" rowHeight="240" id="fUt-vu-T8G" customClass="ProgramCustomCell">
-                                <rect key="frame" x="0.0" y="115" width="768" height="240"/>
+                                <rect key="frame" x="0.0" y="146" width="768" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fUt-vu-T8G" id="zyU-rw-vZ9">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="239"/>
@@ -413,7 +413,7 @@
                             </segmentedControl>
                             <webView contentMode="scaleToFill" id="y97-CW-UQf">
                                 <rect key="frame" x="181" y="460" width="567" height="544"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
