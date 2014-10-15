@@ -55,7 +55,7 @@ BOOL reload = FALSE;
                         NSLog(@"Finish Fetching");
                         [self loadDummyData];
                     } errorHandler:^(void){
-                        NSLog(@"Error Fetching");
+                        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
                     }];
     
     [self loadDummyData];

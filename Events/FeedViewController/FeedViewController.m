@@ -14,6 +14,7 @@
 #import "JASidePanelController.h"
 #import "KQEventAPI.h"
 #import "KQCache.h"
+#import <MessageUI/MessageUI.h>
 #import "Util.h"
 #import "SpeakerDetailsViewController.h"
 #import "ProgramDetailsViewController.h"
@@ -114,6 +115,10 @@
     [cell.lblTweet sizeToFit];
     cell.lblUserName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
     cell.btnUserId.titleLabel.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"];
+    if ([[[dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"] isEqualToString: @""])
+        cell.email.hidden= YES;
+    else
+        cell.email.hidden= NO;
         
     cell.lblViewComment.text=[NSString stringWithFormat:@"Tel: %@",[[dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"]];
         
@@ -122,23 +127,47 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-    {
-        [self.sidePanelController setRightFixedWidth:300];
-    }
-    else
-    {
-        //        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
-    }
+//    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+//    {
+//        [self.sidePanelController setRightFixedWidth:300];
+//    }
+//    else
+//    {
+//        //        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
+//    }
+//    
+//    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
+//    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
+//    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
+//    [vc setData:data];
+//    [self.sidePanelController setRightFixedWidth:600];
+//    [self.sidePanelController setRightPanel:vc];
+//    [self.sidePanelController showRightPanelAnimated:YES];
+    if (![[[dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"] isEqualToString: @""])
+        if ([MFMailComposeViewController canSendMail]) {
+            
+            MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+            //        [mailViewController setSubject:@"Subject Goes Here."];
+            //        [mailViewController setMessageBody:@"Your message goes here." isHTML:NO];
+            
+            NSArray *toRecipients = [NSArray arrayWithObjects:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"email"], nil];
+            [mailViewController setToRecipients:toRecipients];
+            mailViewController.mailComposeDelegate =self;
+            [self presentModalViewController:mailViewController animated:YES];
+        } else {
+            NSLog(@"Device is unable to send email in its current state.");
+        }
     
-    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
-    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
-    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
-    [vc setData:data];
-    [self.sidePanelController setRightFixedWidth:600];
-    [self.sidePanelController setRightPanel:vc];
-    [self.sidePanelController showRightPanelAnimated:YES];
-    
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 

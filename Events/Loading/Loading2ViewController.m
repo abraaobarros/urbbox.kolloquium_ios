@@ -37,7 +37,24 @@
      } finishProcess:^(void){
          [self dismissViewControllerAnimated:YES completion:nil];
      } errorHandler:^(void){
-         NSLog(@"Error Fetching");
+        _loading_label.text = @"No internet connection";
+         [_loading stopAnimating];
+        _try.hidden=NO;
+     }];
+}
+
+- (IBAction)try_again:(id)sender {
+    [[KQEventAPI alloc]
+     initWithDataAssyncWithStart:^(void){
+         _try.hidden=YES;
+         [_loading startAnimating];
+         _loading_label.text = @"Loading data...";
+     } finishProcess:^(void){
+         [self dismissViewControllerAnimated:YES completion:nil];
+     } errorHandler:^(void){
+         _loading_label.text = @"No internet connection";
+         [_loading stopAnimating];
+         _try.hidden=NO;
      }];
 }
 

@@ -10,5 +10,7 @@
 
 @interface Loading2ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
+@property (weak, nonatomic) IBOutlet UILabel *loading_label;
+@property (weak, nonatomic) IBOutlet UIButton *try;
 
 @end

@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblUserName;
 @property (strong, nonatomic) IBOutlet UIButton *btnUserId;
 @property (strong, nonatomic) IBOutlet UILabel *lblTweet;
+@property (weak, nonatomic) IBOutlet UIButton *email;
 @property (strong, nonatomic) IBOutlet UILabel *lblViewComment;
 - (IBAction)clickedUserId:(id)sender;
 - (IBAction)clickedViewComments:(id)sender;
