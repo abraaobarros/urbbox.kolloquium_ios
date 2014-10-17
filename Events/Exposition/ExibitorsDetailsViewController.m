@@ -40,7 +40,12 @@ NSArray *dataSource;
         _description.text = [data objectForKey:@"short_descript"];
         _mobile.text = [data objectForKey:@"responsible_tel"];
         _email.text = [data objectForKey:@"responsible_email"];
-        _stand.text = [NSString stringWithFormat:@"Find me in stand: %@",[data objectForKey:@"localization"]];
+        if ([data objectForKey:@"localization"]==(id)[NSNull null] || [data objectForKey:@"localization"] == nil) {
+        
+        }else{
+            _stand.text = [NSString stringWithFormat:@"Find me in stand: %@",[data objectForKey:@"localization"]];
+            _tableView.hidden = YES;
+        }
         [_description sizeToFit];
         
 
