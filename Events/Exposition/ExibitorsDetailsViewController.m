@@ -32,14 +32,29 @@ NSArray *dataSource;
 {
     [super viewDidLoad];
     NSLog(@"%@",data);
-    
-    dataSource = [data objectForKey:@"participants"];
-    _institute_en.text = [data objectForKey:@"name"];
-    _description.text = [data objectForKey:@"short_descript"];
-    _mobile.text = [data objectForKey:@"responsible_tel"];
-    _email.text = [data objectForKey:@"responsible_email"];
-    _stand.text = [NSString stringWithFormat:@"Find me in stand: %@",[data objectForKey:@"localization"]];
-    [_description sizeToFit];
+    if ([data objectForKey:@"background"]==(id)[NSNull null] || [data objectForKey:@"background"] == nil) {
+        _finalists.hidden=YES;
+        _tableView.hidden = NO;
+        dataSource = [data objectForKey:@"participants"];
+        _institute_en.text = [data objectForKey:@"name"];
+        _description.text = [data objectForKey:@"short_descript"];
+        _mobile.text = [data objectForKey:@"responsible_tel"];
+        _email.text = [data objectForKey:@"responsible_email"];
+        _stand.text = [NSString stringWithFormat:@"Find me in stand: %@",[data objectForKey:@"localization"]];
+        [_description sizeToFit];
+        
+
+    }else{
+        _finalists.hidden=NO;
+        _tableView.hidden = YES;
+        _institute_en.text = [data objectForKey:@"name"];
+        _strenghts.text = [data objectForKey:@"strengths"];
+        _description.text =[data objectForKey:@"profile"];
+        [_strenghts sizeToFit];
+        
+        _background.text = [data objectForKey:@"background"];
+        [_background sizeToFit];
+    }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         @try {
             NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data objectForKey:@"logo"]]];
@@ -51,29 +66,32 @@ NSArray *dataSource;
         }
         
     });
-    // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidLoad];
-    NSLog(@"%@",data);
-    
-    dataSource = [data objectForKey:@"participants"];
-    _institute_en.text = [data objectForKey:@"name"];
-    _description.text = [data objectForKey:@"short_descript"];
-    _mobile.text = [data objectForKey:@"responsible_tel"];
-    _email.text = [data objectForKey:@"responsible_email"];
-    _stand.text = [NSString stringWithFormat:@"Find me in stand: %@",[data objectForKey:@"localization"]];
-    [_description sizeToFit];
-    
-    [KQEventAPI getImageFromUrl:[data objectForKey:@"logo"] finishHandler:^(NSData* data_img){
-        _photo.image=[UIImage imageWithData:data_img];
-    } startHandler:^{
-        
-    } errorHandler:^{
-    }];
-
-}
+//-(void)viewDidAppear:(BOOL)animated{
+//    [super viewDidLoad];
+//    NSLog(@"%@",data);
+//    
+//    dataSource = [data objectForKey:@"participants"];
+//    _institute_en.text = [data objectForKey:@"name"];
+//    _description.text = [data objectForKey:@"short_descript"];
+//    _mobile.text = [data objectForKey:@"responsible_tel"];
+//    _email.text = [data objectForKey:@"responsible_email"];
+//    if ([data objectForKey:@"localization"]!=(id)[NSNull null]) {
+//        _stand.text = [NSString stringWithFormat:@"Find me in stand: %@",[data objectForKey:@"localization"]];
+//    }
+//    
+//    [_description sizeToFit];
+//    
+//    [KQEventAPI getImageFromUrl:[data objectForKey:@"logo"] finishHandler:^(NSData* data_img){
+//        _photo.image=[UIImage imageWithData:data_img];
+//    } startHandler:^{
+//        
+//    } errorHandler:^{
+//    }];
+//
+//}
 
 #pragma mark - Table view data source
 

@@ -16,6 +16,7 @@
 #import "JASidePanelController.h"
 #import "KQEventAPI.h"
 #import "KQCache.h"
+#import "Util.h"
 #import "SpeakerDetailsViewController.h"
 #import "ProgramDetailsViewController.h"
 #import "ExibitorsDetailsViewController.h"
@@ -126,7 +127,12 @@
     } errorHandler:^{
     }];
     
+    
+    
     cell.lblTweet.text=[[dataSource objectAtIndex:indexPath.row] objectForKey:@"short_descript"];
+    if ([_data isEqualToString:@"competitors"]) {
+        cell.lblTweet.text=[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile"];
+    }
     [cell.lblTweet sizeToFit];
     cell.lblUserName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
     return cell;

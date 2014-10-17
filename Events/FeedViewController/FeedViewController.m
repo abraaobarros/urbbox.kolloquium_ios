@@ -127,22 +127,6 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-//    {
-//        [self.sidePanelController setRightFixedWidth:300];
-//    }
-//    else
-//    {
-//        //        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
-//    }
-//    
-//    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
-//    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
-//    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
-//    [vc setData:data];
-//    [self.sidePanelController setRightFixedWidth:600];
-//    [self.sidePanelController setRightPanel:vc];
-//    [self.sidePanelController showRightPanelAnimated:YES];
     if (![[[dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"] isEqualToString: @""])
         if ([MFMailComposeViewController canSendMail]) {
             

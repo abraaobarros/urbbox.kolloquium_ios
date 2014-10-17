@@ -230,6 +230,7 @@
             cell.icon.image = [UIImage imageNamed:@"ic_refresh.png"];
             return cell;
         }
+        
         else if(indexPath.row==1)
         {
             static NSString *CellIdentifier = @"KQSideBarTableViewCell";
@@ -237,8 +238,8 @@
             if (cell == nil) {
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            cell.title.text=@"Logout";
-            cell.icon.image = [UIImage imageNamed:@"ic_logout.png"];
+            cell.title.text=@"Impressum";
+            cell.icon.image = [UIImage imageNamed:@"ic_impressum.png"];
             return cell;
         }
         else if(indexPath.row==2)
@@ -248,8 +249,8 @@
             if (cell == nil) {
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            cell.title.text=@"Impressum";
-            cell.icon.image = [UIImage imageNamed:@"ic_impressum.png"];
+            cell.title.text=@"Logout";
+            cell.icon.image = [UIImage imageNamed:@"ic_logout.png"];
             return cell;
         }
     }
@@ -403,7 +404,7 @@
             
             
         }
-        else if(indexPath.row==1)
+        else if(indexPath.row==2)
         {
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:nil forKey:@"email"];
@@ -411,7 +412,7 @@
             [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
             
         }
-        else if(indexPath.row==2)
+        else if(indexPath.row==1)
         {
             if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
             {

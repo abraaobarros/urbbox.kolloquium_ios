@@ -19,4 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *stand;
 @property (weak, nonatomic) IBOutlet UILabel *description;
 
+@property (weak, nonatomic) IBOutlet UIView *finalists;
+@property (weak, nonatomic) IBOutlet UILabel *background;
+@property (weak, nonatomic) IBOutlet UILabel *strenghts;
 @end
