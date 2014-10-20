@@ -173,7 +173,7 @@ BOOL reload = FALSE;
          cell.speaker.text = [[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"name"];
     }
     @catch (NSException *exception) {
-        cell.speaker.text = @"";
+        cell.speaker.text = [NSString stringWithFormat:@"Location: %@",[[dataSource objectAtIndex:indexPath.row] valueForKey:@"location"]];
     }
     @finally {
         
