@@ -46,7 +46,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
-    [Util setupNavigationBar:self withTitle:@"Werkzeugbau Mit Zukunft"];
+    [Util setupNavigationBar:self withTitle:@"Referenten"];
     cache = [KQCache sharedManager];
     dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"speakers"];
     
