@@ -13,6 +13,7 @@
 #import "UIViewController+JASidePanel.h"
 #import "JASidePanelController.h"
 #import "KQEventAPI.h"
+#import "Util.h"
 #import "ProgramDetailsViewController.h"
 #import "InstituteDetailTableViewController.h"
 @interface AboutViewController ()
@@ -47,9 +48,10 @@ NSInteger *_index;
     self.scrollViewMain.contentSize = CGSizeMake(self.scrollViewMain.frame.size.width,
                                           320);
 
-    self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
     
+    
+    self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
+    [Util setupNavigationBar:self withTitle:@"Kolloquium"];
     
     event =[[KQEventAPI alloc]
             initWithDataAssyncWithStart:^(void){

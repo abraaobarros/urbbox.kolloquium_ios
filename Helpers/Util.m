@@ -31,7 +31,7 @@
     
 //    viewController.navigationItem.title = @"Werkzeugbau Mit Zukunft";
     viewController.navigationItem.title = title;
-    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:15.0],NSFontAttributeName,[UIColor colorWithRed:155.0/255.0 green:0.0 blue:32.0/255.0 alpha:1],NSForegroundColorAttributeName, nil];
+    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:17.0],NSFontAttributeName,[UIColor colorWithRed:155.0/255.0 green:0.0 blue:32.0/255.0 alpha:1],NSForegroundColorAttributeName, nil];
     viewController.navigationController.navigationBar.titleTextAttributes = size;
 
     viewController.navigationItem.leftBarButtonItem.tintColor = [UIColor colorWithRed:155.0/255.0 green:0.0 blue:32.0/255.0 alpha:1];

@@ -38,7 +38,7 @@
     [super viewDidLoad];
     
     
-    [Util setupNavigationBar:self withTitle:@"Werkzeugbau Mit Zukunft"];
+    [Util setupNavigationBar:self withTitle:@"Teilnehmer"];
     
     
     filteredArray = [[NSMutableArray alloc] init];
