@@ -72,6 +72,7 @@ BOOL reload = FALSE;
 - (IBAction)reloadData:(id)sender {
     [event reloadData:^(void){
         } startHandler:^{
+            NSLog(@"WTF !!!!!!");
             [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
             [self loadDummyData];
         } errorHandler:^{

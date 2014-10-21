@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="143-lg-cEl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="143-lg-cEl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Side Bar View Controller-->
@@ -33,7 +34,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" id="Yen-CF-g4T">
-                                                    <rect key="frame" x="0.0" y="27" width="320" height="3"/>
+                                                    <rect key="frame" x="0.0" y="27.5" width="320" height="3"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -57,7 +58,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="participants.png" id="mrD-WB-dRd">
-                                                    <rect key="frame" x="19" y="3" width="60" height="36"/>
+                                                    <rect key="frame" x="19" y="3" width="60" height="36.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -69,7 +70,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" id="ZYo-Sb-fDE">
-                                                    <rect key="frame" x="0.0" y="-3" width="10" height="44"/>
+                                                    <rect key="frame" x="0.0" y="-3" width="10" height="44.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -115,7 +116,7 @@
             </objects>
             <point key="canvasLocation" x="-2394" y="-1113"/>
         </scene>
-        <!--Program View Controller - Kolloquim-->
+        <!--Kolloquim-->
         <scene sceneID="Zm0-gr-3hJ">
             <objects>
                 <tableViewController id="XMy-k7-mqo" customClass="ProgramViewController" sceneMemberID="viewController">
@@ -303,7 +304,7 @@
             </objects>
             <point key="canvasLocation" x="-1160" y="-2540"/>
         </scene>
-        <!--Feed View Controller - Participants-->
+        <!--Participants-->
         <scene sceneID="NyL-Lg-yae">
             <objects>
                 <tableViewController id="SC5-68-ZK9" customClass="FeedViewController" sceneMemberID="viewController">
@@ -526,7 +527,7 @@
             </objects>
             <point key="canvasLocation" x="-721" y="-1201"/>
         </scene>
-        <!--My Program View Controller - My Program-->
+        <!--My Program-->
         <scene sceneID="Tew-Kl-6Ov">
             <objects>
                 <viewController id="3YM-N3-Ofp" customClass="MyProgramViewController" sceneMemberID="viewController">
@@ -594,7 +595,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Livello1.png" id="H42-0p-hBO">
-                                                            <rect key="frame" x="0.0" y="-9" width="320" height="175"/>
+                                                            <rect key="frame" x="-1.5" y="-9.5" width="320" height="174"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rettangolo.png" id="8He-yT-jgp">
@@ -766,7 +767,7 @@
             </objects>
             <point key="canvasLocation" x="-732" y="-453"/>
         </scene>
-        <!--About View Controller - About Kolloquim-->
+        <!--About Kolloquim-->
         <scene sceneID="0v6-xa-O5w">
             <objects>
                 <viewController id="GJ5-Ez-Ag6" customClass="AboutViewController" sceneMemberID="viewController">
@@ -790,7 +791,7 @@
             </objects>
             <point key="canvasLocation" x="-732" y="703"/>
         </scene>
-        <!--Map View Controller - Maps-->
+        <!--Maps-->
         <scene sceneID="WdJ-TP-gcR">
             <objects>
                 <viewController id="kOC-bS-aI0" customClass="MapViewController" sceneMemberID="viewController">
@@ -811,7 +812,7 @@
             </objects>
             <point key="canvasLocation" x="-307" y="703"/>
         </scene>
-        <!--Navigation Controller - More-->
+        <!--More-->
         <scene sceneID="P2C-wx-DeA">
             <objects>
                 <navigationController definesPresentationContext="YES" id="7QV-MF-lRy" sceneMemberID="viewController">
@@ -827,7 +828,7 @@
             </objects>
             <point key="canvasLocation" x="-1160" y="769"/>
         </scene>
-        <!--Table View Controller - More-->
+        <!--More-->
         <scene sceneID="TcK-gX-dIz">
             <objects>
                 <tableViewController id="XD6-ka-Wa6" sceneMemberID="viewController">
@@ -996,14 +997,13 @@
             </objects>
             <point key="canvasLocation" x="-732" y="764"/>
         </scene>
-        <!--Navigation Controller - About-->
+        <!--About-->
         <scene sceneID="FmA-aa-wp5">
             <objects>
                 <navigationController storyboardIdentifier="AboutViewController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="w6F-4W-hwU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="About" image="about_icon.png" id="TIV-OW-V25"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="5gO-R5-nLV">
-                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1014,7 +1014,7 @@
             </objects>
             <point key="canvasLocation" x="-1148" y="101"/>
         </scene>
-        <!--About Table View Controller - About-->
+        <!--About-->
         <scene sceneID="coy-pp-F6y">
             <objects>
                 <tableViewController id="9wu-Ic-DrJ" customClass="AboutTableViewController" sceneMemberID="viewController">
@@ -1034,7 +1034,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_default_institute.jpg" id="HXJ-g6-Hck">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
+                                                    <rect key="frame" x="-0.5" y="-1" width="320.5" height="97.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -1153,7 +1153,7 @@
             </objects>
             <point key="canvasLocation" x="-732" y="101"/>
         </scene>
-        <!--View Controller - Institutes-->
+        <!--Institutes-->
         <scene sceneID="lWR-9S-c3i">
             <objects>
                 <viewController id="Wfy-w5-TbR" sceneMemberID="viewController">
@@ -1258,7 +1258,7 @@
             </objects>
             <point key="canvasLocation" x="-2740" y="-2540"/>
         </scene>
-        <!--Navigation Controller - Schedule-->
+        <!--Schedule-->
         <scene sceneID="ceR-vN-lrW">
             <objects>
                 <navigationController storyboardIdentifier="ProgramViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mml-vq-zwo" customClass="KQNavigationController" sceneMemberID="viewController">
@@ -1361,7 +1361,7 @@
             </objects>
             <point key="canvasLocation" x="-1547" y="-1866"/>
         </scene>
-        <!--Navigation Controller - Participants-->
+        <!--Participants-->
         <scene sceneID="MHz-ui-Bco">
             <objects>
                 <navigationController storyboardIdentifier="FeedViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wat-zQ-9t5" sceneMemberID="viewController">
@@ -1381,7 +1381,7 @@
             </objects>
             <point key="canvasLocation" x="-1148" y="-1201"/>
         </scene>
-        <!--Navigation Controller - My Program-->
+        <!--My Program-->
         <scene sceneID="u2T-EW-rju">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dlv-Lj-Hfo" sceneMemberID="viewController">
@@ -1516,7 +1516,7 @@
             </objects>
             <point key="canvasLocation" x="-292" y="-1201"/>
         </scene>
-        <!--Navigation Controller - Schedule-->
+        <!--Schedule-->
         <scene sceneID="kzS-Di-O46">
             <objects>
                 <navigationController storyboardIdentifier="ParticipantsViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="46H-YX-JIk" customClass="KQNavigationController" sceneMemberID="viewController">

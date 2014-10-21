@@ -25,7 +25,7 @@ KQURLConnectHelperMock *conn;
     kq_event = [[KQEventAPI alloc] init];
     conn = [[KQURLConnectHelperMock alloc]init];
     [kq_event setUrlConnectHelper:conn];
-    [kq_event loadData:nil startHandler:nil];
+    //[kq_event loadData:nil startHandler:nil];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
