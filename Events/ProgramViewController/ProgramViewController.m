@@ -167,7 +167,6 @@ BOOL reload = FALSE;
     cell.lblEventDesc.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"descript"];
     //[cell.lblEventName sizeToFit];
     [cell.lblEventDesc sizeToFit];
-    
     cell.data.text=[Util convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"dd/MM/yyyy HH:mm" toPattern:@"dd MMM"];
     @try {
          cell.speaker.text = [[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"name"];
