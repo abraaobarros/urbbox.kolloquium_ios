@@ -57,10 +57,10 @@ NSInteger *_index;
             initWithDataAssyncWithStart:^(void){
                 NSLog(@"Init Fetching");
             } finishProcess:^(void){
-                _description.text = [event objectForKey:@"descript"];
+                description.text = [event objectForKey:@"descript"];
                 _address.text =[event objectForKey:@"address"];
                 _dates.text = [NSString stringWithFormat:@"%@  -  %@",[event objectForKey:@"start"],[event objectForKey:@"finish"]];
-                [_description sizeToFit];
+                [description sizeToFit];
 
             } errorHandler:^(void){
                 NSLog(@"Error Fetching");

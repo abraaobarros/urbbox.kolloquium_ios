@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="flA-zs-Bld">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="flA-zs-Bld">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Side Bar View Controller-->
@@ -143,7 +143,7 @@
             </objects>
             <point key="canvasLocation" x="-715" y="-1107"/>
         </scene>
-        <!--Program View Controller - Title-->
+        <!--Title-->
         <scene sceneID="Ipy-lB-hRh">
             <objects>
                 <tableViewController id="IGe-Iu-Ivt" customClass="ProgramViewController" sceneMemberID="viewController">
@@ -444,7 +444,7 @@
             </objects>
             <point key="canvasLocation" x="2403" y="-2133"/>
         </scene>
-        <!--Navigation Controller - Schedule-->
+        <!--Schedule-->
         <scene sceneID="441-0B-9Cl">
             <objects>
                 <navigationController storyboardIdentifier="ProgramViewController" definesPresentationContext="YES" id="JhP-wt-lbf" customClass="KQNavigationController" sceneMemberID="viewController">
@@ -460,7 +460,7 @@
             </objects>
             <point key="canvasLocation" x="-175" y="-2133"/>
         </scene>
-        <!--Feed View Controller - Speakers-->
+        <!--Speakers-->
         <scene sceneID="E5r-Uf-aov">
             <objects>
                 <tableViewController id="Isu-yC-5d3" customClass="FeedViewController" sceneMemberID="viewController">
@@ -668,7 +668,7 @@
             </objects>
             <point key="canvasLocation" x="1520" y="-872"/>
         </scene>
-        <!--Navigation Controller - Participants-->
+        <!--Participants-->
         <scene sceneID="df2-pI-a21">
             <objects>
                 <navigationController storyboardIdentifier="FeedViewController" definesPresentationContext="YES" id="vH6-hm-sVX" sceneMemberID="viewController">
@@ -684,7 +684,7 @@
             </objects>
             <point key="canvasLocation" x="415" y="-872"/>
         </scene>
-        <!--Navigation Controller - About-->
+        <!--About-->
         <scene sceneID="gWp-k8-qWX">
             <objects>
                 <navigationController storyboardIdentifier="AboutViewController" definesPresentationContext="YES" id="JDs-gb-tzN" sceneMemberID="viewController">
@@ -700,7 +700,7 @@
             </objects>
             <point key="canvasLocation" x="404" y="302"/>
         </scene>
-        <!--Participants Table View Controller - Root View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="jRM-YP-rwn">
             <objects>
                 <tableViewController id="YUU-EP-GPc" customClass="ParticipantsTableViewController" sceneMemberID="viewController">
@@ -796,7 +796,7 @@
             </objects>
             <point key="canvasLocation" x="404" y="1481"/>
         </scene>
-        <!--Exposition Table View Controller - Root View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="Yj3-UJ-UYL">
             <objects>
                 <tableViewController restorationIdentifier="ExpositionTableViewController" storyboardIdentifier="ExpositionTableViewController" id="sZ5-4s-Uwx" customClass="ExpositionTableViewController" sceneMemberID="viewController">
@@ -878,7 +878,7 @@
             </objects>
             <point key="canvasLocation" x="404" y="2623"/>
         </scene>
-        <!--About View Controller - About-->
+        <!--About-->
         <scene sceneID="W2v-eS-wdq">
             <objects>
                 <viewController id="kpo-LP-FXh" customClass="AboutViewController" sceneMemberID="viewController">
@@ -944,7 +944,7 @@
             </objects>
             <point key="canvasLocation" x="1520" y="302"/>
         </scene>
-        <!--Institute Detail Table View Controller - Title-->
+        <!--Title-->
         <scene sceneID="a9J-jT-qIQ">
             <objects>
                 <tableViewController restorationIdentifier="InstituteDetailTableViewController" storyboardIdentifier="InstituteDetailTableViewController" id="KWp-eL-wap" customClass="InstituteDetailTableViewController" sceneMemberID="viewController">
@@ -1294,7 +1294,7 @@
                                 <color key="backgroundColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" id="8AH-rO-C75">
-                                <rect key="frame" x="197.99998611211777" y="435" width="523.00001388788223" height="460"/>
+                                <rect key="frame" x="197.9999861121178" y="435" width="523.00001388788223" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <label key="tableHeaderView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teilnehmer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CD4-BE-StZ">
@@ -1432,7 +1432,7 @@
             </objects>
             <point key="canvasLocation" x="-603" y="4105"/>
         </scene>
-        <!--Competition View Controller - Wettbewerb-->
+        <!--Wettbewerb-->
         <scene sceneID="bq0-vd-w4V">
             <objects>
                 <viewController id="3Ec-a7-rvD" customClass="CompetitionViewController" sceneMemberID="viewController">

@@ -10,29 +10,29 @@
 	<string>Events</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>42AB35EA-5E00-413B-8884-31727239BCB3</key>
+		<key>32C6D1242592BD54B4FD83957135DD4C928B8723</key>
 		<string>ssh://git.assembla.com/urbbox.kolloquium.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Events.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>42AB35EA-5E00-413B-8884-31727239BCB3</key>
+		<key>32C6D1242592BD54B4FD83957135DD4C928B8723</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://git.assembla.com/urbbox.kolloquium.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>42AB35EA-5E00-413B-8884-31727239BCB3</string>
+	<string>32C6D1242592BD54B4FD83957135DD4C928B8723</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>42AB35EA-5E00-413B-8884-31727239BCB3</string>
+			<string>32C6D1242592BD54B4FD83957135DD4C928B8723</string>
 			<key>IDESourceControlWCCName</key>
 			<string>urbbox.kolloquium</string>
 		</dict>

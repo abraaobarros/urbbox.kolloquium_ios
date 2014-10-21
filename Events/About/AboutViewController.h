@@ -9,8 +9,11 @@
 #import "ViewController.h"
 
 @interface AboutViewController : ViewController
+{
+    UILabel *description;
+}
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollViewMain;
-@property (weak, nonatomic) IBOutlet UILabel *description;
+//@property (weak, nonatomic) IBOutlet UILabel *description;
 @property (weak, nonatomic) IBOutlet UILabel *address;
 @property (weak, nonatomic) IBOutlet UILabel *dates;
 @property (weak, nonatomic) IBOutlet UIButton *ipt;

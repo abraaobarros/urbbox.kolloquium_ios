@@ -35,9 +35,9 @@ KQCache *cache;
     
     NSDictionary *data = [cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"];
     
-    _description.text = [data objectForKey:@"descript"];
+    description.text = [data objectForKey:@"descript"];
     
-    [_description sizeToFit];
+    [description sizeToFit];
     [_kategorie sizeToFit];
     
     [KQEventAPI getImageFromUrl:[data objectForKey:@"thumb"] finishHandler:^(NSData* data){

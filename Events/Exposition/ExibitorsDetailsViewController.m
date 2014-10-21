@@ -37,7 +37,7 @@ NSArray *dataSource;
         _tableView.hidden = NO;
         dataSource = [data objectForKey:@"participants"];
         _institute_en.text = [data objectForKey:@"name"];
-        _description.text = [data objectForKey:@"short_descript"];
+        description.text = [data objectForKey:@"short_descript"];
         _mobile.text = [data objectForKey:@"responsible_tel"];
         _email.text = [data objectForKey:@"responsible_email"];
         if ([data objectForKey:@"localization"]==(id)[NSNull null] || [data objectForKey:@"localization"] == nil) {
@@ -46,7 +46,7 @@ NSArray *dataSource;
             _stand.text = [NSString stringWithFormat:@"Find me in stand: %@",[data objectForKey:@"localization"]];
             _tableView.hidden = YES;
         }
-        [_description sizeToFit];
+        [description sizeToFit];
         
 
     }else{
@@ -54,7 +54,7 @@ NSArray *dataSource;
         _tableView.hidden = YES;
         _institute_en.text = [data objectForKey:@"name"];
         _strenghts.text = [data objectForKey:@"strengths"];
-        _description.text =[data objectForKey:@"profile"];
+        description.text =[data objectForKey:@"profile"];
         [_strenghts sizeToFit];
         
         _background.text = [data objectForKey:@"background"];

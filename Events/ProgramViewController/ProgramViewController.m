@@ -101,7 +101,7 @@ BOOL reload = FALSE;
         NSDictionary *first =(NSDictionary*)a;
         NSDictionary *second = (NSDictionary*)b;
         NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
-        [dateFormater setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [dateFormater setDateFormat:@"dd/MM/yyyy HH:mm"];
         
         NSDate *d1 = [dateFormater dateFromString:[first objectForKey:@"date"]];
         NSDate *d2 = [dateFormater dateFromString:[second objectForKey:@"date"]];
@@ -113,7 +113,7 @@ BOOL reload = FALSE;
     dataImageSource = [[NSMutableDictionary alloc] init];
     
     NSPredicate *predicate =
-    [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"2014-11-04"];
+    [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"04/11/2014"];
     dataSource  = [data filteredArrayUsingPredicate:predicate];
     [_segmentDay setSelectedSegmentIndex:0];
     
@@ -162,13 +162,13 @@ BOOL reload = FALSE;
     {
         cell = [[ProgramCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    cell.lblDateTime.text=[self convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"HH:mm"];
+    cell.lblDateTime.text=[self convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"dd/MM/yyyy HH:mm" toPattern:@"HH:mm"];
     cell.lblEventName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"subject"];
     cell.lblEventDesc.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"descript"];
     //[cell.lblEventName sizeToFit];
     [cell.lblEventDesc sizeToFit];
     
-    cell.data.text=[Util convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"yyyy-MM-dd HH:mm:ss" toPattern:@"dd MMM"];
+    cell.data.text=[Util convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"dd/MM/yyyy HH:mm" toPattern:@"dd MMM"];
     @try {
          cell.speaker.text = [[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"name"];
     }
@@ -271,12 +271,12 @@ BOOL reload = FALSE;
 - (IBAction)segmentDayChange:(id)sender {
     if (_segmentDay.selectedSegmentIndex==0) {
         NSPredicate *predicate =
-        [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"2014-11-04"];
+        [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"04/11/2014"];
         dataSource = [[data filteredArrayUsingPredicate:predicate] mutableCopy];
         
     }else{
         NSPredicate *predicate =
-        [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"2014-11-05"];
+        [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"05/11/2014"];
         dataSource = [[data filteredArrayUsingPredicate:predicate] mutableCopy];
         
     }
