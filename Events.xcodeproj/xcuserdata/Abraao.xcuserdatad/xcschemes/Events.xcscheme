@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB303D9518B863E300B6EBC9"
-               BuildableName = "Werkzeugbau mit Zukunft.app"
+               BuildableName = "Wmz.app"
                BlueprintName = "Events"
                ReferencedContainer = "container:Events.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB303D9518B863E300B6EBC9"
-            BuildableName = "Werkzeugbau mit Zukunft.app"
+            BuildableName = "Wmz.app"
             BlueprintName = "Events"
             ReferencedContainer = "container:Events.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB303D9518B863E300B6EBC9"
-            BuildableName = "Werkzeugbau mit Zukunft.app"
+            BuildableName = "Wmz.app"
             BlueprintName = "Events"
             ReferencedContainer = "container:Events.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB303D9518B863E300B6EBC9"
-            BuildableName = "Werkzeugbau mit Zukunft.app"
+            BuildableName = "Wmz.app"
             BlueprintName = "Events"
             ReferencedContainer = "container:Events.xcodeproj">
          </BuildableReference>

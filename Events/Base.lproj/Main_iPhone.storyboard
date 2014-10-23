@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="143-lg-cEl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="143-lg-cEl">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Side Bar View Controller-->
@@ -124,6 +124,28 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.40000003579999999" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="deviceRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="9tK-lO-nHG">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" segmentControlStyle="bordered" selectedSegmentIndex="0" id="px9-On-RVE">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
+                                    <segments>
+                                        <segment title="4.Nov 2014">
+                                            <size key="contentOffset" width="0.0" height="2"/>
+                                        </segment>
+                                        <segment title="5. Nov 2014"/>
+                                    </segments>
+                                    <color key="tintColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
+                                    <connections>
+                                        <action selector="segmentDayChange:" destination="XMy-k7-mqo" eventType="valueChanged" id="OPQ-zF-eiZ"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgramCustomCell" rowHeight="161" id="jUX-MS-syf" customClass="ProgramCustomCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="161"/>
@@ -202,9 +224,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="segmentDay" destination="px9-On-RVE" id="CK0-K1-Kug"/>
                         <outlet property="tableView" destination="6eF-vP-BpW" id="UNU-Rf-ehB"/>
                         <segue destination="d6p-kL-gGL" kind="push" identifier="ProgramDetailsViewController" id="dPP-Im-FG0"/>
-                        <segue destination="K9W-07-Grp" kind="modal" identifier="LoadingViewController" animates="NO" id="0RN-6r-s5N"/>
+                        <segue destination="K9W-07-Grp" kind="modal" identifier="LoadingViewController" id="Ykk-h1-6Cc"/>
+                        <segue destination="K9W-07-Grp" kind="modal" identifier="Loading2ViewController" id="g3y-SA-T5h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afA-Kn-raX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1280,7 +1304,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMk-o7-OAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1936" y="-2540"/>
+            <point key="canvasLocation" x="-2020" y="-2540"/>
         </scene>
         <!--Participants Table View Controller-->
         <scene sceneID="2XZ-Ac-Aqo">
@@ -1320,10 +1344,10 @@
                                             <color key="textColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="htP-6p-H0A">
-                                            <rect key="frame" x="259" y="11" width="37" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="email">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="htP-6p-H0A">
+                                            <rect key="frame" x="262" y="2" width="50" height="47"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                            <state key="normal" image="ic_email.png">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
@@ -1560,6 +1584,7 @@
         <image name="feedviewCell1.png" width="95" height="94"/>
         <image name="feedviewCell2.png" width="96" height="95"/>
         <image name="feedviewCell3.png" width="95" height="95"/>
+        <image name="ic_email.png" width="73" height="69"/>
         <image name="no_profile.png" width="200" height="200"/>
         <image name="participants.png" width="73" height="69"/>
         <image name="pic.png" width="105" height="96"/>
@@ -1571,4 +1596,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="g3y-SA-T5h"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -64,7 +64,16 @@ BOOL reload = FALSE;
     [Util setupNavigationBar:self withTitle:@"Das Programm"];
     
     CGRect frame= _segmentDay.frame;
-    [_segmentDay setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 60)];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        
+        [_segmentDay setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 60)];
+    }
+    else
+    {
+        [_segmentDay setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 40)];
+    }
+    
 
 }
             
@@ -203,7 +212,7 @@ BOOL reload = FALSE;
         [self.sidePanelController setRightPanel:vc];
         if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
         {
-                [self.sidePanelController setRightFixedWidth:300];
+//                [self.sidePanelController setRightFixedWidth:300];
         }else{
             if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
             {
@@ -244,6 +253,7 @@ BOOL reload = FALSE;
     {
         // Get reference to the destination view controller
         loading = [segue destinationViewController];
+        [loading setLoadingMode:NO];
 
         
         // Pass any objects to the view controller here, like...
@@ -252,6 +262,7 @@ BOOL reload = FALSE;
     {
         // Get reference to the destination view controller
         loading = [segue destinationViewController];
+        [loading setLoadingMode:YES];
         
         
         // Pass any objects to the view controller here, like...

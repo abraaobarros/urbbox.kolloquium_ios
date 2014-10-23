@@ -14,7 +14,7 @@
 		<string>ssh://git.assembla.com/urbbox.kolloquium.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Events.xcodeproj/project.xcworkspace</string>
+	<string>Events.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>32C6D1242592BD54B4FD83957135DD4C928B8723</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>32C6D1242592BD54B4FD83957135DD4C928B8723</string>
 			<key>IDESourceControlWCCName</key>
-			<string>urbbox.kolloquium</string>
+			<string>luciano</string>
 		</dict>
 	</array>
 </dict>
