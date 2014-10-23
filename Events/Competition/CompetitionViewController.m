@@ -35,12 +35,12 @@ KQCache *cache;
     
     NSDictionary *data = [cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"];
     
-    description.text = [data objectForKey:@"descript"];
+    description.text = [self stripTags:[[[data objectForKey:@"competitions"] objectAtIndex:0] objectForKey:@"descript"]] ;
     
     [description sizeToFit];
     [_kategorie sizeToFit];
     
-    [KQEventAPI getImageFromUrl:[data objectForKey:@"thumb"] finishHandler:^(NSData* data){
+    [KQEventAPI getImageFromUrl:[[[data objectForKey:@"competitions"] objectAtIndex:0] objectForKey:@"thumb" ] finishHandler:^(NSData* data){
         _photo.image=[UIImage imageWithData:data];
     } startHandler:^{
         
@@ -51,6 +51,32 @@ KQCache *cache;
     [Util setupNavigationBar:self withTitle:@"Werkzeugbau Mit Zukunft"];
     
     // Do any additional setup after loading the view.
+}
+
+- (NSString *)stripTags:(NSString *)str
+{
+    NSMutableString *html = [NSMutableString stringWithCapacity:[str length]];
+    
+    NSScanner *scanner = [NSScanner scannerWithString:str];
+    scanner.charactersToBeSkipped = NULL;
+    NSString *tempText = nil;
+    
+    while (![scanner isAtEnd])
+    {
+        [scanner scanUpToString:@"<" intoString:&tempText];
+        
+        if (tempText != nil)
+            [html appendString:tempText];
+        
+        [scanner scanUpToString:@">" intoString:NULL];
+        
+        if (![scanner isAtEnd])
+            [scanner setScanLocation:[scanner scanLocation] + 1];
+        
+        tempText = nil;
+    }
+    
+    return html;
 }
 
 - (void)didReceiveMemoryWarning
