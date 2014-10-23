@@ -124,19 +124,22 @@ UIDocumentInteractionController *documentInteractionController;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
      NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [KQEventAPI makeReview:[[alertView textFieldAtIndex:0] text]
-                 withScore:(int)_avaliacao.selectedSegmentIndex toActivity:[[data objectForKey:@"id"] intValue] withParticipant:[[userDefaults objectForKey:@"id"] intValue] finishHandler:^{
-                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Gesendet"
-                                                                     message:@"Dein Bewertung war gesendet"
-                                                                    delegate:nil
-                                                           cancelButtonTitle:@"OK"
-                                                           otherButtonTitles:nil];
-                     [alert show];
-                 } startHandler:^{
-                     NSLog(@"Começou");
-                 } errorHandler:^{
-                     NSLog(@"Deu Errado");
-                 }];
+    if (buttonIndex==1) {
+        [KQEventAPI makeReview:[[alertView textFieldAtIndex:0] text]
+                     withScore:(int)_avaliacao.selectedSegmentIndex toActivity:[[data objectForKey:@"id"] intValue] withParticipant:[[userDefaults objectForKey:@"id"] intValue] finishHandler:^{
+                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Gesendet"
+                                                                         message:@"Dein Bewertung war gesendet"
+                                                                        delegate:nil
+                                                               cancelButtonTitle:@"OK"
+                                                               otherButtonTitles:nil];
+                         [alert show];
+                     } startHandler:^{
+                         NSLog(@"Começou");
+                     } errorHandler:^{
+                         NSLog(@"Deu Errado");
+                     }];
+    }
+   
     NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
 }
 

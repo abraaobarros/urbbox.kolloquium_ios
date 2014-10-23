@@ -13,7 +13,7 @@
 #define URL_EVENT @"http://kolloquium.herokuapp.com/rest/event/1"
 #define URL_LOGIN @"http://kolloquium.herokuapp.com/rest/login"
 #define URL_QUESTION @"http://kolloquium.herokuapp.com/rest/question"
-#define URL_REVIEW @"http://kolloquium.herokuapp.com/rest/question"
+#define URL_REVIEW @"http://kolloquium.herokuapp.com/rest/rating"
 
 @implementation KQEventAPI
 @synthesize urlConnectHelper;

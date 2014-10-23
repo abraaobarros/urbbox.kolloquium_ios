@@ -43,7 +43,7 @@ NSArray *dataSource;
         if ([data objectForKey:@"localization"]==(id)[NSNull null] || [data objectForKey:@"localization"] == nil) {
         
         }else{
-            _stand.text = [NSString stringWithFormat:@"Find me in stand: %@",[data objectForKey:@"localization"]];
+            _stand.text = [NSString stringWithFormat:@"%@",[data objectForKey:@"localization"]];
             _tableView.hidden = YES;
         }
         [description sizeToFit];

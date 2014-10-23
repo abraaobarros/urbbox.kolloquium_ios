@@ -115,7 +115,7 @@
     [cell.lblTweet sizeToFit];
     cell.lblUserName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
     cell.btnUserId.titleLabel.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"];
-    if ([[[dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"] isEqualToString: @""])
+    if ([[[dataSource objectAtIndex:indexPath.row] valueForKey:@"email"] isEqualToString: @""])
         cell.email.hidden= YES;
     else
         cell.email.hidden= NO;
@@ -127,7 +127,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (![[[dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"] isEqualToString: @""])
+    if (![[[dataSource objectAtIndex:indexPath.row] valueForKey:@"email"] isEqualToString: @""])
         if ([MFMailComposeViewController canSendMail]) {
             
             MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
