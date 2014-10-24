@@ -137,6 +137,8 @@
 		78E103EC19EDBE0700066580 /* ic_impressum.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E103EB19EDBE0700066580 /* ic_impressum.png */; };
 		78E5C3A219EE40C80055C6E4 /* Impressum.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 78E5C3A119EE40C80055C6E4 /* Impressum.pdf */; };
 		78E5C3A719F0D7230055C6E4 /* FinalistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E5C3A619F0D7230055C6E4 /* FinalistsViewController.m */; };
+		7F3BC86F19FABC32002229D8 /* ic_ipt.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3BC86E19FABC32002229D8 /* ic_ipt.png */; };
+		7F3BC87319FABCA1002229D8 /* ic_wzl.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3BC87219FABCA1002229D8 /* ic_wzl.png */; };
 		BB303D9A18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
 		BB303D9C18B863E300B6EBC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */; };
 		BB303D9E18B863E300B6EBC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9D18B863E300B6EBC9 /* UIKit.framework */; };
@@ -402,6 +404,8 @@
 		78E5C3A119EE40C80055C6E4 /* Impressum.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Impressum.pdf; sourceTree = "<group>"; };
 		78E5C3A519F0D7230055C6E4 /* FinalistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinalistsViewController.h; path = Finalists/FinalistsViewController.h; sourceTree = "<group>"; };
 		78E5C3A619F0D7230055C6E4 /* FinalistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinalistsViewController.m; path = Finalists/FinalistsViewController.m; sourceTree = "<group>"; };
+		7F3BC86E19FABC32002229D8 /* ic_ipt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_ipt.png; path = ../../../Kolloquim/ic_ipt.png; sourceTree = "<group>"; };
+		7F3BC87219FABCA1002229D8 /* ic_wzl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_wzl.png; path = ../../../Kolloquim/ic_wzl.png; sourceTree = "<group>"; };
 		BB303D9618B863E300B6EBC9 /* WmZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WmZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -691,7 +695,9 @@
 		78AD2C7E19A1866400047B9A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7F3BC86E19FABC32002229D8 /* ic_ipt.png */,
 				78E5C3A119EE40C80055C6E4 /* Impressum.pdf */,
+				7F3BC87219FABCA1002229D8 /* ic_wzl.png */,
 				78E103EB19EDBE0700066580 /* ic_impressum.png */,
 				78E103E919EDBDF000066580 /* ic_aachen.png */,
 				78E103E719EDBDCF00066580 /* ic_logout.png */,
@@ -1107,6 +1113,7 @@
 				BB62B12018B8B529000DBDBC /* Next.png in Resources */,
 				711221E918BC94F900E77A4A /* GreenDot.png in Resources */,
 				78D1A30219E2557B00E92F93 /* sample.pdf in Resources */,
+				7F3BC87319FABCA1002229D8 /* ic_wzl.png in Resources */,
 				7112220618BCA62300E77A4A /* share@2x.png in Resources */,
 				BB303E2518B879AA00B6EBC9 /* pic.png in Resources */,
 				7122DB2B18BB4BDB00C044E8 /* feedviewCell5.png in Resources */,
@@ -1182,6 +1189,7 @@
 				78BF117919C779A4005AE8B0 /* ic_action_schedule.png in Resources */,
 				78E103E819EDBDCF00066580 /* ic_logout.png in Resources */,
 				BB303E2418B879AA00B6EBC9 /* nearby@2x.png in Resources */,
+				7F3BC86F19FABC32002229D8 /* ic_ipt.png in Resources */,
 				BB303E2B18B879AA00B6EBC9 /* Twitter.png in Resources */,
 				BB62B12118B8B529000DBDBC /* Next@2x.png in Resources */,
 				7122DB4818BB7D8600C044E8 /* Segmented_left@2x.png in Resources */,

@@ -193,7 +193,7 @@
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
             cell.title.text=@"Fraunhoufer IPT";
-            cell.icon.image = [UIImage imageNamed:@"ic_institutes.png"];
+            cell.icon.image = [UIImage imageNamed:@"ic_ipt.png"];
             return cell;
         }
         if(indexPath.row==1)
@@ -204,7 +204,7 @@
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
             cell.title.text=@"WZL";
-            cell.icon.image = [UIImage imageNamed:@"ic_institutes.png"];
+            cell.icon.image = [UIImage imageNamed:@"ic_wzl.png"];
             return cell;
         }
         else if(indexPath.row==2)
