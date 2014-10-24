@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ExibitorsDetailsViewController : UIViewController
-{
-    UILabel *description;
-}
+@property (weak, nonatomic) IBOutlet UIView *viewParent;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UILabel *description;
 @property (strong, nonatomic) NSDictionary *data;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 @property (weak, nonatomic) IBOutlet UILabel *institute_en;

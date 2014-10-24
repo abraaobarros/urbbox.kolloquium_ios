@@ -402,7 +402,7 @@
 		78E5C3A119EE40C80055C6E4 /* Impressum.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Impressum.pdf; sourceTree = "<group>"; };
 		78E5C3A519F0D7230055C6E4 /* FinalistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinalistsViewController.h; path = Finalists/FinalistsViewController.h; sourceTree = "<group>"; };
 		78E5C3A619F0D7230055C6E4 /* FinalistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinalistsViewController.m; path = Finalists/FinalistsViewController.m; sourceTree = "<group>"; };
-		BB303D9618B863E300B6EBC9 /* Wmz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wmz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB303D9618B863E300B6EBC9 /* WmZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WmZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BB303D9D18B863E300B6EBC9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -796,7 +796,7 @@
 		BB303D9718B863E300B6EBC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB303D9618B863E300B6EBC9 /* Wmz.app */,
+				BB303D9618B863E300B6EBC9 /* WmZ.app */,
 				BB303DBA18B863E300B6EBC9 /* EventsTests.xctest */,
 			);
 			name = Products;
@@ -1042,7 +1042,7 @@
 			);
 			name = Events;
 			productName = Events;
-			productReference = BB303D9618B863E300B6EBC9 /* Wmz.app */;
+			productReference = BB303D9618B863E300B6EBC9 /* WmZ.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BB303DB918B863E300B6EBC9 /* EventsTests */ = {
@@ -1072,6 +1072,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Teknowledge Software";
 				TargetAttributes = {
+					BB303D9518B863E300B6EBC9 = {
+						DevelopmentTeam = T2AALHGDAD;
+					};
 					BB303DB918B863E300B6EBC9 = {
 						TestTargetID = BB303D9518B863E300B6EBC9;
 					};
@@ -1442,11 +1445,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
 				INFOPLIST_FILE = "Events/Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = Wmz;
+				PRODUCT_NAME = WmZ;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1457,11 +1463,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
 				INFOPLIST_FILE = "Events/Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = Wmz;
+				PRODUCT_NAME = WmZ;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

@@ -226,7 +226,7 @@
             if (cell == nil) {
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            cell.title.text=@"Refresh data";
+            cell.title.text=@"Aktualisieren";
             cell.icon.image = [UIImage imageNamed:@"ic_refresh.png"];
             return cell;
         }
@@ -381,18 +381,18 @@
            
         }
         else if(indexPath.row ==2){
-            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-            {
+//            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+//            {
                 ExpositionTableViewController *vc = (ExpositionTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
                 KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
                 [vc setData:@"partners"];
                 [self.sidePanelController setCenterPanel:partnersView];
-            }
-            else
-            {
-                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
-                
-            }
+//            }
+//            else
+//            {
+//                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
+//                
+//            }
         }
     }else if (indexPath.section==2){
         if(indexPath.row==0)

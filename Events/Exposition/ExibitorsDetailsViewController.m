@@ -18,6 +18,8 @@
 @implementation ExibitorsDetailsViewController
 
 @synthesize data;
+@synthesize description;
+
 NSArray *dataSource;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,6 +73,8 @@ NSArray *dataSource;
         }
         
     });
+    
+    [_scrollView setContentSize:_viewParent.frame.size];
         // Do any additional setup after loading the view.
 }
 

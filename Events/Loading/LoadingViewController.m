@@ -72,6 +72,7 @@
     [KQEventAPI makeLogin:_login.text withPass:_pass.text
             finishHandler:^{
                 _textLoading.hidden = NO;
+                
                 _textLoading.text = @"Getting information...";
                 KQEventAPI *event = [[KQEventAPI alloc] initWithDataAssyncWithStart:^{
                 } finishProcess:^{

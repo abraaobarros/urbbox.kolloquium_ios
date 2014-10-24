@@ -52,7 +52,7 @@ UIDocumentInteractionController *documentInteractionController;
         _descript.text = [data objectForKey:@"descript"];
         subject.text = [[data objectForKey:@"speaker"] objectForKey:@"name"];
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
-            location.text = [NSString stringWithFormat:@"In the Aachen Quellenhof, at %@",
+            location.text = [NSString stringWithFormat:@"Um %@ Uhr im Aachen Quellenhof",
                              [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"],[Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"dd"]];
         }
         [KQEventAPI getImageFromUrl:[[data objectForKey:@"speaker"] objectForKey:@"profile_img"]
@@ -91,7 +91,7 @@ UIDocumentInteractionController *documentInteractionController;
     [KQEventAPI makeQuestion:_quetion.text
                   toActivity:[[data objectForKey:@"id"] intValue] withParticipant:[[userDefaults objectForKey:@"id"] intValue] finishHandler:^{
                       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Gesendet"
-                                                                      message:@"Dein Frage war gesendet"
+                                                                      message:@"Frage gesendet"
                                                                      delegate:nil
                                                             cancelButtonTitle:@"OK"
                                                             otherButtonTitles:nil];
@@ -106,7 +106,7 @@ UIDocumentInteractionController *documentInteractionController;
      NSLog(@"Aqui");
 }
 - (IBAction)changeAvaliation:(id)sender {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Bewertung Schreiben" message:@"Sagen Sie uns lhre Meinung" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Bewertung schreiben" message:@"Sagen Sie uns lhre Meinung" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
 }
@@ -117,7 +117,7 @@ UIDocumentInteractionController *documentInteractionController;
         [KQEventAPI makeReview:[[alertView textFieldAtIndex:0] text]
                      withScore:(int)_avaliacao.selectedSegmentIndex toActivity:[[data objectForKey:@"id"] intValue] withParticipant:[[userDefaults objectForKey:@"id"] intValue] finishHandler:^{
                          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Gesendet"
-                                                                         message:@"Dein Bewertung war gesendet"
+                                                                         message:@"Bewertung gesendet"
                                                                         delegate:nil
                                                                cancelButtonTitle:@"OK"
                                                                otherButtonTitles:nil];

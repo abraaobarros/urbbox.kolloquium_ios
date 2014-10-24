@@ -74,6 +74,11 @@ BOOL reload = FALSE;
         [_segmentDay setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 45)];
     }
     
+    UIFont *font = [UIFont boldSystemFontOfSize:18.0f];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObject:font
+                                                           forKey:NSFontAttributeName];
+    [_segmentDay setTitleTextAttributes:attributes
+                                    forState:UIControlStateNormal];
 
 }
             
