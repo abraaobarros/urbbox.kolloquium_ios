@@ -127,21 +127,20 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (![[[dataSource objectAtIndex:indexPath.row] valueForKey:@"email"] isEqualToString: @""])
+    
+    if (![[[dataSource objectAtIndex:indexPath.row] valueForKey:@"email"] isEqualToString: @""]){
         if ([MFMailComposeViewController canSendMail]) {
             
             MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-            //        [mailViewController setSubject:@"Subject Goes Here."];
-            //        [mailViewController setMessageBody:@"Your message goes here." isHTML:NO];
-            
+
             NSArray *toRecipients = [NSArray arrayWithObjects:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"email"], nil];
             [mailViewController setToRecipients:toRecipients];
-            mailViewController.mailComposeDelegate =self;
+            mailViewController.mailComposeDelegate = self;
             [self presentModalViewController:mailViewController animated:YES];
         } else {
             NSLog(@"Device is unable to send email in its current state.");
         }
-    
+    }
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller
@@ -151,7 +150,7 @@
     if (result == MFMailComposeResultSent) {
         NSLog(@"It's away!");
     }
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:NO completion:^{}];
 }
 
 
@@ -164,7 +163,6 @@
         SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[segue destinationViewController];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
-        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         
         
@@ -186,55 +184,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

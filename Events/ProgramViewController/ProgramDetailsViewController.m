@@ -16,7 +16,6 @@
 
 @implementation ProgramDetailsViewController
 @synthesize name;
-@synthesize description;
 @synthesize subject;
 @synthesize data;
 @synthesize location;
@@ -50,11 +49,11 @@ UIDocumentInteractionController *documentInteractionController;
 
     @try {
         name.text = [data objectForKey:@"subject"];
-        description.text = [data objectForKey:@"descrition"];
+        _descript.text = [data objectForKey:@"descript"];
         subject.text = [[data objectForKey:@"speaker"] objectForKey:@"name"];
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
-            location.text = [NSString stringWithFormat:@"In the Aachen Quellenhof, at %@ at %@ of %@",
-                             [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"],[Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"dd"],[Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"MMM"]];
+            location.text = [NSString stringWithFormat:@"In the Aachen Quellenhof, at %@",
+                             [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"],[Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"dd"]];
         }
         [KQEventAPI getImageFromUrl:[[data objectForKey:@"speaker"] objectForKey:@"profile_img"]
                        finishHandler:^(NSData *_data) {
@@ -75,7 +74,7 @@ UIDocumentInteractionController *documentInteractionController;
     }
 
 //    [subject sizeToFit];
-    [description sizeToFit];
+    [_descript sizeToFit];
 //    [name sizeToFit];
     
     [super viewDidLoad];
@@ -138,7 +137,7 @@ UIDocumentInteractionController *documentInteractionController;
     @try {
         data = new_data;
         name.text = [new_data objectForKey:@"subject"];
-        description.text = [new_data objectForKey:@"descrition"];
+        _descript.text = [new_data objectForKey:@"descrition"];
         subject.text = [[new_data objectForKey:@"speaker"] objectForKey:@"name"];
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
             location.text = [NSString stringWithFormat:@"In the Aachen Quellenhof, %@.%@ um %@ Uhr",

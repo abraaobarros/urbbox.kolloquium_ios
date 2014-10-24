@@ -418,7 +418,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M2Q-A6-OeC">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M2Q-A6-OeC" userLabel="description">
                                 <rect key="frame" x="236" y="281" width="400" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -432,7 +432,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="avaliacao" destination="adQ-rV-yfW" id="2lR-NH-4j9"/>
-                        <outlet property="description" destination="M2Q-A6-OeC" id="Y6J-1e-yMh"/>
+                        <outlet property="descript" destination="M2Q-A6-OeC" id="xX2-u9-t96"/>
                         <outlet property="location" destination="bqN-tJ-ENI" id="BJg-t1-Qsq"/>
                         <outlet property="name" destination="ib7-aN-00O" id="opk-de-wiY"/>
                         <outlet property="photo" destination="EdR-x1-7kc" id="ZU9-x0-ZGE"/>
@@ -1295,7 +1295,7 @@
                                 <color key="backgroundColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" id="8AH-rO-C75">
-                                <rect key="frame" x="197.99998611211777" y="435" width="523.00001388788223" height="460"/>
+                                <rect key="frame" x="197.9999861121178" y="435" width="523.00001388788223" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <label key="tableHeaderView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teilnehmer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CD4-BE-StZ">

@@ -14,7 +14,7 @@
 -(void) setContent:(NSDictionary *) data;
 @property (strong, nonatomic) IBOutlet UILabel *subject;
 @property (strong, nonatomic) IBOutlet UILabel *name;
-@property (strong, nonatomic) IBOutlet UILabel *description;
+@property (strong, nonatomic) IBOutlet UILabel *descript;
 @property (weak, nonatomic) IBOutlet UILabel *location;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *avaliacao;
 @property (strong, nonatomic) NSDictionary *data;

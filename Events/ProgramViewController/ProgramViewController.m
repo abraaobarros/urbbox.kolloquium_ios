@@ -71,7 +71,7 @@ BOOL reload = FALSE;
     }
     else
     {
-        [_segmentDay setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 40)];
+        [_segmentDay setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 45)];
     }
     
 
@@ -81,7 +81,6 @@ BOOL reload = FALSE;
 - (IBAction)reloadData:(id)sender {
     [event reloadData:^(void){
         } startHandler:^{
-            NSLog(@"WTF !!!!!!");
             [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
             [self loadDummyData];
         } errorHandler:^{
@@ -212,7 +211,7 @@ BOOL reload = FALSE;
         [self.sidePanelController setRightPanel:vc];
         if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
         {
-//                [self.sidePanelController setRightFixedWidth:300];
+                [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*6/7];
         }else{
             if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
             {
@@ -262,7 +261,11 @@ BOOL reload = FALSE;
     {
         // Get reference to the destination view controller
         loading = [segue destinationViewController];
-        [loading setLoadingMode:YES];
+        @try {
+            [loading setLoadingMode:YES];
+        }
+        @catch (NSException *exception) {
+        }
         
         
         // Pass any objects to the view controller here, like...
