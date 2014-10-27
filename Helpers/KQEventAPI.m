@@ -79,7 +79,6 @@
                             startHandle:startHandler
                             sucessHandler:^(NSDictionary* finished){
                               NSMutableDictionary * data;
-                                NSLog(@"Data Login Post: %@",data);
                               data = [finished mutableCopy];
                               @try {
                                   [userDefaults setObject:[finished objectForKey:@"id"] forKey:@"id"];
@@ -97,7 +96,6 @@
                               @catch (NSException *exception) {
                                   loginErrorHandler();
                               }
-//                              }
                           } errorHandler:errorHandler];
     }
 }
