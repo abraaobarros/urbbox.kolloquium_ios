@@ -331,16 +331,6 @@
                                     <action selector="changeAvaliation:" destination="d6p-kL-gGL" eventType="valueChanged" id="Jll-dt-qbm"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7NU-De-TVe">
-                                <rect key="frame" x="251" y="79" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="PDF">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="fp2-kO-eDg" kind="modal" identifier="PdfViewController" id="Kc2-GW-U4E"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="T4V-Bt-H0t">
                                 <rect key="frame" x="50" y="356" width="253" height="141"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -354,6 +344,16 @@
                                     </label>
                                 </subviews>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7NU-De-TVe">
+                                <rect key="frame" x="238" y="69" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Pdf.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fp2-kO-eDg" kind="modal" identifier="PdfViewController" id="Kc2-GW-U4E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1753,7 +1753,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <label key="tableHeaderView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teilnehmer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OmM-EJ-6X8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="198" height="46"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="198.00000265496476" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
@@ -2110,6 +2110,7 @@
         <image name="Livello1.png" width="320" height="162"/>
         <image name="MyProgram.png" width="21" height="22"/>
         <image name="Next.png" width="20" height="20"/>
+        <image name="Pdf.png" width="1026" height="1122"/>
         <image name="Program.png" width="22" height="22"/>
         <image name="RedDot.png" width="3" height="3"/>
         <image name="Reload.png" width="20" height="20"/>

@@ -130,7 +130,7 @@ NSArray *dataSource;
     {
         cell = [[ParticipantsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    cell.name.text = [[dataSource objectAtIndex: indexPath.row] objectForKey:@"name"];
+    cell.textLabel.text = [[dataSource objectAtIndex: indexPath.row] objectForKey:@"name"];
     //    cell.imgEventImage.image=[UIImage imageNamed:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"image"]];
     
     //    cell.title.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];

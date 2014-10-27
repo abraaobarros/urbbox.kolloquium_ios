@@ -147,6 +147,7 @@
 		78F8C9B019FE12150077805C /* hotels_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9A919FE12150077805C /* hotels_icon.png */; };
 		78F8C9B119FE12150077805C /* bg_hotes.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9AA19FE12150077805C /* bg_hotes.png */; };
 		78F8C9B219FE12150077805C /* aachen_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9AB19FE12150077805C /* aachen_icon.png */; };
+		7F771D6419FEFF6A00D9DAE9 /* Pdf.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F771D6319FEFF6A00D9DAE9 /* Pdf.png */; };
 		7FB731CB19FEB426009CD692 /* PdfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB731CA19FEB426009CD692 /* PdfViewController.m */; };
 		BB303D9A18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
 		BB303D9C18B863E300B6EBC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */; };
@@ -424,6 +425,7 @@
 		78F8C9A919FE12150077805C /* hotels_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotels_icon.png; sourceTree = "<group>"; };
 		78F8C9AA19FE12150077805C /* bg_hotes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_hotes.png; sourceTree = "<group>"; };
 		78F8C9AB19FE12150077805C /* aachen_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aachen_icon.png; sourceTree = "<group>"; };
+		7F771D6319FEFF6A00D9DAE9 /* Pdf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pdf.png; sourceTree = "<group>"; };
 		7FB731C919FEB426009CD692 /* PdfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdfViewController.h; sourceTree = "<group>"; };
 		7FB731CA19FEB426009CD692 /* PdfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdfViewController.m; sourceTree = "<group>"; };
 		BB303D9618B863E300B6EBC9 /* WmZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WmZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -717,6 +719,7 @@
 		78AD2C7E19A1866400047B9A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7F771D6319FEFF6A00D9DAE9 /* Pdf.png */,
 				78F8C9A519FE12150077805C /* bg_tour.png */,
 				78F8C9A619FE12150077805C /* tour_icon.png */,
 				78F8C9A719FE12150077805C /* bg_restaurant.png */,
@@ -1279,6 +1282,7 @@
 				7836B9C719AC3300004BB485 /* bg_default_institute.jpg in Resources */,
 				78BF118419C779A4005AE8B0 /* ic_red_arrow_right.png in Resources */,
 				7836B9AB19A9388B004BB485 /* welcome.jpg in Resources */,
+				7F771D6419FEFF6A00D9DAE9 /* Pdf.png in Resources */,
 				BB303E2C18B879AA00B6EBC9 /* Twitter@2x.png in Resources */,
 				78BF117B19C779A4005AE8B0 /* ic_darkblue_arrow.png in Resources */,
 				7122DB1C18BB459C00C044E8 /* feedviewCell3@2x.png in Resources */,

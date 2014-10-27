@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExibitorsDetailsViewController : UIViewController
+@interface ExibitorsDetailsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *viewParent;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *description;
