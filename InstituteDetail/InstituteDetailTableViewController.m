@@ -130,7 +130,7 @@ KQEventAPI *event;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
         
-        return 255;
+        return 265;
     }
     else
     {

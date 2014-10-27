@@ -30,7 +30,7 @@ NSArray *dataSource;
 {
     [super viewDidLoad];
     NSLog(@"%@",data);
-    
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     dataSource = [data objectForKey:@"services"];
     _institute_en.text = [data objectForKey:@"name"];
     _responsable.text = [data objectForKey:@"responsible_name"];

@@ -34,6 +34,7 @@ NSArray *dataSource;
 {
     [super viewDidLoad];
     NSLog(@"%@",data);
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     if ([data objectForKey:@"background"]==(id)[NSNull null] || [data objectForKey:@"background"] == nil) {
         _finalists.hidden=YES;
         _tableView.hidden = NO;
