@@ -128,18 +128,39 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (![[[dataSource objectAtIndex:indexPath.row] valueForKey:@"email"] isEqualToString: @""]){
-        if ([MFMailComposeViewController canSendMail]) {
-            
-            MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-
-            NSArray *toRecipients = [NSArray arrayWithObjects:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"email"], nil];
-            [mailViewController setToRecipients:toRecipients];
-            mailViewController.mailComposeDelegate = self;
-            [self presentModalViewController:mailViewController animated:YES];
-        } else {
-            NSLog(@"Device is unable to send email in its current state.");
+//    if (![[[dataSource objectAtIndex:indexPath.row] valueForKey:@"email"] isEqualToString: @""]){
+//        if ([MFMailComposeViewController canSendMail]) {
+//            
+//            MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+//
+//            NSArray *toRecipients = [NSArray arrayWithObjects:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"email"], nil];
+//            [mailViewController setToRecipients:toRecipients];
+//            mailViewController.mailComposeDelegate = self;
+//            [self presentModalViewController:mailViewController animated:YES];
+//        } else {
+//            NSLog(@"Device is unable to send email in its current state.");
+//        }
+//    }
+    
+    // Get reference to the destination view controller
+    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SpeakerDetailsViewController"];
+    NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
+    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
+    [vc setData:data];
+    
+    if ([data objectForKey:@"speaker_id"]!=(id)[NSNull null]) {
+        [self.sidePanelController setRightPanel:vc];
+        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+        {
+            [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*6/7];
+        }else{
+            if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
+            {
+                [self.sidePanelController setRightFixedWidth:650];
+            }else{
+            }
         }
+        [self.sidePanelController showRightPanelAnimated:YES];
     }
 }
 

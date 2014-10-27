@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *conferences;
 @property (weak, nonatomic) IBOutlet UILabel *email_label;
 @property (weak, nonatomic) IBOutlet UIButton *mobile;
+@property (weak, nonatomic) IBOutlet UILabel *about;
 @property (weak, nonatomic) IBOutlet UIButton *email;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *name;
