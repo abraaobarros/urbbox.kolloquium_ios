@@ -61,6 +61,11 @@
         [Util setupNavigationBar:self withTitle:@"Partners"];
     }
     
+    dataSource = [dataSource sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSDictionary *first =(NSDictionary*)a;
+        NSDictionary *second = (NSDictionary*)b;
+        return [[first objectForKey:@"name"] compare:[second objectForKey:@"name"]];
+    }];
 }
 -(void)dicDummyDataInitialization{
     dataSource = [_event objectForKey:@"guest_companies"];
@@ -116,24 +121,33 @@
     
     cell.imgMainImage.image = [UIImage imageNamed:@"no_profile.png"];
     
-    
-    
     [KQEventAPI getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"] finishHandler:^(NSData* data){
-        cell.imgMainImage.image=[UIImage imageWithData:data];
+        @try {
+            cell.imgMainImage.image=[UIImage imageWithData:data];
+        }
+        @catch (NSException *exception) {
+            
+        }
+        
     } startHandler:^{
         
     } errorHandler:^{
     }];
     
     
-    
-    cell.lblTweet.text=[[dataSource objectAtIndex:indexPath.row] objectForKey:@"short_descript"];
-    if ([_data isEqualToString:@"competitors"]) {
-        cell.lblTweet.text=[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile"];
+    @try {
+        cell.lblTweet.text=[[dataSource objectAtIndex:indexPath.row] objectForKey:@"short_descript"];
+        if ([_data isEqualToString:@"competitors"]) {
+            cell.lblTweet.text=[[dataSource objectAtIndex:indexPath.row] objectForKey:@"profile"];
+        }
+        [cell.lblTweet sizeToFit];
+        cell.lblUserName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
+
     }
-    [cell.lblTweet sizeToFit];
-    cell.lblUserName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
-    return cell;
+    @catch (NSException *exception) {
+        
+    }
+        return cell;
     
 }
 

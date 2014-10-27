@@ -1002,7 +1002,7 @@
             </objects>
             <point key="canvasLocation" x="-1148" y="101"/>
         </scene>
-        <!--About-->
+        <!--Kolloquium-->
         <scene sceneID="coy-pp-F6y">
             <objects>
                 <tableViewController id="9wu-Ic-DrJ" customClass="AboutTableViewController" sceneMemberID="viewController">
@@ -1115,7 +1115,7 @@
                             <outlet property="delegate" destination="9wu-Ic-DrJ" id="dXQ-fi-h67"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="About" id="WWi-A9-h6b"/>
+                    <navigationItem key="navigationItem" title="Kolloquium" id="WWi-A9-h6b"/>
                     <connections>
                         <outlet property="about" destination="n4V-qs-xYO" id="SJW-Ba-7Ab"/>
                         <outlet property="about_cell" destination="tra-lU-dDF" id="2fM-Os-VE7"/>

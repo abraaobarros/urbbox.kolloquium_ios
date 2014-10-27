@@ -9,6 +9,7 @@
 #import "AboutTableViewController.h"AboutTableViewController
 #import "UIViewController+JASidePanel.h"
 #import "KQCache.h"
+#import "Util.h"
 
 @interface AboutTableViewController ()
 
@@ -31,7 +32,8 @@ KQCache *cache;
 {
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    
+    [Util setupNavigationBar:self withTitle:@"Kolloquium"];
     UIView* bview = [[UIView alloc] init];
     bview.backgroundColor = [UIColor colorWithRed:44.0/256.0 green:57.0/256.0 blue:69.0/256.0 alpha:1];
     [tableView setBackgroundView:bview];
