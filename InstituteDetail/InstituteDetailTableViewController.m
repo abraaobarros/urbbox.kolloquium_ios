@@ -126,10 +126,13 @@ KQEventAPI *event;
     
     return cell;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 180;
+}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    {
+//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+//    {
         // Get reference to the destination view controller
         InstituteDepartamentDetailsViewController *vc = (InstituteDepartamentDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InstituteDepartamentDetailsViewController"];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
@@ -144,11 +147,11 @@ KQEventAPI *event;
         [self.sidePanelController setRightPanel:vc];
         
         [self.sidePanelController showRightPanelAnimated:YES];
-    }
-    else
-    {
-        [self performSegueWithIdentifier:@"InstituteDepartamentDetailsViewController" sender:self];
-    }
+//    }
+//    else
+//    {
+//        [self performSegueWithIdentifier:@"InstituteDepartamentDetailsViewController" sender:self];
+//    }
 }
 /*
 // Override to support conditional editing of the table view.

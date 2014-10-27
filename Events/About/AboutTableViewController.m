@@ -43,7 +43,7 @@ KQCache *cache;
     
     _address.text = [d objectForKey:@"address"];
     
-    _dates.text = [NSString stringWithFormat:@"%@ - %@",[d objectForKey:@"start"],[d objectForKey:@"start"]];
+    _dates.text = [NSString stringWithFormat:@"%@ - %@",[d objectForKey:@"start"],[d objectForKey:@"finish"]];
     
     
     // Uncomment the following line to preserve selection between presentations.
