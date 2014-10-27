@@ -12,4 +12,6 @@
 +(NSString *) convertDataFormat:(NSString *) data withPattern:(NSString *) from toPattern:(NSString *) to;
 
 +(void) setupNavigationBar:(UIViewController *)nav withTitle:(NSString *) title;
+
++(NSString *)stripTags:(NSString *)str;
 @end

@@ -197,14 +197,14 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 - " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KQH-tr-znJ">
-                                            <rect key="frame" x="17" y="147" width="49" height="22"/>
+                                            <rect key="frame" x="17" y="147.5" width="49" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. Thomas Lindner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q9X-Wa-xt2">
-                                            <rect key="frame" x="69" y="149" width="351" height="20"/>
+                                            <rect key="frame" x="69" y="149.5" width="351" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -218,7 +218,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="USu-og-3Wx">
-                                            <rect key="frame" x="17" y="198" width="734" height="27"/>
+                                            <rect key="frame" x="17" y="198.5" width="734" height="27"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -367,6 +367,7 @@
                                         </state>
                                         <connections>
                                             <action selector="openPDF:" destination="0BV-KE-p17" eventType="touchUpInside" id="iY6-zJ-a1i"/>
+                                            <segue destination="3EQ-s2-46b" kind="modal" identifier="PdfViewController" modalPresentationStyle="formSheet" id="iZc-mh-dLk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -395,7 +396,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Stellen Sie eine Frage" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="5gY-6i-Za8">
-                                <rect key="frame" x="278" y="417" width="317" height="30"/>
+                                <rect key="frame" x="278" y="353" width="317" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <rect key="contentStretch" x="0.24999999999999967" y="0.54999999999999993" width="1" height="1"/>
@@ -406,7 +407,7 @@
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" id="adQ-rV-yfW">
-                                <rect key="frame" x="278" y="369" width="317" height="29"/>
+                                <rect key="frame" x="278" y="305" width="317" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="1"/>
@@ -420,22 +421,24 @@
                                     <action selector="changeAvaliation:" destination="0BV-KE-p17" eventType="valueChanged" id="nd3-F9-HCf"/>
                                 </connections>
                             </segmentedControl>
-                            <webView contentMode="scaleToFill" id="y97-CW-UQf">
-                                <rect key="frame" x="181" y="460" width="567" height="544"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mangelhaft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" id="hW6-8C-daJ">
-                                <rect key="frame" x="278" y="345" width="69" height="21"/>
+                                <rect key="frame" x="278" y="281" width="69" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sehr Gut" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="LqS-ph-QgQ">
-                                <rect key="frame" x="540" y="345" width="55" height="21"/>
+                                <rect key="frame" x="540" y="281" width="55" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dOz-Tg-3O1">
+                                <rect key="frame" x="214" y="422" width="432" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -446,17 +449,62 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="avaliacao" destination="adQ-rV-yfW" id="2lR-NH-4j9"/>
+                        <outlet property="descript" destination="dOz-Tg-3O1" id="iQ8-ZX-a38"/>
                         <outlet property="location" destination="bqN-tJ-ENI" id="BJg-t1-Qsq"/>
                         <outlet property="name" destination="ib7-aN-00O" id="opk-de-wiY"/>
                         <outlet property="photo" destination="EdR-x1-7kc" id="ZU9-x0-ZGE"/>
                         <outlet property="quetion" destination="5gY-6i-Za8" id="3Sr-4n-H0J"/>
                         <outlet property="subject" destination="l9M-C3-PBL" id="iD3-4e-SHf"/>
-                        <outlet property="webView" destination="y97-CW-UQf" id="wZm-oB-eH0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6T-Nk-ZMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2403" y="-2133"/>
+        </scene>
+        <!--Pdf View Controller-->
+        <scene sceneID="kHy-dP-3VT">
+            <objects>
+                <viewController id="3EQ-s2-46b" customClass="PdfViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lH4-Mx-Q6S">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="bcN-Vx-NPq">
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3EQ-s2-46b" id="TuG-9P-mMy"/>
+                                </connections>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="KBe-5V-4VO">
+                                <rect key="frame" x="260" y="300" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fIK-GV-5Cy">
+                                <rect key="frame" x="477" y="0.0" width="58" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.60000002384185791" green="0.023529414087533951" blue="0.14117647707462311" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closePdfButton:" destination="3EQ-s2-46b" eventType="touchUpInside" id="0xt-B4-a9a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="loading" destination="KBe-5V-4VO" id="vUi-kK-P9G"/>
+                        <outlet property="webView" destination="bcN-Vx-NPq" id="gKK-QC-lhJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y67-qB-qKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3302" y="-2133"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="441-0B-9Cl">

@@ -35,7 +35,7 @@ KQCache *cache;
     
     NSDictionary *data = [cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"];
     
-    description.text = [self stripTags:[[[data objectForKey:@"competitions"] objectAtIndex:0] objectForKey:@"descript"]] ;
+    description.text = [Util stripTags:[[[data objectForKey:@"competitions"] objectAtIndex:0] objectForKey:@"descript"]] ;
     
     [description sizeToFit];
     [_kategorie sizeToFit];
@@ -53,31 +53,7 @@ KQCache *cache;
     // Do any additional setup after loading the view.
 }
 
-- (NSString *)stripTags:(NSString *)str
-{
-    NSMutableString *html = [NSMutableString stringWithCapacity:[str length]];
-    
-    NSScanner *scanner = [NSScanner scannerWithString:str];
-    scanner.charactersToBeSkipped = NULL;
-    NSString *tempText = nil;
-    
-    while (![scanner isAtEnd])
-    {
-        [scanner scanUpToString:@"<" intoString:&tempText];
-        
-        if (tempText != nil)
-            [html appendString:tempText];
-        
-        [scanner scanUpToString:@">" intoString:NULL];
-        
-        if (![scanner isAtEnd])
-            [scanner setScanLocation:[scanner scanLocation] + 1];
-        
-        tempText = nil;
-    }
-    
-    return html;
-}
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -188,12 +188,25 @@ BOOL reload = FALSE;
         cell.company.text=[[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"company"];
     }
     @catch (NSException *exception) {
-        cell.speaker.text = [NSString stringWithFormat:@"Ort: %@",[[dataSource objectAtIndex:indexPath.row] valueForKey:@"location"]];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            cell.speaker.text = [NSString stringWithFormat:@"Ort: %@",[[dataSource objectAtIndex:indexPath.row] valueForKey:@"location"]];
+        } else {
+            cell.speaker.text = @"";
+        }
+        
         cell.company.text = @"";
     }
     @finally {
         
     }
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+    {
+        cell.location.text = [NSString stringWithFormat:@"%@",[[dataSource objectAtIndex:indexPath.row] valueForKey:@"location"]];
+    }else{
+        cell.location.text = @"";
+    }
+    
     
     cell.imgEventImage.image = nil;
     

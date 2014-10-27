@@ -134,7 +134,7 @@ KQEventAPI *event;
     }
     else
     {
-        return 180;
+        return 182;
     }
 }
 

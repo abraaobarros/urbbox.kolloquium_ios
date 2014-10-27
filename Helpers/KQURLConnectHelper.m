@@ -88,9 +88,9 @@
 }
 
 -(void) postDataToURL:(NSString *)url withParameters:(NSDictionary *)parameters
-           startHandle:(void (^)(void))startHandler
-         sucessHandler:(void (^)(NSDictionary *))sucessBlock
-          errorHandler:(void (^)(void))errorBlock{
+          startHandle:(void (^)(void))startHandler
+        sucessHandler:(void (^)(NSDictionary *))sucessBlock
+         errorHandler:(void (^)(void))errorBlock{
     
     
     if (startHandler) {
