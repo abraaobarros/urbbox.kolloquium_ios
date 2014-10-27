@@ -160,25 +160,26 @@
     NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     [vc setData:data];
-    [self.sidePanelController setRightPanel:vc];
-    
-    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-    {
+//    
+//    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+//    {
         [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*7/8];
-    }
-    else
-        
-    {
-        //        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
-        
-        if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
-        {
-            [self.sidePanelController setRightFixedWidth:600];
-        }else{
-            [self.sidePanelController setRightFixedWidth:600];
-        }
-    }
+//    }
+//    else
+//        
+//    {
+//        //        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
+//        
+//        if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
+//        {
+//            [self.sidePanelController setRightFixedWidth:600];
+//        }else{
+//            [self.sidePanelController setRightFixedWidth:600];
+//        }
+//    }
+    [self.sidePanelController setRightPanel:vc];
     [self.sidePanelController showRightPanelAnimated:YES];
+    
     
     // Get reference to the destination view controller
     

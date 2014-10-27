@@ -147,21 +147,9 @@
     NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     [vc setData:data];
-    
-    if ([data objectForKey:@"speaker_id"]!=(id)[NSNull null]) {
-        [self.sidePanelController setRightPanel:vc];
-        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-        {
-            [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*6/7];
-        }else{
-            if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
-            {
-                [self.sidePanelController setRightFixedWidth:650];
-            }else{
-            }
-        }
-        [self.sidePanelController showRightPanelAnimated:YES];
-    }
+    [self.sidePanelController setRightPanel:vc];
+    [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*9/10];
+    [self.sidePanelController showRightPanelAnimated:YES];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller
