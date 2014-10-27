@@ -17,7 +17,7 @@
 
 @implementation CompetitionViewController
 KQCache *cache;
-
+@synthesize description;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

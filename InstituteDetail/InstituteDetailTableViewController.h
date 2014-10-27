@@ -11,5 +11,7 @@
 
 @interface InstituteDetailTableViewController : UITableViewController
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *dataSource;
+@property (strong, nonatomic) NSString *title;
 @property (nonatomic) NSInteger *index;
 @end

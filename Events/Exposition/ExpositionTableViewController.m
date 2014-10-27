@@ -48,14 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.navigationItem.title = @"Werkzeugbau Mit Zukunft";
-    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:15.0],NSFontAttributeName,[UIColor redColor],NSForegroundColorAttributeName, nil];
-    self.navigationController.navigationBar.titleTextAttributes = size;
-    
-    self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
-    NSLog(@"_Event: %@",_event);
+
     
     [Util setupNavigationBar:self withTitle:@"Aussteller"];
     
@@ -63,6 +56,9 @@
     dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:_data];
     if ([_data isEqualToString:@"competitors"]) {
         dataSource = [[[[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"competitions"] objectAtIndex:0] objectForKey:@"competitors"];
+        [Util setupNavigationBar:self withTitle:@"Finalisten"];
+    }else if([_data isEqualToString:@"partners"]){
+        [Util setupNavigationBar:self withTitle:@"Partners"];
     }
     
 }

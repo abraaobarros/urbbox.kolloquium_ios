@@ -17,6 +17,7 @@
 #import "ProgramViewController.h"
 #import "KQNavigationController.h"
 #import "ExpositionTableViewController.h"
+#import "InfoViewController.h"
 #import "KQCache.h"
 #import "Util.h"
 
@@ -26,7 +27,7 @@
 @end
 
 @implementation SideBarViewController
-
+KQEventAPI *event;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,6 +40,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    event =[[KQEventAPI alloc]
+            initWithDataAssyncWithStart:^(void){
+                NSLog(@"Init Fetching");
+            } finishProcess:^(void){
+                NSLog(@"Finish Fetching");
+            } errorHandler:^(void){
+                NSLog(@"Error Fetching");
+            }];
     // Do any additional setup after loading the view.
 }
 
@@ -193,7 +203,7 @@
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
             cell.title.text=@"Fraunhoufer IPT";
-            cell.icon.image = [UIImage imageNamed:@"ic_ipt.png"];
+            cell.icon.image = [UIImage imageNamed:@"ic_ipt.jpg"];
             return cell;
         }
         if(indexPath.row==1)
@@ -226,12 +236,23 @@
             if (cell == nil) {
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
+            cell.title.text=@"Aachen";
+            cell.icon.image = [UIImage imageNamed:@"ic_aachen.png"];
+            return cell;
+        }
+        else if(indexPath.row==1)
+        {
+            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
+            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (cell == nil) {
+                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
             cell.title.text=@"Aktualisieren";
             cell.icon.image = [UIImage imageNamed:@"ic_refresh.png"];
             return cell;
         }
         
-        else if(indexPath.row==1)
+        else if(indexPath.row==2)
         {
             static NSString *CellIdentifier = @"KQSideBarTableViewCell";
             KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -242,7 +263,7 @@
             cell.icon.image = [UIImage imageNamed:@"ic_impressum.png"];
             return cell;
         }
-        else if(indexPath.row==2)
+        else if(indexPath.row==3)
         {
             static NSString *CellIdentifier = @"KQSideBarTableViewCell";
             KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -368,34 +389,35 @@
         if(indexPath.row==0)
         {
             InstituteDetailTableViewController *vc = (InstituteDetailTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InstituteDetailTableViewController"];
-            vc.index = 0;
+            vc.title = @"IPT";
             KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
             [self.sidePanelController setCenterPanel:partnersView];
         }
         else if(indexPath.row==1)
         {
             InstituteDetailTableViewController *vc = (InstituteDetailTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InstituteDetailTableViewController"];
-            vc.index = 1;
+            vc.title = @"WZL";
             KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
             [self.sidePanelController setCenterPanel:partnersView];
            
         }
         else if(indexPath.row ==2){
-//            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-//            {
                 ExpositionTableViewController *vc = (ExpositionTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
                 KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
                 [vc setData:@"partners"];
                 [self.sidePanelController setCenterPanel:partnersView];
-//            }
-//            else
-//            {
-//                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
-//                
-//            }
         }
     }else if (indexPath.section==2){
         if(indexPath.row==0)
+        {
+            InfoViewController *vc = (InfoViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InfoViewController"];
+            vc.title = @"Aachen";
+            KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
+            [self.sidePanelController setCenterPanel:partnersView];
+            
+            
+        }
+        if(indexPath.row==1)
         {
             KQCache *cache = [KQCache sharedManager];
             [cache resetDatabase];
@@ -404,7 +426,7 @@
             
             
         }
-        else if(indexPath.row==2)
+        else if(indexPath.row==3)
         {
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:nil forKey:@"email"];
@@ -412,33 +434,21 @@
             [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
             
         }
-        else if(indexPath.row==1)
+        else if(indexPath.row==2)
         {
-            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-            {
-                CGRect webFrame = CGRectMake(0.0, 0.0, 768.0, 1024.0);
-                UIWebView *webView = [[UIWebView alloc] initWithFrame:webFrame];
-                
-                NSString *path = [[NSBundle mainBundle] pathForResource:@"Impressum" ofType:@"pdf"];
-                NSURL *targetURL = [NSURL fileURLWithPath:path];
-                NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
-                [webView loadRequest:request];
-
-                UIViewController *vc = [[UIViewController alloc] init];
-                vc.view = webView;
-                
-                
-                
-                KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
-                [Util setupNavigationBar:vc withTitle:@"Impressum"];
-                [self.sidePanelController setCenterPanel:partnersView];
-            }
-            else
-            {
-                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"]];
-                
-            }
+            CGRect webFrame = CGRectMake(0.0, 0.0, self.view.frame.size.width,self.view.frame.size.height);
+            UIWebView *webView = [[UIWebView alloc] initWithFrame:webFrame];
             
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"Impressum" ofType:@"pdf"];
+            NSURL *targetURL = [NSURL fileURLWithPath:path];
+            NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+            [webView loadRequest:request];
+            
+            UIViewController *vc = [[UIViewController alloc] init];
+            vc.view = webView;
+            KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
+            [Util setupNavigationBar:vc withTitle:@"Impressum"];
+            [self.sidePanelController setCenterPanel:partnersView];
         }
     }
     

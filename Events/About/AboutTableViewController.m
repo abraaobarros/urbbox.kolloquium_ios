@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Teknowledge Software. All rights reserved.
 //
 
-#import "AboutTableViewController.h"
+#import "AboutTableViewController.h"AboutTableViewController
 #import "UIViewController+JASidePanel.h"
 #import "KQCache.h"
 

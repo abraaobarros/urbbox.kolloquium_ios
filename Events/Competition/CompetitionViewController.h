@@ -10,9 +10,9 @@
 
 @interface CompetitionViewController : UIViewController
 {
-    UILabel *description;
+//    UILabel *description;
 }
-//@property (weak, nonatomic) IBOutlet UILabel *description;
+@property (weak, nonatomic) IBOutlet UILabel *description;
 @property (weak, nonatomic) IBOutlet UILabel *kategorie;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 

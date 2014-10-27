@@ -137,8 +137,16 @@
 		78E103EC19EDBE0700066580 /* ic_impressum.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E103EB19EDBE0700066580 /* ic_impressum.png */; };
 		78E5C3A219EE40C80055C6E4 /* Impressum.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 78E5C3A119EE40C80055C6E4 /* Impressum.pdf */; };
 		78E5C3A719F0D7230055C6E4 /* FinalistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E5C3A619F0D7230055C6E4 /* FinalistsViewController.m */; };
-		7F3BC86F19FABC32002229D8 /* ic_ipt.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3BC86E19FABC32002229D8 /* ic_ipt.png */; };
-		7F3BC87319FABCA1002229D8 /* ic_wzl.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3BC87219FABCA1002229D8 /* ic_wzl.png */; };
+		78F8C99C19FDC2330077805C /* ic_ipt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C99B19FDC2330077805C /* ic_ipt.jpg */; };
+		78F8C99E19FDC2380077805C /* ic_wzl.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C99D19FDC2380077805C /* ic_wzl.png */; };
+		78F8C9A419FE0E260077805C /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F8C9A319FE0E260077805C /* InfoViewController.m */; };
+		78F8C9AC19FE12150077805C /* bg_tour.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9A519FE12150077805C /* bg_tour.png */; };
+		78F8C9AD19FE12150077805C /* tour_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9A619FE12150077805C /* tour_icon.png */; };
+		78F8C9AE19FE12150077805C /* bg_restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9A719FE12150077805C /* bg_restaurant.png */; };
+		78F8C9AF19FE12150077805C /* rest_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9A819FE12150077805C /* rest_icon.png */; };
+		78F8C9B019FE12150077805C /* hotels_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9A919FE12150077805C /* hotels_icon.png */; };
+		78F8C9B119FE12150077805C /* bg_hotes.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9AA19FE12150077805C /* bg_hotes.png */; };
+		78F8C9B219FE12150077805C /* aachen_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9AB19FE12150077805C /* aachen_icon.png */; };
 		BB303D9A18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
 		BB303D9C18B863E300B6EBC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */; };
 		BB303D9E18B863E300B6EBC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9D18B863E300B6EBC9 /* UIKit.framework */; };
@@ -404,8 +412,17 @@
 		78E5C3A119EE40C80055C6E4 /* Impressum.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Impressum.pdf; sourceTree = "<group>"; };
 		78E5C3A519F0D7230055C6E4 /* FinalistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinalistsViewController.h; path = Finalists/FinalistsViewController.h; sourceTree = "<group>"; };
 		78E5C3A619F0D7230055C6E4 /* FinalistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinalistsViewController.m; path = Finalists/FinalistsViewController.m; sourceTree = "<group>"; };
-		7F3BC86E19FABC32002229D8 /* ic_ipt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_ipt.png; path = ../../../Kolloquim/ic_ipt.png; sourceTree = "<group>"; };
-		7F3BC87219FABCA1002229D8 /* ic_wzl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_wzl.png; path = ../../../Kolloquim/ic_wzl.png; sourceTree = "<group>"; };
+		78F8C99B19FDC2330077805C /* ic_ipt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ic_ipt.jpg; sourceTree = "<group>"; };
+		78F8C99D19FDC2380077805C /* ic_wzl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_wzl.png; sourceTree = "<group>"; };
+		78F8C9A219FE0E260077805C /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		78F8C9A319FE0E260077805C /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		78F8C9A519FE12150077805C /* bg_tour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_tour.png; sourceTree = "<group>"; };
+		78F8C9A619FE12150077805C /* tour_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tour_icon.png; sourceTree = "<group>"; };
+		78F8C9A719FE12150077805C /* bg_restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_restaurant.png; sourceTree = "<group>"; };
+		78F8C9A819FE12150077805C /* rest_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rest_icon.png; sourceTree = "<group>"; };
+		78F8C9A919FE12150077805C /* hotels_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotels_icon.png; sourceTree = "<group>"; };
+		78F8C9AA19FE12150077805C /* bg_hotes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_hotes.png; sourceTree = "<group>"; };
+		78F8C9AB19FE12150077805C /* aachen_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aachen_icon.png; sourceTree = "<group>"; };
 		BB303D9618B863E300B6EBC9 /* WmZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WmZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -695,9 +712,16 @@
 		78AD2C7E19A1866400047B9A /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				7F3BC86E19FABC32002229D8 /* ic_ipt.png */,
+				78F8C9A519FE12150077805C /* bg_tour.png */,
+				78F8C9A619FE12150077805C /* tour_icon.png */,
+				78F8C9A719FE12150077805C /* bg_restaurant.png */,
+				78F8C9A819FE12150077805C /* rest_icon.png */,
+				78F8C9A919FE12150077805C /* hotels_icon.png */,
+				78F8C9AA19FE12150077805C /* bg_hotes.png */,
+				78F8C9AB19FE12150077805C /* aachen_icon.png */,
+				78F8C99D19FDC2380077805C /* ic_wzl.png */,
+				78F8C99B19FDC2330077805C /* ic_ipt.jpg */,
 				78E5C3A119EE40C80055C6E4 /* Impressum.pdf */,
-				7F3BC87219FABCA1002229D8 /* ic_wzl.png */,
 				78E103EB19EDBE0700066580 /* ic_impressum.png */,
 				78E103E919EDBDF000066580 /* ic_aachen.png */,
 				78E103E719EDBDCF00066580 /* ic_logout.png */,
@@ -778,6 +802,15 @@
 			name = Finalists;
 			sourceTree = "<group>";
 		};
+		78F8C99F19FE0D9E0077805C /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				78F8C9A219FE0E260077805C /* InfoViewController.h */,
+				78F8C9A319FE0E260077805C /* InfoViewController.m */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
 		BB303D8D18B863E300B6EBC9 = {
 			isa = PBXGroup;
 			children = (
@@ -829,6 +862,7 @@
 		BB303D9F18B863E300B6EBC9 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				78F8C99F19FE0D9E0077805C /* Info */,
 				78E5C3A419F0D6ED0055C6E4 /* Finalists */,
 				78CD61F319D0371F00C6E49A /* CompetitionViewController.h */,
 				78CD61F419D0371F00C6E49A /* CompetitionViewController.m */,
@@ -1113,7 +1147,6 @@
 				BB62B12018B8B529000DBDBC /* Next.png in Resources */,
 				711221E918BC94F900E77A4A /* GreenDot.png in Resources */,
 				78D1A30219E2557B00E92F93 /* sample.pdf in Resources */,
-				7F3BC87319FABCA1002229D8 /* ic_wzl.png in Resources */,
 				7112220618BCA62300E77A4A /* share@2x.png in Resources */,
 				BB303E2518B879AA00B6EBC9 /* pic.png in Resources */,
 				7122DB2B18BB4BDB00C044E8 /* feedviewCell5.png in Resources */,
@@ -1123,9 +1156,11 @@
 				7836B9C519AC31E3004BB485 /* about_cell.jpg in Resources */,
 				BB303E0C18B86B3400B6EBC9 /* Programred@2x.png in Resources */,
 				7112221518BCB83500E77A4A /* Direction@2x.png in Resources */,
+				78F8C9AE19FE12150077805C /* bg_restaurant.png in Resources */,
 				78BF117E19C779A4005AE8B0 /* ic_institutes.png in Resources */,
 				BB303E2818B879AA00B6EBC9 /* Reload@2x.png in Resources */,
 				711221EA18BC94F900E77A4A /* GreenDot@2x.png in Resources */,
+				78F8C9AF19FE12150077805C /* rest_icon.png in Resources */,
 				7112220418BCA62300E77A4A /* sendto@2x.png in Resources */,
 				BB303DF818B86B3400B6EBC9 /* Feed@2x.png in Resources */,
 				7890808219A232B500C537E1 /* bg_navigation.jpg in Resources */,
@@ -1139,6 +1174,8 @@
 				BB303DF718B86B3400B6EBC9 /* Feed.png in Resources */,
 				78B6380019B7E87D00C4082B /* schedules.png in Resources */,
 				BB62B12218B8B529000DBDBC /* Segmented.png in Resources */,
+				78F8C9B219FE12150077805C /* aachen_icon.png in Resources */,
+				78F8C99E19FDC2380077805C /* ic_wzl.png in Resources */,
 				BB62B11E18B8B529000DBDBC /* Action3.png in Resources */,
 				78BF118519C779A4005AE8B0 /* ic_star.png in Resources */,
 				7112223218BCCBB300E77A4A /* MapTempImage.png in Resources */,
@@ -1173,6 +1210,7 @@
 				7112221018BCB67600E77A4A /* registerBtn.png in Resources */,
 				711221F018BC9DFB00E77A4A /* placeIcon@2x.png in Resources */,
 				78BF117819C779A4005AE8B0 /* ic_action_participants.png in Resources */,
+				78F8C9B019FE12150077805C /* hotels_icon.png in Resources */,
 				BB303E0818B86B3400B6EBC9 /* MyProgramred@2x.png in Resources */,
 				7122DB2A18BB4BDB00C044E8 /* feedviewCell5@2x.png in Resources */,
 				BB303E0718B86B3400B6EBC9 /* MyProgramred.png in Resources */,
@@ -1184,17 +1222,18 @@
 				BB303DFA18B86B3400B6EBC9 /* Feedred@2x.png in Resources */,
 				BB303E0618B86B3400B6EBC9 /* MyProgram@2x.png in Resources */,
 				BB303E1F18B879AA00B6EBC9 /* image1.png in Resources */,
+				78F8C9AD19FE12150077805C /* tour_icon.png in Resources */,
 				BB303E0318B86B3400B6EBC9 /* Livello3.png in Resources */,
 				BB303DB518B863E300B6EBC9 /* Images.xcassets in Resources */,
 				78BF117919C779A4005AE8B0 /* ic_action_schedule.png in Resources */,
 				78E103E819EDBDCF00066580 /* ic_logout.png in Resources */,
 				BB303E2418B879AA00B6EBC9 /* nearby@2x.png in Resources */,
-				7F3BC86F19FABC32002229D8 /* ic_ipt.png in Resources */,
 				BB303E2B18B879AA00B6EBC9 /* Twitter.png in Resources */,
 				BB62B12118B8B529000DBDBC /* Next@2x.png in Resources */,
 				7122DB4818BB7D8600C044E8 /* Segmented_left@2x.png in Resources */,
 				7112223318BCCBB300E77A4A /* MapTempImage@2x.png in Resources */,
 				78BF117D19C779A4005AE8B0 /* ic_finalists.png in Resources */,
+				78F8C9B119FE12150077805C /* bg_hotes.png in Resources */,
 				78BF117F19C779A4005AE8B0 /* ic_launcher.png in Resources */,
 				BB303E2118B879AA00B6EBC9 /* image2.png in Resources */,
 				BB303DAD18B863E300B6EBC9 /* Main_iPhone.storyboard in Resources */,
@@ -1228,7 +1267,9 @@
 				78E103E419ED636F00066580 /* ic_pdf.png in Resources */,
 				7112221818BCC14B00E77A4A /* arrow.png in Resources */,
 				78BF117719C779A4005AE8B0 /* ic_action_aboutus.png in Resources */,
+				78F8C9AC19FE12150077805C /* bg_tour.png in Resources */,
 				78E103EA19EDBDF000066580 /* ic_aachen.png in Resources */,
+				78F8C99C19FDC2330077805C /* ic_ipt.jpg in Resources */,
 				7836B9BE19ABD21B004BB485 /* lecture_bg.png in Resources */,
 				7836B9C719AC3300004BB485 /* bg_default_institute.jpg in Resources */,
 				78BF118419C779A4005AE8B0 /* ic_red_arrow_right.png in Resources */,
@@ -1288,6 +1329,7 @@
 				7122DB0818BB1F5C00C044E8 /* ProgramCustomCell.m in Sources */,
 				BB62B12B18B8C07C000DBDBC /* MyProgramViewController.m in Sources */,
 				78BF115E19BEB290005AE8B0 /* InstituteDetailTableViewCell.m in Sources */,
+				78F8C9A419FE0E260077805C /* InfoViewController.m in Sources */,
 				711221DC18BC62DD00E77A4A /* NSDate+convenience.m in Sources */,
 				788DE31F19A2D8C800ED8D23 /* KQCache.m in Sources */,
 				711221DE18BC62DD00E77A4A /* UIColor+expanded.m in Sources */,

@@ -12,6 +12,7 @@
 #import "ProgramDetailsViewController.h"
 #import "UIViewController+JASidePanel.h"
 #import "InstituteDepartamentDetailsViewController.h"
+#import "Util.h"
 
 @interface InstituteDetailTableViewController (){
     NSMutableArray *dataSource;
@@ -35,31 +36,22 @@ KQEventAPI *event;
 
 - (void)viewDidLoad
 {
-    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [super viewDidLoad];
     
-    UINavigationBar *myNav = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-    self.navigationItem.title = @"Werkzeugbau Mit Zukunft";
-    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:15.0],NSFontAttributeName,[UIColor redColor],NSForegroundColorAttributeName, nil];
-    self.navigationController.navigationBar.titleTextAttributes = size;
-    
-    self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
-    [self.navigationController setNavigationBarHidden:NO];
+//    UINavigationBar *myNav = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+//    self.navigationItem.title = @"Werkzeugbau Mit Zukunft";
+//    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:15.0],NSFontAttributeName,[UIColor redColor],NSForegroundColorAttributeName, nil];
+//    self.navigationController.navigationBar.titleTextAttributes = size;
+//    
+//    self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
+//    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
+//    [self.navigationController setNavigationBarHidden:NO];
 //    [self.view addSubview:myNav];
     
-    event =[[KQEventAPI alloc]
-            initWithDataAssyncWithStart:^(void){
-                NSLog(@"Init Fetching");
-                //                        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
-            } finishProcess:^(void){
-                NSLog(@"Finish Fetching");
-                //                        [loading dismissViewControllerAnimated:YES completion:nil];
-                [self loadDummyData];
-            } errorHandler:^(void){
-                //                        [loading dismissViewControllerAnimated:YES completion:nil];
-                NSLog(@"Error Fetching");
-            }];
+    
+    
+    
     
     [self loadDummyData];
     //    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -73,7 +65,16 @@ KQEventAPI *event;
 
 -(void)loadDummyData{
     //dic initilization for dummy data start
-    dataSource = [[[event objectForKey:@"organizers"] objectAtIndex:_index] objectForKey:@"departments"];
+    if ([self.title isEqual:@"WZL"]) {
+        dataSource = [[[event objectForKey:@"organizers"] objectAtIndex:1] objectForKey:@"departments"];
+        [Util setupNavigationBar:self withTitle:[[[event objectForKey:@"organizers"] objectAtIndex:1] objectForKey:@"name"]];
+    }else if ([self.title isEqual:@"IPT"]) {
+        dataSource = [[[event objectForKey:@"organizers"] objectAtIndex:0] objectForKey:@"departments"];
+        [Util setupNavigationBar:self withTitle:[[[event objectForKey:@"organizers"] objectAtIndex:0] objectForKey:@"name"]];
+    }else if ([self.title isEqual:@"Aachen"]) {
+        dataSource = [[[event objectForKey:@"organizers"] objectAtIndex:0] objectForKey:@"departments"];
+        [Util setupNavigationBar:self withTitle:[[[event objectForKey:@"organizers"] objectAtIndex:0] objectForKey:@"name"]];
+    }
     NSLog(@"Lectures : %@",dataSource);
     [tableView reloadData];
     //dic initilization for dummy data end
