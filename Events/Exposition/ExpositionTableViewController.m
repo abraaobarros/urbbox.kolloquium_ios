@@ -61,16 +61,17 @@
         [Util setupNavigationBar:self withTitle:@"Partners"];
     }
     
-    dataSource = [dataSource sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        NSDictionary *first =(NSDictionary*)a;
-        NSDictionary *second = (NSDictionary*)b;
-        return [[first objectForKey:@"name"] compare:[second objectForKey:@"name"]];
-    }];
+//    dataSource = [dataSource sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+//        NSDictionary *first =(NSDictionary*)a;
+//        NSDictionary *second = (NSDictionary*)b;
+//        return [[first objectForKey:@"name"] compare:[second objectForKey:@"name"]];
+//    }];
+    
 }
 -(void)dicDummyDataInitialization{
     dataSource = [_event objectForKey:@"guest_companies"];
     
-    NSLog(@"Lectures : %@",dataSource);
+    NSLog(@"Exhibitors : %@",dataSource);
     [tableView reloadData];
 }
 
@@ -113,26 +114,29 @@
     
     CellIdentifier = @"FeedCustomCell";
     
-    FeedCustomCell *cell = [tableview dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    FeedCustomCell *cell = [tableview dequeueReusableCellWithIdentifier:@"FeedCustomCell" forIndexPath:indexPath];
     if(!cell)
     {
-        cell = [[FeedCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[FeedCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"FeedCustomCell"];
     }
     
     cell.imgMainImage.image = [UIImage imageNamed:@"no_profile.png"];
-    
-    [KQEventAPI getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"] finishHandler:^(NSData* data){
-        @try {
-            cell.imgMainImage.image=[UIImage imageWithData:data];
-        }
-        @catch (NSException *exception) {
+    @try{
+        [KQEventAPI getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"logo"] finishHandler:^(NSData* data){
+            @try {
+                cell.imgMainImage.image=[UIImage imageWithData:data];
+            }
+            @catch (NSException *exception) {
             
-        }
+            }
         
-    } startHandler:^{
+        } startHandler:^{
         
-    } errorHandler:^{
-    }];
+        } errorHandler:^{
+        }];
+    }
+    @catch(NSException *exception){
+    }
     
     
     @try {

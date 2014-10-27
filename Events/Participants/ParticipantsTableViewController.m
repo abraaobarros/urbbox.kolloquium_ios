@@ -47,8 +47,21 @@
     
     _dataSource = [[[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"participants"] mutableCopy];
     filteredArray = [[[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"participants"] mutableCopy];
+    NSArray *retorno = [[[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:@"participants"] mutableCopy];
+    retorno = [retorno sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSDictionary *first =(NSDictionary*)a;
+        NSDictionary *second = (NSDictionary*)b;
+        NSString *companyA = [first objectForKey:@"company"];
+        NSString *companyB = [second objectForKey:@"company"];
+        return [companyA compare:companyB];
+    }];
+    _dataSource = [[NSMutableArray alloc] initWithArray:retorno];
+    filteredArray = [[NSMutableArray alloc] initWithArray:retorno];
+    NSLog(@"Companies : %@",_dataSource);
+    
 
 }
+
 
 - (void)didReceiveMemoryWarning
 {

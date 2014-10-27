@@ -176,17 +176,20 @@ BOOL reload = FALSE;
     {
         cell = [[ProgramCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    cell.lblDateTime.text=[self convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"dd/MM/yyyy HH:mm" toPattern:@"HH:mm"];
+    cell.lblDateTime.text=[self convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"dd/MM/yyyy HH:mm" toPattern:@"HH:mm - "];
     cell.lblEventName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"subject"];
     cell.lblEventDesc.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"descript"];
+    
     //[cell.lblEventName sizeToFit];
     [cell.lblEventDesc sizeToFit];
     cell.data.text=[Util convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"dd/MM/yyyy HH:mm" toPattern:@"dd MMM"];
     @try {
-         cell.speaker.text = [[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"name"];
+        cell.speaker.text = [[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"name"];
+        cell.company.text=[[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"company"];
     }
     @catch (NSException *exception) {
-        cell.speaker.text = [NSString stringWithFormat:@"Location: %@",[[dataSource objectAtIndex:indexPath.row] valueForKey:@"location"]];
+        cell.speaker.text = [NSString stringWithFormat:@"Ort: %@",[[dataSource objectAtIndex:indexPath.row] valueForKey:@"location"]];
+        cell.company.text = @"";
     }
     @finally {
         
