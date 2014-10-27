@@ -274,7 +274,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" id="KdJ-dJ-edZ">
-                                <rect key="frame" x="64" y="46" width="236" height="96"/>
+                                <rect key="frame" x="64" y="46" width="179" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
@@ -331,22 +331,92 @@
                                     <action selector="changeAvaliation:" destination="d6p-kL-gGL" eventType="valueChanged" id="Jll-dt-qbm"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7NU-De-TVe">
+                                <rect key="frame" x="251" y="79" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="PDF">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fp2-kO-eDg" kind="modal" identifier="PdfViewController" id="Kc2-GW-U4E"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="T4V-Bt-H0t">
+                                <rect key="frame" x="50" y="356" width="253" height="141"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X2A-9S-wJx">
+                                        <rect key="frame" x="0.0" y="0.0" width="245" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="5qG-Bj-nXt"/>
                     <connections>
                         <outlet property="avaliacao" destination="f2y-lB-fRY" id="gnM-VP-3dB"/>
+                        <outlet property="descript" destination="X2A-9S-wJx" id="Qbr-Nq-nF8"/>
                         <outlet property="location" destination="G43-7W-FC0" id="Iu6-MY-7Oa"/>
                         <outlet property="name" destination="KdJ-dJ-edZ" id="Z8E-zG-hhM"/>
                         <outlet property="photo" destination="wkR-Ga-Wn9" id="MbE-k1-HnU"/>
                         <outlet property="quetion" destination="GJF-7O-Ovx" id="Iv2-d4-TAb"/>
+                        <outlet property="scrollView" destination="T4V-Bt-H0t" id="o7d-7C-9Mc"/>
                         <outlet property="subject" destination="8Dx-2d-0w5" id="0bk-Dg-uIw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VK-Z3-6kn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1148" y="-2569"/>
+        </scene>
+        <!--Pdf View Controller-->
+        <scene sceneID="ugi-fR-iHL">
+            <objects>
+                <viewController id="fp2-kO-eDg" customClass="PdfViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Dt-M1-GCm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="TfN-fB-7eg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fp2-kO-eDg" id="VQf-Mq-N3y"/>
+                                </connections>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3Qy-AY-b0y">
+                                <rect key="frame" x="276" y="5" width="39" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.60000002384185791" green="0.023529414087533951" blue="0.14117647707462311" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closePdfButton:" destination="fp2-kO-eDg" eventType="touchUpInside" id="S3m-cX-CHA"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="yeP-Wo-xmU">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="loading" destination="yeP-Wo-xmU" id="uFY-xG-tGd"/>
+                        <outlet property="webView" destination="TfN-fB-7eg" id="KPf-JF-UWQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2vm-kc-loE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-715" y="-2567"/>
         </scene>
         <!--Participants-->
         <scene sceneID="NyL-Lg-yae">
@@ -591,7 +661,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Livello1.png" id="H42-0p-hBO">
-                                                            <rect key="frame" x="-4" y="-12" width="320" height="176.5"/>
+                                                            <rect key="frame" x="-4" y="-12" width="320" height="177"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rettangolo.png" id="8He-yT-jgp">
@@ -1030,7 +1100,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_default_institute.jpg" id="HXJ-g6-Hck">
-                                                    <rect key="frame" x="-2" y="-2" width="322" height="98"/>
+                                                    <rect key="frame" x="-2.5" y="-3" width="322" height="99"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -1172,7 +1242,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="U3d-YO-d23">
-                                            <rect key="frame" x="0.0" y="-27" width="287" height="137"/>
+                                            <rect key="frame" x="0.0" y="-27" width="574" height="137"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hRP-22-vcp">
@@ -1494,7 +1564,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="htP-6p-H0A">
-                                            <rect key="frame" x="267" y="7" width="39.5" height="37"/>
+                                            <rect key="frame" x="267" y="7" width="39" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                             <state key="normal" image="ic_email.png">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1679,7 +1749,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" id="Q3L-Ka-ZmL" userLabel="Services">
-                                                <rect key="frame" x="49.999996489691569" y="450" width="198.00000265496476" height="684"/>
+                                                <rect key="frame" x="49.999999144656329" y="450" width="198" height="684"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <label key="tableHeaderView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teilnehmer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OmM-EJ-6X8">
@@ -2045,6 +2115,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvn-Ty-Ec7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1564" y="101"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hrH-J8-EBJ">
+            <objects>
+                <viewController id="CZH-Vl-ncK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eGm-gF-kr6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7LT-n8-apE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

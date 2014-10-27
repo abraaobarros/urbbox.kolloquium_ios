@@ -147,6 +147,7 @@
 		78F8C9B019FE12150077805C /* hotels_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9A919FE12150077805C /* hotels_icon.png */; };
 		78F8C9B119FE12150077805C /* bg_hotes.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9AA19FE12150077805C /* bg_hotes.png */; };
 		78F8C9B219FE12150077805C /* aachen_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9AB19FE12150077805C /* aachen_icon.png */; };
+		7FB731CB19FEB426009CD692 /* PdfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB731CA19FEB426009CD692 /* PdfViewController.m */; };
 		BB303D9A18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
 		BB303D9C18B863E300B6EBC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */; };
 		BB303D9E18B863E300B6EBC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9D18B863E300B6EBC9 /* UIKit.framework */; };
@@ -423,6 +424,8 @@
 		78F8C9A919FE12150077805C /* hotels_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotels_icon.png; sourceTree = "<group>"; };
 		78F8C9AA19FE12150077805C /* bg_hotes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_hotes.png; sourceTree = "<group>"; };
 		78F8C9AB19FE12150077805C /* aachen_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aachen_icon.png; sourceTree = "<group>"; };
+		7FB731C919FEB426009CD692 /* PdfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdfViewController.h; sourceTree = "<group>"; };
+		7FB731CA19FEB426009CD692 /* PdfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdfViewController.m; sourceTree = "<group>"; };
 		BB303D9618B863E300B6EBC9 /* WmZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WmZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -650,6 +653,8 @@
 		7836B9A319A479BE004BB485 /* ProgramDetails */ = {
 			isa = PBXGroup;
 			children = (
+				7FB731C919FEB426009CD692 /* PdfViewController.h */,
+				7FB731CA19FEB426009CD692 /* PdfViewController.m */,
 				7836B9A419A479E9004BB485 /* ProgramDetailsViewController.h */,
 				7836B9A519A479E9004BB485 /* ProgramDetailsViewController.m */,
 			);
@@ -1338,6 +1343,7 @@
 				78CD61EF19D027AA00C6E49A /* ExibitorsDetailsViewController.m in Sources */,
 				7836B99719A3897C004BB485 /* CacheDB.xcdatamodeld in Sources */,
 				7122DB1418BB1F7300C044E8 /* SecondFeedCustomCell.m in Sources */,
+				7FB731CB19FEB426009CD692 /* PdfViewController.m in Sources */,
 				78E5C3A719F0D7230055C6E4 /* FinalistsViewController.m in Sources */,
 				BB303DAA18B863E300B6EBC9 /* AppDelegate.m in Sources */,
 				7890808719A23B4900C537E1 /* KQNavigationController.m in Sources */,

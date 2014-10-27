@@ -9,6 +9,7 @@
 #import "ProgramDetailsViewController.h"
 #import "Util.h"
 #import "KQEventAPI.h"
+#import "PdfViewController.h"
 
 @interface ProgramDetailsViewController ()
 
@@ -32,13 +33,8 @@ UIDocumentInteractionController *documentInteractionController;
 }
 - (IBAction)openPDF:(id)sender {
     
-    NSLog(@"%@",[data objectForKey:@"document"]);
-
+    [self performSegueWithIdentifier:@"PdfViewController" sender:self];
     
-    NSURL *URL = [NSURL URLWithString:[data objectForKey:@"document"]];
-    if ([data objectForKey:@"document"]!=(id)[NSNull null]) {
-        [_webView loadRequest:[NSURLRequest requestWithURL:URL]];
-    }
 }
 - (UIViewController *) documentInteractionControllerViewControllerForPreview: (UIDocumentInteractionController *) controller {
     return self;
@@ -49,7 +45,7 @@ UIDocumentInteractionController *documentInteractionController;
 
     @try {
         name.text = [data objectForKey:@"subject"];
-        _descript.text = [data objectForKey:@"descript"];
+        _descript.text = [Util stripTags:[data objectForKey:@"descript"]];
         subject.text = [[data objectForKey:@"speaker"] objectForKey:@"name"];
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
             location.text = [NSString stringWithFormat:@"Um %@ Uhr im Aachen Quellenhof",
@@ -75,6 +71,8 @@ UIDocumentInteractionController *documentInteractionController;
 
 //    [subject sizeToFit];
     [_descript sizeToFit];
+    [_scrollView setContentSize:_descript.viewForBaselineLayout.frame.size];
+    
 //    [name sizeToFit];
     
     [super viewDidLoad];
@@ -137,7 +135,7 @@ UIDocumentInteractionController *documentInteractionController;
     @try {
         data = new_data;
         name.text = [new_data objectForKey:@"subject"];
-        _descript.text = [new_data objectForKey:@"descrition"];
+        _descript.text = [Util stripTags:[new_data objectForKey:@"descript"]];
         subject.text = [[new_data objectForKey:@"speaker"] objectForKey:@"name"];
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
             location.text = [NSString stringWithFormat:@"In the Aachen Quellenhof, %@.%@ um %@ Uhr",
@@ -164,15 +162,18 @@ UIDocumentInteractionController *documentInteractionController;
     }
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([[segue identifier] isEqualToString:@"PdfViewController"]){
+        PdfViewController *vc = (PdfViewController *)[segue destinationViewController];
+        
+        vc.pdfUrl = [data objectForKey:@"document"];
+
+    }
 }
-*/
 
 @end
