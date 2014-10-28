@@ -79,29 +79,6 @@ NSArray *dataSource;
         // Do any additional setup after loading the view.
 }
 
-//-(void)viewDidAppear:(BOOL)animated{
-//    [super viewDidLoad];
-//    NSLog(@"%@",data);
-//    
-//    dataSource = [data objectForKey:@"participants"];
-//    _institute_en.text = [data objectForKey:@"name"];
-//    _description.text = [data objectForKey:@"short_descript"];
-//    _mobile.text = [data objectForKey:@"responsible_tel"];
-//    _email.text = [data objectForKey:@"responsible_email"];
-//    if ([data objectForKey:@"localization"]!=(id)[NSNull null]) {
-//        _stand.text = [NSString stringWithFormat:@"Find me in stand: %@",[data objectForKey:@"localization"]];
-//    }
-//    
-//    [_description sizeToFit];
-//    
-//    [KQEventAPI getImageFromUrl:[data objectForKey:@"logo"] finishHandler:^(NSData* data_img){
-//        _photo.image=[UIImage imageWithData:data_img];
-//    } startHandler:^{
-//        
-//    } errorHandler:^{
-//    }];
-//
-//}
 
 #pragma mark - Table view data source
 
@@ -118,7 +95,6 @@ NSArray *dataSource;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return dataSource.count;
 }
 
@@ -131,12 +107,7 @@ NSArray *dataSource;
         cell = [[ParticipantsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     cell.textLabel.text = [[dataSource objectAtIndex: indexPath.row] objectForKey:@"name"];
-    //    cell.imgEventImage.image=[UIImage imageNamed:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"image"]];
-    
-    //    cell.title.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
-    //    cell.subtitle.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name_en"];
-    
-    //    cell.imgEventImage.image = [UIImage imageNamed:@"no_profile.png"];
+
     return cell;
 }
 

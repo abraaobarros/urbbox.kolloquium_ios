@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface ParticipantsTableViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate,UISearchDisplayDelegate>
+@interface ParticipantsTableViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate,UISearchDisplayDelegate,MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong,nonatomic) NSArray *filteredArray;
 @property (strong,nonatomic) NSArray *dataSource;

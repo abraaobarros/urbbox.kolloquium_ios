@@ -10,7 +10,7 @@
 #import "UIViewController+JASidePanel.h"
 #import "ParticipantsTableViewCell.h"
 #import "KQCache.h"
-#import <MessageUI/MessageUI.h>
+
 #import "Util.h"
 
 @interface ParticipantsTableViewController (){
@@ -119,13 +119,17 @@
     if ([MFMailComposeViewController canSendMail]) {
         
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-//        [mailViewController setSubject:@"Subject Goes Here."];
+//        [mailViewController setSubject:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"email"]];
 //        [mailViewController setMessageBody:@"Your message goes here." isHTML:NO];
        
         NSArray *toRecipients = [NSArray arrayWithObjects:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"email"], nil];
         [mailViewController setToRecipients:toRecipients];
         mailViewController.mailComposeDelegate =self;
-        [self presentModalViewController:mailViewController animated:YES];
+//        [self presentModalViewController:mailViewController animated:YES];
+        
+        [self presentViewController:mailViewController animated:YES completion:^{
+            
+        }];
     } else {
         NSLog(@"Device is unable to send email in its current state.");
     }
@@ -139,7 +143,9 @@
     if (result == MFMailComposeResultSent) {
         NSLog(@"It's away!");
     }
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 #pragma mark Content Filtering

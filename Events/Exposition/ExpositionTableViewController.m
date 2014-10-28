@@ -160,40 +160,10 @@
     NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     [vc setData:data];
-//    
-//    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-//    {
-        [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*7/8];
-//    }
-//    else
-//        
-//    {
-//        //        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
-//        
-//        if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
-//        {
-//            [self.sidePanelController setRightFixedWidth:600];
-//        }else{
-//            [self.sidePanelController setRightFixedWidth:600];
-//        }
-//    }
+
+    [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*7/8];
     [self.sidePanelController setRightPanel:vc];
     [self.sidePanelController showRightPanelAnimated:YES];
-    
-    
-    // Get reference to the destination view controller
-    
-    
-    
-    
-    
-    
-//    SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExibitorsDetailsViewController"];
-//    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-//    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
-//    [self.sidePanelController setRightPanel:vc];
-//    [self.sidePanelController showRightPanelAnimated:YES];
-    
     
     
 }
@@ -204,15 +174,7 @@
     
     if ([[segue identifier] isEqualToString:@"SpeakerDetailsViewController"])
     {
-        // Get reference to the destination view controller
-        //        SpeakerDetailsViewController *vc = (SpeakerDetailsViewController *)[segue destinationViewController];
-        //        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        //        NSLog(@"IP: %@",[_dataSource objectAtIndex:ip.row]);
-        //        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
-        //        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
-        
-        
-        // Pass any objects to the view controller here, like...
+
     }
     
     if ([[segue identifier] isEqualToString:@"ProgramDetailsViewController"])

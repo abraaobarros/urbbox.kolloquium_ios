@@ -147,11 +147,7 @@ KQEventAPI *event;
         NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
         NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
-        if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
-        {
-            [self.sidePanelController setRightFixedWidth:650];
-        }else{
-        }
+        [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*9/10];
         [self.sidePanelController setRightPanel:vc];
         
         [self.sidePanelController showRightPanelAnimated:YES];
