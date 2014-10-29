@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface SpeakerDetailsViewController : UIViewController
+@interface SpeakerDetailsViewController : UIViewController<MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSDictionary *data;
 @property (weak, nonatomic) IBOutlet UILabel *profission;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *email_label;
 @property (weak, nonatomic) IBOutlet UIButton *mobile;
 @property (weak, nonatomic) IBOutlet UILabel *about;
+@property (weak, nonatomic) IBOutlet UIImageView *email_image;
 @property (weak, nonatomic) IBOutlet UIButton *email;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *name;

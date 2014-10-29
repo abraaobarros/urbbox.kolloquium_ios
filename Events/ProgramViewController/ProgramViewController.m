@@ -192,7 +192,14 @@ BOOL reload = FALSE;
     cell.data.text=[Util convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"dd/MM/yyyy HH:mm" toPattern:@"dd MMM"];
     @try {
         cell.speaker.text = [[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"name"];
-        cell.company.text=[[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"company"];
+        
+        if([[[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"]objectForKey:@"name"] isEqualToString:@"Information"])
+        {
+            cell.company.text=@"";
+        }else
+        {
+            cell.company.text=[[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"company"];
+        }
     }
     @catch (NSException *exception) {
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)

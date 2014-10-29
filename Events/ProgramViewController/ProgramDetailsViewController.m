@@ -54,7 +54,9 @@ UIDocumentInteractionController *documentInteractionController;
         _company.text = [[data objectForKey:@"speaker"]objectForKey:@"company"];
         }
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
-            location.text = [NSString stringWithFormat:@"Um %@ Uhr im Aachen Quellenhof",
+            location.text = [NSString stringWithFormat:@"Pullman Quellenhof, %@.%@ um %@ Uhr",
+                             [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"dd"] ,
+                             [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"MMM"],
                              [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"]];
         }
         _photo.image=[UIImage imageNamed:@"no_profile.png"];
@@ -78,7 +80,12 @@ UIDocumentInteractionController *documentInteractionController;
             CGRect f = _quetion.frame;
             f.origin.x = 61;
             f.origin.y = 141;
-            _quetion.frame = f;
+            if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+            {
+                
+                _quetion.frame = f;
+            }
+            
             _pdfButton.hidden=NO;
         }
         [_scroll setContentSize:_contentView.frame.size];
@@ -186,8 +193,10 @@ UIDocumentInteractionController *documentInteractionController;
         _descript.text = [Util stripTags:[new_data objectForKey:@"descript"]];
         subject.text = [[new_data objectForKey:@"speaker"] objectForKey:@"name"];
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
-            location.text = [NSString stringWithFormat:@"Aachen Quellenhof, %@.%@ um %@ Uhr",
-                             [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"],[Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"dd"],[Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"MMM"]];
+            location.text = [NSString stringWithFormat:@"Pullman Quellenhof, %@.%@ um %@ Uhr",
+                             [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"dd"] ,
+                             [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"MMM"],
+                            [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"]];
         }
         if ([data objectForKey:@"document"]==(id)[NSNull null] || [data objectForKey:@"document"]== nil) {
             _pdfButton.hidden=YES;

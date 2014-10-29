@@ -19,8 +19,8 @@
     [super viewDidLoad];
     NSLog(@"%@",data);
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    _institute_en.text = [data objectForKey:@"name"];
     [_institute_en sizeToFit];
-    
     if ([data objectForKey:@"short_descript"]==nil || [data objectForKey:@"short_descript"]==(id)[NSNull null]) {
         _des.text =[data objectForKey:@"profile"];
         _background.text = [data objectForKey:@"background"];
@@ -68,6 +68,7 @@
     });
 }
 -(void)setData:(NSDictionary *)d{
+    _institute_en.text = [data objectForKey:@"name"];
     [_institute_en sizeToFit];
     
     data =d;

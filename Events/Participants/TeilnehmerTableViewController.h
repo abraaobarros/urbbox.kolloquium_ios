@@ -12,5 +12,6 @@
 @interface TeilnehmerTableViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate,UISearchDisplayDelegate,MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong,nonatomic) NSArray *filteredArray;
+@property (weak, nonatomic) IBOutlet UIButton *email;
 @property (strong,nonatomic) NSArray *dataSource;
 @end

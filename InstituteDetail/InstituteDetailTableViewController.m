@@ -40,7 +40,7 @@ KQEventAPI *event;
 
     
     
-    
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self loadData];
     //    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
@@ -118,7 +118,7 @@ KQEventAPI *event;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
         
-        return 265;
+        return 295;
     }
     else
     {
