@@ -119,7 +119,7 @@
     if ([MFMailComposeViewController canSendMail]) {
         
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-        [mailViewController setSubject:@"Kontakt"];
+        [mailViewController setSubject:@"Kontakt Werkzeugbau mit Zukunft"];
         [mailViewController setMessageBody:@"" isHTML:NO];
        
         NSArray *toRecipients = [NSArray arrayWithObjects:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"email"], nil];
