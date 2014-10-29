@@ -84,7 +84,7 @@ NSArray *dataSource;
     if ([MFMailComposeViewController canSendMail]) {
         
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-        [mailViewController setSubject:[data objectForKey:@"responsible_email"]];
+        [mailViewController setSubject:@"Contact Mit"];
         [mailViewController setMessageBody:@"Your message goes here." isHTML:NO];
         
         NSArray *toRecipients = [NSArray arrayWithObjects:[data objectForKey:@"responsible_email"], nil];

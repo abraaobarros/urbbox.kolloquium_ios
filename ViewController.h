@@ -2,7 +2,7 @@
 //  ViewController.h
 //  Events
 //
-//  Created by Shabbir Hasan Zaheb on 22/02/14.
+//  Created by Abraao Barros Lacerda on 29/10/14.
 //  Copyright (c) 2014 Teknowledge Software. All rights reserved.
 //
 

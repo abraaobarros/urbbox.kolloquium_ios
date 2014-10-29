@@ -114,19 +114,24 @@
 }
 
 + (NSDictionary *)requestPost:(NSString *)urlString post:(NSString *)post {
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-    
-    
-    //Criar Request
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSDictionary *data;
-    data = [self buildPostForm:url request:request postLength:postLength postData:postData];
-    
-    NSLog(@"Foi feito uma requisição POST: %@?%@",urlString,post);
-    return data;
+    @try {
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
+        
+        
+        //Criar Request
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        NSDictionary *data;
+        data = [self buildPostForm:url request:request postLength:postLength postData:postData];
+        
+        NSLog(@"Foi feito uma requisição POST: %@?%@",urlString,post);
+        return data;
+    }
+    @catch (NSException *exception) {
+        return nil;
+    }
 }
 
 

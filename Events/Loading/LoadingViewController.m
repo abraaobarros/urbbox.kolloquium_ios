@@ -22,7 +22,8 @@
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         if ([userDefaults objectForKey:@"email"]) {
             [self dismissViewControllerAnimated:NO completion:nil];
-        }    }
+        }
+    }
     return self;
 }
 
@@ -72,12 +73,13 @@
     [KQEventAPI makeLogin:_login.text withPass:_pass.text
             finishHandler:^{
                 _textLoading.hidden = NO;
-                
+                [self dismissViewControllerAnimated:YES completion:nil];
                 _textLoading.text = @"Getting information...";
                 KQEventAPI *event = [[KQEventAPI alloc] initWithDataAssyncWithStart:^{
+                    _textLoading.text = @"Getting information...";
                 } finishProcess:^{
                     [_loading stopAnimating];
-                    [self dismissViewControllerAnimated:YES completion:nil];
+//                    [self dismissViewControllerAnimated:YES completion:nil];
                 } errorHandler:^{
                     _textLoading.hidden = NO;
                     _textLoading.text = @"No internet connection";

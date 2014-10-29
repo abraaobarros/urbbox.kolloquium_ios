@@ -94,7 +94,7 @@
                                   }
                               }
                               @catch (NSException *exception) {
-                                  loginErrorHandler();
+                                  errorHandler();
                               }
                           } errorHandler:errorHandler];
     }

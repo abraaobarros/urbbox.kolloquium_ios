@@ -40,7 +40,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -60,13 +59,6 @@
     }else if([_data isEqualToString:@"partners"]){
         [Util setupNavigationBar:self withTitle:@"Partners"];
     }
-    
-//    dataSource = [dataSource sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-//        NSDictionary *first =(NSDictionary*)a;
-//        NSDictionary *second = (NSDictionary*)b;
-//        return [[first objectForKey:@"name"] compare:[second objectForKey:@"name"]];
-//    }];
-    
 }
 -(void)dicDummyDataInitialization{
     dataSource = [_event objectForKey:@"guest_companies"];
@@ -180,68 +172,13 @@
     
     if ([[segue identifier] isEqualToString:@"ProgramDetailsViewController"])
     {
-        // Get reference to the destination view controller
         ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[segue destinationViewController];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
-        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         
-        
-        // Pass any objects to the view controller here, like...
     }
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a story board-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- 
- */
 
 @end

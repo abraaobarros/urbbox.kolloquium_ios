@@ -147,8 +147,10 @@
     NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     [vc setData:data];
-    [self.sidePanelController setRightPanel:vc];
+    
     [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*9/10];
+    [self.sidePanelController setMaximumAnimationDuration:0.5];
+    [self.sidePanelController setRightPanel:vc];
     [self.sidePanelController showRightPanelAnimated:YES];
 }
 
@@ -186,9 +188,7 @@
         NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
         NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         [vc setData:data];
-//        vc.data =[[NSDictionary alloc] initWithDictionary:[_dataSource objectAtIndex:ip.row]];
         
-        // Pass any objects to the view controller here, like...
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

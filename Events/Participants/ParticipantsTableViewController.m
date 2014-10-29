@@ -119,11 +119,15 @@
     if ([MFMailComposeViewController canSendMail]) {
         
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-        [mailViewController setSubject:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"email"]];
+        [mailViewController setSubject:@"Contact WmZ"];
         [mailViewController setMessageBody:@"Your message goes here." isHTML:NO];
        
         NSArray *toRecipients = [NSArray arrayWithObjects:[[_dataSource objectAtIndex:indexPath.row] objectForKey:@"email"], nil];
+        
+        
         [mailViewController setToRecipients:toRecipients];
+        [mailViewController setCcRecipients:toRecipients];
+        
         mailViewController.mailComposeDelegate =self;
 //        [self presentModalViewController:mailViewController animated:YES];
         
