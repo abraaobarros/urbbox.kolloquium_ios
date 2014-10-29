@@ -53,24 +53,37 @@
 }
 
 -(void) putData: (NSDictionary *) dado toHash:(NSString *)hash{
-    [self.data setValue:dado forKey:hash];
-    [self save:dado toHash:hash];
+    @try {
+        [self.data setValue:dado forKey:hash];
+        [self save:dado toHash:hash];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Erro ao pudData");
+    }
+    
     //    [self saveData];
 }
 
 -(void) putDataSource: (NSData *) dado toHash:(NSString *)hash{
-    [self.dataSource setValue:dado forKey:hash];
-
-    Cache* newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Cache"
-                                                    inManagedObjectContext:self.managedObjectContext];
-    //  2
-    newEntry.url = hash;
-    newEntry.cache = [self.dataSource objectForKey:hash]; ;
     
-    NSError *error;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    @try {
+        [self.dataSource setValue:dado forKey:hash];
+        
+        Cache* newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Cache"
+                                                        inManagedObjectContext:self.managedObjectContext];
+        //  2
+        newEntry.url = hash;
+        newEntry.cache = [self.dataSource objectForKey:hash];
+        
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
     }
+    @catch (NSException *exception) {
+        NSLog(@"Erro ao pudDataSource");
+    }
+    
 }
 
 - (void) save: (NSDictionary *) dado toHash:(NSString *)hash{
