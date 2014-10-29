@@ -47,6 +47,11 @@ UIDocumentInteractionController *documentInteractionController;
         name.text = [data objectForKey:@"subject"];
         _descript.text = [Util stripTags:[data objectForKey:@"descript"]];
         subject.text = [[data objectForKey:@"speaker"] objectForKey:@"name"];
+        if([[[data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
+            _company.text = @"";
+        }else{
+        _company.text = [[data objectForKey:@"speaker"]objectForKey:@"company"];
+        }
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
             location.text = [NSString stringWithFormat:@"Um %@ Uhr im Aachen Quellenhof",
                              [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"]];
