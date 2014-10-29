@@ -80,7 +80,7 @@ UIDocumentInteractionController *documentInteractionController;
     [_scrollView setContentSize:_descript.viewForBaselineLayout.frame.size];
     
 //    [name sizeToFit];
-    
+    [_quetion resignFirstResponder];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -100,6 +100,7 @@ UIDocumentInteractionController *documentInteractionController;
                                                             cancelButtonTitle:@"OK"
                                                             otherButtonTitles:nil];
                       [alert show];
+                      [_quetion resignFirstResponder];
                  } startHandler:^{
                      NSLog(@"Começou");
                  } errorHandler:^{
