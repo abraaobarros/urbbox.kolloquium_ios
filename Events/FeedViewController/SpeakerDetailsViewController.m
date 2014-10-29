@@ -54,6 +54,7 @@
     _mobile_tel.text = [data objectForKey:@"tel"];
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -62,7 +63,40 @@
 - (IBAction)mobile_click:(id)sender {
 }
 - (IBAction)email_click:(id)sender {
+    if ([MFMailComposeViewController canSendMail]) {
+        
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        [mailViewController setSubject:@"Kontakt Werkzeugbau mit Zukunft"];
+        [mailViewController setMessageBody:@"" isHTML:NO];
+        
+        NSArray *toRecipients = [NSArray arrayWithObjects:[data objectForKey:@"email"], nil];
+        
+        
+        [mailViewController setToRecipients:toRecipients];
+        
+        mailViewController.mailComposeDelegate =self;
+        //        [self presentModalViewController:mailViewController animated:YES];
+        
+        [self presentViewController:mailViewController animated:YES completion:^{
+            
+        }];
+    } else {
+        NSLog(@"Device is unable to send email in its current state.");
+    }
 }
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
 
 /*
 #pragma mark - Navigation
