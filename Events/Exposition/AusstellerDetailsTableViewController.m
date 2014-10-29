@@ -89,6 +89,8 @@
         @try {
             if([[data objectForKey:@"participants"] count]==0){
                 _finalists.hidden = YES;
+            }else{
+                _finalists.hidden = NO;
             }
             for (NSDictionary *d in [data objectForKey:@"participants"]) {
                 _strenghts.text = [NSString stringWithFormat:@"%@%@\n\n",_strenghts.text,[d objectForKey:@"name" ]];

@@ -1614,7 +1614,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7E1-4f-JM5">
-                                                    <rect key="frame" x="126" y="37" width="246" height="21"/>
+                                                    <rect key="frame" x="126" y="37" width="608" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1656,12 +1656,13 @@
                     </tableView>
                     <connections>
                         <outlet property="background" destination="7E1-4f-JM5" id="14g-rP-bGm"/>
-                        <outlet property="background_name" destination="ddZ-wm-MeD" id="FP9-TK-uni"/>
+                        <outlet property="background_name" destination="sRN-RY-qPC" id="dmJ-Gl-ILm"/>
                         <outlet property="des" destination="Cgn-Wl-zDP" id="Jag-Kt-CrJ"/>
                         <outlet property="finalists" destination="ddZ-wm-MeD" id="etf-ov-dgd"/>
                         <outlet property="institute_en" destination="imG-AM-mrs" id="IHa-G1-apf"/>
                         <outlet property="photo" destination="TYf-wN-VEe" id="9LM-cf-EGr"/>
-                        <outlet property="strenghts" destination="7E1-4f-JM5" id="KeG-tV-tvP"/>
+                        <outlet property="strenghts" destination="7E1-4f-JM5" id="YKN-nH-qBJ"/>
+                        <outlet property="teilneh" destination="7E1-4f-JM5" id="4GZ-1a-oB8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B6S-Fp-qqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
