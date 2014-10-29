@@ -42,15 +42,6 @@
     [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"]];
     [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
     [self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    {
-        
-        [self setLeftFixedWidth:300.0];
-    }
-    else
-    {
-        
-    }
 //    [self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"rightViewController"]];
 }
 

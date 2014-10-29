@@ -2,21 +2,17 @@
 //  AboutViewController.h
 //  Events
 //
-//  Created by Souvick Ghosh on 2/25/14.
+//  Created by Abraao Barros Lacerda on 29/10/14.
 //  Copyright (c) 2014 Teknowledge Software. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface AboutViewController : ViewController
-{
-    UILabel *description;
-}
-@property (strong, nonatomic) IBOutlet UIScrollView *scrollViewMain;
-//@property (weak, nonatomic) IBOutlet UILabel *description;
+@interface AboutViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *kolloquium;
 @property (weak, nonatomic) IBOutlet UILabel *address;
-@property (weak, nonatomic) IBOutlet UILabel *dates;
-@property (weak, nonatomic) IBOutlet UIButton *ipt;
-@property (weak, nonatomic) IBOutlet UIButton *wzl;
+@property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UIImageView *photo;
 
 @end

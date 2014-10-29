@@ -20,6 +20,7 @@
     NSMutableArray *dataSource;
     NSMutableDictionary *dataImageSource;
     LoadingViewController *loading;
+    ProgramDetailsViewController *vc;
     NSArray *data;
    
 }
@@ -48,6 +49,12 @@ BOOL reload = FALSE;
     if (![userDefaults objectForKey:@"email"]) {
         [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
     }
+    
+    [Util setupNavigationBar:self withTitle:@"Aussteller"];
+    vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
+    [self.sidePanelController setRightPanel:vc];
+    [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*9/10];
+    
     event =[[KQEventAPI alloc]
                     initWithDataAssyncWithStart:^(void){
                         [self performSegueWithIdentifier:@"Loading2ViewController" sender:self];
@@ -222,15 +229,9 @@ BOOL reload = FALSE;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-        // Get reference to the destination view controller
-        ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
-        NSDictionary *d = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
-        vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
-        [vc setData:d];
     
-    if ([d objectForKey:@"speaker_id"]!=(id)[NSNull null]) {
-        [self.sidePanelController setRightPanel:vc];
-        [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*6/7];
+    [vc setData:[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]]];
+    if ([[dataSource objectAtIndex:indexPath.row] objectForKey:@"speaker_id"]!=(id)[NSNull null]) {
         [self.sidePanelController showRightPanelAnimated:YES];
     }
     

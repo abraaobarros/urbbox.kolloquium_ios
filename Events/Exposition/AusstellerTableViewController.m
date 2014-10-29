@@ -27,6 +27,8 @@
     NSMutableArray *dicTweetFeed;
     NSMutableArray *dicImageFeed;
     KQCache *cache;
+    AusstellerDetailsViewController *vc;
+    
     
 }
 
@@ -50,6 +52,10 @@
 
     
     [Util setupNavigationBar:self withTitle:@"Aussteller"];
+    
+    vc = (AusstellerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExibitorsDetailsViewController"];
+    [self.sidePanelController setRightPanel:vc];
+    [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*9/10];
     
     cache = [KQCache sharedManager];
     dataSource = [[cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"] objectForKey:_data];
@@ -148,17 +154,10 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    AusstellerDetailsViewController *vc = (AusstellerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExibitorsDetailsViewController"];
     NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
-    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     [vc setData:data];
-
-    [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*7/8];
-    [self.sidePanelController setRightPanel:vc];
-    [self.sidePanelController setMaximumAnimationDuration:0.5];
     [self.sidePanelController showRightPanelAnimated:YES];
-    
-    
+
 }
 
 

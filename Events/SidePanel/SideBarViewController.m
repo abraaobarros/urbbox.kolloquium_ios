@@ -17,6 +17,7 @@
 #import "ProgramViewController.h"
 #import "KQNavigationController.h"
 #import "AusstellerTableViewController.h"
+#import "AboutTableViewController.h"
 #import "InfoViewController.h"
 #import "KQCache.h"
 #import "Util.h"
@@ -364,15 +365,9 @@ KQEventAPI *event;
         }
         else if(indexPath.row==4)
         {
-            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-            {
-                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"]];
-            }
-            else
-            {
-                [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"]];
-                
-            }
+            AboutTableViewController *vc = (AboutTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"AboutTableViewController"];
+            KQNavigationController *aboutView = [[KQNavigationController alloc] initWithRootViewController:vc];
+            [self.sidePanelController setCenterPanel:aboutView];
             
         }
         else if(indexPath.row==5)
@@ -405,10 +400,10 @@ KQEventAPI *event;
            
         }
         else if(indexPath.row ==2){
-                AusstellerTableViewController *vc = (AusstellerTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
-                KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
-                [vc setData:@"partners"];
-                [self.sidePanelController setCenterPanel:partnersView];
+            AusstellerTableViewController *vc = (AusstellerTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
+            KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
+            [vc setData:@"partners"];
+            [self.sidePanelController setCenterPanel:partnersView];
         }
     }else if (indexPath.section==2){
 //        TODO: ADD AACHEN

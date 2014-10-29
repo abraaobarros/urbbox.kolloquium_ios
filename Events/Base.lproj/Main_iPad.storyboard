@@ -343,7 +343,7 @@
                                 <rect key="frame" x="0.0" y="74" width="768" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ib7-aN-00O">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ib7-aN-00O">
                                         <rect key="frame" x="292" y="20" width="361" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -435,7 +435,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dOz-Tg-3O1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dOz-Tg-3O1">
                                 <rect key="frame" x="214" y="422" width="432" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -452,6 +452,7 @@
                         <outlet property="descript" destination="dOz-Tg-3O1" id="iQ8-ZX-a38"/>
                         <outlet property="location" destination="bqN-tJ-ENI" id="BJg-t1-Qsq"/>
                         <outlet property="name" destination="ib7-aN-00O" id="opk-de-wiY"/>
+                        <outlet property="pdfButton" destination="jxP-6S-WLq" id="OND-iS-L7F"/>
                         <outlet property="photo" destination="EdR-x1-7kc" id="ZU9-x0-ZGE"/>
                         <outlet property="quetion" destination="5gY-6i-Za8" id="3Sr-4n-H0J"/>
                         <outlet property="subject" destination="l9M-C3-PBL" id="iD3-4e-SHf"/>
@@ -940,7 +941,7 @@
         <!--About-->
         <scene sceneID="W2v-eS-wdq">
             <objects>
-                <viewController id="kpo-LP-FXh" customClass="AboutViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="AboutTableViewController" storyboardIdentifier="AboutTableViewController" id="kpo-LP-FXh" customClass="AboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qUf-Kc-awh">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -994,13 +995,15 @@
                     <navigationItem key="navigationItem" title="About" id="il5-Mh-Omx"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="address" destination="aBc-XM-hNZ" id="aHW-Gd-pMw"/>
-                        <outlet property="description" destination="TRe-iq-eJE" id="jhU-yJ-O1w"/>
+                        <outlet property="address" destination="aBc-XM-hNZ" id="RKm-Rx-nQY"/>
+                        <outlet property="date" destination="FZj-47-iaU" id="b29-5D-EB8"/>
+                        <outlet property="kolloquium" destination="TRe-iq-eJE" id="xX6-Jc-VrO"/>
+                        <outlet property="photo" destination="pio-Nr-MDC" id="yDC-5h-UDo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLK-tE-eFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520" y="302"/>
+            <point key="canvasLocation" x="1514" y="309"/>
         </scene>
         <!--Title-->
         <scene sceneID="a9J-jT-qIQ">
@@ -1019,18 +1022,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="L46-x4-QFf">
-                                            <rect key="frame" x="-4" y="-5" width="733" height="217"/>
+                                            <rect key="frame" x="-4" y="-5" width="733" height="220"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O6B-hT-GJJ">
-                                            <rect key="frame" x="11" y="239" width="734" height="23"/>
+                                            <rect key="frame" x="11" y="242" width="734" height="23"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kgu-hJ-oYk">
-                                            <rect key="frame" x="11" y="214" width="734" height="27"/>
+                                            <rect key="frame" x="11" y="216" width="734" height="27"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
@@ -1468,7 +1471,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <label key="tableHeaderView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teilnehmer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CD4-BE-StZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="523" height="46"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="522.99998760223389" height="46"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>

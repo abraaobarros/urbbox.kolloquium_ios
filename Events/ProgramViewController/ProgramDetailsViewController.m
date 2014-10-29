@@ -61,6 +61,12 @@ UIDocumentInteractionController *documentInteractionController;
                             
                         }];
         
+        if ([data objectForKey:@"document"]==(id)[NSNull null] || [data objectForKey:@"document"]== nil) {
+            _pdfButton.hidden=YES;
+        }else{
+            _pdfButton.hidden=NO;
+        }
+        
     }
     @catch (NSException *exception) {
         
@@ -141,7 +147,11 @@ UIDocumentInteractionController *documentInteractionController;
             location.text = [NSString stringWithFormat:@"In the Aachen Quellenhof, %@.%@ um %@ Uhr",
                              [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"],[Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"dd"],[Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"MMM"]];
         }
-        
+        if ([data objectForKey:@"document"]==(id)[NSNull null] || [data objectForKey:@"document"]== nil) {
+            _pdfButton.hidden=YES;
+        }else{
+            _pdfButton.hidden=NO;
+        }
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             @try {
                 NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[new_data objectForKey:@"speaker"] objectForKey:@"profile_img"]]];
@@ -170,7 +180,6 @@ UIDocumentInteractionController *documentInteractionController;
 {
     if([[segue identifier] isEqualToString:@"PdfViewController"]){
         PdfViewController *vc = (PdfViewController *)[segue destinationViewController];
-        
         vc.pdfUrl = [data objectForKey:@"document"];
 
     }

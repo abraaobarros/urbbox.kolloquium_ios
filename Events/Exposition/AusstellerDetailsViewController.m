@@ -142,8 +142,6 @@ NSArray *dataSource;
     }];
 }
 
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -122,7 +122,7 @@ KQEventAPI *event;
     }
     else
     {
-        return 182;
+        return 160;
     }
 }
 
