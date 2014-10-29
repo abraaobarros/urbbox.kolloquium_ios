@@ -19,27 +19,6 @@
     [super viewDidLoad];
     NSLog(@"%@",data);
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-//    if ([data objectForKey:@"background"]==(id)[NSNull null] || [data objectForKey:@"background"] == nil) {
-//        _finalists.hidden=YES;
-////        _tableView.hidden = NO;
-//        _dataSource = [data objectForKey:@"participants"];
-//        _institute_en.text = [data objectForKey:@"name"];
-//        _des.text = [data objectForKey:@"short_descript"];
-//        _mobile.text = [data objectForKey:@"responsible_tel"];
-//        _email.text = [data objectForKey:@"responsible_email"];
-//        if ([data objectForKey:@"localization"]==(id)[NSNull null] || [data objectForKey:@"localization"] == nil) {
-//            
-//        }else{
-//            _stand.text = [NSString stringWithFormat:@"%@",[data objectForKey:@"localization"]];
-////            _tableView.hidden = YES;
-//        }
-//        [_des sizeToFit];
-//        
-//        
-//    }else{
-//        _finalists.hidden=NO;
-//       _tableView.hidden = YES;
-    _institute_en.text = [data objectForKey:@"name"];
     [_institute_en sizeToFit];
     
     if ([data objectForKey:@"short_descript"]==nil || [data objectForKey:@"short_descript"]==(id)[NSNull null]) {
@@ -87,7 +66,55 @@
         
     });
 }
-
+-(void)setData:(NSDictionary *)d{
+    [_institute_en sizeToFit];
+    
+    data =d;
+    if ([data objectForKey:@"short_descript"]==nil || [data objectForKey:@"short_descript"]==(id)[NSNull null]) {
+        _des.text =[data objectForKey:@"profile"];
+        _background.text = [data objectForKey:@"background"];
+        _finalists.hidden = NO;
+        _finalists.text = @"Ausgewählte Stärken";
+        _strenghts.text = [data objectForKey:@"strengths"];
+        _type = 0;
+        
+    }else{
+        _type = 1;
+        _strenghts.text = [data objectForKey:@"location"];
+        _des.text =[data objectForKey:@"short_descript"];
+        _finalists.text = @"Teilnehmer";
+        _background_name.hidden = YES;
+        _strenghts.text = @"";
+        @try {
+            if([[data objectForKey:@"participants"] count]==0){
+                _finalists.hidden = YES;
+            }
+            for (NSDictionary *d in [data objectForKey:@"participants"]) {
+                _strenghts.text = [NSString stringWithFormat:@"%@%@\n\n",_strenghts.text,[d objectForKey:@"name" ]];
+            }
+        }
+        @catch (NSException *exception) {
+            _finalists.hidden = YES;
+        }
+        
+        
+    }
+    [_strenghts sizeToFit];
+    [_des sizeToFit];
+    [_background sizeToFit];
+    //    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        @try {
+            NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data objectForKey:@"logo"]]];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                _photo.image=[UIImage imageWithData: data_img];
+            });
+        }@catch (NSException *exception) {
+            NSLog(@"Error : %@",exception);
+        }
+        
+    });
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -25,4 +25,5 @@
 @property (weak, nonatomic) IBOutlet UIView *finalists;
 @property (weak, nonatomic) IBOutlet UILabel *background;
 @property (weak, nonatomic) IBOutlet UILabel *strenghts;
+-(void)setData:(NSDictionary *)data;
 @end

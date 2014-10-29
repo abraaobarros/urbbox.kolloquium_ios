@@ -29,37 +29,35 @@ NSArray *dataSource;
     return self;
 }
 
-- (void)viewDidLoad
+- (void)setData:(NSDictionary *)d
 {
-    [super viewDidLoad];
-    NSLog(@"%@",data);
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    if ([data objectForKey:@"background"]==(id)[NSNull null] || [data objectForKey:@"background"] == nil) {
+    if ([d objectForKey:@"background"]==(id)[NSNull null] || [data objectForKey:@"background"] == nil) {
         _finalists.hidden=YES;
         _tableView.hidden = NO;
-        dataSource = [data objectForKey:@"participants"];
-        _institute_en.text = [data objectForKey:@"name"];
-        _des.text = [data objectForKey:@"short_descript"];
-        _mobile.text = [data objectForKey:@"responsible_tel"];
-        _email.text = [data objectForKey:@"responsible_email"];
-        if ([data objectForKey:@"localization"]==(id)[NSNull null] || [data objectForKey:@"localization"] == nil) {
-        
+        dataSource = [d objectForKey:@"participants"];
+        _institute_en.text = [d objectForKey:@"name"];
+        _des.text = [d objectForKey:@"short_descript"];
+        _mobile.text = [d objectForKey:@"responsible_tel"];
+        _email.text = [d objectForKey:@"responsible_email"];
+        if ([data objectForKey:@"localization"]==(id)[NSNull null] || [d objectForKey:@"localization"] == nil) {
+            
         }else{
-            _stand.text = [NSString stringWithFormat:@"%@",[data objectForKey:@"localization"]];
+            _stand.text = [NSString stringWithFormat:@"%@",[d objectForKey:@"localization"]];
             _tableView.hidden = YES;
         }
         [_des sizeToFit];
         
-
+        
     }else{
         _finalists.hidden=NO;
         _tableView.hidden = YES;
-        _institute_en.text = [data objectForKey:@"name"];
-        _strenghts.text = [data objectForKey:@"strengths"];
-        _des.text =[data objectForKey:@"profile"];
+        _institute_en.text = [d objectForKey:@"name"];
+        _strenghts.text = [d objectForKey:@"strengths"];
+        _des.text =[d objectForKey:@"profile"];
         [_strenghts sizeToFit];
         
-        _background.text = [data objectForKey:@"background"];
+        _background.text = [d objectForKey:@"background"];
         [_background sizeToFit];
     }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -75,6 +73,12 @@ NSArray *dataSource;
     });
     
     [_scrollView setContentSize:_viewParent.frame.size];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self setData:data];
         // Do any additional setup after loading the view.
 }
 
