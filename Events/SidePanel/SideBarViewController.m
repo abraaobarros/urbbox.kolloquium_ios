@@ -411,16 +411,16 @@ KQEventAPI *event;
                 [self.sidePanelController setCenterPanel:partnersView];
         }
     }else if (indexPath.section==2){
-        //TODO: ADD AACHEN
-//        if(indexPath.row==0)
-//        {
-//            InfoViewController *vc = (InfoViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InfoViewController"];
-//            vc.title = @"Aachen";
-//            KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
-//            [self.sidePanelController setCenterPanel:partnersView];
-//            
-//            
-//        }
+//        TODO: ADD AACHEN
+        if(indexPath.row==0)
+        {
+            InfoViewController *vc = (InfoViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InfoViewController"];
+            vc.title = @"Aachen";
+            KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
+            [self.sidePanelController setCenterPanel:partnersView];
+            
+            
+        }
         if(indexPath.row==0)
         {
             KQCache *cache = [KQCache sharedManager];

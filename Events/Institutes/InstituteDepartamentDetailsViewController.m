@@ -29,7 +29,6 @@ NSArray *dataSource;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@",data);
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     dataSource = [data objectForKey:@"services"];
     _institute_en.text = [data objectForKey:@"name"];
@@ -81,7 +80,36 @@ NSArray *dataSource;
     cell.service.text = [[dataSource objectAtIndex: indexPath.row] objectForKey:@"name"];
     return cell;
 }
+- (IBAction)send_email:(id)sender {
+    if ([MFMailComposeViewController canSendMail]) {
+        
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        [mailViewController setSubject:[data objectForKey:@"responsible_email"]];
+        [mailViewController setMessageBody:@"Your message goes here." isHTML:NO];
+        
+        NSArray *toRecipients = [NSArray arrayWithObjects:[data objectForKey:@"responsible_email"], nil];
+        [mailViewController setToRecipients:toRecipients];
+        mailViewController.mailComposeDelegate =self;
+        
+        [self presentViewController:mailViewController animated:YES completion:^{
+            
+        }];
+    } else {
+        NSLog(@"Device is unable to send email in its current state.");
+    }
+}
 
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
 
 - (void)didReceiveMemoryWarning
 {

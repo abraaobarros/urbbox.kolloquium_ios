@@ -163,6 +163,7 @@
 
     [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*7/8];
     [self.sidePanelController setRightPanel:vc];
+    [self.sidePanelController setMaximumAnimationDuration:0.5];
     [self.sidePanelController showRightPanelAnimated:YES];
     
     
