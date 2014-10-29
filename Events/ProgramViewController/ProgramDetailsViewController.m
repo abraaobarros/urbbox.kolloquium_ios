@@ -57,6 +57,7 @@ UIDocumentInteractionController *documentInteractionController;
             location.text = [NSString stringWithFormat:@"Um %@ Uhr im Aachen Quellenhof",
                              [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"]];
         }
+        _photo.image=[UIImage imageNamed:@"no_profile.png"];
         [KQEventAPI getImageFromUrl:[[data objectForKey:@"speaker"] objectForKey:@"profile_img"]
                        finishHandler:^(NSData *_data) {
                            _photo.image=[UIImage imageWithData: _data];
@@ -80,6 +81,7 @@ UIDocumentInteractionController *documentInteractionController;
             _quetion.frame = f;
             _pdfButton.hidden=NO;
         }
+        [_scroll setContentSize:_contentView.frame.size];
         
     }
     @catch (NSException *exception) {
@@ -178,6 +180,7 @@ UIDocumentInteractionController *documentInteractionController;
 
 -(void)setData:(NSDictionary *)new_data{
     @try {
+        _photo.image=[UIImage imageNamed:@"no_profile.png"];
         data = new_data;
         name.text = [new_data objectForKey:@"subject"];
         _descript.text = [Util stripTags:[new_data objectForKey:@"descript"]];
