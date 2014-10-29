@@ -118,7 +118,7 @@ KQEventAPI *event;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
         
-        return 265;
+        return 295;
     }
     else
     {
