@@ -156,9 +156,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     vc = (AusstellerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExibitorsDetailsViewController"];
+    [vc setData:data];
     [self.sidePanelController setRightPanel:vc];
     [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*9/10];
-    [vc setData:data];
+    
     [self.sidePanelController showRightPanelAnimated:YES];
 
 }
