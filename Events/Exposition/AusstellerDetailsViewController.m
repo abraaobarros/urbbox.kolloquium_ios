@@ -6,19 +6,18 @@
 //  Copyright (c) 2014 Teknowledge Software. All rights reserved.
 //
 
-#import "ExibitorsDetailsViewController.h"
-#import "ParticipantsTableViewCell.h"
+#import "AusstellerDetailsViewController.h"
+#import "TeilnehmerTableViewCell.h"
 #import <MessageUI/MessageUI.h>
 #import "KQEventAPI.h"
 
-@interface ExibitorsDetailsViewController ()
+@interface AusstellerDetailsViewController ()
 
 @end
 
-@implementation ExibitorsDetailsViewController
+@implementation AusstellerDetailsViewController
 
 @synthesize data;
-@synthesize description;
 
 NSArray *dataSource;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,7 +39,7 @@ NSArray *dataSource;
         _tableView.hidden = NO;
         dataSource = [data objectForKey:@"participants"];
         _institute_en.text = [data objectForKey:@"name"];
-        description.text = [data objectForKey:@"short_descript"];
+        _des.text = [data objectForKey:@"short_descript"];
         _mobile.text = [data objectForKey:@"responsible_tel"];
         _email.text = [data objectForKey:@"responsible_email"];
         if ([data objectForKey:@"localization"]==(id)[NSNull null] || [data objectForKey:@"localization"] == nil) {
@@ -49,7 +48,7 @@ NSArray *dataSource;
             _stand.text = [NSString stringWithFormat:@"%@",[data objectForKey:@"localization"]];
             _tableView.hidden = YES;
         }
-        [description sizeToFit];
+        [_des sizeToFit];
         
 
     }else{
@@ -57,7 +56,7 @@ NSArray *dataSource;
         _tableView.hidden = YES;
         _institute_en.text = [data objectForKey:@"name"];
         _strenghts.text = [data objectForKey:@"strengths"];
-        description.text =[data objectForKey:@"profile"];
+        _des.text =[data objectForKey:@"profile"];
         [_strenghts sizeToFit];
         
         _background.text = [data objectForKey:@"background"];
@@ -101,10 +100,10 @@ NSArray *dataSource;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ParticipantsTableCell";
-    ParticipantsTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    TeilnehmerTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if(!cell)
     {
-        cell = [[ParticipantsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[TeilnehmerTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     cell.textLabel.text = [[dataSource objectAtIndex: indexPath.row] objectForKey:@"name"];
 
@@ -116,13 +115,15 @@ NSArray *dataSource;
     if ([MFMailComposeViewController canSendMail]) {
         
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-        //        [mailViewController setSubject:@"Subject Goes Here."];
-        //        [mailViewController setMessageBody:@"Your message goes here." isHTML:NO];
+                [mailViewController setSubject:@"Subject Goes Here."];
+                [mailViewController setMessageBody:@"Your message goes here." isHTML:NO];
         
         NSArray *toRecipients = [NSArray arrayWithObjects:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"email"], nil];
         [mailViewController setToRecipients:toRecipients];
         mailViewController.mailComposeDelegate =self;
-        [self presentModalViewController:mailViewController animated:YES];
+        [self presentViewController:mailViewController animated:YES completion:^{
+            
+        }];
     } else {
         NSLog(@"Device is unable to send email in its current state.");
     }
@@ -136,7 +137,9 @@ NSArray *dataSource;
     if (result == MFMailComposeResultSent) {
         NSLog(@"It's away!");
     }
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 

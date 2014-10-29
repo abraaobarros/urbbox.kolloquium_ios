@@ -49,7 +49,7 @@ UIDocumentInteractionController *documentInteractionController;
         subject.text = [[data objectForKey:@"speaker"] objectForKey:@"name"];
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
             location.text = [NSString stringWithFormat:@"Um %@ Uhr im Aachen Quellenhof",
-                             [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"],[Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"dd"]];
+                             [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"]];
         }
         [KQEventAPI getImageFromUrl:[[data objectForKey:@"speaker"] objectForKey:@"profile_img"]
                        finishHandler:^(NSData *_data) {

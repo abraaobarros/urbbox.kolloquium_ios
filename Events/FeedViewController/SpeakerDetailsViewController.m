@@ -36,8 +36,8 @@
     _about.text = [Util stripTags: [data objectForKey:@"about"]];
     [_about sizeToFit];
     [KQEventAPI getImageFromUrl:[data objectForKey:@"profile_img"]
-                  finishHandler:^(NSData *data) {
-                      _image.image = [UIImage imageWithData: data];
+                  finishHandler:^(NSData *dataImage) {
+                      _image.image = [UIImage imageWithData: dataImage];
                   }
                    startHandler:^{
                        

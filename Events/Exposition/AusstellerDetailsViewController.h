@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface ExibitorsDetailsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface AusstellerDetailsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *viewParent;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UILabel *description;
+@property (weak, nonatomic) IBOutlet UILabel *des;
 @property (strong, nonatomic) NSDictionary *data;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 @property (weak, nonatomic) IBOutlet UILabel *institute_en;
@@ -20,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *email;
 @property (weak, nonatomic) IBOutlet UILabel *stand;
-//@property (weak, nonatomic) IBOutlet UILabel *description;
 
 @property (weak, nonatomic) IBOutlet UIView *finalists;
 @property (weak, nonatomic) IBOutlet UILabel *background;

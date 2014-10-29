@@ -128,7 +128,7 @@ BOOL reload = FALSE;
     
     NSPredicate *predicate =
     [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"04/11/2014"];
-    dataSource  = [data filteredArrayUsingPredicate:predicate];
+    dataSource  = [[data filteredArrayUsingPredicate:predicate] mutableCopy];
     [_segmentDay setSelectedSegmentIndex:0];
     
     
@@ -224,22 +224,13 @@ BOOL reload = FALSE;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         // Get reference to the destination view controller
         ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
-        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
+        NSDictionary *d = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
         vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
-        [vc setData:data];
+        [vc setData:d];
     
-    if ([data objectForKey:@"speaker_id"]!=(id)[NSNull null]) {
+    if ([d objectForKey:@"speaker_id"]!=(id)[NSNull null]) {
         [self.sidePanelController setRightPanel:vc];
-        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-        {
-                [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*6/7];
-        }else{
-            if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
-            {
-                [self.sidePanelController setRightFixedWidth:650];
-            }else{
-            }
-        }
+        [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*6/7];
         [self.sidePanelController showRightPanelAnimated:YES];
     }
     
@@ -247,9 +238,9 @@ BOOL reload = FALSE;
 }
 
 
--(NSString *) convertDataFormat:(NSString *) data withPattern:(NSString *) from toPattern:(NSString *) to{
+-(NSString *) convertDataFormat:(NSString *) timeStamp withPattern:(NSString *) from toPattern:(NSString *) to{
     
-    NSString *str =data; /// here this is your date with format yyyy-MM-dd
+    NSString *str = timeStamp; /// here this is your date with format yyyy-MM-dd
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; // here we create NSDateFormatter object for change the Format of date..
     [dateFormatter setDateFormat:from]; //// here set format of date which is in your output date (means above str with format)
@@ -293,13 +284,11 @@ BOOL reload = FALSE;
     }
     if ([[segue identifier] isEqualToString:@"ProgramDetailsViewController"])
     {
-        // Get reference to the destination view controller
         ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[segue destinationViewController];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
-        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
-        // Pass any objects to the view controller here, like...
+
     }
 }
 

@@ -16,7 +16,7 @@
 #import "Loading2ViewController.h"
 #import "ProgramViewController.h"
 #import "KQNavigationController.h"
-#import "ExpositionTableViewController.h"
+#import "AusstellerTableViewController.h"
 #import "InfoViewController.h"
 #import "KQCache.h"
 #import "Util.h"
@@ -357,7 +357,7 @@ KQEventAPI *event;
         }
         else if(indexPath.row==3)
         {
-            ExpositionTableViewController *vc = (ExpositionTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
+            AusstellerTableViewController *vc = (AusstellerTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
             KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
             [vc setData:@"guest_companies"];
             [self.sidePanelController setCenterPanel:partnersView];
@@ -382,7 +382,7 @@ KQEventAPI *event;
         }
         else if(indexPath.row==6)
         {
-            ExpositionTableViewController *vc = (ExpositionTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
+            AusstellerTableViewController *vc = (AusstellerTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
             KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
             [vc setData:@"competitors"];
             [self.sidePanelController setCenterPanel:partnersView];
@@ -405,7 +405,7 @@ KQEventAPI *event;
            
         }
         else if(indexPath.row ==2){
-                ExpositionTableViewController *vc = (ExpositionTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
+                AusstellerTableViewController *vc = (AusstellerTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExpositionTableViewController"];
                 KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
                 [vc setData:@"partners"];
                 [self.sidePanelController setCenterPanel:partnersView];

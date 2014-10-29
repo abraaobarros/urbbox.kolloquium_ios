@@ -6,21 +6,21 @@
 //  Copyright (c) 2014 Teknowledge Software. All rights reserved.
 //
 
-#import "ParticipantsTableViewController.h"
+#import "TeilnehmerTableViewController.h"
 #import "UIViewController+JASidePanel.h"
-#import "ParticipantsTableViewCell.h"
+#import "TeilnehmerTableViewCell.h"
 #import "KQCache.h"
 
 #import "Util.h"
 
-@interface ParticipantsTableViewController (){
+@interface TeilnehmerTableViewController (){
     KQCache *cache;
 }
 
 
 @end
 
-@implementation ParticipantsTableViewController
+@implementation TeilnehmerTableViewController
 
 @synthesize filteredArray;
 
@@ -90,11 +90,11 @@
 {
 //    ParticipantsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParticipantsTableCell" forIndexPath:indexPath];
     
-    ParticipantsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParticipantsTableCell" ];
+    TeilnehmerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParticipantsTableCell" ];
     
     if(!cell)
     {
-        cell = [[ParticipantsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ParticipantsTableCell"];
+        cell = [[TeilnehmerTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ParticipantsTableCell"];
     }
     
     

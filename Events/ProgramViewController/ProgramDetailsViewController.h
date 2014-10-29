@@ -11,7 +11,7 @@
 @interface ProgramDetailsViewController : UIViewController<UIDocumentInteractionControllerDelegate>{
 }
 
--(void) setContent:(NSDictionary *) data;
+//-(void) setContent:(NSDictionary *) data;
 @property (strong, nonatomic) IBOutlet UILabel *subject;
 @property (strong, nonatomic) IBOutlet UILabel *name;
 @property (strong, nonatomic) IBOutlet UILabel *descript;

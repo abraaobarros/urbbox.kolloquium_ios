@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExpositionTableViewCell : UITableViewCell
+@interface AusstellerTableViewCell : UITableViewCell
 
 @end

@@ -15,7 +15,6 @@
 #import "Util.h"
 
 @interface InstituteDetailTableViewController (){
-    NSMutableArray *dataSource;
 }
 
 @end
@@ -23,7 +22,7 @@
 @implementation InstituteDetailTableViewController
 
 KQEventAPI *event;
-@synthesize tableView;
+@synthesize tableView,dataSource;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -128,15 +127,15 @@ KQEventAPI *event;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-        InstituteDepartamentDetailsViewController *vc = (InstituteDepartamentDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InstituteDepartamentDetailsViewController"];
-        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
-        NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
-        vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
-        [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*9/10];
-        [self.sidePanelController setRightPanel:vc];
-        [self.sidePanelController setMaximumAnimationDuration:0.5];
-        [self.sidePanelController showRightPanelAnimated:YES];
+    InstituteDepartamentDetailsViewController *vc = (InstituteDepartamentDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InstituteDepartamentDetailsViewController"];
+    
+    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+    NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
+    vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+    [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*9/10];
+    [self.sidePanelController setMaximumAnimationDuration:0.5];
+    [self.sidePanelController setRightPanel:vc];
+    [self.sidePanelController showRightPanelAnimated:YES];
 
 }
 

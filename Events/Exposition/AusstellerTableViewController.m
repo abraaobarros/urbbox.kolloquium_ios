@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Teknowledge Software. All rights reserved.
 //
 
-#import "ExpositionTableViewController.h"
+#import "AusstellerTableViewController.h"
 #import "KQCache.h"
 #import "FeedViewController.h"
 #import "FeedCustomCell.h"
@@ -19,9 +19,9 @@
 #import "Util.h"
 #import "SpeakerDetailsViewController.h"
 #import "ProgramDetailsViewController.h"
-#import "ExibitorsDetailsViewController.h"
+#import "AusstellerDetailsViewController.h"
 
-@interface ExpositionTableViewController ()
+@interface AusstellerTableViewController ()
 {
     // NSMutableArray *arrFeedImages;
     NSMutableArray *dicTweetFeed;
@@ -32,7 +32,7 @@
 
 @end
 
-@implementation ExpositionTableViewController
+@implementation AusstellerTableViewController
 @synthesize tableView;
 @synthesize imagesCache;
 @synthesize dataSource;
@@ -148,7 +148,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    ExibitorsDetailsViewController *vc = (ExibitorsDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExibitorsDetailsViewController"];
+    AusstellerDetailsViewController *vc = (AusstellerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExibitorsDetailsViewController"];
     NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
     [vc setData:data];

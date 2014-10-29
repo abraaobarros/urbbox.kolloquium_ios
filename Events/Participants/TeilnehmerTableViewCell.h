@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ParticipantsTableViewCell : UITableViewCell
+@interface TeilnehmerTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *enterprise;
 @property (weak, nonatomic) NSString *email;

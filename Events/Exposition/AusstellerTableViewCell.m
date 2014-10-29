@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Teknowledge Software. All rights reserved.
 //
 
-#import "ExpositionTableViewCell.h"
+#import "AusstellerTableViewCell.h"
 
 
-@implementation ExpositionTableViewCell
+@implementation AusstellerTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

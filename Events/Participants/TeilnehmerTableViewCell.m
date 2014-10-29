@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Teknowledge Software. All rights reserved.
 //
 
-#import "ParticipantsTableViewCell.h"
+#import "TeilnehmerTableViewCell.h"
 #import <MessageUI/MessageUI.h>
 
-@implementation ParticipantsTableViewCell
+@implementation TeilnehmerTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -25,6 +25,9 @@
     // Initialization code
 }
 
+-(void)send_email:(id)sender{
+    // TODOs código de envio de email.
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
