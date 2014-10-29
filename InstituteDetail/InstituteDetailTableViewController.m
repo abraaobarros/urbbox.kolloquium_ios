@@ -40,7 +40,7 @@ KQEventAPI *event;
 
     
     
-    
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self loadData];
     //    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
