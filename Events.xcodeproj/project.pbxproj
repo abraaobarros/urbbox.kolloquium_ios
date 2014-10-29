@@ -86,6 +86,7 @@
 		789CA44C1A00A488009D38E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CA44B1A00A488009D38E5 /* ViewController.m */; };
 		789CA44F1A00B98D009D38E5 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CA44E1A00B98D009D38E5 /* AboutViewController.m */; };
 		789CA4631A00BF10009D38E5 /* AusstellerDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CA4621A00BF10009D38E5 /* AusstellerDetailsTableViewController.m */; };
+		789CA46A1A013A71009D38E5 /* ic_question.png in Resources */ = {isa = PBXBuildFile; fileRef = 789CA4691A013A71009D38E5 /* ic_question.png */; };
 		78AD2C7419A17D7C00047B9A /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD2C7219A17D7C00047B9A /* JASidePanelController.m */; };
 		78AD2C7719A17FA500047B9A /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD2C7519A17FA500047B9A /* UIViewController+JASidePanel.m */; };
 		78AD2C7B19A1843B00047B9A /* KQSidePanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD2C7A19A1843B00047B9A /* KQSidePanelViewController.m */; };
@@ -333,6 +334,7 @@
 		789CA44E1A00B98D009D38E5 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		789CA4611A00BF10009D38E5 /* AusstellerDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AusstellerDetailsTableViewController.h; path = Exposition/AusstellerDetailsTableViewController.h; sourceTree = "<group>"; };
 		789CA4621A00BF10009D38E5 /* AusstellerDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AusstellerDetailsTableViewController.m; path = Exposition/AusstellerDetailsTableViewController.m; sourceTree = "<group>"; };
+		789CA4691A013A71009D38E5 /* ic_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_question.png; sourceTree = "<group>"; };
 		78AD2C7219A17D7C00047B9A /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
 		78AD2C7319A17D7C00047B9A /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
 		78AD2C7519A17FA500047B9A /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
@@ -660,6 +662,7 @@
 		78AD2C7E19A1866400047B9A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				789CA4691A013A71009D38E5 /* ic_question.png */,
 				784F677D19C7F2D900EA6217 /* icon@2x.png */,
 				784F677C19C7F2CD00EA6217 /* icon_.png */,
 				784F677B19C7F2C100EA6217 /* icon.png */,
@@ -1191,6 +1194,7 @@
 				7112221818BCC14B00E77A4A /* arrow.png in Resources */,
 				78BF117719C779A4005AE8B0 /* ic_action_aboutus.png in Resources */,
 				78F8C9AC19FE12150077805C /* bg_tour.png in Resources */,
+				789CA46A1A013A71009D38E5 /* ic_question.png in Resources */,
 				78E103EA19EDBDF000066580 /* ic_aachen.png in Resources */,
 				78F8C99C19FDC2330077805C /* ic_ipt.jpg in Resources */,
 				7836B9BE19ABD21B004BB485 /* lecture_bg.png in Resources */,

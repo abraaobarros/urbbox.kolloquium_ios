@@ -46,6 +46,7 @@ UIDocumentInteractionController *documentInteractionController;
     @try {
         name.text = [data objectForKey:@"subject"];
         _descript.text = [Util stripTags:[data objectForKey:@"descript"]];
+        [_descript sizeToFit];
         subject.text = [[data objectForKey:@"speaker"] objectForKey:@"name"];
         if([[[data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
             _company.text = @"";
@@ -68,7 +69,15 @@ UIDocumentInteractionController *documentInteractionController;
         
         if ([data objectForKey:@"document"]==(id)[NSNull null] || [data objectForKey:@"document"]== nil) {
             _pdfButton.hidden=YES;
+            CGRect f = _quetion.frame;
+            _quetion.frame = f;
+            f.origin.x = 238;
+            f.origin.y = 69;
         }else{
+            CGRect f = _quetion.frame;
+            f.origin.x = 61;
+            f.origin.y = 141;
+            _quetion.frame = f;
             _pdfButton.hidden=NO;
         }
         
@@ -112,18 +121,24 @@ UIDocumentInteractionController *documentInteractionController;
                      NSLog(@"Deu Errado");
                  }];
 }
-- (IBAction)send:(id)sender {
-     NSLog(@"Aqui");
+
+- (IBAction)changeQuestion:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Stellen Sie eine Fragen" message:@"lhre Frage wird von dem Referent empfangen" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert setTag:1];
+    [alert show];
 }
+
 - (IBAction)changeAvaliation:(id)sender {
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Bewertung schreiben" message:@"Sagen Sie uns lhre Meinung" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert setTag:2];
     [alert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
      NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if (buttonIndex==1) {
+    if (alertView.tag == 2 && buttonIndex==1) {
         [KQEventAPI makeReview:[[alertView textFieldAtIndex:0] text]
                      withScore:(int)_avaliacao.selectedSegmentIndex toActivity:[[data objectForKey:@"id"] intValue] withParticipant:[[userDefaults objectForKey:@"id"] intValue] finishHandler:^{
                          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Gesendet"
@@ -138,7 +153,25 @@ UIDocumentInteractionController *documentInteractionController;
                          NSLog(@"Deu Errado");
                      }];
     }
-   
+    if (alertView.tag == 1 && buttonIndex==1) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [KQEventAPI makeQuestion:[[alertView textFieldAtIndex:0] text]
+                      toActivity:[[data objectForKey:@"id"] intValue] withParticipant:[[userDefaults objectForKey:@"id"] intValue] finishHandler:^{
+                          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Gesendet"
+                                                                          message:@"Frage gesendet"
+                                                                         delegate:nil
+                                                                cancelButtonTitle:@"OK"
+                                                                otherButtonTitles:nil];
+                          [alert show];
+                      } startHandler:^{
+                          NSLog(@"Começou");
+                      } errorHandler:^{
+                          NSLog(@"Deu Errado");
+                      }];    }
+    
+
+    
+    
     NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
 }
 
