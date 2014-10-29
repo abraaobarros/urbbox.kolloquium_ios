@@ -279,8 +279,6 @@ BOOL reload = FALSE;
         }
         @catch (NSException *exception) {
         }
-        
-        
         // Pass any objects to the view controller here, like...
     }
     if ([[segue identifier] isEqualToString:@"ProgramDetailsViewController"])
