@@ -144,7 +144,7 @@ UIDocumentInteractionController *documentInteractionController;
         _descript.text = [Util stripTags:[new_data objectForKey:@"descript"]];
         subject.text = [[new_data objectForKey:@"speaker"] objectForKey:@"name"];
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
-            location.text = [NSString stringWithFormat:@"In the Aachen Quellenhof, %@.%@ um %@ Uhr",
+            location.text = [NSString stringWithFormat:@"Aachen Quellenhof, %@.%@ um %@ Uhr",
                              [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"],[Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"dd"],[Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"MMM"]];
         }
         if ([data objectForKey:@"document"]==(id)[NSNull null] || [data objectForKey:@"document"]== nil) {
