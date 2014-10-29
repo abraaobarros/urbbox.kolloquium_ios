@@ -67,7 +67,7 @@
     }
 }
 -(void)dicDummyDataInitialization{
-    dataSource = [_event objectForKey:@"guest_companies"];
+    dataSource = [_event objectForKey:_data];
     
     NSLog(@"Exhibitors : %@",dataSource);
     [tableView reloadData];
@@ -173,7 +173,7 @@
     {
         ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[segue destinationViewController];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
+        NSLog(@"Index Path: %@",[dataSource objectAtIndex:ip.row]);
         vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         
     }
