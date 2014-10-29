@@ -47,6 +47,11 @@ UIDocumentInteractionController *documentInteractionController;
         name.text = [data objectForKey:@"subject"];
         _descript.text = [Util stripTags:[data objectForKey:@"descript"]];
         subject.text = [[data objectForKey:@"speaker"] objectForKey:@"name"];
+        if([[[data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
+            _company.text = @"";
+        }else{
+        _company.text = [[data objectForKey:@"speaker"]objectForKey:@"company"];
+        }
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
             location.text = [NSString stringWithFormat:@"Um %@ Uhr im Aachen Quellenhof",
                              [Util convertDataFormat:[data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"]];
@@ -80,7 +85,7 @@ UIDocumentInteractionController *documentInteractionController;
     [_scrollView setContentSize:_descript.viewForBaselineLayout.frame.size];
     
 //    [name sizeToFit];
-    
+    [_quetion resignFirstResponder];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -100,6 +105,7 @@ UIDocumentInteractionController *documentInteractionController;
                                                             cancelButtonTitle:@"OK"
                                                             otherButtonTitles:nil];
                       [alert show];
+                      [_quetion resignFirstResponder];
                  } startHandler:^{
                      NSLog(@"Começou");
                  } errorHandler:^{
@@ -144,7 +150,7 @@ UIDocumentInteractionController *documentInteractionController;
         _descript.text = [Util stripTags:[new_data objectForKey:@"descript"]];
         subject.text = [[new_data objectForKey:@"speaker"] objectForKey:@"name"];
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
-            location.text = [NSString stringWithFormat:@"In the Aachen Quellenhof, %@.%@ um %@ Uhr",
+            location.text = [NSString stringWithFormat:@"Aachen Quellenhof, %@.%@ um %@ Uhr",
                              [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"],[Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"dd"],[Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"MMM"]];
         }
         if ([data objectForKey:@"document"]==(id)[NSNull null] || [data objectForKey:@"document"]== nil) {

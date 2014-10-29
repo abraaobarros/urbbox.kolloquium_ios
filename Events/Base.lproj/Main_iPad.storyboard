@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="flA-zs-Bld">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="flA-zs-Bld">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -1426,7 +1426,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iiE-FG-TYg" userLabel="Description">
-                                <rect key="frame" x="199" y="287" width="523" height="111"/>
+                                <rect key="frame" x="199" y="287" width="521" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1466,7 +1466,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" id="8AH-rO-C75" userLabel="Services">
-                                <rect key="frame" x="197.00001239776611" y="435" width="522.99998760223389" height="460"/>
+                                <rect key="frame" x="197.00001239776614" y="435" width="522.99998760223389" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1492,11 +1492,21 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="A2g-ZQ-bf3">
+                                                    <rect key="frame" x="395" y="3" width="128" height="69"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="ic_email.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="send_email:" destination="Fb5-ob-rDL" eventType="touchUpInside" id="iKj-ZE-gSh"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="name" destination="SFI-Ph-VgE" id="5qs-P3-5Oa"/>
+                                            <outlet property="name" destination="SFI-Ph-VgE" id="aS0-Kb-mPT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1511,14 +1521,14 @@
                     <navigationItem key="navigationItem" id="Nm1-Oi-QjP"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="background" destination="Yu7-WS-DaJ" id="9d5-Hx-hru"/>
+                        <outlet property="background" destination="Yu7-WS-DaJ" id="LNH-uF-NA0"/>
                         <outlet property="des" destination="iiE-FG-TYg" id="CP2-zh-1F5"/>
-                        <outlet property="finalists" destination="4b3-qt-vom" id="H39-Ub-VqC"/>
-                        <outlet property="institute_en" destination="OQR-Lh-xrf" id="WlB-pC-x1P"/>
-                        <outlet property="photo" destination="K2h-SS-7a5" id="Yr6-Wy-wU2"/>
+                        <outlet property="finalists" destination="4b3-qt-vom" id="9TK-Pu-5Et"/>
+                        <outlet property="institute_en" destination="OQR-Lh-xrf" id="jSv-xY-xxh"/>
+                        <outlet property="photo" destination="K2h-SS-7a5" id="tYZ-69-dh1"/>
                         <outlet property="stand" destination="HVz-cT-07i" id="Vgi-2O-IQl"/>
-                        <outlet property="strenghts" destination="So5-zu-bWE" id="rnB-zh-CdD"/>
-                        <outlet property="tableView" destination="8AH-rO-C75" id="cdZ-Ds-6EX"/>
+                        <outlet property="strenghts" destination="So5-zu-bWE" id="oDY-wU-3CE"/>
+                        <outlet property="tableView" destination="8AH-rO-C75" id="yT3-wE-xox"/>
                         <outlet property="view" destination="dp8-Ym-KSM" id="efZ-cx-gfa"/>
                     </connections>
                 </viewController>

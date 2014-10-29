@@ -67,7 +67,7 @@
     }
 }
 -(void)dicDummyDataInitialization{
-    dataSource = [_event objectForKey:@"guest_companies"];
+    dataSource = [_event objectForKey:_data];
     
     NSLog(@"Exhibitors : %@",dataSource);
     [tableView reloadData];
@@ -155,6 +155,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *data = [[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
+    vc = (AusstellerDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExibitorsDetailsViewController"];
+    [self.sidePanelController setRightPanel:vc];
+    [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*9/10];
     [vc setData:data];
     [self.sidePanelController showRightPanelAnimated:YES];
 
@@ -173,7 +176,7 @@
     {
         ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[segue destinationViewController];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
+        NSLog(@"Index Path: %@",[dataSource objectAtIndex:ip.row]);
         vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
         
     }

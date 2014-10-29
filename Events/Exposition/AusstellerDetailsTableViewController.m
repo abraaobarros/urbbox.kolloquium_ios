@@ -59,6 +59,7 @@
             NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data objectForKey:@"logo"]]];
             dispatch_sync(dispatch_get_main_queue(), ^{
                 _photo.image=[UIImage imageWithData: data_img];
+                _photo.contentMode = UIViewContentModeScaleAspectFit;
             });
         }@catch (NSException *exception) {
             NSLog(@"Error : %@",exception);

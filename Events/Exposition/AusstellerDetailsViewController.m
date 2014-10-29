@@ -72,6 +72,8 @@ NSArray *dataSource;
         
     });
     
+    [self.tableView reloadData];
+    
     [_scrollView setContentSize:_viewParent.frame.size];
 }
 
@@ -79,7 +81,17 @@ NSArray *dataSource;
 {
     [super viewDidLoad];
     [self setData:data];
+    [self.tableView reloadData];
+    
         // Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self setData:data];
+    [self.tableView reloadData];
+    
 }
 
 
