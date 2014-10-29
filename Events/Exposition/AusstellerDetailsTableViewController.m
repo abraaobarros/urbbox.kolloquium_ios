@@ -133,9 +133,12 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    switch (indexPath.row) {
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        switch (indexPath.row) {
         case 0:
-            return 120;
+            return 220;
             break;
         case 1:
             return 30;
@@ -155,7 +158,33 @@
         default:
             return 100;
             break;
-    }
+        }
+    }else{
+            switch (indexPath.row) {
+                case 0:
+                    return 120;
+                    break;
+                case 1:
+                    return 30;
+                    break;
+                case 2:
+                    return _institute_en.frame.size.height+10;
+                    break;
+                case 3:
+                    return _des.frame.size.height+10;
+                    break;
+                case 4:
+                    return _strenghts.frame.size.height+50;
+                    break;
+                case 5:
+                    return _background.frame.size.height+50;
+                    break;
+                default:
+                    return 100;
+                    break;
+            }
+        }
+
     return 100;
     
 

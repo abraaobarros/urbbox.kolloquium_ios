@@ -125,7 +125,7 @@ UIDocumentInteractionController *documentInteractionController;
 }
 
 - (IBAction)changeQuestion:(id)sender {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Stellen Sie eine Fragen" message:@"lhre Frage wird von dem Referent empfangen" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Stellen Sie eine Frage" message:@"lhre Frage wird von dem Referent empfangen" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert setTag:1];
     [alert show];
