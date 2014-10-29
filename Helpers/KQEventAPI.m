@@ -80,6 +80,9 @@
                             sucessHandler:^(NSDictionary* finished){
                               NSMutableDictionary * data;
                               data = [finished mutableCopy];
+                                if (data==nil) {
+                                    errorHandler();
+                                }
                               @try {
                                   [userDefaults setObject:[finished objectForKey:@"id"] forKey:@"id"];
                                   [userDefaults setObject:[finished objectForKey:@"name"] forKey:@"name"];
