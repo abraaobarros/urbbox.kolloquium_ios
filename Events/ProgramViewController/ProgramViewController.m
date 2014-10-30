@@ -137,7 +137,7 @@ BOOL reload = FALSE;
     [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"04/11/2014"];
     dataSource  = [[data filteredArrayUsingPredicate:predicate] mutableCopy];
     [_segmentDay setSelectedSegmentIndex:0];
-    [Util setupNavigationBar:self withTitle:@"Das programm"];
+    [Util setupNavigationBar:self withTitle:@"Das Programm"];
     
     NSLog(@"Lectures : %@",dataSource);
     [tableView reloadData];

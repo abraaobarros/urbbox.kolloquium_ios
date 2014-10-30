@@ -53,7 +53,7 @@ UIDocumentInteractionController *documentInteractionController;
         if([[[data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
             _company.text = @"";
         }else{
-        _company.text = [[data objectForKey:@"speaker"]objectForKey:@"company"];
+            _company.text = [[data objectForKey:@"speaker"]objectForKey:@"company"];
         }
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
             location.text = [NSString stringWithFormat:@"Pullman Quellenhof, %@.%@ um %@ Uhr",
@@ -103,7 +103,7 @@ UIDocumentInteractionController *documentInteractionController;
 //    [subject sizeToFit];
     [_descript sizeToFit];
     [_scrollView setContentSize:_descript.viewForBaselineLayout.frame.size];
-    
+    [_company sizeToFit];
 //    [name sizeToFit];
     [_quetion resignFirstResponder];
     [super viewDidLoad];

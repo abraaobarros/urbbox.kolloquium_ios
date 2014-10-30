@@ -112,7 +112,6 @@
                            
                        }];
     cell.lblTweet.text=[[dataSource objectAtIndex:indexPath.row] objectForKey:@"company"];
-    [cell.lblTweet sizeToFit];
     cell.lblUserName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"name"];
     cell.btnUserId.titleLabel.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"tel"];
     if ([[[dataSource objectAtIndex:indexPath.row] valueForKey:@"email"] isEqualToString: @""])
