@@ -273,6 +273,11 @@ UIDocumentInteractionController *documentInteractionController;
         }else{
             _pdfButton.hidden=NO;
         }
+        if([[[data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
+            _company.text = @"";
+        }else{
+            _company.text = [[data objectForKey:@"speaker"]objectForKey:@"company"];
+        }
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             @try {
                 NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[new_data objectForKey:@"speaker"] objectForKey:@"profile_img"]]];

@@ -279,11 +279,11 @@ BOOL reload = FALSE;
     {
         // Get reference to the destination view controller
         loading = [segue destinationViewController];
-        @try {
-            [loading setLoadingMode:YES];
-        }
-        @catch (NSException *exception) {
-        }
+//        @try {
+//            [loading setLoadingMode:YES];
+//        }
+//        @catch (NSException *exception) {
+//        }
         // Pass any objects to the view controller here, like...
     }
     if ([[segue identifier] isEqualToString:@"ProgramDetailsViewController"])
