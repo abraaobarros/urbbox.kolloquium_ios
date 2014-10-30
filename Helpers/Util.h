@@ -13,5 +13,5 @@
 
 +(void) setupNavigationBar:(UIViewController *)nav withTitle:(NSString *) title;
 
-+(NSString *)stripTags:(NSString *)str;
++(NSString *)interpretTags:(NSString *)str;
 @end

@@ -35,7 +35,7 @@ KQCache *cache;
     
     NSDictionary *data = [cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"];
     
-    description.text = [Util stripTags:[[[data objectForKey:@"competitions"] objectAtIndex:0] objectForKey:@"descript"]] ;
+    description.text = [Util interpretTags:[[[data objectForKey:@"competitions"] objectAtIndex:0] objectForKey:@"descript"]] ;
     
     [description sizeToFit];
     [_kategorie sizeToFit];
