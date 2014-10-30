@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *pass;
 - (IBAction)login_action:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *login_view;
+@property (strong, nonatomic) IBOutlet UIView *viewMaster;
 
 - (IBAction)login_finish:(id)sender;
 -(void) noInternetConnect;

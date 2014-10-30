@@ -52,6 +52,8 @@ NSArray *dataSource;
         }
         
     });
+    [_scrollView setContentSize:_scrollInside.frame.size
+     ];
     // Do any additional setup after loading the view.
 }
 

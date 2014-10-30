@@ -268,6 +268,11 @@ UIDocumentInteractionController *documentInteractionController;
                              [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"MMM"],
                             [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"]];
         }
+        if([[[data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
+            _company.text = @"";
+        }else{
+            _company.text = [[data objectForKey:@"speaker"]objectForKey:@"company"];
+        }
         if ([data objectForKey:@"document"]==(id)[NSNull null] || [data objectForKey:@"document"]== nil) {
             _pdfButton.hidden=YES;
         }else{

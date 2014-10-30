@@ -237,8 +237,9 @@ BOOL reload = FALSE;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [vc setData:[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]]];
+    
     if ([[dataSource objectAtIndex:indexPath.row] objectForKey:@"speaker_id"]!=(id)[NSNull null]) {
+        [vc setData:[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]]];
         [self.sidePanelController showRightPanelAnimated:YES];
     }
     

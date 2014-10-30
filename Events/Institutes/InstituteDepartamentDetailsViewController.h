@@ -16,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *responsable;
 @property (weak, nonatomic) IBOutlet UILabel *mobile;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollInside;
 @property (weak, nonatomic) IBOutlet UILabel *email;
 @end
