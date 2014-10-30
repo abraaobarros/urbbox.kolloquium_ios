@@ -204,7 +204,7 @@ KQEventAPI *event;
             if (cell == nil) {
                 cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            cell.title.text=@"Fraunhoufer IPT";
+            cell.title.text=@"Fraunhofer IPT";
             cell.icon.image = [UIImage imageNamed:@"ic_ipt.jpg"];
             return cell;
         }
