@@ -21,6 +21,7 @@
     NSURL *URL = [NSURL URLWithString:_pdfUrl];
     if (_pdfUrl != (id)[NSNull null]) {
         [_webView loadRequest:[NSURLRequest requestWithURL:URL]];
+    }else{
     }
 }
 
