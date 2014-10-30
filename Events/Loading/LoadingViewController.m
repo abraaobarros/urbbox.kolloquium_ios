@@ -66,6 +66,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)passFinishEditing:(id)sender {
+    [_pass resignFirstResponder];
+    [self login_action:self];
+}
 
 - (IBAction)login_action:(id)sender {
     [_pass resignFirstResponder];
