@@ -79,8 +79,10 @@
             [html appendString:tempText];
         
         [scanner scanUpToString:@">" intoString:&tempText];
-        if ([tempText isEqualToString:@"br"]) {
-            [html appendString:@"\n"];
+        if (tempText != nil){
+            if ([tempText isEqualToString:@"<br"]) {
+                [html appendString:@"\n"];
+            }
         }
         if (![scanner isAtEnd])
             [scanner setScanLocation:[scanner scanLocation] + 1];

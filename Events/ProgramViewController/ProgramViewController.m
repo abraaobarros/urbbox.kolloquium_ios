@@ -183,7 +183,7 @@ BOOL reload = FALSE;
     {
         cell = [[ProgramCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    cell.lblDateTime.text=[self convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"dd/MM/yyyy HH:mm" toPattern:@"HH:mm - "];
+    cell.lblDateTime.text=[self convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"dd/MM/yyyy HH:mm" toPattern:@"HH:mm "];
     cell.lblEventName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"subject"];
     cell.lblEventDesc.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"descript"];
     

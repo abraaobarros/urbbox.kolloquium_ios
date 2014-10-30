@@ -412,7 +412,7 @@
 		7F771D6319FEFF6A00D9DAE9 /* Pdf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pdf.png; sourceTree = "<group>"; };
 		7FB731C919FEB426009CD692 /* PdfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdfViewController.h; sourceTree = "<group>"; };
 		7FB731CA19FEB426009CD692 /* PdfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdfViewController.m; sourceTree = "<group>"; };
-		BB303D9618B863E300B6EBC9 /* WmZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WmZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB303D9618B863E300B6EBC9 /* Werkzeugbau 2014.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Werkzeugbau 2014.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BB303D9D18B863E300B6EBC9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -783,7 +783,7 @@
 		BB303D9718B863E300B6EBC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB303D9618B863E300B6EBC9 /* WmZ.app */,
+				BB303D9618B863E300B6EBC9 /* Werkzeugbau 2014.app */,
 				BB303DBA18B863E300B6EBC9 /* EventsTests.xctest */,
 			);
 			name = Products;
@@ -1019,7 +1019,7 @@
 			);
 			name = Events;
 			productName = Events;
-			productReference = BB303D9618B863E300B6EBC9 /* WmZ.app */;
+			productReference = BB303D9618B863E300B6EBC9 /* Werkzeugbau 2014.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BB303DB918B863E300B6EBC9 /* EventsTests */ = {
@@ -1435,8 +1435,8 @@
 				INFOPLIST_FILE = "Events/Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = WmZ;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "Werkzeugbau 2014";
+				PROVISIONING_PROFILE = "60df0f7d-6a97-4c40-86cd-53b768408a53";
 				SWIFT_OBJC_BRIDGING_HEADER = "Events/Events-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1457,8 +1457,8 @@
 				INFOPLIST_FILE = "Events/Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = WmZ;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "Werkzeugbau 2014";
+				PROVISIONING_PROFILE = "60df0f7d-6a97-4c40-86cd-53b768408a53";
 				SWIFT_OBJC_BRIDGING_HEADER = "Events/Events-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
