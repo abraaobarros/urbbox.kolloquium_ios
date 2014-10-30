@@ -46,9 +46,9 @@ BOOL reload = FALSE;
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [super viewDidLoad];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    if (![userDefaults objectForKey:@"email"]) {
-//        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
-//    }
+    if (![userDefaults objectForKey:@"email"]) {
+        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
+    }
     
     [Util setupNavigationBar:self withTitle:@"Aussteller"];
     vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
@@ -137,7 +137,7 @@ BOOL reload = FALSE;
     [NSPredicate predicateWithFormat:@"date BEGINSWITH[c] %@", @"04/11/2014"];
     dataSource  = [[data filteredArrayUsingPredicate:predicate] mutableCopy];
     [_segmentDay setSelectedSegmentIndex:0];
-    
+    [Util setupNavigationBar:self withTitle:@"Das programm"];
     
     NSLog(@"Lectures : %@",dataSource);
     [tableView reloadData];
@@ -273,8 +273,6 @@ BOOL reload = FALSE;
         // Get reference to the destination view controller
         loading = [segue destinationViewController];
         [loading setLoadingMode:NO];
-
-        
         // Pass any objects to the view controller here, like...
     }
     if ([[segue identifier] isEqualToString:@"Loading2ViewController"])

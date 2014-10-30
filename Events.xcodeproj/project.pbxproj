@@ -1040,7 +1040,7 @@
 				ORGANIZATIONNAME = "Teknowledge Software";
 				TargetAttributes = {
 					BB303D9518B863E300B6EBC9 = {
-						DevelopmentTeam = T2AALHGDAD;
+						DevelopmentTeam = 3K2NMAET8S;
 					};
 					BB303DB918B863E300B6EBC9 = {
 						TestTargetID = BB303D9518B863E300B6EBC9;
