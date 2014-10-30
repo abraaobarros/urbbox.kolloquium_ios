@@ -140,6 +140,8 @@
 		78F8C9B019FE12150077805C /* hotels_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9A919FE12150077805C /* hotels_icon.png */; };
 		78F8C9B119FE12150077805C /* bg_hotes.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9AA19FE12150077805C /* bg_hotes.png */; };
 		78F8C9B219FE12150077805C /* aachen_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C9AB19FE12150077805C /* aachen_icon.png */; };
+		7F30862B1A0253AA00174089 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F30862A1A0253AA00174089 /* CustomIOS7AlertView.m */; };
+		7F30862E1A0255B800174089 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F30862D1A0255B800174089 /* UIPlaceHolderTextView.m */; };
 		7F771D6419FEFF6A00D9DAE9 /* Pdf.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F771D6319FEFF6A00D9DAE9 /* Pdf.png */; };
 		7FB731CB19FEB426009CD692 /* PdfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB731CA19FEB426009CD692 /* PdfViewController.m */; };
 		BB303D9A18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
@@ -403,6 +405,10 @@
 		78F8C9A919FE12150077805C /* hotels_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotels_icon.png; sourceTree = "<group>"; };
 		78F8C9AA19FE12150077805C /* bg_hotes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_hotes.png; sourceTree = "<group>"; };
 		78F8C9AB19FE12150077805C /* aachen_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aachen_icon.png; sourceTree = "<group>"; };
+		7F3086291A02537400174089 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
+		7F30862A1A0253AA00174089 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
+		7F30862C1A02559E00174089 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		7F30862D1A0255B800174089 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
 		7F771D6319FEFF6A00D9DAE9 /* Pdf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pdf.png; sourceTree = "<group>"; };
 		7FB731C919FEB426009CD692 /* PdfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdfViewController.h; sourceTree = "<group>"; };
 		7FB731CA19FEB426009CD692 /* PdfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdfViewController.m; sourceTree = "<group>"; };
@@ -797,6 +803,10 @@
 				BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */,
 				BB303D9D18B863E300B6EBC9 /* UIKit.framework */,
 				BB303DBB18B863E300B6EBC9 /* XCTest.framework */,
+				7F3086291A02537400174089 /* CustomIOS7AlertView.h */,
+				7F30862A1A0253AA00174089 /* CustomIOS7AlertView.m */,
+				7F30862C1A02559E00174089 /* UIPlaceHolderTextView.h */,
+				7F30862D1A0255B800174089 /* UIPlaceHolderTextView.m */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1248,6 +1258,7 @@
 				7890808019A229FE00C537E1 /* KQURLConnectHelper.m in Sources */,
 				7122DB1218BB1F7300C044E8 /* FeedCustomCell.m in Sources */,
 				78CD61EC19D0207A00C6E49A /* AusstellerTableViewController.m in Sources */,
+				7F30862E1A0255B800174089 /* UIPlaceHolderTextView.m in Sources */,
 				7122DB0818BB1F5C00C044E8 /* ProgramCustomCell.m in Sources */,
 				78BF115E19BEB290005AE8B0 /* InstituteDetailTableViewCell.m in Sources */,
 				78F8C9A419FE0E260077805C /* InfoViewController.m in Sources */,
@@ -1278,6 +1289,7 @@
 				7112222F18BCC69300E77A4A /* AboutCustomCell3.m in Sources */,
 				BB303DA618B863E300B6EBC9 /* main.m in Sources */,
 				78AD2C7B19A1843B00047B9A /* KQSidePanelViewController.m in Sources */,
+				7F30862B1A0253AA00174089 /* CustomIOS7AlertView.m in Sources */,
 				7806B3DC19CCCC27008BCC31 /* TeilnehmerTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1416,15 +1428,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH (T2AALHGDAD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH (T2AALHGDAD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
 				INFOPLIST_FILE = "Events/Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = WmZ;
-				PROVISIONING_PROFILE = "8b30b59e-f595-4736-9b89-05c5664a506a";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Events/Events-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1438,15 +1450,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH (T2AALHGDAD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH (T2AALHGDAD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
 				INFOPLIST_FILE = "Events/Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = WmZ;
-				PROVISIONING_PROFILE = "8b30b59e-f595-4736-9b89-05c5664a506a";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Events/Events-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
