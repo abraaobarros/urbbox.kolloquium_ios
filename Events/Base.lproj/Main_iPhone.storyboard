@@ -317,8 +317,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="openPDF:" destination="d6p-kL-gGL" eventType="touchUpInside" id="8ze-cH-xwb"/>
-                                                    <segue destination="fp2-kO-eDg" kind="modal" identifier="PdfViewController" id="4OS-55-p3r"/>
+                                                    <action selector="openPDF:" destination="d6p-kL-gGL" eventType="touchUpInside" id="ujn-a7-zNc"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mangelhaft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" id="Otc-1T-AFC">
@@ -376,6 +375,7 @@
                         <outlet property="photo" destination="5Kh-Rl-Mmg" id="wiX-Wr-4lD"/>
                         <outlet property="scroll" destination="U6b-Sd-ddT" id="wc3-uq-KxF"/>
                         <outlet property="subject" destination="30g-cA-cgD" id="Xgz-Ni-ibV"/>
+                        <segue destination="fp2-kO-eDg" kind="modal" identifier="PdfViewController" id="TAK-03-TnO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VK-Z3-6kn" userLabel="First Responder" sceneMemberID="firstResponder"/>
