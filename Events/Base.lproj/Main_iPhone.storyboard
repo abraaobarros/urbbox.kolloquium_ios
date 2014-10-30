@@ -939,6 +939,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="xw2-mo-SWR">
+                                <rect key="frame" x="150" y="262" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="color" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
+                            </activityIndicatorView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CIZ-cL-STv">
                                 <rect key="frame" x="129" y="357" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -946,11 +951,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="xw2-mo-SWR">
-                                <rect key="frame" x="150" y="262" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <color key="color" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
-                            </activityIndicatorView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading data..." textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" id="59o-t1-dfk">
                                 <rect key="frame" x="33" y="290" width="255" height="15"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -961,10 +961,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="loading" destination="xw2-mo-SWR" id="Dvj-zF-gth"/>
+                        <outlet property="loading_label" destination="59o-t1-dfk" id="gU7-9v-czZ"/>
+                        <outlet property="try" destination="CIZ-cL-STv" id="riJ-0F-7C2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0iJ-Ha-Kfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2237" y="-3271"/>
+            <point key="canvasLocation" x="-2053" y="-3270"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="ceR-vN-lrW">

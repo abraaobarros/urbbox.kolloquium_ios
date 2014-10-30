@@ -267,7 +267,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" id="wrh-cw-g92">
                                 <rect key="frame" x="255" y="136" width="258" height="270"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" id="gH0-lU-VWb">
                                         <rect key="frame" x="36" y="79" width="187" height="30"/>
