@@ -734,9 +734,6 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="iha-df-LzR" kind="push" identifier="InfoDetailTableViewController" id="vUT-Kv-FNY"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="S5r-1I-vIt">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>

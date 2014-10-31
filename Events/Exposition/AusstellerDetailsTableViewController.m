@@ -98,7 +98,14 @@
         _type = 0;
         _videoWebView.hidden = NO;
         NSString *videoID = [self getVideoIdFromURL:[data objectForKey:@"video"]];
+        if (videoID ==nil ) {
+            _videoWebView.hidden = YES;
+        }else{
+            _videoWebView.hidden = NO;
+        }
         NSString *htmlString = [NSString stringWithFormat:@"<html><head><meta name = \"viewport\" content = \"initial-scale = 1.0, user-scalable = no, width = 320\"/></head><body style=\"background:#fff;margin-top:0px;margin-left:0px\"><div><object width=\"320\" height=\"172\"><param name=\"movie\" value=\"http://www.youtube.com/v/%@&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/%@&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"320\" height=\"172\"></embed></object></div></body></html>",videoID,videoID];
+
+        
         [_videoWebView loadHTMLString:htmlString baseURL:[NSURL URLWithString:@"http://www.your-url.com"]];
     }else{
         _type = 1;

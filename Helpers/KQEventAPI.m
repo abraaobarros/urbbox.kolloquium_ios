@@ -75,7 +75,15 @@
         NSMutableDictionary *dados = [[NSMutableDictionary alloc] init];
         [dados setObject:login forKey:@"email"];
         [dados setObject:pass forKey:@"password"];
-        finishHandler();
+        startHandler();
+        if ([pass isEqualToString:@"werkzeugbau"]) {
+            [userDefaults setObject:login forKey:@"email"];
+            [userDefaults setObject:pass forKey:@"pass"];
+            [userDefaults synchronize];
+            finishHandler();
+        }else{
+            loginErrorHandler();
+        }
 //        KQURLConnectHelper *conn = [[KQURLConnectHelper alloc]init];
 //        [conn postDataToURL:URL_LOGIN withParameters:dados
 //                            startHandle:startHandler
