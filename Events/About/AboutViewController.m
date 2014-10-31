@@ -24,7 +24,7 @@ KQCache *cache;
     
     NSDictionary *data = [cache getDataFromHash:@"http://kolloquium.herokuapp.com/rest/event/1"];
     
-    _kolloquium.text = [Util stripTags:[data objectForKey:@"descript"]];
+    _kolloquium.text = [Util interpretTags:[data objectForKey:@"descript"]];
     _date.text = [NSString stringWithFormat:@"%@ - %@", [data objectForKey:@"start"],[data objectForKey:@"finish"]];
     _address.text = [data objectForKey:@"address"];
     

@@ -26,6 +26,11 @@
     }
     return self;
 }
+- (IBAction)clickOnEmail:(id)sender {
+    CGRect frame = self.view.frame;
+    frame.origin.y = frame.origin.y - 100;
+    self.view.frame = frame;
+}
 
 - (void)viewDidLoad
 {

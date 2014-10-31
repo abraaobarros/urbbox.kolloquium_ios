@@ -65,4 +65,30 @@
     return html;
 }
 
++ (NSString *)interpretTags:(NSString *)str
+{
+    NSMutableString *html = [NSMutableString stringWithCapacity:[str length]];
+    
+    NSScanner *scanner = [NSScanner scannerWithString:str];
+    scanner.charactersToBeSkipped = NULL;
+    NSString *tempText = nil;
+    while(![scanner isAtEnd])
+    {
+        [scanner scanUpToString:@"<" intoString:&tempText];
+        if (tempText != nil)
+            [html appendString:tempText];
+        
+        [scanner scanUpToString:@">" intoString:&tempText];
+        if (tempText != nil){
+            if ([tempText isEqualToString:@"<br"]) {
+                [html appendString:@"\n"];
+            }
+        }
+        if (![scanner isAtEnd])
+            [scanner setScanLocation:[scanner scanLocation] + 1];
+        tempText = nil;
+    }
+    return html;
+}
+
 @end

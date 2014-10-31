@@ -47,7 +47,7 @@ UIDocumentInteractionController *documentInteractionController;
 
     @try {
         name.text = [data objectForKey:@"subject"];
-        _descript.text = [Util stripTags:[data objectForKey:@"descript"]];
+        _descript.text = [Util interpretTags:[data objectForKey:@"descript"]];
         [_descript sizeToFit];
         subject.text = [[data objectForKey:@"speaker"] objectForKey:@"name"];
         if([[[data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
@@ -260,13 +260,18 @@ UIDocumentInteractionController *documentInteractionController;
         _photo.image=[UIImage imageNamed:@"no_profile.png"];
         data = new_data;
         name.text = [new_data objectForKey:@"subject"];
-        _descript.text = [Util stripTags:[new_data objectForKey:@"descript"]];
+        _descript.text = [Util interpretTags:[new_data objectForKey:@"descript"]];
         subject.text = [[new_data objectForKey:@"speaker"] objectForKey:@"name"];
         if ([data objectForKey:@"location"] != (id)[NSNull null]) {
             location.text = [NSString stringWithFormat:@"Pullman Quellenhof, %@.%@ um %@ Uhr",
                              [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"dd"] ,
                              [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"MMM"],
                             [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"]];
+        }
+        if([[[data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
+            _company.text = @"";
+        }else{
+            _company.text = [[data objectForKey:@"speaker"]objectForKey:@"company"];
         }
         if ([data objectForKey:@"document"]==(id)[NSNull null] || [data objectForKey:@"document"]== nil) {
             _pdfButton.hidden=YES;
