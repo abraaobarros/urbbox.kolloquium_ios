@@ -93,6 +93,7 @@
                     _textLoading.hidden = NO;
                     _textLoading.text = @"No internet connection";
                 }];
+
             } startHandler:^{
                 [_loading startAnimating];
                 _textLoading.hidden = NO;
@@ -107,6 +108,7 @@
                 [_loading stopAnimating];
             }];
 }
+
 
 - (IBAction)login_finish:(id)sender {
 }

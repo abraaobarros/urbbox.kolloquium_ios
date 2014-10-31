@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *login_view;
 @property (strong, nonatomic) IBOutlet UIView *viewMaster;
 
+
 - (IBAction)login_finish:(id)sender;
 -(void) noInternetConnect;
 
