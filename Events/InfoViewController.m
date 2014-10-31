@@ -34,13 +34,6 @@
     return 3;
 }
 
-
-
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//}
-
 - (CGFloat) tableView: (UITableView *) tableView heightForRowAtIndexPath: (NSIndexPath *) indexPath
 {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -62,12 +55,8 @@
     
 }
 
-
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
     InfoDetailTableViewController *vc = (InfoDetailTableViewController *) [segue destinationViewController];
     switch (self.tableView.indexPathForSelectedRow.row) {
         case 0:
