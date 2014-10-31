@@ -28,7 +28,10 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
+    
+    [_scrollView setContentSize:_viewContent.frame.size];
     _profission.text = [data objectForKey:@"company"];
     _name.text = [data objectForKey:@"name"];
     _email_label.text = [data objectForKey:@"email"];

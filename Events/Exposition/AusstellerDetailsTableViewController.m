@@ -7,8 +7,14 @@
 //
 
 #import "AusstellerDetailsTableViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import "KQEventAPI.h"
 
-@interface AusstellerDetailsTableViewController ()
+@interface AusstellerDetailsTableViewController (){
+
+    MPMoviePlayerViewController *movie;
+
+}
 
 
 @end
@@ -20,6 +26,9 @@
     NSLog(@"%@",data);
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     _institute_en.text = [data objectForKey:@"name"];
+    NSString *htmlString = @"<html><head><meta name = \"viewport\" content = \"initial-scale = 1.0, user-scalable = no, width = 320\"/></head><body style=\"background:#fff;margin-top:0px;margin-left:0px\"><div><object width=\"320\" height=\"172\"><param name=\"movie\" value=\"http://www.youtube.com/v/2RF3QoCnPfU&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/2RF3QoCnPfU&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"320\" height=\"172\"></embed></object></div></body></html>";
+    
+    
     [_institute_en sizeToFit];
     if ([data objectForKey:@"short_descript"]==nil || [data objectForKey:@"short_descript"]==(id)[NSNull null]) {
         _des.text =[data objectForKey:@"profile"];
@@ -28,6 +37,7 @@
         _finalists.text = @"Ausgewählte Stärken";
         _strenghts.text = [data objectForKey:@"strengths"];
         _type = 0;
+        [_videoWebView loadHTMLString:htmlString baseURL:[NSURL URLWithString:@"http://www.your-url.com"]];
         
     }else{
         _type = 1;
@@ -36,6 +46,7 @@
         _finalists.text = @"Teilnehmer";
         _background_name.hidden = YES;
         _strenghts.text = @"";
+        
         @try {
             if([[data objectForKey:@"participants"] count]==0){
                 _finalists.hidden = YES;
@@ -53,7 +64,13 @@
     [_strenghts sizeToFit];
     [_des sizeToFit];
     [_background sizeToFit];
-//    }
+    [KQEventAPI getImageFromUrl:[data objectForKey:@"logo"] finishHandler:^(NSData *d) {
+        _photo.image=[UIImage imageWithData: d];
+    } startHandler:^{
+        
+    } errorHandler:^{
+        
+    }];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         @try {
             NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data objectForKey:@"logo"]]];
@@ -79,6 +96,10 @@
         _finalists.text = @"Ausgewählte Stärken";
         _strenghts.text = [data objectForKey:@"strengths"];
         _type = 0;
+        _videoWebView.hidden = NO;
+        NSString *videoID = [self getVideoIdFromURL:[data objectForKey:@"video"]];
+        NSString *htmlString = [NSString stringWithFormat:@"<html><head><meta name = \"viewport\" content = \"initial-scale = 1.0, user-scalable = no, width = 320\"/></head><body style=\"background:#fff;margin-top:0px;margin-left:0px\"><div><object width=\"320\" height=\"172\"><param name=\"movie\" value=\"http://www.youtube.com/v/%@&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/%@&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"320\" height=\"172\"></embed></object></div></body></html>",videoID,videoID];
+        [_videoWebView loadHTMLString:htmlString baseURL:[NSURL URLWithString:@"http://www.your-url.com"]];
         
     }else{
         _type = 1;
@@ -87,6 +108,7 @@
         _finalists.text = @"Teilnehmer";
         _background_name.hidden = YES;
         _strenghts.text = @"";
+        _videoWebView.hidden = YES;
         @try {
             if([[data objectForKey:@"participants"] count]==0){
                 _finalists.hidden = YES;
@@ -119,6 +141,29 @@
         
     });
 }
+
+- (NSString *)getVideoIdFromURL:(NSString *) videoUrl{
+    NSError *error = NULL;
+    NSString *pattern = @"(?:(?:\.be\/|embed\/|v\/|\\?v=|\&v=|\/videos\/)|(?:[\\w+]+#\\w\/\\w(?:\/[\\w]+)?\/\\w\/))([\\w-_]+)";
+
+    NSRegularExpression *regex  = [NSRegularExpression regularExpressionWithPattern: pattern
+                                                                            options: NSRegularExpressionCaseInsensitive
+                                                                              error: &error];
+    NSTextCheckingResult *match = [regex firstMatchInString: videoUrl
+                                                    options: 0
+                                                      range: NSMakeRange(0, [videoUrl length])];
+    if ( match ) {
+        NSRange videoIDRange             = [match rangeAtIndex:1];
+        NSString *substringForFirstMatch = [videoUrl substringWithRange:videoIDRange];
+        
+        NSLog(@"url: %@, Youtube ID: %@", videoUrl, substringForFirstMatch);
+        return videoUrl;
+    } else {
+        NSLog(@"No string matched! %@", videoUrl);
+        return  nil;
+    }
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -131,7 +176,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    return 7;
 }
 
 
@@ -159,7 +204,7 @@
             return _background.frame.size.height+50;
             break;
         default:
-            return 100;
+            return 172;
             break;
         }
     }else{
@@ -183,7 +228,7 @@
                     return _background.frame.size.height+50;
                     break;
                 default:
-                    return 100;
+                    return 172;
                     break;
             }
         }
@@ -191,6 +236,12 @@
     return 100;
     
 
+}
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+-(BOOL)shouldAutorotate{
+    return NO;
 }
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

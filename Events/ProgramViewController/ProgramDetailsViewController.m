@@ -44,7 +44,7 @@ UIDocumentInteractionController *documentInteractionController;
 
 - (void)viewDidLoad
 {
-
+    
     @try {
         name.text = [data objectForKey:@"subject"];
         _descript.text = [Util interpretTags:[data objectForKey:@"descript"]];
@@ -256,6 +256,8 @@ UIDocumentInteractionController *documentInteractionController;
 
 
 -(void)setData:(NSDictionary *)new_data{
+    [_scroll setContentOffset:
+     CGPointMake(0, -_scroll.contentInset.top) animated:YES];
     @try {
         _photo.image=[UIImage imageNamed:@"no_profile.png"];
         data = new_data;
@@ -294,6 +296,7 @@ UIDocumentInteractionController *documentInteractionController;
             }
             
         });
+        [_descript sizeToFit];
     }
     @catch (NSException *exception) {
         

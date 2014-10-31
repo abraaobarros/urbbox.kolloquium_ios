@@ -7,6 +7,7 @@
 //
 
 #import "InfoViewController.h"
+#import "InfoDetailTableViewController.h"
 #import "Util.h"
 
 @interface InfoViewController ()
@@ -42,8 +43,12 @@
 
 - (CGFloat) tableView: (UITableView *) tableView heightForRowAtIndexPath: (NSIndexPath *) indexPath
 {
-    return 321;
-    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        return 321;
+    }else{
+        return 184;
+    }
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -54,6 +59,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:@"InfoDetailTableViewController" sender:self];
+    
 }
 
 
@@ -62,6 +68,20 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    InfoDetailTableViewController *vc = (InfoDetailTableViewController *) [segue destinationViewController];
+    switch (self.tableView.indexPathForSelectedRow.row) {
+        case 0:
+            [vc setKinddd:@"touristc_points"];
+            break;
+        case 1:
+            [vc setKinddd:@"restaurants" ];
+            break;
+        case 2:
+            [vc setKinddd:@"hotels" ];
+            break;
+        default:
+            break;
+    }
 }
 
 @end

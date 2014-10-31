@@ -51,6 +51,7 @@
 		7122DB4918BB7D8600C044E8 /* Segmented_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7122DB4518BB7D8600C044E8 /* Segmented_left.png */; };
 		7122DC1718BDFB7B00DC9925 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7122DC1618BDFB7B00DC9925 /* MapKit.framework */; };
 		7122DC1918BDFB8100DC9925 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7122DC1818BDFB8100DC9925 /* CoreLocation.framework */; };
+		780212781A034E030037F069 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780212771A034E030037F069 /* VideoViewController.m */; };
 		7806B3DC19CCCC27008BCC31 /* TeilnehmerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7806B3DB19CCCC27008BCC31 /* TeilnehmerTableViewController.m */; };
 		7806B3DF19CCDB20008BCC31 /* TeilnehmerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7806B3DE19CCDB20008BCC31 /* TeilnehmerTableViewCell.m */; };
 		7836B99719A3897C004BB485 /* CacheDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7836B99519A3897C004BB485 /* CacheDB.xcdatamodeld */; };
@@ -280,6 +281,8 @@
 		7122DB4518BB7D8600C044E8 /* Segmented_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Segmented_left.png; sourceTree = "<group>"; };
 		7122DC1618BDFB7B00DC9925 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7122DC1818BDFB8100DC9925 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		780212761A034E030037F069 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoViewController.h; path = ../VideoViewController.h; sourceTree = "<group>"; };
+		780212771A034E030037F069 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoViewController.m; path = ../VideoViewController.m; sourceTree = "<group>"; };
 		7806B3DA19CCCC27008BCC31 /* TeilnehmerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeilnehmerTableViewController.h; path = Participants/TeilnehmerTableViewController.h; sourceTree = "<group>"; };
 		7806B3DB19CCCC27008BCC31 /* TeilnehmerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeilnehmerTableViewController.m; path = Participants/TeilnehmerTableViewController.m; sourceTree = "<group>"; };
 		7806B3DD19CCDB20008BCC31 /* TeilnehmerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeilnehmerTableViewCell.h; path = Participants/TeilnehmerTableViewCell.h; sourceTree = "<group>"; };
@@ -594,6 +597,8 @@
 		7806B3E119D01DC1008BCC31 /* AusstellerViewController */ = {
 			isa = PBXGroup;
 			children = (
+				780212761A034E030037F069 /* VideoViewController.h */,
+				780212771A034E030037F069 /* VideoViewController.m */,
 				789CA4611A00BF10009D38E5 /* AusstellerDetailsTableViewController.h */,
 				789CA4621A00BF10009D38E5 /* AusstellerDetailsTableViewController.m */,
 				78CD61EA19D0207A00C6E49A /* AusstellerTableViewController.h */,
@@ -1297,6 +1302,7 @@
 				78B83D1A19BE1DE8004E5B35 /* InstituteDetailTableViewController.m in Sources */,
 				784F678619C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.m in Sources */,
 				789CA44C1A00A488009D38E5 /* ViewController.m in Sources */,
+				780212781A034E030037F069 /* VideoViewController.m in Sources */,
 				7806B3DF19CCDB20008BCC31 /* TeilnehmerTableViewCell.m in Sources */,
 				7112222F18BCC69300E77A4A /* AboutCustomCell3.m in Sources */,
 				BB303DA618B863E300B6EBC9 /* main.m in Sources */,

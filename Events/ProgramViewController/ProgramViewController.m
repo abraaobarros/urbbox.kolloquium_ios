@@ -46,15 +46,12 @@ BOOL reload = FALSE;
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [super viewDidLoad];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    {
+
         if (![userDefaults objectForKey:@"email"]) {
             [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
         }
-    } else {
-        
-    }
    
+
     [Util setupNavigationBar:self withTitle:@"Aussteller"];
     vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
     [self.sidePanelController setRightPanel:vc];
@@ -67,7 +64,7 @@ BOOL reload = FALSE;
                         NSLog(@"Finish Fetching");
                         [self loadDummyData];
                     } errorHandler:^(void){
-                        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
+                        [self performSegueWithIdentifier:@"Loading2ViewController" sender:self];
                     }];
     
     [self loadDummyData];
@@ -278,7 +275,6 @@ BOOL reload = FALSE;
     {
         // Get reference to the destination view controller
         loading = [segue destinationViewController];
-        [loading setLoadingMode:NO];
         // Pass any objects to the view controller here, like...
     }
     if ([[segue identifier] isEqualToString:@"Loading2ViewController"])
@@ -317,7 +313,12 @@ BOOL reload = FALSE;
     [tableView reloadData];
 }
 
-
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+-(BOOL)shouldAutorotate{
+    return NO;
+}
 
 - (IBAction)leftBar:(id)sender {
     [self.sidePanelController setCenterPanelHidden:YES];

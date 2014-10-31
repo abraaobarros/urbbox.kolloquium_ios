@@ -1,5 +1,5 @@
 //
-//  InfoDetailTableViewController.h
+//  VideoViewController.h
 //  Events
 //
 //  Created by Abraao Barros Lacerda on 31/10/14.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InfoDetailTableViewController : UITableViewController
-
--(void)setKinddd:(NSString *) kind;
+@interface VideoViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end

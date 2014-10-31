@@ -27,9 +27,9 @@
     return self;
 }
 - (IBAction)clickOnEmail:(id)sender {
-    CGRect frame = self.view.frame;
-    frame.origin.y = frame.origin.y - 100;
-    self.view.frame = frame;
+//    CGRect frame = self.view.frame;
+//    frame.origin.y = frame.origin.y - 100;
+//    self.view.frame = frame;
 }
 
 - (void)viewDidLoad
@@ -88,7 +88,7 @@
                     _textLoading.text = @"Getting information...";
                 } finishProcess:^{
                     [_loading stopAnimating];
-//                    [self dismissViewControllerAnimated:YES completion:nil];
+                    [self dismissViewControllerAnimated:YES completion:nil];
                 } errorHandler:^{
                     _textLoading.hidden = NO;
                     _textLoading.text = @"No internet connection";

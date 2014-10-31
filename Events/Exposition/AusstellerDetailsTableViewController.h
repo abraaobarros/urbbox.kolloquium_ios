@@ -11,6 +11,7 @@
 @interface AusstellerDetailsTableViewController : UITableViewController
 
 @property(nonatomic,weak) NSDictionary *data;
+@property (weak, nonatomic) IBOutlet UIWebView *videoWebView;
 @property(nonatomic,weak) NSArray *dataSource;
 @property(nonatomic) NSInteger type;
 @property (weak, nonatomic) IBOutlet UIView *viewParent;
