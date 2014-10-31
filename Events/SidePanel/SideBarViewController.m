@@ -104,7 +104,7 @@ KQEventAPI *event;
             break;
         case 2:
             //TODO: ADD AACHEN - return 4;
-            return 3;
+            return 4;
             break;
             
         default:
