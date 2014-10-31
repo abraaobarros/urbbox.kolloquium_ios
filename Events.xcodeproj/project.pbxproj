@@ -122,6 +122,8 @@
 		78CD61F519D0371F00C6E49A /* CompetitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61F419D0371F00C6E49A /* CompetitionViewController.m */; };
 		78CD61F819D044A400C6E49A /* Loading2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD61F719D044A400C6E49A /* Loading2ViewController.m */; };
 		78D1A30219E2557B00E92F93 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 78D1A30119E2557B00E92F93 /* sample.pdf */; };
+		78D9875A1A0328CA00942AB9 /* InfoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D987591A0328CA00942AB9 /* InfoDetailViewController.m */; };
+		78D9875D1A0329AC00942AB9 /* InfoDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D9875C1A0329AC00942AB9 /* InfoDetailTableViewController.m */; };
 		78E103E219ED630300066580 /* ic_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E103E119ED630300066580 /* ic_refresh.png */; };
 		78E103E419ED636F00066580 /* ic_pdf.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E103E319ED636F00066580 /* ic_pdf.png */; };
 		78E103E619EDBB0500066580 /* ic_email.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E103E519EDBB0500066580 /* ic_email.png */; };
@@ -385,6 +387,10 @@
 		78CD61F619D044A400C6E49A /* Loading2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Loading2ViewController.h; path = Loading/Loading2ViewController.h; sourceTree = "<group>"; };
 		78CD61F719D044A400C6E49A /* Loading2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Loading2ViewController.m; path = Loading/Loading2ViewController.m; sourceTree = "<group>"; };
 		78D1A30119E2557B00E92F93 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = sample.pdf; path = ../sample.pdf; sourceTree = "<group>"; };
+		78D987581A0328CA00942AB9 /* InfoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoDetailViewController.h; sourceTree = "<group>"; };
+		78D987591A0328CA00942AB9 /* InfoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoDetailViewController.m; sourceTree = "<group>"; };
+		78D9875B1A0329AC00942AB9 /* InfoDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoDetailTableViewController.h; sourceTree = "<group>"; };
+		78D9875C1A0329AC00942AB9 /* InfoDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoDetailTableViewController.m; sourceTree = "<group>"; };
 		78E103E119ED630300066580 /* ic_refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_refresh.png; sourceTree = "<group>"; };
 		78E103E319ED636F00066580 /* ic_pdf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_pdf.png; sourceTree = "<group>"; };
 		78E103E519EDBB0500066580 /* ic_email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_email.png; sourceTree = "<group>"; };
@@ -412,7 +418,7 @@
 		7F771D6319FEFF6A00D9DAE9 /* Pdf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pdf.png; sourceTree = "<group>"; };
 		7FB731C919FEB426009CD692 /* PdfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdfViewController.h; sourceTree = "<group>"; };
 		7FB731CA19FEB426009CD692 /* PdfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdfViewController.m; sourceTree = "<group>"; };
-		BB303D9618B863E300B6EBC9 /* Werkzeugbau-2014.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Werkzeugbau-2014.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB303D9618B863E300B6EBC9 /* WBZ 2014.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WBZ 2014.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB303D9918B863E300B6EBC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB303D9B18B863E300B6EBC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BB303D9D18B863E300B6EBC9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -760,8 +766,12 @@
 		78F8C99F19FE0D9E0077805C /* InfoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				78D987581A0328CA00942AB9 /* InfoDetailViewController.h */,
+				78D987591A0328CA00942AB9 /* InfoDetailViewController.m */,
 				78F8C9A219FE0E260077805C /* InfoViewController.h */,
 				78F8C9A319FE0E260077805C /* InfoViewController.m */,
+				78D9875B1A0329AC00942AB9 /* InfoDetailTableViewController.h */,
+				78D9875C1A0329AC00942AB9 /* InfoDetailTableViewController.m */,
 			);
 			name = InfoViewController;
 			sourceTree = "<group>";
@@ -783,7 +793,7 @@
 		BB303D9718B863E300B6EBC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB303D9618B863E300B6EBC9 /* Werkzeugbau-2014.app */,
+				BB303D9618B863E300B6EBC9 /* WBZ 2014.app */,
 				BB303DBA18B863E300B6EBC9 /* EventsTests.xctest */,
 			);
 			name = Products;
@@ -1019,7 +1029,7 @@
 			);
 			name = Events;
 			productName = Events;
-			productReference = BB303D9618B863E300B6EBC9 /* Werkzeugbau-2014.app */;
+			productReference = BB303D9618B863E300B6EBC9 /* WBZ 2014.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BB303DB918B863E300B6EBC9 /* EventsTests */ = {
@@ -1258,8 +1268,10 @@
 				7890808019A229FE00C537E1 /* KQURLConnectHelper.m in Sources */,
 				7122DB1218BB1F7300C044E8 /* FeedCustomCell.m in Sources */,
 				78CD61EC19D0207A00C6E49A /* AusstellerTableViewController.m in Sources */,
+				78D9875A1A0328CA00942AB9 /* InfoDetailViewController.m in Sources */,
 				7F30862E1A0255B800174089 /* UIPlaceHolderTextView.m in Sources */,
 				7122DB0818BB1F5C00C044E8 /* ProgramCustomCell.m in Sources */,
+				78D9875D1A0329AC00942AB9 /* InfoDetailTableViewController.m in Sources */,
 				78BF115E19BEB290005AE8B0 /* InstituteDetailTableViewCell.m in Sources */,
 				78F8C9A419FE0E260077805C /* InfoViewController.m in Sources */,
 				788DE31F19A2D8C800ED8D23 /* KQCache.m in Sources */,
@@ -1432,7 +1444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
@@ -1454,7 +1466,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";

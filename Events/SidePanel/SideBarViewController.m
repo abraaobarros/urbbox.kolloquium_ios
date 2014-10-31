@@ -231,20 +231,18 @@ KQEventAPI *event;
             return cell;
         }
     }else if (indexPath.section ==2){
-        //TODO: ADD AACHEN
-//        if(indexPath.row==0)
-//        {
-//            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-//            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//            if (cell == nil) {
-//                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//            }
-//            cell.title.text=@"Aachen";
-//            cell.icon.image = [UIImage imageNamed:@"ic_aachen.png"];
-//            return cell;
-//        }
-        //else if(indexPath.row==1)
-        if(indexPath.row == 0)
+        if(indexPath.row==0)
+        {
+            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
+            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (cell == nil) {
+                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
+            cell.title.text=@"Aachen";
+            cell.icon.image = [UIImage imageNamed:@"ic_aachen.png"];
+            return cell;
+        }
+        else if(indexPath.row==1)
         {
             static NSString *CellIdentifier = @"KQSideBarTableViewCell";
             KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -255,8 +253,7 @@ KQEventAPI *event;
             cell.icon.image = [UIImage imageNamed:@"ic_refresh.png"];
             return cell;
         }
-        
-        else if(indexPath.row==1)
+        else if(indexPath.row==2)
         {
             static NSString *CellIdentifier = @"KQSideBarTableViewCell";
             KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -267,7 +264,7 @@ KQEventAPI *event;
             cell.icon.image = [UIImage imageNamed:@"ic_impressum.png"];
             return cell;
         }
-        else if(indexPath.row==2)
+        else if(indexPath.row==3)
         {
             static NSString *CellIdentifier = @"KQSideBarTableViewCell";
             KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -406,7 +403,6 @@ KQEventAPI *event;
             [self.sidePanelController setCenterPanel:partnersView];
         }
     }else if (indexPath.section==2){
-//        TODO: ADD AACHEN
         if(indexPath.row==0)
         {
             InfoViewController *vc = (InfoViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"InfoViewController"];
@@ -416,7 +412,7 @@ KQEventAPI *event;
             
             
         }
-        if(indexPath.row==0)
+        if(indexPath.row==1)
         {
             KQCache *cache = [KQCache sharedManager];
             [cache resetDatabase];
@@ -425,7 +421,7 @@ KQEventAPI *event;
             
             
         }
-        else if(indexPath.row==2)
+        else if(indexPath.row==3)
         {
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:nil forKey:@"email"];
@@ -433,7 +429,7 @@ KQEventAPI *event;
             [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
             
         }
-        else if(indexPath.row==1)
+        else if(indexPath.row==2)
         {
             CGRect webFrame = CGRectMake(0.0, 0.0, self.view.frame.size.width,self.view.frame.size.height);
             UIWebView *webView = [[UIWebView alloc] initWithFrame:webFrame];
@@ -447,6 +443,7 @@ KQEventAPI *event;
             vc.view = webView;
             KQNavigationController *partnersView = [[KQNavigationController alloc] initWithRootViewController:vc];
             [Util setupNavigationBar:vc withTitle:@"Impressum"];
+            vc.navigationController.navigationItem.leftBarButtonItem.tintColor = [UIColor colorWithRed:155.0/255.0 green:0.0 blue:32.0/255.0 alpha:1];
             [self.sidePanelController setCenterPanel:partnersView];
         }
     }

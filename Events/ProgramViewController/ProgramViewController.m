@@ -46,10 +46,15 @@ BOOL reload = FALSE;
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [super viewDidLoad];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    if (![userDefaults objectForKey:@"email"]) {
-//        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
-//    }
-    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        if (![userDefaults objectForKey:@"email"]) {
+            [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
+        }
+    } else {
+        
+    }
+   
     [Util setupNavigationBar:self withTitle:@"Aussteller"];
     vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
     [self.sidePanelController setRightPanel:vc];
