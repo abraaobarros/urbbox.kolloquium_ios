@@ -51,7 +51,7 @@ UIDocumentInteractionController *documentInteractionController;
         [_descript sizeToFit];
         subject.text = [[data objectForKey:@"speaker"] objectForKey:@"name"];
         if([[[data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
-            _company.text = @"";
+            _company.text = @" ";
         }else{
             _company.text = [[data objectForKey:@"speaker"]objectForKey:@"company"];
         }
@@ -103,7 +103,6 @@ UIDocumentInteractionController *documentInteractionController;
 //    [subject sizeToFit];
     [_descript sizeToFit];
     [_scrollView setContentSize:_descript.viewForBaselineLayout.frame.size];
-    [_company sizeToFit];
 //    [name sizeToFit];
     [_quetion resignFirstResponder];
     [super viewDidLoad];
@@ -270,20 +269,17 @@ UIDocumentInteractionController *documentInteractionController;
                              [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"MMM"],
                             [Util convertDataFormat:[new_data valueForKey:@"date"] withPattern:@"dd/MM/yyy HH:mm" toPattern:@"HH:mm"]];
         }
-        if([[[data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
-            _company.text = @"";
+        if([[[new_data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
+            _company.hidden = YES;
         }else{
-            _company.text = [[data objectForKey:@"speaker"]objectForKey:@"company"];
+            NSString *companyString = [[new_data objectForKey:@"speaker"]objectForKey:@"company"];
+            _company.hidden = NO;
+            _company.text = companyString;
         }
         if ([data objectForKey:@"document"]==(id)[NSNull null] || [data objectForKey:@"document"]== nil) {
             _pdfButton.hidden=YES;
         }else{
             _pdfButton.hidden=NO;
-        }
-        if([[[data objectForKey:@"speaker"] objectForKey:@"name"] isEqualToString:@"Information"]){
-            _company.text = @"";
-        }else{
-            _company.text = [[data objectForKey:@"speaker"]objectForKey:@"company"];
         }
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             @try {
