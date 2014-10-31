@@ -47,9 +47,9 @@ BOOL reload = FALSE;
     [super viewDidLoad];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
-        if (![userDefaults objectForKey:@"email"]) {
-            [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
-        }
+    if (![userDefaults objectForKey:@"email"]) {
+        [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
+    }
    
 
     [Util setupNavigationBar:self withTitle:@"Aussteller"];

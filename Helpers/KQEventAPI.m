@@ -71,35 +71,37 @@
         startHandler();
         finishHandler();
     }else{
+        startHandler();
         NSMutableDictionary *dados = [[NSMutableDictionary alloc] init];
         [dados setObject:login forKey:@"email"];
         [dados setObject:pass forKey:@"password"];
-        KQURLConnectHelper *conn = [[KQURLConnectHelper alloc]init];
-        [conn postDataToURL:URL_LOGIN withParameters:dados
-                            startHandle:startHandler
-                            sucessHandler:^(NSDictionary* finished){
-                              NSMutableDictionary * data;
-                              data = [finished mutableCopy];
-                                if (data==nil) {
-                                    errorHandler();
-                                }
-                              @try {
-                                  [userDefaults setObject:[finished objectForKey:@"id"] forKey:@"id"];
-                                  [userDefaults setObject:[finished objectForKey:@"name"] forKey:@"name"];
-                                  [userDefaults setObject:[finished objectForKey:@"company"] forKey:@"company"];
-                                  [userDefaults setObject:[finished objectForKey:@"email"] forKey:@"email"];
-                                  [userDefaults synchronize];
-                                  if (![finished objectForKey:@"id"] ) {
-                                      loginErrorHandler();
-                                  }
-                                  else if (finishHandler!=nil) {
-                                      finishHandler();
-                                  }
-                              }
-                              @catch (NSException *exception) {
-                                  errorHandler();
-                              }
-                          } errorHandler:errorHandler];
+        finishHandler();
+//        KQURLConnectHelper *conn = [[KQURLConnectHelper alloc]init];
+//        [conn postDataToURL:URL_LOGIN withParameters:dados
+//                            startHandle:startHandler
+//                            sucessHandler:^(NSDictionary* finished){
+//                              NSMutableDictionary * data;
+//                              data = [finished mutableCopy];
+//                                if (data==nil) {
+//                                    errorHandler();
+//                                }
+//                              @try {
+//                                  [userDefaults setObject:[finished objectForKey:@"id"] forKey:@"id"];
+//                                  [userDefaults setObject:[finished objectForKey:@"name"] forKey:@"name"];
+//                                  [userDefaults setObject:[finished objectForKey:@"company"] forKey:@"company"];
+//                                  [userDefaults setObject:[finished objectForKey:@"email"] forKey:@"email"];
+//                                  [userDefaults synchronize];
+//                                  if (![finished objectForKey:@"id"] ) {
+//                                      loginErrorHandler();
+//                                  }
+//                                  else if (finishHandler!=nil) {
+//                                      finishHandler();
+//                                  }
+//                              }
+//                              @catch (NSException *exception) {
+//                                  errorHandler();
+//                              }
+//                          } errorHandler:errorHandler];
     }
 }
 
