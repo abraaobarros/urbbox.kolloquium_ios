@@ -1630,7 +1630,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <webView contentMode="scaleToFill" id="NR6-Ef-cLd">
-                                                    <rect key="frame" x="18" y="0.0" width="942" height="514"/>
+                                                    <rect key="frame" x="18" y="0.0" width="1262" height="686.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </webView>
