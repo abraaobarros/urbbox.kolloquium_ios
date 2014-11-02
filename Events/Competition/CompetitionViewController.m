@@ -48,7 +48,7 @@ KQCache *cache;
     }];
     [_scroll_page setContentSize:CGSizeMake(self.view.frame.size.width, 1024)];
     
-    [Util setupNavigationBar:self withTitle:@"Competitors"];
+    [Util setupNavigationBar:self withTitle:@"Der Wettbewerb"];
 
 }
 
