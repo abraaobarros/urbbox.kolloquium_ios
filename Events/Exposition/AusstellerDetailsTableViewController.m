@@ -76,7 +76,6 @@
             NSData *data_img = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data objectForKey:@"logo"]]];
             dispatch_sync(dispatch_get_main_queue(), ^{
                 _photo.image=[UIImage imageWithData: data_img];
-                _photo.contentMode = UIViewContentModeScaleAspectFit;
             });
         }@catch (NSException *exception) {
             NSLog(@"Error : %@",exception);
@@ -150,24 +149,30 @@
 
 - (NSString *)getVideoIdFromURL:(NSString *) videoUrl{
     NSError *error = NULL;
-    NSString *pattern = @"(?:(?:\.be\/|embed\/|v\/|\\?v=|\&v=|\/videos\/)|(?:[\\w+]+#\\w\/\\w(?:\/[\\w]+)?\/\\w\/))([\\w-_]+)";
-
-    NSRegularExpression *regex  = [NSRegularExpression regularExpressionWithPattern: pattern
-                                                                            options: NSRegularExpressionCaseInsensitive
-                                                                              error: &error];
-    NSTextCheckingResult *match = [regex firstMatchInString: videoUrl
-                                                    options: 0
-                                                      range: NSMakeRange(0, [videoUrl length])];
-    if ( match ) {
-        NSRange videoIDRange             = [match rangeAtIndex:1];
-        NSString *substringForFirstMatch = [videoUrl substringWithRange:videoIDRange];
+    @try {
+        NSString *pattern = @"(?:(?:\.be\/|embed\/|v\/|\\?v=|\&v=|\/videos\/)|(?:[\\w+]+#\\w\/\\w(?:\/[\\w]+)?\/\\w\/))([\\w-_]+)";
         
-        NSLog(@"url: %@, Youtube ID: %@", videoUrl, substringForFirstMatch);
-        return videoUrl;
-    } else {
-        NSLog(@"No string matched! %@", videoUrl);
-        return  nil;
+        NSRegularExpression *regex  = [NSRegularExpression regularExpressionWithPattern: pattern
+                                                                                options: NSRegularExpressionCaseInsensitive
+                                                                                  error: &error];
+        NSTextCheckingResult *match = [regex firstMatchInString: videoUrl
+                                                        options: 0
+                                                          range: NSMakeRange(0, [videoUrl length])];
+        if ( match ) {
+            NSRange videoIDRange             = [match rangeAtIndex:1];
+            NSString *substringForFirstMatch = [videoUrl substringWithRange:videoIDRange];
+            
+            NSLog(@"url: %@, Youtube ID: %@", videoUrl, substringForFirstMatch);
+            return videoUrl;
+        } else {
+            NSLog(@"No string matched! %@", videoUrl);
+            return  nil;
+        }
     }
+    @catch (NSException *exception) {
+        return nil;
+    }
+   
 
 }
 - (void)didReceiveMemoryWarning {
