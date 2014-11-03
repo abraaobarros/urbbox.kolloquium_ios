@@ -83,6 +83,9 @@
             if ([tempText isEqualToString:@"<br"]) {
                 [html appendString:@"\n"];
             }
+            else if ([tempText isEqualToString:@"br"]) {
+                [html appendString:@"\n"];
+            }
         }
         if (![scanner isAtEnd])
             [scanner setScanLocation:[scanner scanLocation] + 1];
