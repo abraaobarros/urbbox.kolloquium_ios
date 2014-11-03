@@ -26,7 +26,7 @@
     NSLog(@"%@",data);
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     _institute_en.text = [data objectForKey:@"name"];
-    NSString *htmlString = @"<html><head><meta name = \"viewport\" content = \"initial-scale = 1.0, user-scalable = no, width = 320\"/></head><body style=\"background:#fff;margin-top:0px;margin-left:0px\"><div><object width=\"320\" height=\"172\"><param name=\"movie\" value=\"http://www.youtube.com/v/2RF3QoCnPfU&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/2RF3QoCnPfU&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"320\" height=\"172\"></embed></object></div></body></html>";
+//    NSString *htmlString = @"<html><head><meta name = \"viewport\" content = \"initial-scale = 1.0, user-scalable = no, width = 320\"/></head><body style=\"background:#fff;margin-top:0px;margin-left:0px\"><div><object width=\"320\" height=\"172\"><param name=\"movie\" value=\"http://www.youtube.com/v/2RF3QoCnPfU&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/2RF3QoCnPfU&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"320\" height=\"172\"></embed></object></div></body></html>";
     
     
     [_institute_en sizeToFit];
@@ -37,7 +37,17 @@
         _finalists.text = @"Ausgewählte Stärken";
         _strenghts.text = [data objectForKey:@"strengths"];
         _type = 0;
-        [_videoWebView loadHTMLString:htmlString baseURL:[NSURL URLWithString:@"http://www.your-url.com"]];
+        _videoWebView.hidden = NO;
+        NSString *videoID = [self getVideoIdFromURL:[data objectForKey:@"video"]];
+        if (videoID ==nil ) {
+            _videoWebView.hidden = YES;
+        }else{
+            _videoWebView.hidden = NO;
+        }
+        NSString *htmlString = [NSString stringWithFormat:@"<html><head><meta name = \"viewport\" content = \"initial-scale = 1.0, user-scalable = no, width = 320\"/></head><body style=\"background:#fff;margin-top:0px;margin-left:0px\"><div><object width=\"320\" height=\"172\"><param name=\"movie\" value=\"http://www.youtube.com/v/%@&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/%@&f=gdata_videos&c=ytapi-my-clientID&d=nGF83uyVrg8eD4rfEkk22mDOl3qUImVMV6ramM\"type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"320\" height=\"172\"></embed></object></div></body></html>",videoID,videoID];
+        
+        
+        [_videoWebView loadHTMLString:htmlString baseURL:[NSURL URLWithString:htmlString]];
         
     }else{
         _type = 1;
@@ -46,10 +56,12 @@
         _finalists.text = @"Teilnehmer";
         _background_name.hidden = YES;
         _strenghts.text = @"";
-        
+        _videoWebView.hidden = YES;
         @try {
             if([[data objectForKey:@"participants"] count]==0){
                 _finalists.hidden = YES;
+            }else{
+                _finalists.hidden = NO;
             }
             for (NSDictionary *d in [data objectForKey:@"participants"]) {
                 _strenghts.text = [NSString stringWithFormat:@"%@%@\n\n",_strenghts.text,[d objectForKey:@"name" ]];
@@ -58,6 +70,7 @@
         @catch (NSException *exception) {
             _finalists.hidden = YES;
         }
+
         
         
     }
