@@ -55,6 +55,8 @@
     _name.text = [data objectForKey:@"name"];
     _email_label.text = [data objectForKey:@"email"];
     _mobile_tel.text = [data objectForKey:@"tel"];
+    _about.text = [Util interpretTags: [data objectForKey:@"about"]];
+    [_about sizeToFit];
 }
 
 
