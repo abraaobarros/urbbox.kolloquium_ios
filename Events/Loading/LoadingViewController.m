@@ -19,8 +19,10 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        _startView.hidden = YES;
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         if ([userDefaults objectForKey:@"email"]) {
+            _startView.hidden = NO;
             [self dismissViewControllerAnimated:NO completion:nil];
         }
     }
@@ -35,7 +37,9 @@
 - (void)viewDidLoad
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+     _startView.alpha = 0;
     if ([userDefaults objectForKey:@"email"]) {
+        _startView.hidden = NO;
         [self dismissViewControllerAnimated:NO completion:nil];
     }
     [super viewDidLoad];
@@ -45,7 +49,9 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    _startView.alpha = 0;
     if ([userDefaults objectForKey:@"email"]) {
+        _startView.hidden = NO;
         [self dismissViewControllerAnimated:NO completion:nil];
     }
 }
@@ -59,6 +65,9 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)openProgramm:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
@@ -82,13 +91,22 @@
     [KQEventAPI makeLogin:_login.text withPass:_pass.text
             finishHandler:^{
                 _textLoading.hidden = NO;
-                [self dismissViewControllerAnimated:YES completion:nil];
+//                [self dismissViewControllerAnimated:YES completion:nil];
+                [UIView animateWithDuration:1
+                                      delay:0.5
+                                    options: UIViewAnimationCurveEaseOut
+                                 animations:^{
+                                     _startView.alpha = 1.0;
+                                 }
+                                 completion:^(BOOL finished){
+                                     NSLog(@"Done!");
+                                 }];
                 _textLoading.text = @"Getting information...";
                 KQEventAPI *event = [[KQEventAPI alloc] initWithDataAssyncWithStart:^{
                     _textLoading.text = @"Getting information...";
                 } finishProcess:^{
                     [_loading stopAnimating];
-                    [self dismissViewControllerAnimated:YES completion:nil];
+                    _startView.hidden = NO;
                 } errorHandler:^{
                     _textLoading.hidden = NO;
                     _textLoading.text = @"No internet connection";

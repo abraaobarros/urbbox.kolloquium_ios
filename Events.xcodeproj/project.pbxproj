@@ -150,6 +150,7 @@
 		78F62E9D1A0700D0009BED32 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F62E8A1A0700D0009BED32 /* UIProgressView+AFNetworking.m */; };
 		78F62E9E1A0700D0009BED32 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F62E8C1A0700D0009BED32 /* UIRefreshControl+AFNetworking.m */; };
 		78F62E9F1A0700D0009BED32 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F62E8E1A0700D0009BED32 /* UIWebView+AFNetworking.m */; };
+		78F62EA11A07D08B009BED32 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F62EA01A07D08B009BED32 /* start.png */; };
 		78F8C99C19FDC2330077805C /* ic_ipt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C99B19FDC2330077805C /* ic_ipt.jpg */; };
 		78F8C99E19FDC2380077805C /* ic_wzl.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F8C99D19FDC2380077805C /* ic_wzl.png */; };
 		78F8C9A419FE0E260077805C /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F8C9A319FE0E260077805C /* InfoViewController.m */; };
@@ -456,6 +457,7 @@
 		78F62E8C1A0700D0009BED32 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		78F62E8D1A0700D0009BED32 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		78F62E8E1A0700D0009BED32 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		78F62EA01A07D08B009BED32 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
 		78F8C99B19FDC2330077805C /* ic_ipt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ic_ipt.jpg; sourceTree = "<group>"; };
 		78F8C99D19FDC2380077805C /* ic_wzl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_wzl.png; sourceTree = "<group>"; };
 		78F8C9A219FE0E260077805C /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
@@ -732,6 +734,7 @@
 		78AD2C7E19A1866400047B9A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				78F62EA01A07D08B009BED32 /* start.png */,
 				789CA4691A013A71009D38E5 /* ic_question.png */,
 				784F677D19C7F2D900EA6217 /* icon@2x.png */,
 				784F677C19C7F2CD00EA6217 /* icon_.png */,
@@ -1323,6 +1326,7 @@
 				78E103E419ED636F00066580 /* ic_pdf.png in Resources */,
 				7112221818BCC14B00E77A4A /* arrow.png in Resources */,
 				78BF117719C779A4005AE8B0 /* ic_action_aboutus.png in Resources */,
+				78F62EA11A07D08B009BED32 /* start.png in Resources */,
 				78F8C9AC19FE12150077805C /* bg_tour.png in Resources */,
 				789CA46A1A013A71009D38E5 /* ic_question.png in Resources */,
 				78E103EA19EDBDF000066580 /* ic_aachen.png in Resources */,
