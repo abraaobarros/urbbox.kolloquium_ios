@@ -34,7 +34,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" id="Yen-CF-g4T">
-                                                    <rect key="frame" x="-3" y="29" width="320" height="4"/>
+                                                    <rect key="frame" x="-3" y="29.5" width="320" height="4"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -58,7 +58,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="participants.png" id="mrD-WB-dRd">
-                                                    <rect key="frame" x="17" y="1" width="60" height="38.5"/>
+                                                    <rect key="frame" x="17" y="1" width="60" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -70,7 +70,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" id="ZYo-Sb-fDE">
-                                                    <rect key="frame" x="0.0" y="-3" width="10" height="47.5"/>
+                                                    <rect key="frame" x="0.0" y="-3" width="10" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -228,7 +228,7 @@
                         <outlet property="tableView" destination="6eF-vP-BpW" id="UNU-Rf-ehB"/>
                         <segue destination="d6p-kL-gGL" kind="push" identifier="ProgramDetailsViewController" id="dPP-Im-FG0"/>
                         <segue destination="OK7-6M-g1B" kind="modal" identifier="Loading2ViewController" id="Fo1-5Y-tGC"/>
-                        <segue destination="ttJ-0I-HM3" kind="modal" identifier="LoadingViewController" id="3w3-Uy-0eL"/>
+                        <segue destination="ttJ-0I-HM3" kind="modal" identifier="LoadingViewController" animates="NO" id="3w3-Uy-0eL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afA-Kn-raX" userLabel="First Responder" sceneMemberID="firstResponder"/>
