@@ -75,41 +75,26 @@
         NSMutableDictionary *dados = [[NSMutableDictionary alloc] init];
         [dados setObject:login forKey:@"email"];
         [dados setObject:pass forKey:@"password"];
-        startHandler();
-        if ([pass isEqualToString:@"werkzeugbau"]) {
+        NSURL *baseURL = [NSURL URLWithString:@"http://kolloquium.herokuapp.com"];
+        NSDictionary *parameters = @{@"email": login,@"password":pass};
+        
+        // 2
+        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
+        manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        
+//        startHandler();
+        [manager POST:@"/rest/login" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+            NSDictionary *dataReceived = (NSDictionary *)responseObject;
             [userDefaults setObject:login forKey:@"email"];
+            [userDefaults setObject:[dataReceived objectForKey:@"id" ] forKey:@"id"];
+            [userDefaults setObject:[dataReceived objectForKey:@"name" ] forKey:@"name"];
             [userDefaults setObject:pass forKey:@"pass"];
             [userDefaults synchronize];
             finishHandler();
-        }else{
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
             loginErrorHandler();
-        }
-//        KQURLConnectHelper *conn = [[KQURLConnectHelper alloc]init];
-//        [conn postDataToURL:URL_LOGIN withParameters:dados
-//                            startHandle:startHandler
-//                            sucessHandler:^(NSDictionary* finished){
-//                              NSMutableDictionary * data;
-//                              data = [finished mutableCopy];
-//                                if (data==nil) {
-//                                    errorHandler();
-//                                }
-//                              @try {
-//                                  [userDefaults setObject:[finished objectForKey:@"id"] forKey:@"id"];
-//                                  [userDefaults setObject:[finished objectForKey:@"name"] forKey:@"name"];
-//                                  [userDefaults setObject:[finished objectForKey:@"company"] forKey:@"company"];
-//                                  [userDefaults setObject:[finished objectForKey:@"email"] forKey:@"email"];
-//                                  [userDefaults synchronize];
-//                                  if (![finished objectForKey:@"id"] ) {
-//                                      loginErrorHandler();
-//                                  }
-//                                  else if (finishHandler!=nil) {
-//                                      finishHandler();
-//                                  }
-//                              }
-//                              @catch (NSException *exception) {
-//                                  errorHandler();
-//                              }
-//                          } errorHandler:errorHandler];
+        }];
+
     }
 }
 
@@ -122,22 +107,28 @@
         [dados setObject:question forKey:@"question"];
         [dados setObject:@(activity_id) forKey:@"activity_id"];
         [dados setObject:@(participant_id) forKey:@"participant_id"];
-        KQURLConnectHelper *conn = [[KQURLConnectHelper alloc]init];
-        [conn postDataToURL:URL_QUESTION withParameters:dados
-                startHandle:startHandler
-              sucessHandler:^(NSDictionary* finished){
-                  NSMutableDictionary * data;
-                  NSLog(@"Question: %@",data);
-                  data = [finished mutableCopy];
-                  @try {
-                      if (finishHandler!=nil) {
-                          finishHandler();
-                      }
-                  }
-                  @catch (NSException *exception) {
-                      errorHandler();
-                  }
-              } errorHandler:errorHandler];
+    
+    NSURL *baseURL = [NSURL URLWithString:@"http://kolloquium.herokuapp.com"];
+    
+    // 2
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    if(startHandler){
+        startHandler();
+    }
+    [manager POST:@"/rest/question" parameters:dados success:^(NSURLSessionDataTask *task, id responseObject) {
+        @try {
+            if (finishHandler!=nil) {
+                finishHandler();
+            }
+        }
+        @catch (NSException *exception) {
+            errorHandler();
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+         errorHandler();
+    }];
 }
 
 + (void)makeReview:(NSString *)review withScore:(int) value toActivity:(int)activity_id withParticipant:(int) participant_id finishHandler:(void (^)())finishHandler
@@ -147,25 +138,29 @@
     
     NSMutableDictionary *dados = [[NSMutableDictionary alloc] init];
     [dados setObject:review forKey:@"review"];
-    [dados setObject:@(value) forKey:@"value"];
+    [dados setObject:@(value+1) forKey:@"value"];
     [dados setObject:@(activity_id) forKey:@"activity_id"];
     [dados setObject:@(participant_id) forKey:@"participant_id"];
-    KQURLConnectHelper *conn = [[KQURLConnectHelper alloc]init];
-    [conn postDataToURL:URL_REVIEW withParameters:dados
-            startHandle:startHandler
-          sucessHandler:^(NSDictionary* finished){
-              NSMutableDictionary * data;
-              NSLog(@"Question: %@",data);
-              data = [finished mutableCopy];
-              @try {
-                  if (finishHandler!=nil) {
-                      finishHandler();
-                  }
-              }
-              @catch (NSException *exception) {
-                  errorHandler();
-              }
-          } errorHandler:errorHandler];
+    
+    
+    NSURL *baseURL = [NSURL URLWithString:@"http://kolloquium.herokuapp.com"];
+    
+    // 2
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [manager POST:@"/rest/rating" parameters:dados success:^(NSURLSessionDataTask *task, id responseObject) {
+        @try {
+            if (finishHandler!=nil) {
+                finishHandler();
+            }
+        }
+        @catch (NSException *exception) {
+            errorHandler();
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        errorHandler();
+    }];
 }
 
 - (void)reloadData:(void (^)())finishHandler
