@@ -299,7 +299,7 @@ KQEventAPI *event;
             headerView.title.text = @"Veranstalter";
             break;
         case 2:
-            headerView.title.text = @"Algeimenes";
+            headerView.title.text = @"Allgeimenes";
             break;
             
         default:

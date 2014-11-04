@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB303D9518B863E300B6EBC9"
-               BuildableName = "WZB 2014.app"
+               BuildableName = "Werzeubau-2014.app"
                BlueprintName = "Events"
                ReferencedContainer = "container:Events.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB303D9518B863E300B6EBC9"
-            BuildableName = "WZB 2014.app"
+            BuildableName = "Werzeubau-2014.app"
             BlueprintName = "Events"
             ReferencedContainer = "container:Events.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB303D9518B863E300B6EBC9"
-            BuildableName = "WZB 2014.app"
+            BuildableName = "Werzeubau-2014.app"
             BlueprintName = "Events"
             ReferencedContainer = "container:Events.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB303D9518B863E300B6EBC9"
-            BuildableName = "WZB 2014.app"
+            BuildableName = "Werzeubau-2014.app"
             BlueprintName = "Events"
             ReferencedContainer = "container:Events.xcodeproj">
          </BuildableReference>

@@ -58,14 +58,26 @@ KQEventAPI *event;
         [Util setupNavigationBar:self withTitle:[[[event objectForKey:@"organizers"] objectAtIndex:1] objectForKey:@"name"]];
     }else if ([self.title isEqual:@"IPT"]) {
         dataSource = [[[event objectForKey:@"organizers"] objectAtIndex:0] objectForKey:@"departments"];
+
         [Util setupNavigationBar:self withTitle:[[[event objectForKey:@"organizers"] objectAtIndex:0] objectForKey:@"name"]];
     }else if ([self.title isEqual:@"Aachen"]) {
         dataSource = [[[event objectForKey:@"organizers"] objectAtIndex:0] objectForKey:@"departments"];
         [Util setupNavigationBar:self withTitle:[[[event objectForKey:@"organizers"] objectAtIndex:0] objectForKey:@"name"]];
     }
     NSLog(@"Lectures : %@",dataSource);
+    dataSource  = [dataSource sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSDictionary *first =(NSDictionary*)a;
+        NSDictionary *second = (NSDictionary*)b;
+        
+        if ([[first objectForKey:@"name"] isEqualToString:@"WZL der RWTH Aachen"] || [[first objectForKey:@"name"] isEqualToString:@"Fraunhofer IPT"] ) {
+            return -1;
+        }else{
+            return 1;
+        }
+    }];
+
     [tableView reloadData];
-    //dic initilization for dummy data end
+
     
 }
 
