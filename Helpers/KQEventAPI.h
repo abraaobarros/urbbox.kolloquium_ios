@@ -12,14 +12,16 @@
 @interface KQEventAPI : NSMutableDictionary{
     KQURLConnectHelper * URLConnectHelper;
 }
-@property (nonatomic, retain) KQURLConnectHelper * urlConnectHelper;
+@property (nonatomic, retain) KQURLConnectHelper *urlConnectHelper;
 @property (nonatomic, strong) NSMutableDictionary *data;
 
 - (id)initWithDataAssyncWithStart:(void (^)(void))startHandler finishProcess:(void (^)(void))finishHandler errorHandler:(void (^)(void))errorHandler;
 //- (void)loadData:(void (^)())finishHandler startHandler:(void (^)())startHandler;
+
 - (void)reloadData:(void (^)())finishHandler
         startHandler:(void (^)())startHandler
         errorHandler:(void (^)())errorHandler;
+
 + (void)getImageFromUrl:(NSString *)url
             finishHandler:(void (^)(NSData *))finishHandler
              startHandler:(void (^)())startHandler

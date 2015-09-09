@@ -19,6 +19,7 @@
 #import "AusstellerTableViewController.h"
 #import "AboutTableViewController.h"
 #import "InfoViewController.h"
+#import "GalerieViewController.h"
 #import "KQCache.h"
 #import "Util.h"
 
@@ -242,7 +243,17 @@ KQEventAPI *event;
             cell.icon.image = [UIImage imageNamed:@"ic_aachen.png"];
             return cell;
         }
-        else if(indexPath.row==1)
+        else if(indexPath.row==1){
+            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
+            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (cell == nil) {
+                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
+            cell.title.text=@"Galerie";
+            cell.icon.image = [UIImage imageNamed:@"ic_launcher.png"];
+            return cell;
+        }
+        else if(indexPath.row==2)
         {
             static NSString *CellIdentifier = @"KQSideBarTableViewCell";
             KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -253,7 +264,7 @@ KQEventAPI *event;
             cell.icon.image = [UIImage imageNamed:@"ic_refresh.png"];
             return cell;
         }
-        else if(indexPath.row==2)
+        else if(indexPath.row==3)
         {
             static NSString *CellIdentifier = @"KQSideBarTableViewCell";
             KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -264,7 +275,7 @@ KQEventAPI *event;
             cell.icon.image = [UIImage imageNamed:@"ic_impressum.png"];
             return cell;
         }
-        else if(indexPath.row==3)
+        else if(indexPath.row==4)
         {
             static NSString *CellIdentifier = @"KQSideBarTableViewCell";
             KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -412,7 +423,13 @@ KQEventAPI *event;
             
             
         }
-        if(indexPath.row==1)
+        if(indexPath.row==1){
+            GalerieViewController *vc = (GalerieViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GalerieViewController"];
+            vc.title = @"Galerie";
+            KQNavigationController *partnersView = [[KQNavigationController alloc]initWithRootViewController:vc];
+            [self.sidePanelController setCenterPanel:partnersView];
+        }
+        if(indexPath.row==2)
         {
             KQCache *cache = [KQCache sharedManager];
             [cache resetDatabase];
@@ -421,7 +438,7 @@ KQEventAPI *event;
             
             
         }
-        else if(indexPath.row==3)
+        else if(indexPath.row==4)
         {
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:nil forKey:@"email"];
@@ -429,7 +446,7 @@ KQEventAPI *event;
             [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
             
         }
-        else if(indexPath.row==2)
+        else if(indexPath.row==3)
         {
             CGRect webFrame = CGRectMake(0.0, 0.0, self.view.frame.size.width,self.view.frame.size.height);
             UIWebView *webView = [[UIWebView alloc] initWithFrame:webFrame];
