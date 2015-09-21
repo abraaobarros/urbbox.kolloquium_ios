@@ -9,10 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SideBarViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
-
-- (IBAction)schedule_tab:(id)sender;
-- (IBAction)participants_tab:(id)sender;
-- (IBAction)about_tab:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

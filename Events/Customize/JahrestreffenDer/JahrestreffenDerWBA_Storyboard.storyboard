@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMN-ya-Yyl">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Kolloquim-->
+        <scene sceneID="ycw-9o-TOx">
+            <objects>
+                <tableViewController storyboardIdentifier="ProgramViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0de-X2-y2h" customClass="ProgramViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="168" sectionHeaderHeight="22" sectionFooterHeight="22" id="tuR-Y1-qTv">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.40000003579999999" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="deviceRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="EKj-CX-7qw">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0oI-Gh-zHl">
+                                    <rect key="frame" x="140" y="8" width="320" height="29"/>
+                                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
+                                    <segments>
+                                        <segment title="4. Nov 2014">
+                                            <size key="contentOffset" width="0.0" height="2"/>
+                                        </segment>
+                                        <segment title="5. Nov 2014"/>
+                                    </segments>
+                                    <color key="tintColor" red="0.6784313917" green="0.0" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
+                                    <connections>
+                                        <action selector="segmentDayChange:" destination="0de-X2-y2h" eventType="valueChanged" id="UqC-BE-dW0"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgramCustomCell" rowHeight="161" id="HBd-mP-wC5" customClass="ProgramCustomCell">
+                                <rect key="frame" x="0.0" y="66" width="600" height="161"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HBd-mP-wC5" id="vGe-Wl-4vc">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="160.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hzk-qK-dcT">
+                                            <rect key="frame" x="-2" y="0.0" width="320" height="160"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Livello1.png" translatesAutoresizingMaskIntoConstraints="NO" id="43Q-QT-e46">
+                                            <rect key="frame" x="-2" y="0.0" width="602" height="160"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rettangolo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gx1-Rf-Ofc">
+                                            <rect key="frame" x="0.0" y="89" width="600" height="72"/>
+                                            <color key="backgroundColor" red="0.12581712370000001" green="0.12581712370000001" blue="0.12581712370000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prof" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.85000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="3Cv-E9-dMT">
+                                            <rect key="frame" x="63" y="95" width="249" height="19"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15o-Ng-ONX">
+                                            <rect key="frame" x="13" y="140" width="579" height="20"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Gautier Runway show" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="KF2-47-rql">
+                                            <rect key="frame" x="13" y="110" width="579" height="37"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                            <color key="textColor" red="1" green="0.93551513480000004" blue="0.96313694819999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="12:00 - " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vwp-7F-8HB">
+                                            <rect key="frame" x="13" y="94" width="579" height="19"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="KF2-47-rql" secondAttribute="trailing" constant="5" id="AaO-37-PXd"/>
+                                        <constraint firstItem="15o-Ng-ONX" firstAttribute="trailing" secondItem="vGe-Wl-4vc" secondAttribute="trailingMargin" constant="5" id="BwJ-EP-p9Y"/>
+                                        <constraint firstItem="KF2-47-rql" firstAttribute="leading" secondItem="vGe-Wl-4vc" secondAttribute="leadingMargin" constant="5" id="C1q-Mi-Mmz"/>
+                                        <constraint firstItem="KF2-47-rql" firstAttribute="trailing" secondItem="vGe-Wl-4vc" secondAttribute="trailingMargin" constant="5" id="FbO-gX-JdQ"/>
+                                        <constraint firstItem="Vwp-7F-8HB" firstAttribute="trailing" secondItem="vGe-Wl-4vc" secondAttribute="trailingMargin" constant="5" id="FkP-4m-i2i"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="43Q-QT-e46" secondAttribute="trailing" id="GVp-aF-K0n"/>
+                                        <constraint firstItem="Vwp-7F-8HB" firstAttribute="leading" secondItem="vGe-Wl-4vc" secondAttribute="leadingMargin" constant="5" id="Z4M-IW-cQx"/>
+                                        <constraint firstItem="43Q-QT-e46" firstAttribute="leading" secondItem="vGe-Wl-4vc" secondAttribute="leadingMargin" id="ZKo-lW-JjN"/>
+                                        <constraint firstItem="15o-Ng-ONX" firstAttribute="top" secondItem="Vwp-7F-8HB" secondAttribute="bottom" constant="27" id="d8I-2q-vTN"/>
+                                        <constraint firstItem="43Q-QT-e46" firstAttribute="top" secondItem="vGe-Wl-4vc" secondAttribute="topMargin" id="izl-Sc-31q"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="imgEventImage" destination="43Q-QT-e46" id="Vpd-vc-gJ7"/>
+                                    <outlet property="lblDateTime" destination="Vwp-7F-8HB" id="UgS-5M-5eg"/>
+                                    <outlet property="lblEventName" destination="KF2-47-rql" id="gxB-zb-Ffp"/>
+                                    <outlet property="location" destination="15o-Ng-ONX" id="f4I-0P-xXg"/>
+                                    <outlet property="speaker" destination="3Cv-E9-dMT" id="kdC-ol-kcK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="0de-X2-y2h" id="1Li-tF-qhq"/>
+                            <outlet property="delegate" destination="0de-X2-y2h" id="LGG-Sy-rKk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Kolloquim" id="rrR-9q-Af9">
+                        <barButtonItem key="rightBarButtonItem" image="Reload.png" id="1yX-Uw-Gdy">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="reloadData:" destination="0de-X2-y2h" id="b76-FS-zST"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentDay" destination="0oI-Gh-zHl" id="kxh-Ll-yZu"/>
+                        <outlet property="tableView" destination="tuR-Y1-qTv" id="0Xy-QJ-wql"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0b-oX-gDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3077" y="-2866"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="cXg-NR-PCH">
+            <objects>
+                <navigationController storyboardIdentifier="ProgramViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NMN-ya-Yyl" customClass="KQNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" image="Program.png" id="IL8-jJ-jMi"/>
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="oU9-gO-gid">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="Kwf-a3-gNu">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="0de-X2-y2h" kind="relationship" relationship="rootViewController" id="UFd-QI-3fN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBW-14-lGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3752" y="-2851"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Livello1.png" width="320" height="162"/>
+        <image name="Program.png" width="22" height="22"/>
+        <image name="Reload.png" width="20" height="20"/>
+        <image name="Rettangolo.png" width="320" height="42"/>
+    </resources>
+</document>

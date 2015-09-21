@@ -20,8 +20,10 @@
 #import "AboutTableViewController.h"
 #import "InfoViewController.h"
 #import "GalerieViewController.h"
+#import "KQGalleryCollectionViewController.h"
 #import "KQCache.h"
 #import "Util.h"
+#import "Setup.h"
 
 
 @interface SideBarViewController ()
@@ -29,15 +31,12 @@
 @end
 
 @implementation SideBarViewController
+
 KQEventAPI *event;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+NSArray *sections;
+Event *eventTab;
+NSDictionary *datasource;
+
 
 - (void)viewDidLoad
 {
@@ -51,243 +50,55 @@ KQEventAPI *event;
             } errorHandler:^(void){
                 NSLog(@"Error Fetching");
             }];
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)schedule_tab:(id)sender {
-    NSLog(@"1");
-    [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramViewController"]];
+    
+    eventTab   = [Setup getActualEvent];
+    sections   = [[eventTab getTabsEvent] allKeys];
+    datasource = [eventTab getTabsEvent];
 
 }
-
-- (IBAction)participants_tab:(id)sender {
-    NSLog(@"2");
-    [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"]];
-}
-
-- (IBAction)about_tab:(id)sender {
-    NSLog(@"3");
-    [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"]];
-}
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return 3;
+    
+    return [sections count];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section) {
-        case 0:
-            return 7;
-            break;
-        case 1:
-            return 3;
-            break;
-        case 2:
-            //TODO: ADD AACHEN - return 4;
-            return 4;
-            break;
-            
-        default:
-            return 0;
-            break;
-    }
+
+    
+    return [[datasource objectForKey:[sections objectAtIndex:section]] count];
+
 }
 
+-(long) getTabFromIndex:(NSIndexPath *)indexPath{
+
+    NSLog(@"%@",[[datasource objectForKey:
+                 [sections objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row]);
+    
+    long s = [[[datasource objectForKey:
+                    [sections objectAtIndex:indexPath.section]]
+               objectAtIndex:indexPath.row] longValue];
+    return s;
+
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section==0) {
-        if(indexPath.row==0)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Programm";
-            cell.icon.image = [UIImage imageNamed:@"ic_action_schedule.png"];
-            return cell;
-        }
-        else if(indexPath.row==1)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Teilnehmer";
-            cell.icon.image = [UIImage imageNamed:@"ic_participants.png"];
-            return cell;
-        }
-        else if(indexPath.row==2)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Referenten";
-            cell.icon.image = [UIImage imageNamed:@"ic_action_participants.png"];
-            return cell;
-        }
-        else if(indexPath.row==3)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Aussteller";
-            cell.icon.image = [UIImage imageNamed:@"ic_star.png"];
-            return cell;
-        }
-        else if(indexPath.row==4)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Kolloquium";
-            cell.icon.image = [UIImage imageNamed:@"ic_launcher.png"];
-            return cell;
-        }
-        else if(indexPath.row==5)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Wettbewerb";
-            cell.icon.image = [UIImage imageNamed:@"ic_competition.png"];
-            return cell;
-        }
-        else if(indexPath.row==6)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Finalisten";
-            cell.icon.image = [UIImage imageNamed:@"ic_finalists.png"];
-            return cell;
-            
-        }
+    
+    
+    static NSString *CellIdentifier = @"KQSideBarTableViewCell";
+    KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    else if (indexPath.section==1){
-        if(indexPath.row==0)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Fraunhofer IPT";
-            cell.icon.image = [UIImage imageNamed:@"ic_ipt.jpg"];
-            return cell;
-        }
-        if(indexPath.row==1)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"WZL";
-            cell.icon.image = [UIImage imageNamed:@"ic_wzl.png"];
-            return cell;
-        }
-        else if(indexPath.row==2)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Partner";
-            cell.icon.image = [UIImage imageNamed:@"ic_partners.png"];
-            return cell;
-        }
-    }else if (indexPath.section ==2){
-        if(indexPath.row==0)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Aachen";
-            cell.icon.image = [UIImage imageNamed:@"ic_aachen.png"];
-            return cell;
-        }
-        else if(indexPath.row==1){
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Galerie";
-            cell.icon.image = [UIImage imageNamed:@"ic_launcher.png"];
-            return cell;
-        }
-        else if(indexPath.row==2)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Aktualisieren";
-            cell.icon.image = [UIImage imageNamed:@"ic_refresh.png"];
-            return cell;
-        }
-        else if(indexPath.row==3)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Impressum";
-            cell.icon.image = [UIImage imageNamed:@"ic_impressum.png"];
-            return cell;
-        }
-        else if(indexPath.row==4)
-        {
-            static NSString *CellIdentifier = @"KQSideBarTableViewCell";
-            KQSideBarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[KQSideBarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.title.text=@"Logout";
-            cell.icon.image = [UIImage imageNamed:@"ic_logout.png"];
-            return cell;
-        }
-    }
-        return nil;
+
+    cell.title.text = [eventTab getTitleOfTab:[self getTabFromIndex:indexPath]];
+    cell.icon.image  = [eventTab getIconOfTab:[self getTabFromIndex:indexPath]];
+    
+    return cell;
+    
 }
 
 - (CGFloat) tableView: (UITableView *) tableView heightForRowAtIndexPath: (NSIndexPath *) indexPath
@@ -297,26 +108,14 @@ KQEventAPI *event;
 }
 
 -(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
     static NSString *CellIdentifier = @"SectionHeader";
-     KQSectionTableViewCell *headerView = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (headerView == nil){
-        [NSException raise:@"headerView == nil.." format:@"No cells with matching CellIdentifier loaded from your storyboard"];
-    }
-    switch (section) {
-        case 0:
-            headerView.title.text = @"Event";
-            break;
-        case 1:
-            headerView.title.text = @"Veranstalter";
-            break;
-        case 2:
-            headerView.title.text = @"Allgeimenes";
-            break;
-            
-        default:
-            break;
-    }
+    
+    KQSectionTableViewCell *headerView = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    headerView.title.text = [sections objectAtIndex:section];
+    
     return headerView;
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -424,8 +223,7 @@ KQEventAPI *event;
             
         }
         if(indexPath.row==1){
-            GalerieViewController *vc = (GalerieViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GalerieViewController"];
-            vc.title = @"Galerie";
+            KQGalleryCollectionViewController *vc = (KQGalleryCollectionViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"GalerieViewController"];
             KQNavigationController *partnersView = [[KQNavigationController alloc]initWithRootViewController:vc];
             [self.sidePanelController setCenterPanel:partnersView];
         }

@@ -92,6 +92,7 @@
             [userDefaults synchronize];
             finishHandler();
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            NSLog(@"Error : %@",error);
             loginErrorHandler();
         }];
 

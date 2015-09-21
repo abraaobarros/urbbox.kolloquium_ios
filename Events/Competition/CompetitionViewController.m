@@ -45,6 +45,7 @@ KQCache *cache;
     } startHandler:^{
         
     } errorHandler:^{
+        
     }];
     [_scroll_page setContentSize:CGSizeMake(self.view.frame.size.width, 1024)];
     

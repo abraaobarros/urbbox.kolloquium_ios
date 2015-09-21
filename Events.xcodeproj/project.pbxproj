@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B21C4A01BAFEB7300F30112 /* Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B21C49F1BAFEB7300F30112 /* Setup.m */; settings = {ASSET_TAGS = (); }; };
+		5B21C4A61BAFF24400F30112 /* JahrestreffenDerWBASetupEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B21C4A51BAFF24400F30112 /* JahrestreffenDerWBASetupEvent.m */; settings = {ASSET_TAGS = (); }; };
+		5B21C4A91BAFFA7F00F30112 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B21C4A81BAFFA7F00F30112 /* Event.m */; settings = {ASSET_TAGS = (); }; };
+		5B21C4AD1BB02BBB00F30112 /* JahrestreffenDerWBA_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B21C4AC1BB02BBB00F30112 /* JahrestreffenDerWBA_Storyboard.storyboard */; settings = {ASSET_TAGS = (); }; };
+		5B4EF9491BAAC4B7001FCEC4 /* KQGalleryPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4EF9481BAAC4B7001FCEC4 /* KQGalleryPhotoViewController.m */; };
+		5B4EF94B1BAACD5B001FCEC4 /* ic_action_fotos.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B4EF94A1BAACD5B001FCEC4 /* ic_action_fotos.png */; };
+		5B7BF52D1BA957F600791897 /* KQGalleryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BF52C1BA957F600791897 /* KQGalleryCollectionViewController.m */; };
+		5B7BF5311BA9587300791897 /* KQGalleryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7BF5301BA9587300791897 /* KQGalleryCollectionViewCell.m */; };
 		711221E918BC94F900E77A4A /* GreenDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 711221E518BC94F900E77A4A /* GreenDot.png */; };
 		711221EA18BC94F900E77A4A /* GreenDot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 711221E618BC94F900E77A4A /* GreenDot@2x.png */; };
 		711221EB18BC94F900E77A4A /* RedDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 711221E718BC94F900E77A4A /* RedDot.png */; };
@@ -74,8 +82,6 @@
 		784F678619C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 784F678519C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.m */; };
 		788DE31C19A2B42F00ED8D23 /* KQEventAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DE31B19A2B42F00ED8D23 /* KQEventAPI.m */; };
 		788DE31F19A2D8C800ED8D23 /* KQCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DE31E19A2D8C800ED8D23 /* KQCache.m */; };
-		788DE32119A2DD1D00ED8D23 /* KQEventAPITestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DE32019A2DD1D00ED8D23 /* KQEventAPITestCase.m */; };
-		788DE32419A2DD5A00ED8D23 /* KQURLConnectHelperMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DE32319A2DD5A00ED8D23 /* KQURLConnectHelperMock.m */; };
 		7890808019A229FE00C537E1 /* KQURLConnectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7890807F19A229FE00C537E1 /* KQURLConnectHelper.m */; };
 		7890808219A232B500C537E1 /* bg_navigation.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7890808119A232B500C537E1 /* bg_navigation.jpg */; };
 		7890808419A239CC00C537E1 /* bd_navigation.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7890808319A239CC00C537E1 /* bd_navigation.jpg */; };
@@ -180,7 +186,6 @@
 		BB303DBD18B863E300B6EBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9918B863E300B6EBC9 /* Foundation.framework */; };
 		BB303DBE18B863E300B6EBC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB303D9D18B863E300B6EBC9 /* UIKit.framework */; };
 		BB303DC618B863E300B6EBC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB303DC418B863E300B6EBC9 /* InfoPlist.strings */; };
-		BB303DC818B863E300B6EBC9 /* EventsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB303DC718B863E300B6EBC9 /* EventsTests.m */; };
 		BB303DF318B86B3400B6EBC9 /* Aboutred.png in Resources */ = {isa = PBXBuildFile; fileRef = BB303DD418B86B3400B6EBC9 /* Aboutred.png */; };
 		BB303DF418B86B3400B6EBC9 /* Aboutred@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB303DD518B86B3400B6EBC9 /* Aboutred@2x.png */; };
 		BB303DF518B86B3400B6EBC9 /* Action.png in Resources */ = {isa = PBXBuildFile; fileRef = BB303DD618B86B3400B6EBC9 /* Action.png */; };
@@ -248,6 +253,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B21C49E1BAFEB7300F30112 /* Setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Setup.h; path = Events/Config/Setup.h; sourceTree = "<group>"; };
+		5B21C49F1BAFEB7300F30112 /* Setup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Setup.m; path = Events/Config/Setup.m; sourceTree = "<group>"; };
+		5B21C4A11BAFF19F00F30112 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Events/Config/Event.h; sourceTree = "<group>"; };
+		5B21C4A41BAFF24400F30112 /* JahrestreffenDerWBASetupEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JahrestreffenDerWBASetupEvent.h; path = Events/Config/JahrestreffenDerWBASetupEvent.h; sourceTree = "<group>"; };
+		5B21C4A51BAFF24400F30112 /* JahrestreffenDerWBASetupEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JahrestreffenDerWBASetupEvent.m; path = Events/Config/JahrestreffenDerWBASetupEvent.m; sourceTree = "<group>"; };
+		5B21C4A81BAFFA7F00F30112 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Events/Config/Event.m; sourceTree = "<group>"; };
+		5B21C4AC1BB02BBB00F30112 /* JahrestreffenDerWBA_Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = JahrestreffenDerWBA_Storyboard.storyboard; path = Events/Customize/JahrestreffenDer/JahrestreffenDerWBA_Storyboard.storyboard; sourceTree = "<group>"; };
+		5B4EF9471BAAC4B7001FCEC4 /* KQGalleryPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQGalleryPhotoViewController.h; path = Gallery/KQGalleryPhotoViewController.h; sourceTree = "<group>"; };
+		5B4EF9481BAAC4B7001FCEC4 /* KQGalleryPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQGalleryPhotoViewController.m; path = Gallery/KQGalleryPhotoViewController.m; sourceTree = "<group>"; };
+		5B4EF94A1BAACD5B001FCEC4 /* ic_action_fotos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_action_fotos.png; sourceTree = "<group>"; };
+		5B7BF52B1BA957F600791897 /* KQGalleryCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQGalleryCollectionViewController.h; path = Gallery/KQGalleryCollectionViewController.h; sourceTree = "<group>"; };
+		5B7BF52C1BA957F600791897 /* KQGalleryCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQGalleryCollectionViewController.m; path = Gallery/KQGalleryCollectionViewController.m; sourceTree = "<group>"; };
+		5B7BF52F1BA9587300791897 /* KQGalleryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQGalleryCollectionViewCell.h; path = Gallery/KQGalleryCollectionViewCell.h; sourceTree = "<group>"; };
+		5B7BF5301BA9587300791897 /* KQGalleryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQGalleryCollectionViewCell.m; path = Gallery/KQGalleryCollectionViewCell.m; sourceTree = "<group>"; };
 		711221E118BC6A4300E77A4A /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Events/Common.h; sourceTree = "<group>"; };
 		711221E518BC94F900E77A4A /* GreenDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenDot.png; sourceTree = "<group>"; };
 		711221E618BC94F900E77A4A /* GreenDot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GreenDot@2x.png"; sourceTree = "<group>"; };
@@ -340,9 +359,6 @@
 		788DE31B19A2B42F00ED8D23 /* KQEventAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQEventAPI.m; path = Helpers/KQEventAPI.m; sourceTree = "<group>"; };
 		788DE31D19A2D8C800ED8D23 /* KQCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQCache.h; path = Helpers/KQCache.h; sourceTree = "<group>"; };
 		788DE31E19A2D8C800ED8D23 /* KQCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQCache.m; path = Helpers/KQCache.m; sourceTree = "<group>"; };
-		788DE32019A2DD1D00ED8D23 /* KQEventAPITestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KQEventAPITestCase.m; sourceTree = "<group>"; };
-		788DE32219A2DD5A00ED8D23 /* KQURLConnectHelperMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KQURLConnectHelperMock.h; sourceTree = "<group>"; };
-		788DE32319A2DD5A00ED8D23 /* KQURLConnectHelperMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KQURLConnectHelperMock.m; sourceTree = "<group>"; };
 		7890807E19A229FE00C537E1 /* KQURLConnectHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQURLConnectHelper.h; path = Helpers/KQURLConnectHelper.h; sourceTree = "<group>"; };
 		7890807F19A229FE00C537E1 /* KQURLConnectHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQURLConnectHelper.m; path = Helpers/KQURLConnectHelper.m; sourceTree = "<group>"; };
 		7890808119A232B500C537E1 /* bg_navigation.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_navigation.jpg; path = Images/bg_navigation.jpg; sourceTree = "<group>"; };
@@ -499,7 +515,6 @@
 		BB303DBB18B863E300B6EBC9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BB303DC318B863E300B6EBC9 /* EventsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EventsTests-Info.plist"; sourceTree = "<group>"; };
 		BB303DC518B863E300B6EBC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BB303DC718B863E300B6EBC9 /* EventsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventsTests.m; sourceTree = "<group>"; };
 		BB303DD418B86B3400B6EBC9 /* Aboutred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aboutred.png; sourceTree = "<group>"; };
 		BB303DD518B86B3400B6EBC9 /* Aboutred@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aboutred@2x.png"; sourceTree = "<group>"; };
 		BB303DD618B86B3400B6EBC9 /* Action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Action.png; sourceTree = "<group>"; };
@@ -586,6 +601,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B21C49D1BAFEA5200F30112 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				5B21C4A71BAFF8D000F30112 /* Events */,
+				5B21C4A81BAFFA7F00F30112 /* Event.m */,
+				5B21C4A11BAFF19F00F30112 /* Event.h */,
+				5B21C49F1BAFEB7300F30112 /* Setup.m */,
+				5B21C49E1BAFEB7300F30112 /* Setup.h */,
+			);
+			name = Setup;
+			sourceTree = "<group>";
+		};
+		5B21C4A71BAFF8D000F30112 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				5B21C4A41BAFF24400F30112 /* JahrestreffenDerWBASetupEvent.h */,
+				5B21C4A51BAFF24400F30112 /* JahrestreffenDerWBASetupEvent.m */,
+				5B21C4AC1BB02BBB00F30112 /* JahrestreffenDerWBA_Storyboard.storyboard */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		5B21C4AB1BB01CD100F30112 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				78F8C99D19FDC2380077805C /* ic_wzl.png */,
+				78E103EB19EDBE0700066580 /* ic_impressum.png */,
+				78E103E919EDBDF000066580 /* ic_aachen.png */,
+				78E103E719EDBDCF00066580 /* ic_logout.png */,
+				78E103E519EDBB0500066580 /* ic_email.png */,
+				78E103E319ED636F00066580 /* ic_pdf.png */,
+				78E103E119ED630300066580 /* ic_refresh.png */,
+				78BF116719C779A4005AE8B0 /* ic_action_aboutus.png */,
+				78BF116819C779A4005AE8B0 /* ic_action_participants.png */,
+				78BF116919C779A4005AE8B0 /* ic_action_schedule.png */,
+				78BF116A19C779A4005AE8B0 /* ic_competition.png */,
+				78BF116B19C779A4005AE8B0 /* ic_darkblue_arrow.png */,
+				78BF116C19C779A4005AE8B0 /* ic_drawer.png */,
+				78BF116D19C779A4005AE8B0 /* ic_finalists.png */,
+				78BF116E19C779A4005AE8B0 /* ic_institutes.png */,
+				78BF116F19C779A4005AE8B0 /* ic_launcher.png */,
+				78BF117019C779A4005AE8B0 /* ic_loading.png */,
+				78BF117119C779A4005AE8B0 /* ic_participants.png */,
+				78BF117219C779A4005AE8B0 /* ic_partners.png */,
+				78BF117319C779A4005AE8B0 /* ic_plus_sign.png */,
+				78BF117419C779A4005AE8B0 /* ic_red_arrow_right.png */,
+				78BF117519C779A4005AE8B0 /* ic_star.png */,
+				78BF117619C779A4005AE8B0 /* ic_thumbnail.png */,
+				78F8C99B19FDC2330077805C /* ic_ipt.jpg */,
+			);
+			name = Tabs;
+			sourceTree = "<group>";
+		};
+		5B7BF52E1BA957FF00791897 /* GaleryController */ = {
+			isa = PBXGroup;
+			children = (
+				5B7BF52B1BA957F600791897 /* KQGalleryCollectionViewController.h */,
+				5B7BF52C1BA957F600791897 /* KQGalleryCollectionViewController.m */,
+				5B7BF52F1BA9587300791897 /* KQGalleryCollectionViewCell.h */,
+				5B7BF5301BA9587300791897 /* KQGalleryCollectionViewCell.m */,
+				5B4EF9471BAAC4B7001FCEC4 /* KQGalleryPhotoViewController.h */,
+				5B4EF9481BAAC4B7001FCEC4 /* KQGalleryPhotoViewController.m */,
+			);
+			name = GaleryController;
+			sourceTree = "<group>";
+		};
 		7112220A18BCAEFF00E77A4A /* KolloquiumViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -694,15 +775,6 @@
 			name = LoginViewController;
 			sourceTree = "<group>";
 		};
-		788DE31919A29E7F00ED8D23 /* DataRequest */ = {
-			isa = PBXGroup;
-			children = (
-				788DE32219A2DD5A00ED8D23 /* KQURLConnectHelperMock.h */,
-				788DE32319A2DD5A00ED8D23 /* KQURLConnectHelperMock.m */,
-			);
-			name = DataRequest;
-			sourceTree = "<group>";
-		};
 		7890807D19A2297900C537E1 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -740,6 +812,7 @@
 		78AD2C7E19A1866400047B9A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5B21C4AB1BB01CD100F30112 /* Tabs */,
 				7F2D9AA81ADFB80100E200E8 /* GalleryPhotos */,
 				78F62EA01A07D08B009BED32 /* start.png */,
 				789CA4691A013A71009D38E5 /* ic_question.png */,
@@ -757,31 +830,7 @@
 				78F8C9A919FE12150077805C /* hotels_icon.png */,
 				78F8C9AA19FE12150077805C /* bg_hotes.png */,
 				78F8C9AB19FE12150077805C /* aachen_icon.png */,
-				78F8C99D19FDC2380077805C /* ic_wzl.png */,
-				78F8C99B19FDC2330077805C /* ic_ipt.jpg */,
 				78E5C3A119EE40C80055C6E4 /* Impressum.pdf */,
-				78E103EB19EDBE0700066580 /* ic_impressum.png */,
-				78E103E919EDBDF000066580 /* ic_aachen.png */,
-				78E103E719EDBDCF00066580 /* ic_logout.png */,
-				78E103E519EDBB0500066580 /* ic_email.png */,
-				78E103E319ED636F00066580 /* ic_pdf.png */,
-				78E103E119ED630300066580 /* ic_refresh.png */,
-				78BF116719C779A4005AE8B0 /* ic_action_aboutus.png */,
-				78BF116819C779A4005AE8B0 /* ic_action_participants.png */,
-				78BF116919C779A4005AE8B0 /* ic_action_schedule.png */,
-				78BF116A19C779A4005AE8B0 /* ic_competition.png */,
-				78BF116B19C779A4005AE8B0 /* ic_darkblue_arrow.png */,
-				78BF116C19C779A4005AE8B0 /* ic_drawer.png */,
-				78BF116D19C779A4005AE8B0 /* ic_finalists.png */,
-				78BF116E19C779A4005AE8B0 /* ic_institutes.png */,
-				78BF116F19C779A4005AE8B0 /* ic_launcher.png */,
-				78BF117019C779A4005AE8B0 /* ic_loading.png */,
-				78BF117119C779A4005AE8B0 /* ic_participants.png */,
-				78BF117219C779A4005AE8B0 /* ic_partners.png */,
-				78BF117319C779A4005AE8B0 /* ic_plus_sign.png */,
-				78BF117419C779A4005AE8B0 /* ic_red_arrow_right.png */,
-				78BF117519C779A4005AE8B0 /* ic_star.png */,
-				78BF117619C779A4005AE8B0 /* ic_thumbnail.png */,
 				78B83D1619BDD7B3004E5B35 /* institutes.png */,
 				78B637FF19B7E87D00C4082B /* schedules.png */,
 				7836B9C219AC2B25004BB485 /* no_profile.png */,
@@ -908,6 +957,7 @@
 		7F2D9AA81ADFB80100E200E8 /* GalleryPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				5B4EF94A1BAACD5B001FCEC4 /* ic_action_fotos.png */,
 			);
 			name = GalleryPhotos;
 			sourceTree = "<group>";
@@ -917,6 +967,7 @@
 			children = (
 				7836B9B619ABB791004BB485 /* Cache.m */,
 				7836B9B719ABB791004BB485 /* Cache.h */,
+				5B21C49D1BAFEA5200F30112 /* Setup */,
 				7890807D19A2297900C537E1 /* API */,
 				78AD2C7F19A1A97500047B9A /* menu.jpg */,
 				BB303D9F18B863E300B6EBC9 /* Events */,
@@ -974,6 +1025,7 @@
 				BB303E3D18B88D3600B6EBC9 /* ReferentenViewController */,
 				BB303E3118B8801C00B6EBC9 /* ProgramViewController */,
 				BB303E2D18B87FB400B6EBC9 /* TabBarController */,
+				5B7BF52E1BA957FF00791897 /* GaleryController */,
 				78CD61F319D0371F00C6E49A /* CompetitionViewController.h */,
 				78CD61F419D0371F00C6E49A /* CompetitionViewController.m */,
 				BB303DA818B863E300B6EBC9 /* AppDelegate.h */,
@@ -1005,9 +1057,6 @@
 		BB303DC118B863E300B6EBC9 /* EventsTests */ = {
 			isa = PBXGroup;
 			children = (
-				788DE31919A29E7F00ED8D23 /* DataRequest */,
-				BB303DC718B863E300B6EBC9 /* EventsTests.m */,
-				788DE32019A2DD1D00ED8D23 /* KQEventAPITestCase.m */,
 				BB303DC218B863E300B6EBC9 /* Supporting Files */,
 			);
 			path = EventsTests;
@@ -1202,7 +1251,7 @@
 						DevelopmentTeam = 3K2NMAET8S;
 					};
 					BB303DB918B863E300B6EBC9 = {
-						TestTargetID = BB303D9518B863E300B6EBC9;
+						DevelopmentTeam = 3K2NMAET8S;
 					};
 				};
 			};
@@ -1316,6 +1365,7 @@
 				BB303E2B18B879AA00B6EBC9 /* Twitter.png in Resources */,
 				BB62B12118B8B529000DBDBC /* Next@2x.png in Resources */,
 				7122DB4818BB7D8600C044E8 /* Segmented_left@2x.png in Resources */,
+				5B21C4AD1BB02BBB00F30112 /* JahrestreffenDerWBA_Storyboard.storyboard in Resources */,
 				7112223318BCCBB300E77A4A /* MapTempImage@2x.png in Resources */,
 				78BF117D19C779A4005AE8B0 /* ic_finalists.png in Resources */,
 				78F8C9B119FE12150077805C /* bg_hotes.png in Resources */,
@@ -1335,6 +1385,7 @@
 				BB303E0A18B86B3400B6EBC9 /* Program@2x.png in Resources */,
 				BB857F4618B8928700B366D8 /* secondpic@2x.png in Resources */,
 				BB303DA418B863E300B6EBC9 /* InfoPlist.strings in Resources */,
+				5B4EF94B1BAACD5B001FCEC4 /* ic_action_fotos.png in Resources */,
 				BB303DFB18B86B3400B6EBC9 /* List.png in Resources */,
 				78BF118019C779A4005AE8B0 /* ic_loading.png in Resources */,
 				7112220518BCA62300E77A4A /* share.png in Resources */,
@@ -1419,6 +1470,7 @@
 				7122DB0818BB1F5C00C044E8 /* ProgramCustomCell.m in Sources */,
 				78D9875D1A0329AC00942AB9 /* InfoDetailTableViewController.m in Sources */,
 				78BF115E19BEB290005AE8B0 /* InstituteDetailTableViewCell.m in Sources */,
+				5B7BF52D1BA957F600791897 /* KQGalleryCollectionViewController.m in Sources */,
 				78F62E981A0700D0009BED32 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				78F8C9A419FE0E260077805C /* InfoViewController.m in Sources */,
 				788DE31F19A2D8C800ED8D23 /* KQCache.m in Sources */,
@@ -1428,9 +1480,11 @@
 				78BF116619C01901005AE8B0 /* Util.m in Sources */,
 				7F2D9AA71ADFB43A00E200E8 /* GalerieViewController.m in Sources */,
 				78F62E901A0700D0009BED32 /* AFHTTPRequestOperationManager.m in Sources */,
+				5B21C4A01BAFEB7300F30112 /* Setup.m in Sources */,
 				789CA44F1A00B98D009D38E5 /* AboutViewController.m in Sources */,
 				78CD61EF19D027AA00C6E49A /* AusstellerDetailsViewController.m in Sources */,
 				7836B99719A3897C004BB485 /* CacheDB.xcdatamodeld in Sources */,
+				5B21C4A91BAFFA7F00F30112 /* Event.m in Sources */,
 				7122DB1418BB1F7300C044E8 /* SecondFeedCustomCell.m in Sources */,
 				7FB731CB19FEB426009CD692 /* PdfViewController.m in Sources */,
 				78F62E9B1A0700D0009BED32 /* UIButton+AFNetworking.m in Sources */,
@@ -1439,6 +1493,7 @@
 				7890808719A23B4900C537E1 /* KQNavigationController.m in Sources */,
 				7112222D18BCC69300E77A4A /* AboutCustomCell1.m in Sources */,
 				78F62E9C1A0700D0009BED32 /* UIImageView+AFNetworking.m in Sources */,
+				5B4EF9491BAAC4B7001FCEC4 /* KQGalleryPhotoViewController.m in Sources */,
 				78CD61F519D0371F00C6E49A /* CompetitionViewController.m in Sources */,
 				BB303E3418B8802E00B6EBC9 /* ProgramViewController.m in Sources */,
 				789CA4631A00BF10009D38E5 /* AusstellerDetailsTableViewController.m in Sources */,
@@ -1447,11 +1502,13 @@
 				7836B9B819ABB791004BB485 /* Cache.m in Sources */,
 				78F62E9F1A0700D0009BED32 /* UIWebView+AFNetworking.m in Sources */,
 				78F62E921A0700D0009BED32 /* AFNetworkReachabilityManager.m in Sources */,
+				5B7BF5311BA9587300791897 /* KQGalleryCollectionViewCell.m in Sources */,
 				7836B9C119AC2933004BB485 /* SpeakerDetailsViewController.m in Sources */,
 				7112222E18BCC69300E77A4A /* AboutCustomCell2.m in Sources */,
 				78B83D1A19BE1DE8004E5B35 /* InstituteDetailTableViewController.m in Sources */,
 				784F678619C80EB900EA6217 /* InstituteDepartamentDetailTableViewCell.m in Sources */,
 				78F62E911A0700D0009BED32 /* AFHTTPSessionManager.m in Sources */,
+				5B21C4A61BAFF24400F30112 /* JahrestreffenDerWBASetupEvent.m in Sources */,
 				78F62E9A1A0700D0009BED32 /* UIAlertView+AFNetworking.m in Sources */,
 				789CA44C1A00A488009D38E5 /* ViewController.m in Sources */,
 				78F62E931A0700D0009BED32 /* AFSecurityPolicy.m in Sources */,
@@ -1470,9 +1527,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB303DC818B863E300B6EBC9 /* EventsTests.m in Sources */,
-				788DE32419A2DD5A00ED8D23 /* KQURLConnectHelperMock.m in Sources */,
-				788DE32119A2DD1D00ED8D23 /* KQEventAPITestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1604,15 +1658,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
 				INFOPLIST_FILE = "Events/Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Werzeubau-2014";
-				PROVISIONING_PROFILE = "befed813-b929-4c04-be9e-bd4b6ce2972d";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Events/Events-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1626,15 +1680,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WBA Aachener Werkzeugbau Akademie GmbH";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
 				INFOPLIST_FILE = "Events/Events-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Werzeubau-2014";
-				PROVISIONING_PROFILE = "befed813-b929-4c04-be9e-bd4b6ce2972d";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Events/Events-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -1644,7 +1698,8 @@
 		BB303DCF18B863E300B6EBC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Events.app/Events";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1658,7 +1713,7 @@
 				);
 				INFOPLIST_FILE = "EventsTests/EventsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -1666,7 +1721,8 @@
 		BB303DD018B863E300B6EBC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Events.app/Events";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1676,7 +1732,7 @@
 				GCC_PREFIX_HEADER = "Events/Events-Prefix.pch";
 				INFOPLIST_FILE = "EventsTests/EventsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
