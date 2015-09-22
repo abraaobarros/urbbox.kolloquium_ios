@@ -10,13 +10,13 @@
 
 @implementation Event
 
--(NSString *)getTitleOfTab:(EventTab)tab{
+-(NSString *)getTitleOfTab:(long)tab{
     
     return @"New Tab";
 
 }
 
--(UIImage *)getIconOfTab:(EventTab)tab{
+-(UIImage *)getIconOfTab:(long)tab{
 
     return [UIImage imageNamed:@"ic_thumbnail.png"];
 

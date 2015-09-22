@@ -20,7 +20,6 @@
     NSMutableArray *dataSource;
     NSMutableDictionary *dataImageSource;
     LoadingViewController *loading;
-    ProgramDetailsViewController *vc;
     NSArray *data;
    
 }
@@ -31,6 +30,8 @@
 KQEventAPI *event;
 @synthesize tableView;
 BOOL reload = FALSE;
+
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -43,34 +44,35 @@ BOOL reload = FALSE;
 
 - (void)viewDidLoad
 {
-    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [super viewDidLoad];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     if (![userDefaults objectForKey:@"email"]) {
         [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
     }
-   
-
-    [Util setupNavigationBar:self withTitle:@"Aussteller"];
-    vc = (ProgramDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProgramDetailsViewController"];
-    [self.sidePanelController setRightPanel:vc];
-    [self.sidePanelController setRightFixedWidth:self.view.frame.size.width*9/10];
     
     event =[[KQEventAPI alloc]
                     initWithDataAssyncWithStart:^(void){
                         [self performSegueWithIdentifier:@"Loading2ViewController" sender:self];
                     } finishProcess:^(void){
                         NSLog(@"Finish Fetching");
-                        [self loadDummyData];
                     } errorHandler:^(void){
                         [self performSegueWithIdentifier:@"Loading2ViewController" sender:self];
+                    
+                    
                     }];
-    
-    [self loadDummyData];
+
     
     self.navigationItem.leftBarButtonItem = self.sidePanelController.leftButtonForCenterPanel;
     [Util setupNavigationBar:self withTitle:@"Das Programm"];
+    
+    [self loadData];
+    
+    
+
+}
+
+-(void) styleSegmentDay{
     
     CGRect frame= _segmentDay.frame;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -87,16 +89,17 @@ BOOL reload = FALSE;
     NSDictionary *attributes = [NSDictionary dictionaryWithObject:font
                                                            forKey:NSFontAttributeName];
     [_segmentDay setTitleTextAttributes:attributes
-                                    forState:UIControlStateNormal];
+                               forState:UIControlStateNormal];
 
 }
-            
+
+
 
 - (IBAction)reloadData:(id)sender {
     [event reloadData:^(void){
         } startHandler:^{
             [self performSegueWithIdentifier:@"LoadingViewController" sender:self];
-            [self loadDummyData];
+            [self loadData];
         } errorHandler:^{
             [loading dismissViewControllerAnimated:YES completion:nil];
             NSLog(@"Error Fetching");
@@ -113,7 +116,7 @@ BOOL reload = FALSE;
     NSLog(@"aqui");
     [self.sidePanelController showLeftPanelAnimated:YES];
 }
--(void)loadDummyData{
+-(void)loadData{
     //dic initilization for dummy data start
     NSArray *retorno = [event objectForKey:@"activities"];
     self.navigationItem.title = [event objectForKey:@"name"];
@@ -185,54 +188,25 @@ BOOL reload = FALSE;
     {
         cell = [[ProgramCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    cell.lblDateTime.text=[self convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"dd/MM/yyyy HH:mm" toPattern:@"HH:mm "];
-    cell.lblEventName.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"subject"];
-    cell.lblEventDesc.text=[[dataSource objectAtIndex:indexPath.row] valueForKey:@"descript"];
-    
-    //[cell.lblEventName sizeToFit];
-    [cell.lblEventDesc sizeToFit];
-    cell.data.text=[Util convertDataFormat:[[dataSource objectAtIndex:indexPath.row] valueForKey:@"date"] withPattern:@"dd/MM/yyyy HH:mm" toPattern:@"dd MMM"];
-    @try {
-        cell.speaker.text = [[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"name"];
-        
-        if([[[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"]objectForKey:@"name"] isEqualToString:@"Information"])
-        {
-            cell.company.text=@"";
-        }else
-        {
-            cell.company.text=[[[dataSource objectAtIndex:indexPath.row] valueForKey:@"speaker"] objectForKey:@"company"];
-        }
-    }
-    @catch (NSException *exception) {
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-        {
-            cell.speaker.text = [NSString stringWithFormat:@"Ort: %@",[[dataSource objectAtIndex:indexPath.row] valueForKey:@"location"]];
-        } else {
-            cell.speaker.text = @"";
-        }
-        
-        cell.company.text = @"";
-    }
-    @finally {
-        
-    }
-    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-    {
-        cell.location.text = [NSString stringWithFormat:@"%@",[[dataSource objectAtIndex:indexPath.row] valueForKey:@"location"]];
-    }else{
-        cell.location.text = @"";
-    }
-    
-    
+    [cell setData:[dataSource objectAtIndex:indexPath.row]];
     cell.imgEventImage.image = nil;
     
     [KQEventAPI getImageFromUrl:[[dataSource objectAtIndex:indexPath.row] objectForKey:@"thumb"] finishHandler:^(NSData* d){
+    
         cell.imgEventImage.image=[UIImage imageWithData:d];
+    
+    
     } startHandler:^{
+    
         NSLog(@"Init Image loader");
     
+    
     } errorHandler:^{
+    
+        
         NSLog(@"Problem Image loader");
+    
+    
     }];
     
     return cell;
@@ -241,59 +215,25 @@ BOOL reload = FALSE;
     
     
     if ([[dataSource objectAtIndex:indexPath.row] objectForKey:@"speaker_id"]!=(id)[NSNull null]) {
-        [vc setData:[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]]];
-        [self.sidePanelController showRightPanelAnimated:YES];
+    
+        [self performSegueWithIdentifier:@"ProgramDetailsViewController" sender:self];
+    
     }
     
     
 }
-
-
--(NSString *) convertDataFormat:(NSString *) timeStamp withPattern:(NSString *) from toPattern:(NSString *) to{
-    
-    NSString *str = timeStamp; /// here this is your date with format yyyy-MM-dd
-
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; // here we create NSDateFormatter object for change the Format of date..
-    [dateFormatter setDateFormat:from]; //// here set format of date which is in your output date (means above str with format)
-
-    NSDate *date = [dateFormatter dateFromString: str]; // here you can fetch date from string with define format
-
-    dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:to];// here set format which you want...
-
-    NSString *convertedString = [dateFormatter stringFromDate:date]; //here convert date in NSString
-    return convertedString;
-}
-
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if ([[segue identifier] isEqualToString:@"LoadingViewController"])
-    {
-        // Get reference to the destination view controller
-        loading = [segue destinationViewController];
-        // Pass any objects to the view controller here, like...
-    }
-    if ([[segue identifier] isEqualToString:@"Loading2ViewController"])
-    {
-        // Get reference to the destination view controller
-        loading = [segue destinationViewController];
-//        @try {
-//            [loading setLoadingMode:YES];
-//        }
-//        @catch (NSException *exception) {
-//        }
-        // Pass any objects to the view controller here, like...
-    }
     if ([[segue identifier] isEqualToString:@"ProgramDetailsViewController"])
     {
-        ProgramDetailsViewController *vc = (ProgramDetailsViewController *)[segue destinationViewController];
-        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        NSLog(@"IP: %@",[dataSource objectAtIndex:ip.row]);
-        vc.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:ip.row]];
+        ProgramDetailsViewController *viewController = (ProgramDetailsViewController *)[segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        viewController.data =[[NSDictionary alloc] initWithDictionary:[dataSource objectAtIndex:indexPath.row]];
 
     }
 }
@@ -313,9 +253,6 @@ BOOL reload = FALSE;
     [tableView reloadData];
 }
 
-- (NSUInteger)supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskPortrait;
-}
 -(BOOL)shouldAutorotate{
     return NO;
 }

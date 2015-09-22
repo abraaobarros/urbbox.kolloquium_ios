@@ -18,4 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *data;
 @property (weak, nonatomic) IBOutlet UILabel *location;
 @property (weak, nonatomic) IBOutlet UILabel *company;
+
+-(void) setData:(NSDictionary *)data;
+
 @end

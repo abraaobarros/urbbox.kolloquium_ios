@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KQTableViewController.h"
 
 typedef enum : NSUInteger {
     ProgrammTab,
@@ -28,12 +29,13 @@ typedef enum : NSUInteger {
     EventTabcount
 } EventTab;
 
-@interface Event : NSObject
+@interface Event : NSObject <KQTableViewControllerProtocoll>
 
 -(NSDictionary *)getTabsEvent;
 -(int) getIdEvent;
 
 -(NSString *) getTitleOfTab:(long)tab;
 -(UIImage *) getIconOfTab :(long)tab;
+-(UIViewController *) getViewControllerOfTab:(long)tab;
 
 @end

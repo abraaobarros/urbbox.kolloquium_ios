@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Teknowledge Software. All rights reserved.
 //
 
-#import "FeedViewController.h"
+#import "ReferentenViewController.h"
 #import "FeedCustomCell.h"
 #import "SecondFeedCustomCell.h"
 #import "ThirdFeedCustomCell.h"
@@ -19,7 +19,7 @@
 #import "SpeakerDetailsViewController.h"
 #import "ProgramDetailsViewController.h"
 
-@interface FeedViewController ()
+@interface ReferentenViewController ()
 {
     // NSMutableArray *arrFeedImages;
     NSMutableArray *dicTweetFeed;
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation FeedViewController
+@implementation ReferentenViewController
 @synthesize tableView;
 @synthesize imagesCache;
 @synthesize dataSource;

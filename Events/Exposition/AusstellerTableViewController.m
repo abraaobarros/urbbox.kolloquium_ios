@@ -8,7 +8,7 @@
 
 #import "AusstellerTableViewController.h"
 #import "KQCache.h"
-#import "FeedViewController.h"
+#import "ReferentenViewController.h"
 #import "FeedCustomCell.h"
 #import "SecondFeedCustomCell.h"
 #import "ThirdFeedCustomCell.h"

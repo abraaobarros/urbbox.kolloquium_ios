@@ -23,7 +23,7 @@
 #import "KQGalleryCollectionViewController.h"
 #import "KQCache.h"
 #import "Util.h"
-#import "Setup.h"
+
 
 
 @interface SideBarViewController ()
@@ -33,10 +33,16 @@
 @implementation SideBarViewController
 
 KQEventAPI *event;
-NSArray *sections;
-Event *eventTab;
-NSDictionary *datasource;
+@synthesize eventTab;
+@synthesize sections;
+@synthesize datasource;
 
+- (void)loadTabs
+{
+    eventTab   = [Setup getActualEvent];
+    sections   = [[eventTab getTabsEvent] allKeys];
+    datasource = [eventTab getTabsEvent];
+}
 
 - (void)viewDidLoad
 {
@@ -51,10 +57,14 @@ NSDictionary *datasource;
                 NSLog(@"Error Fetching");
             }];
     
-    eventTab   = [Setup getActualEvent];
-    sections   = [[eventTab getTabsEvent] allKeys];
-    datasource = [eventTab getTabsEvent];
+    [self loadTabs];
 
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+
+    [super viewDidAppear:animated];
+    [self loadTabs];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -73,14 +83,10 @@ NSDictionary *datasource;
 }
 
 -(long) getTabFromIndex:(NSIndexPath *)indexPath{
-
-    NSLog(@"%@",[[datasource objectForKey:
-                 [sections objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row]);
     
-    long s = [[[datasource objectForKey:
-                    [sections objectAtIndex:indexPath.section]]
-               objectAtIndex:indexPath.row] longValue];
-    return s;
+    return [[[datasource objectForKey:
+              [sections objectAtIndex:indexPath.section]]
+             objectAtIndex:indexPath.row] longValue];
 
 }
 
@@ -123,8 +129,12 @@ NSDictionary *datasource;
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    
+    [self.sidePanelController setCenterPanel:[eventTab getViewControllerOfTab:[self getTabFromIndex:indexPath]]];
+    return;
+
     if (indexPath.section==0) {
         if(indexPath.row==0)
         {

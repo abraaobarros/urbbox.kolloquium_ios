@@ -7,18 +7,22 @@
 //
 
 #import "JahrestreffenDerWBASetupEvent.h"
+#import "KQNavigationController.h"
+#import "LayoutSetup.h"
+
+
+@implementation JahrestreffenDerWBASetupEvent
 
 NSDictionary *TitleTab;
 NSDictionary *IconTab;
-@implementation JahrestreffenDerWBASetupEvent
-
-
+NSDictionary *LayoutView;
+long actualTab;
 
 -(instancetype)init{
     self = [super init];
     if (self) {
         TitleTab = @{
-                    @(ProgrammTab): @"Programm",
+                    @(ProgrammTab)       : @"Programm",
                     @(TeilnehmerTab     ): @"Teilnehmer",
                     @(ReferentenTab     ): @"Referenten",
                     @(AustellerTab      ): @"Austeller",
@@ -53,7 +57,42 @@ NSDictionary *IconTab;
                     @(ImpressumTab):      @"ic_impressum.png",
                     @(LogoutTab):         @"ic_logout.png",
                 };
-
+        LayoutView = @{
+                       @(ProgrammTab)  : [LayoutSetup withTableViewAndWith:ProgrammCellLayout
+                                                          andDetailsView:ProgrammDetailsLayout
+                                                                   title:@"Programm"
+                                                                  source:@"activities"],
+                       @(TeilnehmerTab): [LayoutSetup withTableViewAndWith:TeilnehmerCellLayout
+                                                          andDetailsView:TeilnehmerDetailsLayout
+                                                                   title:@"Teilnehmer"
+                                                                  source:@"participants"],
+                       @(ReferentenTab): [LayoutSetup withTableViewAndWith:ReferentenCellLayout
+                                                            andDetailsView:TeilnehmerDetailsLayout
+                                                                     title:@"Referenten"
+                                                                    source:@"speakers"],
+                       @(WzlTab): [LayoutSetup withTableViewAndWith:ReferentenCellLayout
+                                                            andDetailsView:TeilnehmerDetailsLayout
+                                                                     title:@"WZL"
+                                                                    source:@"organizers.1.departments"],
+                       @(FraunhoferIPTTab): [LayoutSetup withTableViewAndWith:InstituteCellLayout
+                                                            andDetailsView:TeilnehmerDetailsLayout
+                                                                     title:@"Fraunhofer IPT"
+                                                                    source:@"organizers.0.departments"],
+                       
+//                    @(ReferentenTab ):    @"ic_action_participants.png",
+//                    @(AustellerTab ):     @"ic_star.png",
+//                    @(KolloquiumTab ):    @"ic_launcher.png",
+//                    @(WerttbewerbTab ):   @"ic_competition.png",
+//                    @(FinalistenTab ):    @"ic_finalists.png",
+//                    @(FraunhoferIPTTab ): @"ic_ipt.jpg",
+//                    @(WzlTab ):           @"ic_wzl.png",
+//                    @(PartnerTab ):       @"ic_partners.png",
+//                    @(AachenTab ):        @"ic_aachen.png",
+//                    @(FotosTab ):         @"ic_action_fotos.png",
+//                    @(AktualisierenTab ): @"ic_refresh.png",
+//                    @(ImpressumTab):      @"ic_impressum.png",
+//                    @(LogoutTab):         @"ic_logout.png",
+                    };
     }
 
     return self;
@@ -61,7 +100,9 @@ NSDictionary *IconTab;
 
 
 -(int)getIdEvent{
+    
     return 1;
+    
 }
 
 -(NSDictionary *)getTabsEvent{
@@ -109,14 +150,35 @@ NSDictionary *IconTab;
         return [UIImage imageNamed:[IconTab objectForKey:@(tab)]];
     }
     @catch (NSException *exception) {
+    
         return [UIImage imageNamed:[IconTab objectForKey:@(ProgrammTab)]];
+    
     }
 
 }
 
+-(Layout *) tableViewLayout{
+
+    return [LayoutView objectForKey:@(actualTab)];
+    
+}
 
 
+-(UIViewController *)getViewControllerOfTab:(long)tab{
 
+    actualTab = tab;
+    UIStoryboard *mystoryboard;
+    mystoryboard = [UIStoryboard storyboardWithName:@"JahrestreffenDer_Storyboard" bundle:nil];
+    KQNavigationController *nav = [mystoryboard instantiateViewControllerWithIdentifier:
+                                   [[self tableViewLayout] getFirstViewControllerIdentifier]];
+    
+    KQTableViewController *tablewViewController = (KQTableViewController *)[nav topViewController];
+    tablewViewController.delegate = self;
+    
+    return  nav;
+
+
+}
 
 
 @end

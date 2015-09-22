@@ -100,10 +100,8 @@ UIDocumentInteractionController *documentInteractionController;
         
     }
 
-//    [subject sizeToFit];
     [_descript sizeToFit];
     [_scrollView setContentSize:_descript.viewForBaselineLayout.frame.size];
-//    [name sizeToFit];
     [_quetion resignFirstResponder];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -115,14 +113,17 @@ UIDocumentInteractionController *documentInteractionController;
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)sendQuestion:(id)sender {
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [KQEventAPI makeQuestion:_quetion.text
                   toActivity:[[data objectForKey:@"id"] intValue] withParticipant:[[userDefaults objectForKey:@"id"] intValue] finishHandler:^{
+                      
                       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Gesendet"
                                                                       message:@"Frage gesendet"
                                                                      delegate:nil
                                                             cancelButtonTitle:@"OK"
                                                             otherButtonTitles:nil];
+
                       [alert show];
                       [_quetion resignFirstResponder];
                  } startHandler:^{
@@ -133,11 +134,6 @@ UIDocumentInteractionController *documentInteractionController;
 }
 
 - (IBAction)changeQuestion:(id)sender {
-//    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Stellen Sie eine Frage" message:@"lhre Frage wird von dem Referent empfangen" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
-//    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-//    
-//    [alert setTag:1];
-//    [alert show];
     
     CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] init];
     UIPlaceHolderTextView *textView = [[UIPlaceHolderTextView alloc] initWithFrame:CGRectMake(0, 0, 290, 200)];

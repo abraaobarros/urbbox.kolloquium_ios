@@ -10,7 +10,7 @@
 #import "KQURLConnectHelper.h"
 #import "KQEventAPI.h"
 
-@interface FeedViewController : UITableViewController
+@interface ReferentenViewController : UITableViewController
 
 @property (nonatomic, retain) KQURLConnectHelper * urlConnectHelper;
 @property (nonatomic,strong) NSArray *dataSource;
